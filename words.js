@@ -3080,3 +3080,48 @@ ihr|Possessivartikel (sie)|her; their|Sie hat ihren Schlüssel verloren.|She has
 unser|Possessivartikel (wir)|our|Unser Zug fährt um acht Uhr ab.|Our train leaves at eight o'clock.|B
 euer|Possessivartikel (ihr)|your (informal, several people)|Wo steht euer Auto?|Where is your car parked?|B
 Ihr|Possessivartikel (Sie)|your (formal)|Darf ich Ihren Ausweis sehen?|May I see your ID?|B`;
+// Possessive gap sentences: sentence with ___|answer|person|gender · case|translation
+const POSSESSIVE = `Das ist ___ Bruder.|mein|ich|maskulin · Nominativ|That is my brother.
+___ Schwester wohnt in Wien.|Meine|ich|feminin · Nominativ|My sister lives in Vienna.
+Ich suche ___ Mantel.|meinen|ich|maskulin · Akkusativ|I am looking for my coat.
+Ich fahre mit ___ Auto zur Arbeit.|meinem|ich|neutrum · Dativ (mit)|I drive to work in my car.
+Ich helfe ___ Mutter im Garten.|meiner|ich|feminin · Dativ|I help my mother in the garden.
+Ich besuche ___ Großeltern.|meine|ich|Plural · Akkusativ|I am visiting my grandparents.
+Das ist das Auto ___ Vaters.|meines|ich|maskulin · Genitiv|That is my father's car.
+Das ist die Wohnung ___ Schwester.|meiner|ich|feminin · Genitiv|That is my sister's flat.
+Wo ist ___ Handy?|dein|du|neutrum · Nominativ|Where is your phone?
+Hast du ___ Ausweis dabei?|deinen|du|maskulin · Akkusativ|Do you have your ID with you?
+Wie geht es ___ Eltern?|deinen|du|Plural · Dativ|How are your parents?
+Kann ich ___ Fahrrad benutzen?|dein|du|neutrum · Akkusativ|Can I use your bike?
+Was machst du mit ___ Freundin am Wochenende?|deiner|du|feminin · Dativ (mit)|What are you doing with your girlfriend at the weekend?
+Er besucht ___ Eltern.|seine|er|Plural · Akkusativ|He is visiting his parents.
+Er hat ___ Job verloren.|seinen|er|maskulin · Akkusativ|He has lost his job.
+Er wohnt bei ___ Tante.|seiner|er|feminin · Dativ (bei)|He lives with his aunt.
+Paul spielt mit ___ Sohn Fußball.|seinem|er|maskulin · Dativ (mit)|Paul plays football with his son.
+___ Frau arbeitet im Krankenhaus.|Seine|er|feminin · Nominativ|His wife works in the hospital.
+Das Kind sucht ___ Ball.|seinen|es|maskulin · Akkusativ|The child is looking for its ball.
+Sie hat ___ Tasche vergessen.|ihre|sie1|feminin · Akkusativ|She has forgotten her bag.
+Anna telefoniert mit ___ Bruder.|ihrem|sie1|maskulin · Dativ (mit)|Anna is on the phone with her brother.
+Sie liebt ___ Beruf.|ihren|sie1|maskulin · Akkusativ|She loves her job.
+Maria sagt, ___ Mann kocht sehr gut.|ihr|sie1|maskulin · Nominativ|Maria says her husband cooks very well.
+Sie fährt mit ___ Kindern in den Urlaub.|ihren|sie1|Plural · Dativ (mit)|She is going on holiday with her children.
+Das ist ___ Haus.|unser|wir|neutrum · Nominativ|That is our house.
+Wir laden ___ Nachbarn ein.|unsere|wir|Plural · Akkusativ|We are inviting our neighbours.
+Wir sprechen mit ___ Lehrerin.|unserer|wir|feminin · Dativ (mit)|We are talking to our teacher.
+Wir suchen ___ Hund.|unseren|wir|maskulin · Akkusativ|We are looking for our dog.
+In ___ Garten stehen zwei Apfelbäume.|unserem|wir|maskulin · Dativ (in, wo?)|There are two apple trees in our garden.
+Ist das ___ Hund?|euer|ihr|maskulin · Nominativ|Is that your dog?
+Wo sind ___ Kinder?|eure|ihr|Plural · Nominativ|Where are your children?
+Habt ihr ___ Sachen schon gepackt?|eure|ihr|Plural · Akkusativ|Have you already packed your things?
+Wir kommen gern zu ___ Party.|eurer|ihr|feminin · Dativ (zu)|We would love to come to your party.
+Ich habe ___ Vater gestern gesehen.|euren|ihr|maskulin · Akkusativ|I saw your father yesterday.
+Die Kinder spielen mit ___ Freunden.|ihren|sie3|Plural · Dativ (mit)|The children are playing with their friends.
+Meine Nachbarn verkaufen ___ Haus.|ihr|sie3|neutrum · Akkusativ|My neighbours are selling their house.
+Die Eltern holen ___ Tochter von der Schule ab.|ihre|sie3|feminin · Akkusativ|The parents pick their daughter up from school.
+Sie wohnen bei ___ Großmutter.|ihrer|sie3|feminin · Dativ (bei)|They live with their grandmother.
+Wie ist ___ Name, bitte?|Ihr|Sie|maskulin · Nominativ|What is your name, please?
+Darf ich ___ Ausweis sehen?|Ihren|Sie|maskulin · Akkusativ|May I see your ID?
+Vielen Dank für ___ Hilfe.|Ihre|Sie|feminin · Akkusativ (für)|Thank you very much for your help.
+Was kann ich für ___ Kinder tun?|Ihre|Sie|Plural · Akkusativ (für)|What can I do for your children?
+Bitte kommen Sie mit ___ Pass.|Ihrem|Sie|maskulin · Dativ (mit)|Please come with your passport.
+Wir haben ___ Brief erhalten.|Ihren|Sie|maskulin · Akkusativ|We have received your letter.`;
