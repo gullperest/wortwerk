@@ -659,20 +659,31 @@ const canSpeak="speechSynthesis" in window;
 function say(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="de-DE";u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
 const sayBtn=w=>canSpeak?`<button class="say" data-act="say" data-t="${esc(label(w))}">Listen</button>`:"";
 const $=id=>document.getElementById(id);
-let actx=null;
+// Answer sounds are small generated WAV clips played through <audio>, which phones play
+// more reliably than Web Audio (on iPhone, Web Audio is silenced by the ring/silent switch).
+function wav(notes,buzz){
+  const sr=22050, n=Math.floor(sr*(Math.max(...notes.map(x=>x[1]+x[2]))+.05)), d=new DataView(new ArrayBuffer(44+n*2));
+  const str=(o,t)=>[...t].forEach((c,i)=>d.setUint8(o+i,c.charCodeAt(0)));
+  str(0,"RIFF");d.setUint32(4,36+n*2,true);str(8,"WAVEfmt ");d.setUint32(16,16,true);d.setUint16(20,1,true);d.setUint16(22,1,true);
+  d.setUint32(24,sr,true);d.setUint32(28,sr*2,true);d.setUint16(32,2,true);d.setUint16(34,16,true);str(36,"data");d.setUint32(40,n*2,true);
+  for(let i=0;i<n;i++){
+    const t=i/sr; let v=0;
+    notes.forEach(([f,at,len])=>{const x=t-at; if(x<0||x>len) return; const env=Math.min(1,x/.008)*Math.exp(-4*x/len), ph=x*f; v+=env*(buzz?(2*(ph%1)-1)*.4:Math.sin(2*Math.PI*ph)*.7);});
+    d.setInt16(44+i*2,Math.max(-1,Math.min(1,v))*32767,true);
+  }
+  let bin=""; const u=new Uint8Array(d.buffer); for(let i=0;i<u.length;i++) bin+=String.fromCharCode(u[i]);
+  return "data:audio/wav;base64,"+btoa(bin);
+}
+let snd=null;
+try{
+  snd={ok:new Audio(wav([[659,0,.14],[988,.12,.3]],false)),no:new Audio(wav([[208,0,.18],[156,.17,.32]],true)),next:new Audio(wav([[523,0,.07]],false))};
+  snd.next.volume=.6;
+  snd.ok.preload=snd.no.preload=snd.next.preload="auto";
+  if(navigator.audioSession) navigator.audioSession.type="playback";
+}catch(e){}
 function tone(ok){
-  if(store.sound===false) return;
-  try{
-    actx=actx||new (window.AudioContext||window.webkitAudioContext)();
-    if(actx.state==="suspended") actx.resume();
-    const t=actx.currentTime, notes=ok?[[659,0,.13],[988,.11,.24]]:[[208,0,.17],[156,.16,.3]];
-    notes.forEach(([f,at,len])=>{
-      const o=actx.createOscillator(), g=actx.createGain();
-      o.type=ok?"sine":"sawtooth"; o.frequency.value=f;
-      g.gain.setValueAtTime(.0001,t+at); g.gain.linearRampToValueAtTime(ok?.25:.12,t+at+.015); g.gain.exponentialRampToValueAtTime(.0001,t+at+len);
-      o.connect(g); g.connect(actx.destination); o.start(t+at); o.stop(t+at+len+.03);
-    });
-  }catch(e){}
+  if(store.sound===false||!snd) return;
+  try{const a=ok==="next"?snd.next:ok?snd.ok:snd.no; a.currentTime=0; const p=a.play(); if(p&&p.catch) p.catch(()=>{});}catch(e){}
 }
 
 let S=null, query="", confirmReset=false;
@@ -850,8 +861,8 @@ document.addEventListener("click",e=>{
   if(a==="artkey"){const i=$("answer");i.value=b.dataset.k+" "+i.value.replace(/^(der|die|das)\s*/i,"");return updateTiles();}
   if(a==="back"){const i=$("answer");i.value=i.value.slice(0,-1);return updateTiles();}
   if(a==="giveup") return checkWrite("");
-  if(a==="next") return next();
-  if(a==="again"){S=null;return render();}
+  if(a==="next"){tone("next");return next();}
+  if(a==="again"){tone("next");S=null;return render();}
 });
 document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventDefault();checkWrite($("answer").value);} });
 document.addEventListener("input",e=>{
