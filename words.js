@@ -139,7 +139,30 @@ die|Krankmeldung|die Krankmeldungen|sick note|Ich muss dem Arbeitgeber eine Kran
 das|Lager|die Lager|warehouse, stockroom|Die Ware ist noch im Lager.|The goods are still in the warehouse.|B
 die|Baustelle|die Baustellen|building site|Auf der Baustelle muss man einen Helm tragen.|You have to wear a helmet on the building site.|B
 der|Architekt|die Architekten|architect|Der Architekt hat das neue Rathaus geplant.|The architect designed the new town hall.|B
-der|Kaufmann|die Kaufleute|businessman, trained clerk|Er hat eine Ausbildung zum Kaufmann gemacht.|He trained as a commercial clerk.|B`],
+der|Kaufmann|die Kaufleute|businessman, trained clerk|Er hat eine Ausbildung zum Kaufmann gemacht.|He trained as a commercial clerk.|B
+die|Beschäftigung|die Beschäftigungen|employment, occupation|Er sucht seit Monaten eine neue Beschäftigung.|He has been looking for a new job for months.|B
+der|Betreuer|die Betreuer|carer, supervisor|Der Betreuer begleitet die Kinder ins Schwimmbad.|The supervisor accompanies the children to the swimming pool.|B
+die|Entlassung|die Entlassungen|dismissal, discharge|Nach der Entlassung hat er lange Arbeit gesucht.|After his dismissal he looked for work for a long time.|B
+der|Experte|die Experten|expert|Ein Experte hat den Schaden am Dach geprüft.|An expert examined the damage to the roof.|B
+der|Fachmann|die Fachleute|specialist, expert|Für diese Reparatur brauchen wir einen Fachmann.|We need a specialist for this repair.|B
+die|Forderung|die Forderungen|demand|Die Firma hat die Forderungen der Mitarbeiter abgelehnt.|The company rejected the employees' demands.|B
+der|Fotograf|die Fotografen|photographer|Der Fotograf macht Bilder von der Hochzeit.|The photographer is taking pictures of the wedding.|B
+der|Lehrling|die Lehrlinge|apprentice|Der Lehrling lernt den Beruf in drei Jahren.|The apprentice learns the trade in three years.|B
+die|Lehrstelle|die Lehrstellen|apprenticeship (position)|Nach der Schule sucht sie eine Lehrstelle als Köchin.|After school she is looking for an apprenticeship as a cook.|B
+der|Maler|die Maler|painter|Der Maler streicht morgen unser Wohnzimmer.|The painter is painting our living room tomorrow.|B
+die|Messe|die Messen|trade fair|Unsere Firma zeigt das Produkt auf der Messe.|Our company is showing the product at the trade fair.|B
+die|Organisation|die Organisationen|organisation|Sie arbeitet für eine internationale Organisation.|She works for an international organisation.|B
+der|Sozialarbeiter|die Sozialarbeiter|social worker|Der Sozialarbeiter hilft Familien mit Problemen.|The social worker helps families with problems.|B
+die|Technologie|die Technologien|technology|Die Firma investiert viel in neue Technologien.|The company invests a lot in new technologies.|B
+die|Uniform|die Uniformen|uniform|Die Polizisten tragen eine blaue Uniform.|The police officers wear a blue uniform.|B
+der|Unternehmer|die Unternehmer|entrepreneur|Der Unternehmer hat zwanzig neue Mitarbeiter eingestellt.|The entrepreneur has taken on twenty new employees.|B
+die|Vermittlung|die Vermittlungen|placement, arrangement|Die Agentur hilft bei der Vermittlung von Jobs.|The agency helps with finding people jobs.|B
+die|Versammlung|die Versammlungen|meeting, assembly|Die Versammlung beginnt um neunzehn Uhr.|The meeting begins at seven in the evening.|B
+der|Vertreter|die Vertreter|representative|Ein Vertreter der Firma kommt morgen vorbei.|A representative of the company is coming by tomorrow.|B
+die|Vertretung|die Vertretungen|substitute, cover|Frau Klein macht diese Woche meine Vertretung.|Ms Klein is covering for me this week.|B
+die|Visitenkarte|die Visitenkarten|business card|Darf ich Ihnen meine Visitenkarte geben?|May I give you my business card?|B
+das|Werk|die Werke|plant, work|Mein Vater arbeitet in einem großen Werk.|My father works in a large plant.|B
+der|Übersetzer|die Übersetzer|translator|Ein Übersetzer hat den Vertrag ins Deutsche übertragen.|A translator rendered the contract into German.|B`],
 ["Wohnen","Housing",`die|Miete|die Mieten|rent|Die Miete ist in dieser Stadt sehr hoch.|Rent is very high in this city.|B
 der|Vermieter|die Vermieter|landlord|Der Vermieter wohnt im selben Haus.|The landlord lives in the same building.|B
 der|Mieter|die Mieter|tenant|Der neue Mieter zieht im Mai ein.|The new tenant moves in in May.|B
@@ -273,7 +296,32 @@ die|Heizkosten|nur Plural|heating costs|Die Heizkosten sind in diesem Winter ges
 das|Zuhause|–|home|Nach zwei Jahren ist Berlin mein Zuhause geworden.|After two years Berlin has become my home.|B
 die|Mieterhöhung|die Mieterhöhungen|rent increase|Gestern haben wir eine Mieterhöhung bekommen.|We received a rent increase yesterday.|B
 das|Gästezimmer|die Gästezimmer|guest room|Du kannst gern in unserem Gästezimmer schlafen.|You are welcome to sleep in our guest room.|B
-das|Arbeitszimmer|die Arbeitszimmer|study|Im Arbeitszimmer steht mein Computer.|My computer is in the study.|B`],
+das|Arbeitszimmer|die Arbeitszimmer|study|Im Arbeitszimmer steht mein Computer.|My computer is in the study.|B
+der|Abfalleimer|die Abfalleimer|rubbish bin|Der Abfalleimer in der Küche ist schon wieder voll.|The rubbish bin in the kitchen is full again.|B
+die|Anlage|die Anlagen|facility, enclosure (in a letter)|In der Anlage finden Sie meinen Lebenslauf.|Enclosed you will find my CV.|B
+das|Apartment|die Apartments|apartment, small flat|Im Urlaub haben wir ein kleines Apartment gemietet.|On holiday we rented a small apartment.|B
+der|Bau|die Bauten|construction, building|Der Bau der neuen Schule dauert zwei Jahre.|The construction of the new school will take two years.|B
+der|Bewohner|die Bewohner|resident|Die Bewohner des Hauses kennen sich gut.|The residents of the building know each other well.|B
+die|Couch|die Couchs|sofa, couch|Abends liege ich gern auf der Couch.|In the evening I like lying on the sofa.|A
+die|Fläche|die Flächen|area, surface|Die Wohnung hat eine Fläche von siebzig Quadratmetern.|The flat has an area of seventy square metres.|B
+der|Gang|die Gänge|corridor, hallway|Die Toiletten sind am Ende des Ganges.|The toilets are at the end of the corridor.|B
+die|Garderobe|die Garderoben|cloakroom, coat rack|Sie können Ihren Mantel an der Garderobe abgeben.|You can leave your coat at the cloakroom.|B
+der|Hammer|die Hämmer|hammer|Ich brauche einen Hammer und ein paar Nägel.|I need a hammer and a few nails.|B
+das|Heim|die Heime|home (institution)|Mein Großvater wohnt seit einem Jahr im Heim.|My grandfather has lived in a home for a year.|B
+die|Kerze|die Kerzen|candle|Auf dem Tisch brennen zwei Kerzen.|Two candles are burning on the table.|B
+die|Kiste|die Kisten|box, crate|Die Bücher sind noch in den Kisten.|The books are still in the boxes.|B
+die|Klimaanlage|die Klimaanlagen|air conditioning|Im Büro ist die Klimaanlage leider kaputt.|Unfortunately the air conditioning in the office is broken.|B
+der|Korridor|die Korridore|corridor|Der Korridor ist lang und ziemlich dunkel.|The corridor is long and rather dark.|B
+die|Mauer|die Mauern|wall (outdoor)|Um den Garten steht eine hohe Mauer.|There is a high wall around the garden.|B
+der|Notausgang|die Notausgänge|emergency exit|Der Notausgang befindet sich neben der Treppe.|The emergency exit is next to the stairs.|B
+der|Schmutz|–|dirt|Zieh die Schuhe aus, sonst kommt Schmutz herein.|Take your shoes off, otherwise dirt will get in.|B
+der|Staub|–|dust|Auf dem Regal liegt viel Staub.|There is a lot of dust on the shelf.|B
+der|Stecker|die Stecker|plug|Zieh bitte den Stecker aus der Steckdose.|Please pull the plug out of the socket.|B
+der|Stock|–|floor (storey)|Unsere Wohnung liegt im dritten Stock.|Our flat is on the third floor.|A
+die|Vase|die Vasen|vase|Stell die Blumen bitte in die Vase.|Please put the flowers in the vase.|B
+die|Vermietung|die Vermietungen|letting, rental|Die Vermietung der Wohnung übernimmt ein Makler.|An estate agent is handling the letting of the flat.|B
+das|Waschmittel|die Waschmittel|detergent|Wir brauchen neues Waschmittel für die Wäsche.|We need new detergent for the washing.|B
+die|Zange|die Zangen|pliers|Ich brauche eine Zange, um den Nagel herauszuziehen.|I need pliers to pull the nail out.|B`],
 ["Gesundheit","Health",`die|Gesundheit|–|health|Rauchen schadet der Gesundheit.|Smoking damages your health.|B
 die|Krankheit|die Krankheiten|illness|Diese Krankheit ist nicht gefährlich.|This illness is not dangerous.|B
 der|Schmerz|die Schmerzen|pain|Ich habe starke Schmerzen im Rücken.|I have severe pain in my back.|B
@@ -404,7 +452,19 @@ das|Thermometer|die Thermometer|thermometer|Das Thermometer zeigt 39 Grad Fieber
 der|Blutdruck|–|blood pressure|Mein Vater hat zu hohen Blutdruck.|My father's blood pressure is too high.|B
 das|Schmerzmittel|die Schmerzmittel|painkiller|Ich habe schon ein Schmerzmittel genommen.|I have already taken a painkiller.|B
 die|Infektion|die Infektionen|infection|Regelmäßiges Händewaschen schützt vor Infektionen.|Washing your hands regularly protects against infections.|B
-der|Sonnenbrand|die Sonnenbrände|sunburn|Am ersten Urlaubstag habe ich einen Sonnenbrand bekommen.|I got sunburnt on the first day of the holiday.|B`],
+der|Sonnenbrand|die Sonnenbrände|sunburn|Am ersten Urlaubstag habe ich einen Sonnenbrand bekommen.|I got sunburnt on the first day of the holiday.|B
+der|Atem|–|breath|Halten Sie bitte kurz den Atem an.|Please hold your breath for a moment.|B
+die|Flüssigkeit|die Flüssigkeiten|liquid, fluid|Bei Fieber braucht der Körper viel Flüssigkeit.|When you have a fever, the body needs plenty of fluid.|B
+das|Gift|die Gifte|poison|Vorsicht, in dieser Flasche ist Gift.|Careful, there is poison in this bottle.|B
+die|Klinik|die Kliniken|clinic, hospital|Er muss noch eine Woche in der Klinik bleiben.|He has to stay in the clinic for another week.|B
+der|Kranke|die Kranken|sick person, patient|Die Schwester bringt dem Kranken das Essen.|The nurse brings the patient his meal.|B
+die|Medizin|–|medicine|Meine Schwester studiert Medizin in Heidelberg.|My sister studies medicine in Heidelberg.|B
+der|Nerv|die Nerven|nerve|Der laute Lärm geht mir auf die Nerven.|The loud noise is getting on my nerves.|B
+der|Nichtraucher|die Nichtraucher|non-smoker|Seit zwei Jahren bin ich Nichtraucher.|I have been a non-smoker for two years.|B
+die|Pille|die Pillen|pill|Nehmen Sie diese Pille bitte vor dem Essen.|Please take this pill before eating.|B
+die|Sucht|die Süchte|addiction|Rauchen kann schnell zu einer Sucht werden.|Smoking can quickly become an addiction.|B
+das|Suchtmittel|die Suchtmittel|addictive substance|Alkohol ist ein gefährliches Suchtmittel.|Alcohol is a dangerous addictive substance.|B
+die|Zahncreme|die Zahncremes|toothpaste|Ich muss noch Zahncreme kaufen.|I still have to buy toothpaste.|B`],
 ["Reisen & Verkehr","Travel & transport",`die|Abfahrt|die Abfahrten|departure|Die Abfahrt ist um 9:15 Uhr.|Departure is at 9:15.|B
 die|Ankunft|die Ankünfte|arrival|Die Ankunft in Berlin ist um 14 Uhr.|Arrival in Berlin is at 2 pm.|B
 die|Verspätung|die Verspätungen|delay|Der Zug hat zwanzig Minuten Verspätung.|The train is twenty minutes late.|B
@@ -525,7 +585,32 @@ der|Tunnel|die Tunnel|tunnel|Der Zug fährt durch einen langen Tunnel.|The train
 der|Hafen|die Häfen|harbour, port|Im Hafen liegen viele große Schiffe.|There are many large ships in the harbour.|B
 die|Fähre|die Fähren|ferry|Die Fähre zur Insel fährt dreimal am Tag.|The ferry to the island runs three times a day.|B
 die|Rezeption|die Rezeptionen|reception (hotel)|Den Schlüssel bekommen Sie an der Rezeption.|You get the key at reception.|B
-die|Verbindung|die Verbindungen|connection|Es gibt eine direkte Verbindung nach Frankfurt.|There is a direct connection to Frankfurt.|B`],
+die|Verbindung|die Verbindungen|connection|Es gibt eine direkte Verbindung nach Frankfurt.|There is a direct connection to Frankfurt.|B
+die|Ansage|die Ansagen|announcement|Ich habe die Ansage am Bahnhof nicht verstanden.|I did not understand the announcement at the station.|B
+die|Bahn|die Bahnen|railway, train|Ich fahre jeden Tag mit der Bahn zur Arbeit.|I go to work by train every day.|A
+die|Einbahnstraße|die Einbahnstraßen|one-way street|Hier dürfen Sie nicht abbiegen, das ist eine Einbahnstraße.|You may not turn here, it is a one-way street.|B
+die|Einfahrt|die Einfahrten|entrance, driveway|Bitte parken Sie nicht vor der Einfahrt.|Please do not park in front of the driveway.|B
+der|Empfang|die Empfänge|reception|Den Schlüssel bekommen Sie am Empfang.|You will get the key at reception.|B
+die|Fahrbahn|die Fahrbahnen|carriageway, road|Vorsicht, die Fahrbahn ist heute sehr glatt.|Careful, the road is very slippery today.|B
+der|Halt|die Halte|stop|Der Zug fährt ohne Halt bis München.|The train runs to Munich without stopping.|B
+der|Hauptbahnhof|die Hauptbahnhöfe|main station|Wir treffen uns um acht am Hauptbahnhof.|We are meeting at eight at the main station.|A
+das|Kennzeichen|die Kennzeichen|registration number, number plate|Hast du dir das Kennzeichen des Autos gemerkt?|Did you make a note of the car's registration number?|B
+das|Kraftfahrzeug|die Kraftfahrzeuge|motor vehicle|Dieser Weg ist für Kraftfahrzeuge gesperrt.|This path is closed to motor vehicles.|B
+die|Landung|die Landungen|landing|Kurz vor der Landung wurde es sehr windig.|Shortly before landing it became very windy.|B
+der|Laster|die Laster|lorry|Auf der Autobahn fahren heute viele Laster.|There are many lorries on the motorway today.|B
+die|Metropole|die Metropolen|metropolis|Berlin ist eine Metropole mit vielen Kulturen.|Berlin is a metropolis with many cultures.|B
+die|Rundfahrt|die Rundfahrten|tour (round trip)|Wir haben eine Rundfahrt durch die Stadt gemacht.|We went on a tour of the city.|B
+das|Schild|die Schilder|sign|Auf dem Schild steht, dass Parken verboten ist.|The sign says that parking is prohibited.|B
+der|Sitz|die Sitze|seat|Die Sitze im Bus sind sehr bequem.|The seats on the bus are very comfortable.|B
+die|Spur|die Spuren|lane, trace|Auf der linken Spur fährt man schneller.|You drive faster in the left-hand lane.|B
+der|Start|die Starts|start, take-off|Beim Start müssen alle Passagiere sitzen.|All passengers must be seated during take-off.|B
+der|Steward|die Stewards|steward, flight attendant|Der Steward brachte uns ein Glas Wasser.|The steward brought us a glass of water.|B
+das|Tempo|–|speed, pace|Hier darf man nur Tempo dreißig fahren.|You may only drive at thirty here.|B
+der|Tourismus|–|tourism|Viele Menschen auf der Insel leben vom Tourismus.|Many people on the island live off tourism.|B
+das|Verkehrszeichen|die Verkehrszeichen|road sign|In der Fahrschule lernt man alle Verkehrszeichen.|At driving school you learn all the road signs.|B
+die|Vorfahrt|–|right of way|An dieser Kreuzung hat der Bus Vorfahrt.|At this junction the bus has right of way.|B
+der|Wagen|die Wagen|car, carriage|Unser Wagen steht in der Garage.|Our car is in the garage.|B
+die|Zone|die Zonen|zone|Diese Fahrkarte gilt nur für eine Zone.|This ticket is only valid for one zone.|B`],
 ["Ämter & Behörden","Public offices",`das|Amt|die Ämter|public office|Das Amt ist nur vormittags geöffnet.|The office is only open in the mornings.|B
 die|Behörde|die Behörden|authority|Die Behörde hat meinen Brief beantwortet.|The authority has replied to my letter.|B
 der|Antrag|die Anträge|application, request|Sie müssen einen Antrag stellen.|You have to submit an application.|B
@@ -629,7 +714,25 @@ der|Einwohner|die Einwohner|inhabitant|Die Stadt hat etwa 50 000 Einwohner.|The 
 der|Flüchtling|die Flüchtlinge|refugee|Die Stadt hilft den Flüchtlingen bei der Wohnungssuche.|The city helps the refugees to look for flats.|B
 das|Bundesland|die Bundesländer|federal state|Deutschland hat sechzehn Bundesländer.|Germany has sixteen federal states.|B
 die|Gemeinde|die Gemeinden|municipality, community|Unsere Gemeinde baut einen neuen Kindergarten.|Our municipality is building a new nursery school.|B
-die|Demonstration|die Demonstrationen|demonstration, protest|Am Samstag gibt es eine Demonstration im Zentrum.|On Saturday there is a demonstration in the centre.|B`],
+die|Demonstration|die Demonstrationen|demonstration, protest|Am Samstag gibt es eine Demonstration im Zentrum.|On Saturday there is a demonstration in the centre.|B
+der|Anspruch|die Ansprüche|entitlement, claim|Sie haben Anspruch auf dreißig Tage Urlaub.|You are entitled to thirty days of holiday.|B
+das|Asyl|–|asylum|Die Familie hat in Deutschland Asyl beantragt.|The family has applied for asylum in Germany.|B
+der|Bogen|die Bögen|sheet (of paper), form|Füllen Sie bitte diesen Bogen aus.|Please fill in this form.|B
+der|Briefumschlag|die Briefumschläge|envelope|Ich brauche noch einen Briefumschlag und eine Briefmarke.|I still need an envelope and a stamp.|B
+der|Einbrecher|die Einbrecher|burglar|Die Polizei hat den Einbrecher schnell gefunden.|The police found the burglar quickly.|B
+die|Flucht|–|escape, flight|Viele Menschen sind auf der Flucht vor dem Krieg.|Many people are fleeing from the war.|B
+die|Gewalt|–|violence|Gewalt ist keine Lösung für Probleme.|Violence is no solution to problems.|B
+die|Integration|–|integration|Die Sprache ist wichtig für die Integration.|Language is important for integration.|B
+das|Konsulat|die Konsulate|consulate|Das Visum müssen Sie beim Konsulat beantragen.|You have to apply for the visa at the consulate.|B
+der|Migrant|die Migranten|migrant|Der Kurs hilft Migranten bei der Arbeitssuche.|The course helps migrants to look for work.|B
+die|Migration|die Migrationen|migration|Im Unterricht sprechen wir über das Thema Migration.|In class we are talking about the topic of migration.|B
+das|Original|die Originale|original|Bitte bringen Sie das Original des Zeugnisses mit.|Please bring the original of the certificate with you.|B
+der|Pass|die Pässe|passport|Mein Pass ist leider nicht mehr gültig.|Unfortunately my passport is no longer valid.|A
+der|Protest|die Proteste|protest|Es gab viel Protest gegen die neue Straße.|There was a lot of protest against the new road.|B
+der|Prozess|die Prozesse|trial, process|Der Prozess vor Gericht dauerte drei Monate.|The trial in court lasted three months.|B
+die|Reform|die Reformen|reform|Die Regierung plant eine Reform der Schulen.|The government is planning a reform of the schools.|B
+der|Verbrecher|die Verbrecher|criminal|Die Polizei hat den Verbrecher endlich gefasst.|The police have finally caught the criminal.|B
+der|Verdacht|–|suspicion|Die Polizei hat einen Verdacht, wer es war.|The police have a suspicion as to who it was.|B`],
 ["Bildung","Education",`der|Unterricht|–|lessons, teaching|Der Unterricht beginnt um acht Uhr.|Lessons start at eight o'clock.|B
 die|Prüfung|die Prüfungen|exam|Ich habe die Prüfung bestanden.|I passed the exam.|B
 die|Note|die Noten|grade, mark|Sie hat eine gute Note bekommen.|She got a good grade.|B
@@ -766,7 +869,24 @@ die|Teilnahme|–|participation|Die Teilnahme am Kurs ist kostenlos.|Participati
 der|Schulhof|die Schulhöfe|school playground|In der Pause spielen die Kinder auf dem Schulhof.|At break the children play in the school playground.|B
 die|Klassenfahrt|die Klassenfahrten|school trip|Im Mai machen wir eine Klassenfahrt nach Wien.|In May we are going on a school trip to Vienna.|B
 die|Physik|–|physics|In Physik hatte ich immer gute Noten.|I always had good marks in physics.|B
-der|Taschenrechner|die Taschenrechner|pocket calculator|In der Prüfung darf man keinen Taschenrechner benutzen.|You are not allowed to use a calculator in the exam.|B`],
+der|Taschenrechner|die Taschenrechner|pocket calculator|In der Prüfung darf man keinen Taschenrechner benutzen.|You are not allowed to use a calculator in the exam.|B
+die|Abbildung|die Abbildungen|illustration, figure|Die Abbildung auf Seite zehn zeigt ein Herz.|The illustration on page ten shows a heart.|B
+die|Biologie|–|biology|In Biologie lernen wir gerade etwas über Pflanzen.|In biology we are currently learning about plants.|B
+die|Darstellung|die Darstellungen|presentation, depiction|Die Darstellung in der Zeitung war nicht ganz richtig.|The account in the newspaper was not quite right.|B
+der|Dialekt|die Dialekte|dialect|Ich verstehe den Dialekt in diesem Dorf kaum.|I can hardly understand the dialect in this village.|B
+die|Einführung|die Einführungen|introduction|Der Kurs beginnt mit einer kurzen Einführung.|The course begins with a short introduction.|B
+die|Förderung|die Förderungen|support, funding|Die Schule bietet eine besondere Förderung in Deutsch an.|The school offers special support in German.|B
+die|Grafik|die Grafiken|chart, graphic|Die Grafik zeigt die Preise der letzten Jahre.|The chart shows the prices of recent years.|B
+das|Institut|die Institute|institute|Sie arbeitet an einem Institut für Sprachen.|She works at a language institute.|B
+die|Intelligenz|–|intelligence|Für diese Aufgabe braucht man Geduld und Intelligenz.|For this task you need patience and intelligence.|B
+der|Intensivkurs|die Intensivkurse|intensive course|Im Sommer mache ich einen Intensivkurs in Deutsch.|In summer I am doing an intensive German course.|B
+der|Kursleiter|die Kursleiter|course instructor|Der Kursleiter erklärt die Grammatik sehr gut.|The course instructor explains the grammar very well.|B
+der|Lerner|die Lerner|learner|Das Buch ist für Lerner mit guten Grundkenntnissen.|The book is for learners with good basic knowledge.|B
+das|Lexikon|die Lexika|encyclopaedia|Ich schlage das Wort im Lexikon nach.|I look the word up in the encyclopaedia.|B
+die|Mensa|die Mensen|university canteen|Mittags essen die Studenten in der Mensa.|At lunchtime the students eat in the canteen.|B
+die|Präsentation|die Präsentationen|presentation|Morgen halte ich eine Präsentation im Kurs.|Tomorrow I am giving a presentation in class.|B
+die|Statistik|die Statistiken|statistics|Die Statistik zeigt, dass mehr Leute Rad fahren.|The statistics show that more people are cycling.|B
+die|Theorie|die Theorien|theory|In der Theorie klingt das ganz einfach.|In theory that sounds quite simple.|B`],
 ["Freizeit & Medien","Leisure & media",`die|Freizeit|–|free time|In meiner Freizeit spiele ich Gitarre.|In my free time I play the guitar.|B
 der|Verein|die Vereine|club, association|Er spielt Fußball in einem Verein.|He plays football in a club.|B
 die|Veranstaltung|die Veranstaltungen|event|Die Veranstaltung findet im Stadtpark statt.|The event takes place in the city park.|B
@@ -867,7 +987,61 @@ die|Tastatur|die Tastaturen|keyboard (computer)|Die Tastatur von meinem Laptop i
 die|App|die Apps|app|Mit dieser App lerne ich jeden Tag Deutsch.|I learn German every day with this app.|B
 der|Akku|die Akkus|rechargeable battery|Der Akku von meinem Handy ist fast leer.|My phone battery is almost empty.|B
 die|Technik|die Techniken|technology, technique|Mein Opa interessiert sich sehr für Technik.|My grandad is very interested in technology.|B
-der|Kopfhörer|die Kopfhörer|headphones|Im Zug höre ich Musik mit Kopfhörern.|On the train I listen to music with headphones.|B`],
+der|Kopfhörer|die Kopfhörer|headphones|Im Zug höre ich Musik mit Kopfhörern.|On the train I listen to music with headphones.|B
+das|Abenteuer|die Abenteuer|adventure|Die Reise durch Afrika war ein großes Abenteuer.|The journey through Africa was a great adventure.|B
+die|Aktivität|die Aktivitäten|activity|Das Hotel bietet viele Aktivitäten für Kinder an.|The hotel offers many activities for children.|B
+die|Annonce|die Annoncen|advertisement (in a newspaper)|Sie hat die Wohnung über eine Annonce gefunden.|She found the flat through an advertisement.|B
+der|Anrufbeantworter|die Anrufbeantworter|answering machine|Ich habe dir auf den Anrufbeantworter gesprochen.|I left you a message on the answering machine.|B
+der|Auftritt|die Auftritte|performance, appearance|Vor ihrem ersten Auftritt war die Sängerin nervös.|The singer was nervous before her first performance.|B
+die|Bar|die Bars|bar|Nach dem Konzert gehen wir noch in eine Bar.|After the concert we are going to a bar.|A
+der|Basketball|die Basketbälle|basketball|Am Wochenende spielen wir im Park Basketball.|At the weekend we play basketball in the park.|A
+das|Denkmal|die Denkmäler|monument|Vor dem Rathaus steht ein altes Denkmal.|There is an old monument in front of the town hall.|B
+die|Diskothek|die Diskotheken|disco, nightclub|Früher sind wir jeden Samstag in die Diskothek gegangen.|We used to go to the disco every Saturday.|B
+die|Erzählung|die Erzählungen|story, narrative|Im Unterricht lesen wir eine kurze Erzählung.|In class we are reading a short story.|B
+die|Eröffnung|die Eröffnungen|opening|Zur Eröffnung des Restaurants kamen viele Gäste.|Many guests came to the opening of the restaurant.|B
+die|Flöte|die Flöten|flute, recorder|Meine Tochter lernt seit einem Jahr Flöte.|My daughter has been learning the flute for a year.|B
+die|Fortsetzung|die Fortsetzungen|continuation, sequel|Die Fortsetzung der Serie kommt nächste Woche.|The next part of the series is on next week.|B
+das|Forum|die Foren|forum|In einem Forum habe ich gute Tipps gefunden.|I found good tips in a forum.|B
+der|Fotoapparat|die Fotoapparate|camera|Ich habe meinen Fotoapparat im Hotel vergessen.|I left my camera at the hotel.|A
+die|Fotografie|die Fotografien|photography, photograph|Die Fotografie ist seit Jahren sein Hobby.|Photography has been his hobby for years.|B
+die|Galerie|die Galerien|gallery|In der Galerie hängen Bilder junger Künstler.|Pictures by young artists hang in the gallery.|B
+der|Gegner|die Gegner|opponent|Unsere Mannschaft hat gegen einen starken Gegner gewonnen.|Our team won against a strong opponent.|B
+die|Gymnastik|–|gymnastics, exercises|Jeden Morgen mache ich zehn Minuten Gymnastik.|Every morning I do ten minutes of exercises.|B
+der|Hörer|die Hörer|listener, receiver|Viele Hörer haben beim Radiosender angerufen.|Many listeners rang the radio station.|B
+das|Inserat|die Inserate|advertisement (classified)|Ich habe das Auto über ein Inserat verkauft.|I sold the car through an advertisement.|B
+der|Karneval|–|carnival|In Köln feiert man jedes Jahr Karneval.|In Cologne people celebrate carnival every year.|B
+der|Klick|die Klicks|click|Mit einem Klick können Sie das Formular abschicken.|You can send the form with one click.|B
+das|Kostüm|die Kostüme|costume|Welches Kostüm trägst du auf der Party?|Which costume are you wearing to the party?|B
+das|Laufwerk|die Laufwerke|drive (computer)|Die Datei ist auf einem anderen Laufwerk gespeichert.|The file is saved on a different drive.|B
+der|Lautsprecher|die Lautsprecher|loudspeaker|Die Musik kommt aus den Lautsprechern im Wohnzimmer.|The music is coming from the speakers in the living room.|B
+der|Leser|die Leser|reader|Viele Leser haben der Zeitung einen Brief geschrieben.|Many readers wrote a letter to the newspaper.|B
+die|Meldung|die Meldungen|report, news item|Hast du die Meldung im Radio gehört?|Did you hear the report on the radio?|B
+das|Mobiltelefon|die Mobiltelefone|mobile phone|Bitte schalten Sie Ihr Mobiltelefon aus.|Please switch off your mobile phone.|B
+das|Netz|die Netze|net, network|Hier im Keller habe ich kein Netz.|I have no signal down here in the cellar.|B
+das|Picknick|die Picknicks|picnic|Am Sonntag machen wir ein Picknick im Park.|On Sunday we are having a picnic in the park.|B
+der|Profisportler|die Profisportler|professional athlete|Ein Profisportler muss jeden Tag trainieren.|A professional athlete has to train every day.|B
+die|Recherche|die Recherchen|research (journalistic)|Für den Artikel war viel Recherche nötig.|A lot of research was needed for the article.|B
+der|Rechner|die Rechner|computer, calculator|Mein Rechner ist heute sehr langsam.|My computer is very slow today.|B
+die|Reportage|die Reportagen|report, documentary feature|Gestern habe ich eine Reportage über Indien gesehen.|Yesterday I watched a report about India.|B
+der|Reporter|die Reporter|reporter|Ein Reporter hat die Zeugen des Unfalls befragt.|A reporter questioned the witnesses of the accident.|B
+die|Runde|die Runden|round, lap|Wir laufen noch eine Runde um den See.|We are running one more lap around the lake.|B
+der|Saal|die Säle|hall|Das Konzert findet im großen Saal statt.|The concert is taking place in the large hall.|B
+der|Sieger|die Sieger|winner|Der Sieger bekommt einen Pokal.|The winner gets a trophy.|B
+der|Ski|die Skier|ski|Im Winter fahren wir in Österreich Ski.|In winter we go skiing in Austria.|B
+der|Star|die Stars|star (celebrity)|Der Star gab nach dem Konzert Autogramme.|The star signed autographs after the concert.|B
+die|Szene|die Szenen|scene|Die letzte Szene des Films war sehr traurig.|The last scene of the film was very sad.|B
+das|Talent|die Talente|talent|Sie hat großes Talent für Musik.|She has great talent for music.|B
+die|Taste|die Tasten|key, button|Drücken Sie die grüne Taste, um zu starten.|Press the green button to start.|B
+das|Tennis|–|tennis|Am Wochenende spiele ich mit Freunden Tennis.|At the weekend I play tennis with friends.|A
+die|Umfrage|die Umfragen|survey|Ich habe an einer Umfrage im Internet teilgenommen.|I took part in a survey on the internet.|B
+das|Vergnügen|die Vergnügen|pleasure|Es war mir ein Vergnügen, Ihnen zu helfen.|It was a pleasure to help you.|B
+der|Verlag|die Verlage|publishing house|Der Verlag veröffentlicht vor allem Kinderbücher.|The publishing house mainly publishes children's books.|B
+der|Verlierer|die Verlierer|loser|Auch der Verlierer bekommt einen kleinen Preis.|The loser gets a small prize too.|B
+der|Witz|die Witze|joke|Mein Onkel erzählt gern Witze.|My uncle likes telling jokes.|B
+die|Zeichnung|die Zeichnungen|drawing|Das Kind hat eine schöne Zeichnung gemacht.|The child has done a lovely drawing.|B
+der|Zirkus|die Zirkusse|circus|Am Wochenende gehen wir in den Zirkus.|At the weekend we are going to the circus.|B
+der|Zugang|die Zugänge|access|Im Hotel haben alle Gäste Zugang zum Internet.|In the hotel all guests have access to the internet.|B
+der|Zuhörer|die Zuhörer|listener|Die Zuhörer haben am Ende laut geklatscht.|The listeners clapped loudly at the end.|B`],
 ["Einkaufen & Geld","Shopping & money",`das|Angebot|die Angebote|offer|Heute gibt es Äpfel im Angebot.|Apples are on offer today.|B
 die|Nachfrage|die Nachfragen|demand|Die Nachfrage nach Fahrrädern ist gestiegen.|Demand for bicycles has risen.|B
 der|Preis|die Preise|price|Der Preis ist in Ordnung.|The price is fine.|B
@@ -999,7 +1173,31 @@ der|Knopf|die Knöpfe|button|An meiner Jacke fehlt ein Knopf.|A button is missin
 die|Mode|die Moden|fashion|Sie interessiert sich sehr für Mode.|She is very interested in fashion.|B
 die|Schlange|die Schlangen|queue|An der Kasse war eine lange Schlange.|There was a long queue at the till.|B
 das|Pfand|–|deposit (on bottles)|Auf diese Flaschen bezahlt man Pfand.|You pay a deposit on these bottles.|B
-das|Kleidungsstück|die Kleidungsstücke|item of clothing|Dieses Kleidungsstück darf man nicht heiß waschen.|This item of clothing must not be washed hot.|B`],
+das|Kleidungsstück|die Kleidungsstücke|item of clothing|Dieses Kleidungsstück darf man nicht heiß waschen.|This item of clothing must not be washed hot.|B
+die|Aktion|die Aktionen|campaign, special offer|Diese Woche gibt es eine Aktion für Winterjacken.|This week there is a special offer on winter jackets.|B
+der|Anbieter|die Anbieter|provider, supplier|Wir haben den Anbieter für Strom gewechselt.|We have changed our electricity provider.|B
+der|Automat|die Automaten|vending machine|Ich hole mir einen Kaffee am Automaten.|I am getting myself a coffee from the machine.|A
+der|Bedarf|–|need, demand|Bei Bedarf können Sie mich jederzeit anrufen.|If necessary, you can ring me at any time.|B
+der|Beitrag|die Beiträge|contribution, fee|Der Beitrag für den Sportverein ist gestiegen.|The fee for the sports club has gone up.|B
+der|Beleg|die Belege|receipt, proof|Bewahren Sie den Beleg bitte gut auf.|Please keep the receipt in a safe place.|B
+die|Einnahme|die Einnahmen|income, takings|Die Einnahmen des Geschäfts sind dieses Jahr gestiegen.|The shop's takings have risen this year.|B
+die|Einzahlung|die Einzahlungen|deposit, payment (into an account)|Die Einzahlung können Sie auch am Automaten machen.|You can also make the deposit at the machine.|B
+die|Erhöhung|die Erhöhungen|increase|Die Mieter sind gegen die Erhöhung der Miete.|The tenants are against the rent increase.|B
+der|Export|die Exporte|export|Die Firma lebt vom Export ihrer Maschinen.|The company lives off the export of its machines.|B
+der|Hut|die Hüte|hat|Im Sommer trägt mein Opa immer einen Hut.|In summer my grandad always wears a hat.|A
+der|Import|die Importe|import|Der Import von Obst ist teurer geworden.|The import of fruit has become more expensive.|B
+die|Kette|die Ketten|chain, necklace|Zum Geburtstag hat sie eine goldene Kette bekommen.|She got a gold necklace for her birthday.|B
+der|Konsum|–|consumption|Der Konsum von Zucker ist stark gestiegen.|The consumption of sugar has risen sharply.|B
+das|Leder|–|leather|Die Tasche ist aus echtem Leder.|The bag is made of real leather.|B
+der|Metzger|die Metzger|butcher|Das Fleisch kaufe ich immer beim Metzger.|I always buy the meat at the butcher's.|B
+das|Parfüm|die Parfüms|perfume|Dieses Parfüm riecht mir zu süß.|This perfume smells too sweet to me.|B
+der|Ring|die Ringe|ring|Er hat ihr einen goldenen Ring geschenkt.|He gave her a gold ring.|B
+der|Sack|die Säcke|sack|Wir haben einen Sack Kartoffeln gekauft.|We bought a sack of potatoes.|B
+die|Schachtel|die Schachteln|box, packet|Ich habe eine Schachtel Pralinen mitgebracht.|I have brought a box of chocolates.|B
+der|Schein|die Scheine|banknote|Können Sie mir diesen Schein wechseln?|Can you change this note for me?|B
+der|Service|–|service|Der Service in diesem Hotel ist ausgezeichnet.|The service in this hotel is excellent.|B
+der|Stiefel|die Stiefel|boot|Im Winter trage ich warme Stiefel.|In winter I wear warm boots.|B
+das|Taschengeld|–|pocket money|Meine Tochter bekommt zehn Euro Taschengeld pro Woche.|My daughter gets ten euros pocket money a week.|B`],
 ["Umwelt & Natur","Environment & nature",`die|Umwelt|–|environment|Wir müssen die Umwelt schützen.|We must protect the environment.|B
 der|Umweltschutz|–|environmental protection|Umweltschutz beginnt zu Hause.|Environmental protection starts at home.|B
 das|Klima|–|climate|Das Klima hier ist mild.|The climate here is mild.|B
@@ -1128,7 +1326,14 @@ die|Erwärmung|–|warming|Die Erwärmung der Erde ist ein großes Problem.|The 
 das|Trinkwasser|–|drinking water|Sauberes Trinkwasser ist nicht überall selbstverständlich.|Clean drinking water cannot be taken for granted everywhere.|B
 der|Sonnenaufgang|die Sonnenaufgänge|sunrise|Wir sind schon vor Sonnenaufgang losgegangen.|We set off before sunrise.|B
 der|Sonnenuntergang|die Sonnenuntergänge|sunset|Am Meer kann man schöne Sonnenuntergänge sehen.|You can see beautiful sunsets by the sea.|B
-der|Verbrauch|–|consumption|Wir müssen den Verbrauch von Wasser senken.|We have to reduce water consumption.|B`],
+der|Verbrauch|–|consumption|Wir müssen den Verbrauch von Wasser senken.|We have to reduce water consumption.|B
+das|Gebiet|die Gebiete|area, region|In diesem Gebiet regnet es sehr selten.|It rains very rarely in this region.|B
+die|Hütte|die Hütten|hut, cabin|Wir haben in einer Hütte in den Bergen übernachtet.|We spent the night in a hut in the mountains.|B
+der|Kunststoff|die Kunststoffe|plastic|Die Flasche ist aus Kunststoff, nicht aus Glas.|The bottle is made of plastic, not glass.|B
+die|Region|die Regionen|region|In dieser Region regnet es sehr oft.|It rains very often in this region.|B
+das|Rind|die Rinder|cow, cattle|Auf der Wiese stehen zwanzig Rinder.|There are twenty cattle in the meadow.|B
+der|Tierpark|die Tierparks|zoo, animal park|Am Samstag gehen wir mit den Kindern in den Tierpark.|On Saturday we are going to the zoo with the children.|B
+die|Wärme|–|warmth, heat|Nach dem langen Winter freue ich mich auf Wärme.|After the long winter I am looking forward to warmth.|B`],
 ["Menschen & Beziehungen","People & relationships",`die|Beziehung|die Beziehungen|relationship|Sie haben eine gute Beziehung zueinander.|They have a good relationship with each other.|B
 die|Freundschaft|die Freundschaften|friendship|Unsere Freundschaft besteht seit der Schulzeit.|Our friendship goes back to our school days.|B
 die|Ehe|die Ehen|marriage|Sie führen eine glückliche Ehe.|They have a happy marriage.|B
@@ -1263,7 +1468,27 @@ die|Wahrheit|die Wahrheiten|truth|Sag mir bitte die Wahrheit.|Please tell me the
 das|Geheimnis|die Geheimnisse|secret|Kannst du ein Geheimnis für dich behalten?|Can you keep a secret?|B
 das|Versprechen|die Versprechen|promise|Er hat sein Versprechen leider nicht gehalten.|Unfortunately he did not keep his promise.|B
 die|Bitte|die Bitten|request|Ich habe eine kleine Bitte an dich.|I have a small favour to ask of you.|B
-die|Erinnerung|die Erinnerungen|memory|Ich habe schöne Erinnerungen an meine Schulzeit.|I have happy memories of my school days.|B`],
+die|Erinnerung|die Erinnerungen|memory|Ich habe schöne Erinnerungen an meine Schulzeit.|I have happy memories of my school days.|B
+der|Angehörige|die Angehörigen|relative, family member|Der Arzt hat mit den Angehörigen gesprochen.|The doctor spoke to the relatives.|B
+der|Bart|die Bärte|beard|Mein Bruder trägt seit einem Jahr einen Bart.|My brother has had a beard for a year.|B
+die|Betreuung|–|care, supervision|Wir suchen eine Betreuung für unsere Tochter.|We are looking for childcare for our daughter.|B
+die|Cousine|die Cousinen|cousin (female)|Meine Cousine heiratet im Juni.|My cousin is getting married in June.|A
+die|Dame|die Damen|lady|Die ältere Dame dort ist meine Nachbarin.|The elderly lady over there is my neighbour.|A
+der|Dank|–|thanks|Vielen Dank für Ihre schnelle Antwort.|Many thanks for your quick reply.|A
+der|Einfluss|die Einflüsse|influence|Freunde haben großen Einfluss auf junge Leute.|Friends have a great influence on young people.|B
+die|Gemeinschaft|die Gemeinschaften|community|In unserem Haus gibt es eine gute Gemeinschaft.|There is a good sense of community in our building.|B
+das|Gewissen|die Gewissen|conscience|Ich habe ein schlechtes Gewissen, weil ich gelogen habe.|I have a guilty conscience because I lied.|B
+der|Gott|die Götter|god|Viele Menschen glauben an einen Gott.|Many people believe in a god.|B
+die|Gratulation|die Gratulationen|congratulations|Herzliche Gratulation zur bestandenen Prüfung!|Warm congratulations on passing your exam!|B
+die|Hausfrau|die Hausfrauen|housewife|Meine Großmutter war ihr ganzes Leben Hausfrau.|My grandmother was a housewife all her life.|A
+der|Held|die Helden|hero|Für die Kinder ist der Feuerwehrmann ein Held.|To the children the firefighter is a hero.|B
+die|Kommunikation|–|communication|Gute Kommunikation ist im Team sehr wichtig.|Good communication is very important in a team.|B
+der|König|die Könige|king|Der König wohnte früher in diesem Schloss.|The king used to live in this castle.|B
+die|Minderheit|die Minderheiten|minority|Nur eine Minderheit war gegen den Vorschlag.|Only a minority was against the proposal.|B
+der|Nachwuchs|–|offspring, young talent|Unsere Nachbarn haben Nachwuchs bekommen.|Our neighbours have had a baby.|B
+der|Tote|die Toten|dead person|Bei dem Unfall gab es zum Glück keine Toten.|Fortunately nobody was killed in the accident.|B
+das|Verhältnis|die Verhältnisse|relationship|Ich habe ein gutes Verhältnis zu meinen Eltern.|I have a good relationship with my parents.|B
+das|Verständnis|–|understanding|Vielen Dank für Ihr Verständnis.|Thank you very much for your understanding.|B`],
 ["Essen & Trinken","Food & drink",`das|Brot|die Brote|bread|Ich kaufe das Brot beim Bäcker.|I buy the bread at the baker's.|A
 das|Brötchen|die Brötchen|bread roll|Zum Frühstück esse ich zwei Brötchen.|I eat two rolls for breakfast.|A
 die|Butter|–|butter|Kannst du mir bitte die Butter geben?|Can you pass me the butter, please?|A
@@ -1352,7 +1577,28 @@ das|Mehl|–|flour|Für den Teig brauchst du 500 Gramm Mehl.|You need 500 grams 
 der|Honig|–|honey|Ich süße meinen Tee mit Honig.|I sweeten my tea with honey.|B
 der|Vegetarier|die Vegetarier|vegetarian|Mein Bruder ist seit zwei Jahren Vegetarier.|My brother has been a vegetarian for two years.|B
 die|Spezialität|die Spezialitäten|speciality|Dieses Gericht ist eine Spezialität der Region.|This dish is a speciality of the region.|B
-die|Kanne|die Kannen|pot, jug|Ich mache uns eine Kanne Tee.|I'll make us a pot of tea.|B`],
+die|Kanne|die Kannen|pot, jug|Ich mache uns eine Kanne Tee.|I'll make us a pot of tea.|B
+die|Aprikose|die Aprikosen|apricot|Im Sommer koche ich Marmelade aus Aprikosen.|In summer I make jam from apricots.|B
+die|Büchse|die Büchsen|tin, can|Im Schrank steht noch eine Büchse Tomaten.|There is still a tin of tomatoes in the cupboard.|B
+das|Dessert|die Desserts|dessert|Als Dessert gibt es heute Schokoladenkuchen.|For dessert there is chocolate cake today.|B
+das|Fett|die Fette|fat|Dieser Käse enthält sehr viel Fett.|This cheese contains a great deal of fat.|B
+das|Gasthaus|die Gasthäuser|inn, restaurant|Im Dorf gibt es ein gemütliches Gasthaus.|There is a cosy inn in the village.|B
+das|Gebäck|–|biscuits, pastries|Zum Kaffee gibt es frisches Gebäck.|There are fresh pastries with the coffee.|B
+der|Grill|die Grills|barbecue, grill|Das Fleisch liegt schon auf dem Grill.|The meat is already on the barbecue.|B
+das|Hackfleisch|–|minced meat|Für die Soße brauche ich ein Pfund Hackfleisch.|I need a pound of minced meat for the sauce.|B
+der|Kloß|die Klöße|dumpling|Zum Braten gibt es Klöße und Rotkohl.|There are dumplings and red cabbage with the roast.|B
+der|Knödel|die Knödel|dumpling|In Bayern isst man gern Knödel mit Soße.|In Bavaria people like eating dumplings with gravy.|B
+das|Lokal|die Lokale|pub, restaurant|Nach der Arbeit gehen wir in ein Lokal.|After work we go to a pub.|B
+das|Menü|die Menüs|set menu|Ich nehme das Menü mit Suppe und Salat.|I'll have the set menu with soup and salad.|B
+die|Möhre|die Möhren|carrot|Für die Suppe brauche ich noch drei Möhren.|I still need three carrots for the soup.|B
+die|Nachspeise|die Nachspeisen|dessert|Als Nachspeise gibt es heute Eis mit Früchten.|For dessert today there is ice cream with fruit.|B
+das|Nahrungsmittel|die Nahrungsmittel|food, foodstuff|Brot ist ein wichtiges Nahrungsmittel.|Bread is an important food.|B
+die|Pflaume|die Pflaumen|plum|Im Herbst backt meine Oma Kuchen mit Pflaumen.|In autumn my grandma bakes cake with plums.|B
+die|Pommes|nur Plural|chips|Die Kinder möchten Pommes mit Ketchup.|The children would like chips with ketchup.|A
+der|Schinken|die Schinken|ham|Ich hätte gern ein Brötchen mit Schinken.|I would like a roll with ham.|A
+die|Torte|die Torten|gateau, cake|Zum Geburtstag gibt es eine Torte mit Sahne.|For the birthday there is a gateau with cream.|B
+der|Wirt|die Wirte|landlord, innkeeper|Der Wirt hat uns ein Getränk spendiert.|The landlord treated us to a drink.|B
+das|Müsli|die Müslis|muesli|Zum Frühstück esse ich Müsli mit Obst.|For breakfast I eat muesli with fruit.|A`],
 ["Zeit & Alltag","Time & everyday life",`die|Zeit|die Zeiten|time|Hast du am Samstag Zeit?|Do you have time on Saturday?|A
 der|Tag|die Tage|day|Ich arbeite acht Stunden pro Tag.|I work eight hours a day.|A
 die|Woche|die Wochen|week|Nächste Woche habe ich frei.|I am off next week.|A
@@ -1435,7 +1681,64 @@ der|Gedanke|die Gedanken|thought|Der Gedanke an die Prüfung macht mich nervös.
 der|Fall|die Fälle|case|In diesem Fall rufen Sie mich bitte an.|In that case please call me.|B
 das|Ereignis|die Ereignisse|event|Die Geburt war ein besonderes Ereignis.|The birth was a special event.|B
 die|Reihe|die Reihen|row, turn|Jetzt bist du an der Reihe.|Now it is your turn.|B
-der|Sinn|die Sinne|sense, meaning|Es hat keinen Sinn, länger zu warten.|There is no point in waiting any longer.|B`]
+der|Sinn|die Sinne|sense, meaning|Es hat keinen Sinn, länger zu warten.|There is no point in waiting any longer.|B
+die|Ahnung|die Ahnungen|idea, clue|Ich habe keine Ahnung, wo mein Schlüssel ist.|I have no idea where my key is.|B
+der|Alarm|die Alarme|alarm|Um drei Uhr nachts gab es plötzlich Alarm.|At three in the morning there was suddenly an alarm.|B
+die|Anleitung|die Anleitungen|instructions|Lies bitte zuerst die Anleitung genau durch.|Please read the instructions carefully first.|B
+der|Apparat|die Apparate|device, appliance|Wie funktioniert dieser Apparat eigentlich?|How does this device actually work?|B
+die|Batterie|die Batterien|battery|Die Batterie der Fernbedienung ist leer.|The battery in the remote control is flat.|B
+die|Bedienungsanleitung|die Bedienungsanleitungen|operating instructions|Die Bedienungsanleitung liegt im Karton.|The operating instructions are in the box.|B
+der|Bereich|die Bereiche|area, field|In diesem Bereich ist das Rauchen verboten.|Smoking is forbidden in this area.|B
+der|Blick|die Blicke|view, look|Vom Balkon hat man einen schönen Blick aufs Meer.|From the balcony you have a lovely view of the sea.|B
+die|Breite|die Breiten|width|Die Breite des Tisches beträgt achtzig Zentimeter.|The width of the table is eighty centimetres.|B
+das|Detail|die Details|detail|Die Details besprechen wir morgen im Büro.|We will discuss the details in the office tomorrow.|B
+der|Druck|–|pressure|Bei der Arbeit stehe ich oft unter Druck.|I am often under pressure at work.|B
+die|Eile|–|hurry, rush|Ich kann jetzt nicht reden, ich bin in Eile.|I cannot talk now, I am in a hurry.|B
+der|Einfall|die Einfälle|idea|Das war wirklich ein guter Einfall von dir.|That really was a good idea of yours.|B
+die|Empfehlung|die Empfehlungen|recommendation|Auf Empfehlung einer Freundin habe ich das Buch gelesen.|I read the book on a friend's recommendation.|B
+der|Ersatz|–|replacement, substitute|Für den kranken Kollegen suchen wir einen Ersatz.|We are looking for a replacement for our sick colleague.|B
+das|Feuerzeug|die Feuerzeuge|lighter|Hast du ein Feuerzeug für die Kerzen?|Have you got a lighter for the candles?|B
+die|Figur|die Figuren|figure, character|Die wichtigste Figur im Film ist ein Detektiv.|The main character in the film is a detective.|B
+der|Fleck|die Flecken|stain, spot|Auf deinem Hemd ist ein Fleck.|There is a stain on your shirt.|B
+die|Form|die Formen|form, shape|Der Kuchen hat die Form eines Herzens.|The cake is in the shape of a heart.|B
+die|Gebrauchsanweisung|die Gebrauchsanweisungen|instructions for use|Ohne Gebrauchsanweisung kann ich das Regal nicht aufbauen.|I cannot put the shelves together without the instructions.|B
+der|Gegensatz|die Gegensätze|contrast, opposite|Im Gegensatz zu mir steht er gern früh auf.|Unlike me, he likes getting up early.|B
+der|Gegenstand|die Gegenstände|object, item|Welche Gegenstände nehmen Sie auf die Reise mit?|Which items are you taking on the journey?|B
+der|Kreis|die Kreise|circle|Die Kinder sitzen im Kreis und singen.|The children are sitting in a circle and singing.|B
+das|Kreuz|die Kreuze|cross|Machen Sie bitte ein Kreuz bei der richtigen Antwort.|Please put a cross next to the correct answer.|B
+die|Langeweile|–|boredom|Aus Langeweile hat er den ganzen Tag ferngesehen.|Out of boredom he watched television all day.|B
+das|Loch|die Löcher|hole|In meiner Socke ist ein großes Loch.|There is a big hole in my sock.|B
+das|Material|die Materialien|material|Aus welchem Material ist diese Tasche?|What material is this bag made of?|B
+das|Modell|die Modelle|model|Dieses Modell gibt es auch in Rot.|This model is also available in red.|B
+die|Nadel|die Nadeln|needle|Ich brauche eine Nadel, um den Knopf anzunähen.|I need a needle to sew the button on.|B
+die|Neuigkeit|die Neuigkeiten|piece of news|Ich habe eine tolle Neuigkeit für dich.|I have a great piece of news for you.|B
+die|Nähe|–|vicinity, closeness|Gibt es hier in der Nähe eine Apotheke?|Is there a chemist's near here?|A
+der|Ort|die Orte|place, village|Wir wohnen in einem kleinen Ort am See.|We live in a small village by the lake.|A
+die|Fantasie|die Fantasien|imagination|Kinder haben oft sehr viel Fantasie.|Children often have a great deal of imagination.|B
+die|Reaktion|die Reaktionen|reaction|Ihre Reaktion auf die Nachricht hat mich überrascht.|Her reaction to the news surprised me.|B
+die|Realität|die Realitäten|reality|In der Realität ist das Leben oft anders.|In reality life is often different.|B
+die|Rede|die Reden|speech|Der Chef hielt eine kurze Rede.|The boss gave a short speech.|B
+das|Risiko|die Risiken|risk|Ohne Helm ist das Risiko zu groß.|Without a helmet the risk is too great.|B
+die|Schere|die Scheren|scissors|Gib mir bitte die Schere vom Tisch.|Please pass me the scissors from the table.|B
+der|Schirm|die Schirme|umbrella|Nimm einen Schirm mit, es regnet gleich.|Take an umbrella with you, it is about to rain.|B
+der|Standpunkt|die Standpunkte|point of view|Ich kann deinen Standpunkt gut verstehen.|I can understand your point of view well.|B
+der|Stil|die Stile|style|Mir gefällt der Stil dieser Möbel.|I like the style of this furniture.|B
+das|Streichholz|die Streichhölzer|match (for fire)|Hast du ein Streichholz für die Kerze?|Have you got a match for the candle?|B
+die|Störung|die Störungen|disruption, fault|Wegen einer Störung fährt die Bahn nicht.|The train is not running because of a fault.|B
+das|Symbol|die Symbole|symbol|Das Herz ist ein Symbol für die Liebe.|The heart is a symbol of love.|B
+das|System|die Systeme|system|Das neue System funktioniert noch nicht richtig.|The new system is not working properly yet.|B
+der|Tagesablauf|die Tagesabläufe|daily routine|Beschreiben Sie bitte Ihren Tagesablauf.|Please describe your daily routine.|B
+die|Tat|die Taten|deed, act|Der Mann hat die Tat zugegeben.|The man admitted the act.|B
+der|Terminkalender|die Terminkalender|diary (appointments)|Ich schaue kurz in meinen Terminkalender.|I'll just have a quick look in my diary.|B
+der|Tipp|die Tipps|tip, hint|Kannst du mir einen Tipp für die Prüfung geben?|Can you give me a tip for the exam?|B
+das|Unglück|die Unglücke|accident, misfortune|Bei dem Unglück wurde niemand verletzt.|Nobody was injured in the accident.|B
+die|Vorsicht|–|caution, care|Vorsicht, der Boden ist nass!|Careful, the floor is wet!|B
+die|Wirklichkeit|die Wirklichkeiten|reality|In Wirklichkeit ist er viel netter.|In reality he is much nicer.|B
+das|Zeichen|die Zeichen|sign, signal|Gib mir ein Zeichen, wenn du fertig bist.|Give me a signal when you are ready.|B
+die|Zustimmung|–|agreement, consent|Für den Umbau brauchen wir die Zustimmung des Vermieters.|For the alterations we need the landlord's consent.|B
+die|Änderung|die Änderungen|change|Im Fahrplan gibt es einige Änderungen.|There are some changes in the timetable.|B
+die|Überzeugung|die Überzeugungen|conviction, belief|Ich bin der Überzeugung, dass er recht hat.|I am of the conviction that he is right.|B
+der|Hinweis|die Hinweise|hint, piece of information|Vielen Dank für den Hinweis.|Thank you for the tip.|B`]
 ];
 const VERBS = `sich bewerben|bewirbt sich · bewarb sich · hat sich beworben|to apply (for a job)|Ich bewerbe mich um die Stelle als Verkäufer.|I am applying for the job as a sales assistant.|B
 kündigen|kündigt · kündigte · hat gekündigt|to give notice, to cancel a contract|Sie hat ihre Wohnung zum ersten Mai gekündigt.|She has given notice on her flat for the first of May.|B
@@ -1897,7 +2200,177 @@ auswandern|wandert aus · wanderte aus · ist ausgewandert|to emigrate|Meine Gro
 berücksichtigen|berücksichtigt · berücksichtigte · hat berücksichtigt|to take into account|Bitte berücksichtigen Sie auch meine Erfahrung.|Please take my experience into account too.|B
 bügeln|bügelt · bügelte · hat gebügelt|to iron|Ich muss noch mein Hemd bügeln.|I still have to iron my shirt.|B
 entsorgen|entsorgt · entsorgte · hat entsorgt|to dispose of|Alte Batterien muss man richtig entsorgen.|Old batteries must be disposed of properly.|B
-erwähnen|erwähnt · erwähnte · hat erwähnt|to mention|Er hat das Problem nicht erwähnt.|He did not mention the problem.|B`;
+erwähnen|erwähnt · erwähnte · hat erwähnt|to mention|Er hat das Problem nicht erwähnt.|He did not mention the problem.|B
+akzeptieren|akzeptiert · akzeptierte · hat akzeptiert|to accept|Wir akzeptieren Ihre Entscheidung.|We accept your decision.|B
+anerkennen|erkennt an · erkannte an · hat anerkannt|to recognise, to acknowledge|Mein Zeugnis wurde in Deutschland anerkannt.|My certificate was recognised in Germany.|B
+anschaffen|schafft an · schaffte an · hat angeschafft|to buy, to acquire|Wir haben uns ein neues Auto angeschafft.|We have bought ourselves a new car.|B
+anschließen|schließt an · schloss an · hat angeschlossen|to connect|Der Techniker schließt die Waschmaschine an.|The technician is connecting the washing machine.|B
+sich anschnallen|schnallt sich an · schnallte sich an · hat sich angeschnallt|to fasten one's seat belt|Bitte schnallen Sie sich vor dem Start an.|Please fasten your seat belt before take-off.|B
+ansprechen|spricht an · sprach an · hat angesprochen|to speak to, to address|Auf der Straße hat mich ein Tourist angesprochen.|A tourist spoke to me in the street.|B
+anstellen|stellt an · stellte an · hat angestellt|to employ, to take on|Die Firma stellt zwei neue Mitarbeiter an.|The company is taking on two new employees.|B
+anzeigen|zeigt an · zeigte an · hat angezeigt|to report (to the police)|Sie hat den Diebstahl bei der Polizei angezeigt.|She reported the theft to the police.|B
+auftreten|tritt auf · trat auf · ist aufgetreten|to perform, to appear|Die Band tritt heute Abend in Köln auf.|The band is performing in Cologne tonight.|B
+ausreichen|reicht aus · reichte aus · hat ausgereicht|to be enough|Das Geld reicht für die Reise nicht aus.|The money is not enough for the trip.|B
+ausrichten|richtet aus · richtete aus · hat ausgerichtet|to pass on (a message)|Kann ich ihm etwas ausrichten?|Can I pass on a message to him?|B
+ausschließen|schließt aus · schloss aus · hat ausgeschlossen|to rule out, to exclude|Der Arzt schließt eine Operation nicht aus.|The doctor does not rule out an operation.|B
+beeinflussen|beeinflusst · beeinflusste · hat beeinflusst|to influence|Die Werbung beeinflusst unsere Entscheidungen.|Advertising influences our decisions.|B
+behindern|behindert · behinderte · hat behindert|to obstruct, to hinder|Der Unfall behindert den Verkehr.|The accident is obstructing the traffic.|B
+beleidigen|beleidigt · beleidigte · hat beleidigt|to insult|Ich wollte dich nicht beleidigen.|I did not want to insult you.|B
+sich bemühen|bemüht sich · bemühte sich · hat sich bemüht|to make an effort (um + Akk.)|Er bemüht sich um eine neue Stelle.|He is making an effort to get a new job.|B
+berechnen|berechnet · berechnete · hat berechnet|to calculate, to charge|Für die Lieferung berechnen wir zehn Euro.|We charge ten euros for delivery.|B
+beschädigen|beschädigt · beschädigte · hat beschädigt|to damage|Der Sturm hat viele Dächer beschädigt.|The storm damaged many roofs.|B
+besetzen|besetzt · besetzte · hat besetzt|to occupy, to fill|Die Stelle wurde schon besetzt.|The position has already been filled.|B
+bestrafen|bestraft · bestrafte · hat bestraft|to punish|Der Richter hat den Dieb bestraft.|The judge punished the thief.|B
+sich beteiligen|beteiligt sich · beteiligte sich · hat sich beteiligt|to take part (an + Dat.)|Alle beteiligen sich an den Kosten.|Everyone is contributing to the costs.|B
+betrügen|betrügt · betrog · hat betrogen|to cheat, to deceive|Der Verkäufer hat seine Kunden betrogen.|The salesman cheated his customers.|B
+blitzen|blitzt · blitzte · hat geblitzt|to flash (lightning)|Draußen blitzt und donnert es.|There is thunder and lightning outside.|B
+bluten|blutet · blutete · hat geblutet|to bleed|Dein Finger blutet ja!|Your finger is bleeding!|B
+blühen|blüht · blühte · hat geblüht|to bloom, to flower|Im Frühling blühen die Bäume im Park.|In spring the trees in the park are in bloom.|B
+darstellen|stellt dar · stellte dar · hat dargestellt|to show, to represent|Die Grafik stellt die Ergebnisse dar.|The chart shows the results.|B
+dekorieren|dekoriert · dekorierte · hat dekoriert|to decorate|Wir dekorieren das Zimmer für die Party.|We are decorating the room for the party.|B
+dienen|dient · diente · hat gedient|to serve (as)|Dieser Raum dient als Büro.|This room serves as an office.|B
+duzen|duzt · duzte · hat geduzt|to address somebody as du|In unserer Firma duzen sich alle.|In our company everyone uses du with each other.|B
+eilen|eilt · eilte · ist geeilt|to hurry|Sie eilte sofort nach Hause.|She hurried home at once.|B
+einbrechen|bricht ein · brach ein · ist eingebrochen|to break in (in + Akk.)|Jemand ist in unser Haus eingebrochen.|Somebody has broken into our house.|B
+einfügen|fügt ein · fügte ein · hat eingefügt|to insert|Bitte fügen Sie hier Ihren Namen ein.|Please insert your name here.|B
+einsetzen|setzt ein · setzte ein · hat eingesetzt|to put in, to use|Setzen Sie das richtige Wort ein.|Put in the correct word.|B
+sich entschließen|entschließt sich · entschloss sich · hat sich entschlossen|to decide (zu + Dat.)|Sie hat sich zu einem Umzug entschlossen.|She has decided to move house.|B
+erleichtern|erleichtert · erleichterte · hat erleichtert|to make easier|Das neue Programm erleichtert die Arbeit.|The new programme makes the work easier.|B
+erstellen|erstellt · erstellte · hat erstellt|to create, to draw up|Ich erstelle eine Liste mit allen Namen.|I am drawing up a list of all the names.|B
+festsetzen|setzt fest · setzte fest · hat festgesetzt|to fix, to set|Wir müssen noch einen Termin festsetzen.|We still have to fix a date.|B
+feststehen|steht fest · stand fest · hat festgestanden|to be certain, to be fixed|Der Termin steht noch nicht fest.|The date has not been fixed yet.|B
+finanzieren|finanziert · finanzierte · hat finanziert|to finance, to pay for|Meine Eltern finanzieren mein Studium.|My parents are paying for my studies.|B
+fliehen|flieht · floh · ist geflohen|to flee, to escape|Viele Menschen sind vor dem Krieg geflohen.|Many people have fled from the war.|B
+fließen|fließt · floss · ist geflossen|to flow|Der Rhein fließt durch Köln.|The Rhine flows through Cologne.|B
+fortsetzen|setzt fort · setzte fort · hat fortgesetzt|to continue|Nach der Pause setzen wir das Gespräch fort.|After the break we will continue the conversation.|B
+fotografieren|fotografiert · fotografierte · hat fotografiert|to photograph|Im Museum darf man nicht fotografieren.|You are not allowed to take photographs in the museum.|A
+frühstücken|frühstückt · frühstückte · hat gefrühstückt|to have breakfast|Am Sonntag frühstücken wir immer lange.|On Sundays we always have a long breakfast.|A
+fürchten|fürchtet · fürchtete · hat gefürchtet|to fear, to be afraid|Ich fürchte, wir kommen zu spät.|I am afraid we are going to be late.|B
+füttern|füttert · fütterte · hat gefüttert|to feed|Kannst du bitte die Katze füttern?|Can you feed the cat, please?|B
+garantieren|garantiert · garantierte · hat garantiert|to guarantee|Ich kann Ihnen nichts garantieren.|I cannot guarantee you anything.|B
+gebrauchen|gebraucht · gebrauchte · hat gebraucht|to use|Das alte Fahrrad kann ich gut gebrauchen.|I can make good use of the old bicycle.|B
+gelten|gilt · galt · hat gegolten|to be valid, to apply|Die Fahrkarte gilt nur heute.|The ticket is only valid today.|B
+genehmigen|genehmigt · genehmigte · hat genehmigt|to approve|Der Chef hat meinen Urlaub genehmigt.|The boss has approved my holiday.|B
+genügen|genügt · genügte · hat genügt|to be enough|Ein kurzer Anruf genügt.|A short phone call is enough.|B
+gießen|gießt · goss · hat gegossen|to water, to pour|Ich gieße die Blumen jeden zweiten Tag.|I water the flowers every other day.|B
+gratulieren|gratuliert · gratulierte · hat gratuliert|to congratulate (zu + Dat.)|Ich gratuliere dir herzlich zum Geburtstag.|I wish you a very happy birthday.|A
+greifen|greift · griff · hat gegriffen|to reach, to grab (nach + Dat.)|Das Kind greift nach dem Ball.|The child is reaching for the ball.|B
+grillen|grillt · grillte · hat gegrillt|to barbecue, to grill|Am Wochenende grillen wir im Garten.|At the weekend we are having a barbecue in the garden.|A
+grüßen|grüßt · grüßte · hat gegrüßt|to greet, to say hello to|Unser Nachbar grüßt immer freundlich.|Our neighbour always says hello in a friendly way.|A
+gucken|guckt · guckte · hat geguckt|to look|Guck mal, da kommt der Bus!|Look, here comes the bus!|A
+hassen|hasst · hasste · hat gehasst|to hate|Ich hasse es, früh aufzustehen.|I hate getting up early.|B
+heben|hebt · hob · hat gehoben|to lift, to raise|Ich kann den schweren Koffer nicht heben.|I cannot lift the heavy suitcase.|B
+heizen|heizt · heizte · hat geheizt|to heat|Im Winter heizen wir mit Gas.|In winter we heat with gas.|B
+hochladen|lädt hoch · lud hoch · hat hochgeladen|to upload|Ich lade die Fotos später hoch.|I will upload the photos later.|B
+hupen|hupt · hupte · hat gehupt|to sound the horn|Der Fahrer hinter uns hupt ständig.|The driver behind us keeps sounding his horn.|B
+husten|hustet · hustete · hat gehustet|to cough|Das Kind hustet seit drei Tagen.|The child has been coughing for three days.|A
+installieren|installiert · installierte · hat installiert|to install|Ich muss das Programm neu installieren.|I have to install the programme again.|B
+integrieren|integriert · integrierte · hat integriert|to integrate|Die Schule will alle Kinder gut integrieren.|The school wants to integrate all the children well.|B
+klagen|klagt · klagte · hat geklagt|to complain (über + Akk.)|Sie klagt oft über Kopfschmerzen.|She often complains of headaches.|B
+kleben|klebt · klebte · hat geklebt|to stick, to glue|Er klebt eine Briefmarke auf den Brief.|He is sticking a stamp on the letter.|B
+klettern|klettert · kletterte · ist geklettert|to climb|Die Kinder klettern auf den Baum.|The children are climbing up the tree.|B
+klicken|klickt · klickte · hat geklickt|to click (auf + Akk.)|Klicken Sie bitte auf das Symbol.|Please click on the icon.|A
+klingeln|klingelt · klingelte · hat geklingelt|to ring|Es hat an der Tür geklingelt.|The doorbell rang.|A
+klopfen|klopft · klopfte · hat geklopft|to knock|Jemand klopft an die Tür.|Somebody is knocking at the door.|A
+konsumieren|konsumiert · konsumierte · hat konsumiert|to consume|Wir konsumieren zu viel Zucker.|We consume too much sugar.|B
+küssen|küsst · küsste · hat geküsst|to kiss|Zum Abschied küsst sie ihre Kinder.|She kisses her children goodbye.|A
+sich langweilen|langweilt sich · langweilte sich · hat sich gelangweilt|to be bored|Ohne Handy langweilt er sich schnell.|Without his mobile he quickly gets bored.|B
+loben|lobt · lobte · hat gelobt|to praise|Die Lehrerin lobt die Schüler oft.|The teacher often praises the pupils.|B
+losfahren|fährt los · fuhr los · ist losgefahren|to set off, to drive off|Wir fahren morgen früh um sechs los.|We are setting off at six tomorrow morning.|A
+malen|malt · malte · hat gemalt|to paint|Meine Tochter malt gern Tiere.|My daughter likes painting animals.|A
+mischen|mischt · mischte · hat gemischt|to mix|Zuerst mischt man Mehl und Zucker.|First you mix flour and sugar.|B
+nachschlagen|schlägt nach · schlug nach · hat nachgeschlagen|to look up|Ich schlage das Wort im Wörterbuch nach.|I am looking the word up in the dictionary.|B
+nähen|näht · nähte · hat genäht|to sew|Meine Oma näht ihre Kleider selbst.|My grandma sews her dresses herself.|B
+sich nähern|nähert sich · näherte sich · hat sich genähert|to approach (+ Dat.)|Der Zug nähert sich dem Bahnhof.|The train is approaching the station.|B
+nützen|nützt · nützte · hat genützt|to be of use|Das Wörterbuch nützt mir sehr.|The dictionary is very useful to me.|B
+ordnen|ordnet · ordnete · hat geordnet|to put in order, to arrange|Ich muss meine Unterlagen ordnen.|I have to put my papers in order.|B
+packen|packt · packte · hat gepackt|to pack|Hast du deinen Koffer schon gepackt?|Have you packed your suitcase yet?|A
+parken|parkt · parkte · hat geparkt|to park|Hier darf man nicht parken.|You are not allowed to park here.|A
+passen|passt · passte · hat gepasst|to fit, to suit|Die Hose passt mir nicht mehr.|The trousers do not fit me any more.|A
+pflanzen|pflanzt · pflanzte · hat gepflanzt|to plant|Wir pflanzen einen Apfelbaum im Garten.|We are planting an apple tree in the garden.|B
+probieren|probiert · probierte · hat probiert|to try, to taste|Möchtest du den Kuchen probieren?|Would you like to try the cake?|A
+protestieren|protestiert · protestierte · hat protestiert|to protest (gegen + Akk.)|Die Studenten protestieren gegen die neuen Gebühren.|The students are protesting against the new fees.|B
+realisieren|realisiert · realisierte · hat realisiert|to realise, to carry out|Wir wollen das Projekt nächstes Jahr realisieren.|We want to carry out the project next year.|B
+rechnen|rechnet · rechnete · hat gerechnet|to calculate, to expect (mit + Dat.)|Mit so viel Regen habe ich nicht gerechnet.|I did not expect so much rain.|A
+reduzieren|reduziert · reduzierte · hat reduziert|to reduce|Das Geschäft hat alle Preise reduziert.|The shop has reduced all its prices.|B
+regeln|regelt · regelte · hat geregelt|to sort out, to regulate|Das müssen wir noch heute regeln.|We have to sort that out today.|B
+schalten|schaltet · schaltete · hat geschaltet|to switch, to change gear|Die Ampel schaltet auf Grün.|The traffic lights are changing to green.|B
+schauen|schaut · schaute · hat geschaut|to look|Er schaut aus dem Fenster.|He is looking out of the window.|A
+scheiden|scheidet · schied · hat geschieden|to divorce, to dissolve (a marriage)|Das Gericht hat die Ehe geschieden.|The court dissolved the marriage.|B
+scheinen|scheint · schien · hat geschienen|to shine, to seem|Heute scheint den ganzen Tag die Sonne.|The sun is shining all day today.|A
+schieben|schiebt · schob · hat geschoben|to push|Er schiebt sein Fahrrad den Berg hinauf.|He is pushing his bicycle up the hill.|B
+schießen|schießt · schoss · hat geschossen|to shoot, to score|Er hat zwei Tore geschossen.|He scored two goals.|B
+schimpfen|schimpft · schimpfte · hat geschimpft|to grumble, to scold (über + Akk.)|Der Nachbar schimpft über den Lärm.|The neighbour is grumbling about the noise.|B
+sich schminken|schminkt sich · schminkte sich · hat sich geschminkt|to put on make-up|Sie schminkt sich jeden Morgen im Bad.|She puts on her make-up in the bathroom every morning.|B
+schneien|schneit · schneite · hat geschneit|to snow|In den Bergen schneit es seit gestern.|It has been snowing in the mountains since yesterday.|A
+schweigen|schweigt · schwieg · hat geschwiegen|to be silent|Er schwieg und sah aus dem Fenster.|He was silent and looked out of the window.|B
+siegen|siegt · siegte · hat gesiegt|to win|Unsere Mannschaft hat gestern gesiegt.|Our team won yesterday.|B
+siezen|siezt · siezte · hat gesiezt|to address somebody as Sie|Ich sieze meine Chefin immer noch.|I still use Sie with my boss.|B
+singen|singt · sang · hat gesungen|to sing|Sie singt seit Jahren im Chor.|She has been singing in the choir for years.|A
+sinken|sinkt · sank · ist gesunken|to sink, to fall|Die Temperaturen sinken heute Nacht unter null.|Temperatures will fall below zero tonight.|B
+spazieren|spaziert · spazierte · ist spaziert|to stroll|Wir sind durch die Altstadt spaziert.|We strolled through the old town.|A
+spülen|spült · spülte · hat gespült|to wash up, to rinse|Ich koche und du spülst das Geschirr.|I cook and you do the washing-up.|A
+spüren|spürt · spürte · hat gespürt|to feel, to sense|Ich spüre einen Schmerz im Rücken.|I can feel a pain in my back.|B
+stammen|stammt · stammte · hat gestammt|to come from (aus + Dat.)|Meine Familie stammt aus Polen.|My family comes from Poland.|B
+starten|startet · startete · hat gestartet|to start|Er hat den Motor gestartet.|He started the engine.|A
+staubsaugen|staubsaugt · staubsaugte · hat gestaubsaugt|to vacuum, to hoover|Ich staubsauge jeden Samstag die Wohnung.|I hoover the flat every Saturday.|B
+stechen|sticht · stach · hat gestochen|to sting, to prick|Eine Biene hat mich gestochen.|A bee stung me.|B
+stecken|steckt · steckte · hat gesteckt|to put, to be stuck|Der Schlüssel steckt noch in der Tür.|The key is still in the door.|B
+stehlen|stiehlt · stahl · hat gestohlen|to steal|Jemand hat mein Fahrrad gestohlen.|Somebody has stolen my bicycle.|B
+stimmen|stimmt · stimmte · hat gestimmt|to be right, to be correct|Die Rechnung stimmt leider nicht.|Unfortunately the bill is not right.|A
+stinken|stinkt · stank · hat gestunken|to stink, to smell bad|Der Müll in der Küche stinkt.|The rubbish in the kitchen stinks.|B
+stoppen|stoppt · stoppte · hat gestoppt|to stop|Die Polizei hat den Wagen gestoppt.|The police stopped the car.|B
+stoßen|stößt · stieß · hat gestoßen|to push, to bump|Er hat mich aus Versehen gestoßen.|He pushed me by accident.|B
+stürzen|stürzt · stürzte · ist gestürzt|to fall|Sie ist mit dem Fahrrad gestürzt.|She fell off her bicycle.|B
+tanken|tankt · tankte · hat getankt|to fill up (with petrol)|Wir müssen vor der Fahrt noch tanken.|We still have to fill up before the journey.|A
+tauchen|taucht · tauchte · ist getaucht|to dive|Im Urlaub sind wir im Meer getaucht.|On holiday we went diving in the sea.|B
+testen|testet · testete · hat getestet|to test|Wir testen das neue Gerät zuerst.|We are testing the new device first.|B
+tippen|tippt · tippte · hat getippt|to type|Sie tippt sehr schnell auf dem Handy.|She types very fast on her mobile.|B
+trainieren|trainiert · trainierte · hat trainiert|to train|Er trainiert dreimal pro Woche.|He trains three times a week.|A
+umarmen|umarmt · umarmte · hat umarmt|to hug|Zur Begrüßung umarmt sie ihre Freundin.|She hugs her friend to say hello.|B
+umdrehen|dreht um · drehte um · hat umgedreht|to turn over, to turn round|Bitte drehen Sie das Blatt um.|Please turn the sheet over.|B
+umgehen|geht um · ging um · ist umgegangen|to deal with, to handle (mit + Dat.)|Sie kann gut mit Kindern umgehen.|She is good with children.|B
+unterlassen|unterlässt · unterließ · hat unterlassen|to refrain from|Bitte unterlassen Sie das Rauchen.|Please refrain from smoking.|B
+unterstreichen|unterstreicht · unterstrich · hat unterstrichen|to underline|Unterstreichen Sie bitte alle Verben im Text.|Please underline all the verbs in the text.|B
+verbrennen|verbrennt · verbrannte · hat verbrannt|to burn|Er hat die alten Briefe verbrannt.|He burnt the old letters.|B
+vergrößern|vergrößert · vergrößerte · hat vergrößert|to enlarge|Kannst du das Foto vergrößern?|Can you enlarge the photo?|B
+verhaften|verhaftet · verhaftete · hat verhaftet|to arrest|Die Polizei hat zwei Männer verhaftet.|The police have arrested two men.|B
+sich verhalten|verhält sich · verhielt sich · hat sich verhalten|to behave|Er hat sich sehr höflich verhalten.|He behaved very politely.|B
+sich verlaufen|verläuft sich · verlief sich · hat sich verlaufen|to get lost (on foot)|Wir haben uns im Wald verlaufen.|We got lost in the woods.|B
+vermuten|vermutet · vermutete · hat vermutet|to suspect, to assume|Ich vermute, dass er krank ist.|I suspect that he is ill.|B
+verpacken|verpackt · verpackte · hat verpackt|to pack, to wrap|Ich verpacke das Geschenk heute Abend.|I am wrapping the present this evening.|B
+verpflegen|verpflegt · verpflegte · hat verpflegt|to feed, to cater for|Das Hotel verpflegt seine Gäste sehr gut.|The hotel feeds its guests very well.|B
+verraten|verrät · verriet · hat verraten|to reveal, to betray|Ich verrate dir ein Geheimnis.|I am going to tell you a secret.|B
+verreisen|verreist · verreiste · ist verreist|to go away (on a trip)|Unsere Nachbarn sind für zwei Wochen verreist.|Our neighbours have gone away for two weeks.|B
+verschmutzen|verschmutzt · verschmutzte · hat verschmutzt|to pollute, to make dirty|Zu viele Autos verschmutzen die Luft.|Too many cars pollute the air.|B
+versichern|versichert · versicherte · hat versichert|to insure, to assure|Wir haben das Haus gegen Feuer versichert.|We have insured the house against fire.|B
+verstecken|versteckt · versteckte · hat versteckt|to hide|Sie versteckt die Geschenke im Schrank.|She is hiding the presents in the wardrobe.|B
+versäumen|versäumt · versäumte · hat versäumt|to miss|Er hat wegen der Krankheit viel Unterricht versäumt.|He missed a lot of lessons because of his illness.|B
+vertreten|vertritt · vertrat · hat vertreten|to stand in for, to represent|Frau Lang vertritt heute unseren Lehrer.|Ms Lang is standing in for our teacher today.|B
+verursachen|verursacht · verursachte · hat verursacht|to cause|Wer hat den Unfall verursacht?|Who caused the accident?|B
+verurteilen|verurteilt · verurteilte · hat verurteilt|to sentence, to condemn|Das Gericht verurteilte ihn zu einer Geldstrafe.|The court sentenced him to a fine.|B
+verwechseln|verwechselt · verwechselte · hat verwechselt|to mix up, to confuse (mit + Dat.)|Ich verwechsle ihn immer mit seinem Bruder.|I always mix him up with his brother.|B
+verzeihen|verzeiht · verzieh · hat verziehen|to forgive|Kannst du mir bitte verzeihen?|Can you please forgive me?|B
+vorkommen|kommt vor · kam vor · ist vorgekommen|to happen, to occur|So etwas kommt bei uns selten vor.|That sort of thing rarely happens here.|B
+vorlesen|liest vor · las vor · hat vorgelesen|to read aloud|Abends liest er den Kindern eine Geschichte vor.|In the evening he reads the children a story.|A
+wandern|wandert · wanderte · ist gewandert|to hike|Wir sind drei Stunden durch den Wald gewandert.|We hiked through the forest for three hours.|A
+wecken|weckt · weckte · hat geweckt|to wake (somebody) up|Kannst du mich um sieben Uhr wecken?|Can you wake me at seven o'clock?|A
+sich weigern|weigert sich · weigerte sich · hat sich geweigert|to refuse|Er weigert sich, die Rechnung zu bezahlen.|He refuses to pay the bill.|B
+weinen|weint · weinte · hat geweint|to cry|Das Baby weint schon wieder.|The baby is crying again.|A
+wetten|wettet · wettete · hat gewettet|to bet|Ich wette, dass er wieder zu spät kommt.|I bet he will be late again.|B
+widersprechen|widerspricht · widersprach · hat widersprochen|to contradict (+ Dat.)|Da muss ich Ihnen leider widersprechen.|I am afraid I have to disagree with you there.|B
+winken|winkt · winkte · hat gewinkt|to wave|Die Kinder winken dem Zug.|The children are waving at the train.|B
+wirken|wirkt · wirkte · hat gewirkt|to work, to seem|Die Tablette wirkt nach einer halben Stunde.|The tablet works after half an hour.|B
+zeichnen|zeichnet · zeichnete · hat gezeichnet|to draw|Sie zeichnet ein Haus mit Garten.|She is drawing a house with a garden.|A
+zelten|zeltet · zeltete · hat gezeltet|to camp|Im Sommer zelten wir am See.|In summer we go camping by the lake.|B
+zubereiten|bereitet zu · bereitete zu · hat zubereitet|to prepare (food)|Er bereitet das Abendessen für die Gäste zu.|He is preparing dinner for the guests.|B
+zugehen|geht zu · ging zu · ist zugegangen|to walk up to (auf + Akk.)|Sie ging freundlich auf die neuen Nachbarn zu.|She walked up to the new neighbours in a friendly way.|B
+zumachen|macht zu · machte zu · hat zugemacht|to close, to shut|Mach bitte das Fenster zu.|Please shut the window.|A
+zweifeln|zweifelt · zweifelte · hat gezweifelt|to doubt (an + Dat.)|Ich zweifle an seiner Geschichte.|I doubt his story.|B
+zwingen|zwingt · zwang · hat gezwungen|to force (zu + Dat.)|Niemand kann dich dazu zwingen.|Nobody can force you to do that.|B
+überqueren|überquert · überquerte · hat überquert|to cross|Überqueren Sie die Straße nur bei Grün.|Only cross the road when the light is green.|B
+überreden|überredet · überredete · hat überredet|to persuade|Sie hat mich zum Mitkommen überredet.|She persuaded me to come along.|B
+übertreiben|übertreibt · übertrieb · hat übertrieben|to exaggerate|Du übertreibst mal wieder!|You are exaggerating again!|B`;
 const ADJS = `zuverlässig|unzuverlässig|reliable|Meine Kollegin ist sehr zuverlässig.|My colleague is very reliable.|B
 pünktlich|unpünktlich|punctual, on time|Bitte seien Sie morgen pünktlich.|Please be on time tomorrow.|B
 selbstständig|angestellt|self-employed; independent|Er arbeitet seit zwei Jahren selbstständig.|He has been self-employed for two years.|B
@@ -2206,7 +2679,106 @@ getrennt|gemeinsam|separate|Wir haben getrennte Konten.|We have separate account
 giftig|ungiftig|poisonous|Vorsicht, diese Pilze sind giftig!|Careful, these mushrooms are poisonous!|B
 verschmutzt|sauber|polluted|Die Luft in der Stadt ist stark verschmutzt.|The air in the city is heavily polluted.|B
 anwesend|abwesend|present|Alle Teilnehmer waren heute anwesend.|All participants were present today.|B
-verständlich|unverständlich|understandable, clear|Die Durchsage war gut verständlich.|The announcement was easy to understand.|B`;
+verständlich|unverständlich|understandable, clear|Die Durchsage war gut verständlich.|The announcement was easy to understand.|B
+ausgebildet|ungelernt|trained|Sie ist eine gut ausgebildete Krankenschwester.|She is a well-trained nurse.|B
+bar|–|in cash|Kann ich hier auch bar bezahlen?|Can I also pay in cash here?|A
+behindert|–|disabled|Mein Nachbar ist seit einem Unfall behindert.|My neighbour has been disabled since an accident.|B
+betrunken|nüchtern|drunk|Wer betrunken ist, darf nicht Auto fahren.|Anyone who is drunk must not drive a car.|B
+blass|–|pale|Du siehst heute sehr blass aus.|You look very pale today.|B
+blind|–|blind|Der alte Hund ist auf einem Auge blind.|The old dog is blind in one eye.|B
+blond|dunkelhaarig|blond|Meine Schwester hat lange blonde Haare.|My sister has long blond hair.|A
+dauernd|–|constant|Das dauernde Klingeln des Telefons stört mich.|The constant ringing of the phone disturbs me.|B
+dicht|undicht|dense, tight|Am Morgen war der Nebel sehr dicht.|In the morning the fog was very dense.|B
+digital|analog|digital|Viele Menschen lesen die Zeitung heute digital.|Many people read the newspaper digitally today.|B
+durstig|–|thirsty|Nach dem Sport bin ich immer sehr durstig.|After sport I am always very thirsty.|A
+eindeutig|unklar|clear, unambiguous|Die Antwort auf diese Frage ist eindeutig.|The answer to this question is clear.|B
+einheitlich|unterschiedlich|uniform, standard|In der Firma gibt es einheitliche Regeln für alle.|In the company there are standard rules for everyone.|B
+einzeln|gemeinsam|single, individual|Die Lehrerin spricht mit jedem Schüler einzeln.|The teacher speaks to each pupil individually.|B
+entschlossen|unentschlossen|determined|Sie ist fest entschlossen, die Prüfung zu bestehen.|She is firmly determined to pass the exam.|B
+entspannend|anstrengend|relaxing|Ein Spaziergang im Wald ist sehr entspannend.|A walk in the forest is very relaxing.|B
+ernsthaft|–|serious|Wir müssen ernsthaft über das Problem sprechen.|We need to talk seriously about the problem.|B
+ewig|–|eternal, endless|Wir haben ewig auf den Bus gewartet.|We waited for the bus for ages.|B
+extrem|–|extreme|Im Sommer war es in der Stadt extrem heiß.|In summer it was extremely hot in the city.|B
+fantastisch|schrecklich|fantastic|Das Konzert gestern Abend war fantastisch.|The concert last night was fantastic.|B
+farbig|farblos|coloured|Die Kinder malen mit farbigen Stiften.|The children are drawing with coloured pencils.|B
+fließend|–|fluent|Nach zwei Jahren spricht er fließend Deutsch.|After two years he speaks fluent German.|B
+folgend|vorherig|following|Bitte beantworten Sie die folgenden Fragen.|Please answer the following questions.|B
+frech|brav|cheeky|Der Junge war frech zu seiner Lehrerin.|The boy was cheeky to his teacher.|B
+geehrt|–|honoured, dear|Sehr geehrte Frau Müller, vielen Dank für Ihren Brief.|Dear Ms Müller, thank you very much for your letter.|B
+geheim|öffentlich|secret|Das Passwort muss unbedingt geheim bleiben.|The password absolutely must remain secret.|B
+gering|hoch|low, small|Die Kosten für den Kurs sind gering.|The costs of the course are low.|B
+gespannt|–|curious, excited|Ich bin gespannt, wie der Film endet.|I am curious to see how the film ends.|B
+gewohnt|ungewohnt|usual, accustomed|Wir treffen uns zur gewohnten Zeit im Café.|We are meeting at the usual time in the café.|B
+gewöhnlich|ungewöhnlich|ordinary, usual|Es war ein ganz gewöhnlicher Montag im Büro.|It was a perfectly ordinary Monday in the office.|B
+gleichberechtigt|–|having equal rights|Frauen und Männer sind in Deutschland gleichberechtigt.|Women and men have equal rights in Germany.|B
+gleichzeitig|–|simultaneous|Ich kann nicht gleichzeitig kochen und telefonieren.|I cannot cook and talk on the phone at the same time.|B
+heimlich|offen|secret|Er hat heimlich ein Geschenk für sie gekauft.|He secretly bought a present for her.|B
+herzlich|kühl|warm, cordial|Die Familie hat uns sehr herzlich begrüßt.|The family welcomed us very warmly.|B
+historisch|–|historical|Wir haben die historische Altstadt besichtigt.|We visited the historic old town.|B
+individuell|–|individual|Jeder Kunde bekommt eine individuelle Beratung.|Every customer receives individual advice.|B
+intensiv|–|intensive|Sie hat sich intensiv auf die Prüfung vorbereitet.|She prepared intensively for the exam.|B
+interessiert|uninteressiert|interested|Mein Sohn ist sehr an Technik interessiert.|My son is very interested in technology.|B
+interkulturell|–|intercultural|In unserer Stadt gibt es jedes Jahr ein interkulturelles Fest.|In our town there is an intercultural festival every year.|B
+international|national|international|Sie arbeitet bei einer internationalen Firma.|She works for an international company.|B
+komplett|unvollständig|complete|Die Wohnung ist komplett renoviert.|The flat has been completely renovated.|B
+korrekt|falsch|correct|Ist diese Adresse noch korrekt?|Is this address still correct?|B
+kräftig|schwach|strong, powerful|Der Handwerker hat sehr kräftige Arme.|The workman has very strong arms.|B
+kulturell|–|cultural|Berlin hat ein großes kulturelles Angebot.|Berlin has a wide range of cultural activities.|B
+locker|fest|loose, relaxed|Die Schraube am Stuhl ist locker.|The screw on the chair is loose.|B
+maximal|minimal|maximum|Die maximale Geschwindigkeit ist hier 50 km/h.|The maximum speed here is 50 km/h.|B
+menschlich|unmenschlich|human|Fehler zu machen ist ganz menschlich.|Making mistakes is completely human.|B
+merkwürdig|normal|strange, odd|Gestern ist mir etwas Merkwürdiges passiert.|Something strange happened to me yesterday.|B
+minimal|maximal|minimal|Der Unterschied zwischen den beiden Angeboten ist minimal.|The difference between the two offers is minimal.|B
+musikalisch|unmusikalisch|musical|Ihre Tochter ist sehr musikalisch und spielt Geige.|Her daughter is very musical and plays the violin.|B
+neblig|klar|foggy|Heute Morgen war es so neblig, dass ich langsam fuhr.|This morning it was so foggy that I drove slowly.|B
+original|–|original|Das ist ein originales Bild aus dem Jahr 1920.|That is an original picture from the year 1920.|B
+parallel|–|parallel|Die beiden Straßen sind parallel.|The two streets are parallel.|B
+passiv|aktiv|passive|Im Unterricht ist er leider oft passiv.|Unfortunately he is often passive in class.|B
+populär|unpopulär|popular|Dieser Sänger ist bei jungen Leuten sehr populär.|This singer is very popular with young people.|B
+prima|–|great|Das Essen in dem neuen Restaurant war prima.|The food in the new restaurant was great.|A
+rechtlich|–|legal|Bei rechtlichen Fragen hilft Ihnen ein Anwalt.|A lawyer will help you with legal questions.|B
+regional|überregional|regional|Wir kaufen am liebsten regionale Produkte vom Markt.|We prefer to buy regional products from the market.|B
+rein|unrein|pure|Der Pullover ist aus reiner Wolle.|The jumper is made of pure wool.|B
+roh|gekocht|raw|Karotten kann man auch roh essen.|You can also eat carrots raw.|B
+schief|gerade|crooked|Das Bild an der Wand hängt schief.|The picture on the wall is hanging crooked.|B
+schmal|breit|narrow|Die Straße ist zu schmal für den Bus.|The street is too narrow for the bus.|B
+schuldig|unschuldig|guilty|Das Gericht fand den Mann schuldig.|The court found the man guilty.|B
+selbstverständlich|–|natural, a matter of course|Es ist selbstverständlich, dass wir dir beim Umzug helfen.|It goes without saying that we will help you move.|B
+senkrecht|waagerecht|vertical|Zeichnen Sie bitte eine senkrechte Linie.|Please draw a vertical line.|B
+sichtbar|unsichtbar|visible|Der Fleck auf dem Hemd ist kaum sichtbar.|The stain on the shirt is barely visible.|B
+sinnlos|sinnvoll|pointless|Es ist sinnlos, noch länger auf ihn zu warten.|It is pointless to wait for him any longer.|B
+statistisch|–|statistical|Die statistischen Daten zeigen, dass die Preise steigen.|The statistical data show that prices are rising.|B
+stilistisch|–|stylistic|Der Text hat einige stilistische Fehler.|The text has some stylistic mistakes.|B
+still|laut|quiet, still|Im Lesesaal der Bibliothek muss man still sein.|You have to be quiet in the library reading room.|B
+strafbar|–|punishable|Ohne Fahrkarte zu fahren ist strafbar.|Travelling without a ticket is a punishable offence.|B
+städtisch|ländlich|municipal, urban|Meine Kinder gehen in den städtischen Kindergarten.|My children go to the municipal nursery.|B
+super|–|super, great|Der Film gestern Abend war wirklich super.|The film last night was really great.|A
+süchtig|–|addicted|Viele Jugendliche sind süchtig nach ihrem Handy.|Many young people are addicted to their mobile phones.|B
+taub|–|deaf|Mein Großvater ist auf einem Ohr taub.|My grandfather is deaf in one ear.|B
+tot|lebendig|dead|Die Pflanze ist leider tot, weil niemand sie gegossen hat.|Unfortunately the plant is dead because nobody watered it.|A
+traditionell|modern|traditional|An Weihnachten gibt es bei uns ein traditionelles Essen.|At Christmas we have a traditional meal.|B
+tödlich|harmlos|fatal, deadly|Auf der Autobahn gab es einen tödlichen Unfall.|There was a fatal accident on the motorway.|B
+unentschieden|–|drawn, undecided|Das Spiel endete unentschieden.|The match ended in a draw.|B
+ungewöhnlich|gewöhnlich|unusual|Für Oktober ist es heute ungewöhnlich warm.|It is unusually warm today for October.|B
+unglaublich|–|unbelievable|Sie hat eine unglaubliche Geschichte erzählt.|She told an unbelievable story.|B
+unheimlich|–|eerie, scary|Nachts ist der dunkle Park ein bisschen unheimlich.|At night the dark park is a bit scary.|B
+ursprünglich|–|original|Unser ursprünglicher Plan war eine Reise nach Italien.|Our original plan was a trip to Italy.|B
+vergnügt|–|cheerful|Die Kinder spielten vergnügt im Garten.|The children played cheerfully in the garden.|B
+versteckt|–|hidden|Der Schlüssel liegt versteckt unter einem Stein.|The key is hidden under a stone.|B
+virtuell|real|virtual|Wir haben uns nur in einem virtuellen Meeting gesehen.|We only saw each other in a virtual meeting.|B
+vorläufig|endgültig|temporary, provisional|Das ist nur eine vorläufige Lösung.|That is only a temporary solution.|B
+waagerecht|senkrecht|horizontal|Das Regal muss genau waagerecht hängen.|The shelf must hang exactly horizontally.|B
+wach|müde|awake|Ich war die ganze Nacht wach.|I was awake all night.|B
+wahnsinnig|–|crazy, insane|Der Lärm auf der Baustelle macht mich wahnsinnig.|The noise on the building site is driving me crazy.|B
+weltweit|–|worldwide|Die Firma hat weltweit über tausend Mitarbeiter.|The company has over a thousand employees worldwide.|B
+wertlos|wertvoll|worthless|Der alte Ring ist leider wertlos.|Unfortunately the old ring is worthless.|B
+willkommen|unwillkommen|welcome|Gäste sind bei uns immer willkommen.|Guests are always welcome at our house.|A
+windig|windstill|windy|An der Küste ist es oft sehr windig.|It is often very windy on the coast.|A
+wunderschön|hässlich|beautiful|Vom Berg hat man eine wunderschöne Aussicht.|From the mountain you have a beautiful view.|A
+zahlreich|–|numerous|Zum Fest kamen zahlreiche Besucher.|Numerous visitors came to the festival.|B
+zufällig|absichtlich|accidental, by chance|Ich habe sie zufällig in der Stadt getroffen.|I met her by chance in town.|B
+zugänglich|unzugänglich|accessible|Das Museum ist auch für Rollstuhlfahrer zugänglich.|The museum is also accessible to wheelchair users.|B
+äußerlich|innerlich|external, outward|Äußerlich blieb er ruhig, aber er war sehr nervös.|Outwardly he stayed calm, but he was very nervous.|B`;
 const OTHERS = `aber|normal word order|but|Das Auto ist alt, aber es fährt noch gut.|The car is old, but it still runs well.|A
 denn|normal word order|because, for|Ich bleibe zu Hause, denn ich bin müde.|I am staying at home because I am tired.|A
 sondern|after a negation|but rather|Wir fahren nicht heute, sondern morgen.|We are not going today but tomorrow.|A
@@ -2410,4 +2982,94 @@ einander|–|each other|Wir helfen einander bei den Hausaufgaben.|We help each o
 wofür|–|what for|Wofür brauchst du das Geld?|What do you need the money for?|B
 da|verb at the end|as, since (reason)|Da es regnet, bleiben wir zu Hause.|As it is raining, we are staying at home.|B
 als ob|verb at the end|as if|Er tut so, als ob er nichts wüsste.|He acts as if he knew nothing.|B
-anstatt|+ Genitiv|instead of|Anstatt des Autos nehme ich das Fahrrad.|Instead of the car I take the bike.|B`;
+anstatt|+ Genitiv|instead of|Anstatt des Autos nehme ich das Fahrrad.|Instead of the car I take the bike.|B
+allein|–|alone|Meine Großmutter wohnt seit zwei Jahren allein.|My grandmother has lived alone for two years.|A
+andererseits|pairs with einerseits|on the other hand|Die Wohnung ist schön, andererseits ist sie sehr teuer.|The flat is nice; on the other hand, it is very expensive.|B
+anfangs|–|at first|Anfangs habe ich im Kurs fast nichts verstanden.|At first I understood almost nothing in the course.|B
+aufwärts|direction|upwards|Der Weg führt von hier steil aufwärts.|The path leads steeply upwards from here.|B
+auseinander|–|apart|Unsere Meinungen gehen bei diesem Thema weit auseinander.|Our opinions differ widely on this topic.|B
+ausschließlich|–|exclusively|Dieser Parkplatz ist ausschließlich für Gäste des Hotels.|This car park is exclusively for hotel guests.|B
+außen|–|outside|Das Haus sieht von außen sehr alt aus.|The house looks very old from the outside.|B
+beinahe|–|almost|Ich hätte beinahe meinen Zug verpasst.|I almost missed my train.|B
+bloß|colloquial|only, just|Ich habe bloß noch fünf Euro dabei.|I have only got five euros left on me.|B
+daneben|–|next to it|Dort ist die Post, und daneben ist eine Bäckerei.|The post office is there, and next to it is a bakery.|B
+danke|–|thank you|Danke, das ist sehr nett von Ihnen.|Thank you, that is very kind of you.|A
+dasselbe|neuter pronoun|the same|Ich nehme dasselbe wie du, bitte.|I will have the same as you, please.|B
+derselbe|declines like der|the same|Das ist derselbe Mann wie gestern.|That is the same man as yesterday.|B
+diesmal|–|this time|Diesmal fahren wir mit dem Zug nach Hamburg.|This time we are going to Hamburg by train.|B
+drin|colloquial|inside, in it|Ist in der Flasche noch Wasser drin?|Is there still water in the bottle?|B
+drüben|–|over there|Die Apotheke ist da drüben neben der Bank.|The chemist's is over there next to the bank.|B
+durcheinander|–|mixed up, confused|Nach dem Umzug war in der Wohnung alles durcheinander.|After the move everything in the flat was in a mess.|B
+eben|–|just, just now|Der Bus ist eben abgefahren.|The bus has just left.|B
+ebenfalls|–|likewise, also|Mein Bruder arbeitet ebenfalls in dieser Firma.|My brother also works at this company.|B
+ebenso|–|just as|Der zweite Film war ebenso spannend wie der erste.|The second film was just as exciting as the first.|B
+einerseits|pairs with andererseits|on the one hand|Einerseits möchte ich reisen, andererseits will ich sparen.|On the one hand I would like to travel; on the other hand I want to save.|B
+einmal|–|once|Ich gehe einmal pro Woche schwimmen.|I go swimming once a week.|A
+einschließlich|+ Genitiv|including|Die Miete beträgt 700 Euro einschließlich aller Nebenkosten.|The rent is 700 euros including all additional costs.|B
+es|personal pronoun|it|Das Kind weint, weil es müde ist.|The child is crying because it is tired.|A
+etwas|–|something|Möchtest du etwas trinken?|Would you like something to drink?|A
+eventuell|–|possibly|Wir kommen eventuell etwas später zur Feier.|We may possibly come to the party a little later.|B
+extra|–|specially, extra|Ich habe den Kuchen extra für dich gebacken.|I baked the cake specially for you.|B
+genauso|–|just as|Sie spricht genauso gut Englisch wie Deutsch.|She speaks English just as well as German.|B
+genug|–|enough|Haben wir genug Brot für das Frühstück?|Do we have enough bread for breakfast?|A
+gestern|–|yesterday|Gestern habe ich meine Eltern besucht.|Yesterday I visited my parents.|A
+gleichfalls|reply to a wish|the same to you|Schönes Wochenende! – Danke, gleichfalls!|Have a nice weekend! – Thanks, the same to you!|B
+gratis|–|free of charge|Die Getränke sind heute Abend gratis.|The drinks are free of charge this evening.|B
+heim|direction|home|Nach der Arbeit gehe ich sofort heim.|After work I am going straight home.|B
+herunter|direction|down|Die Katze kommt nicht mehr vom Baum herunter.|The cat will not come down from the tree any more.|B
+heute|–|today|Heute muss ich lange arbeiten.|Today I have to work late.|A
+hierher|direction|here, over here|Kommen Sie bitte hierher und setzen Sie sich.|Please come over here and sit down.|B
+hinten|–|at the back|Im Bus sitze ich am liebsten ganz hinten.|On the bus I like sitting right at the back best.|A
+inklusive|+ Genitiv|including, inclusive of|Das Zimmer kostet 80 Euro inklusive Frühstück.|The room costs 80 euros including breakfast.|B
+innen|–|inside|Das Auto ist außen schmutzig, aber innen sauber.|The car is dirty outside but clean inside.|B
+insgesamt|–|altogether, in total|Insgesamt haben zwanzig Personen an dem Kurs teilgenommen.|In total, twenty people took part in the course.|B
+ja|–|yes|Ja, ich komme morgen gern mit.|Yes, I would be happy to come along tomorrow.|A
+je|–|each, ever|Die Eintrittskarten kosten je zehn Euro.|The tickets cost ten euros each.|B
+jederzeit|–|at any time|Sie können mich jederzeit anrufen.|You can call me at any time.|B
+jemals|–|ever|Warst du jemals in Österreich?|Have you ever been to Austria?|B
+jetzt|–|now|Ich habe jetzt leider keine Zeit.|Unfortunately I have no time now.|A
+jeweils|–|each, in each case|Die Kurse finden jeweils montags und mittwochs statt.|The courses take place on Mondays and Wednesdays each week.|B
+kürzlich|–|recently|Ich habe kürzlich einen alten Freund getroffen.|I recently met an old friend.|B
+lange|–|for a long time|Wir haben lange auf den Bus gewartet.|We waited a long time for the bus.|A
+links|–|on the left|Die Apotheke ist gleich hier links.|The chemist's is just here on the left.|A
+längst|–|long ago|Das habe ich dir doch längst erzählt.|I told you that long ago.|B
+meinetwegen|–|as far as I'm concerned|Meinetwegen können wir auch morgen fahren.|As far as I'm concerned, we can go tomorrow instead.|B
+möglichst|–|as ... as possible|Bitte antworten Sie möglichst schnell auf meine E-Mail.|Please reply to my email as quickly as possible.|B
+nebenan|–|next door|Nebenan wohnt eine junge Familie mit zwei Kindern.|A young family with two children lives next door.|B
+nebenbei|–|on the side|Sie studiert und arbeitet nebenbei in einem Café.|She is studying and works in a café on the side.|B
+nein|–|no|Nein, ich habe heute leider keine Zeit.|No, unfortunately I have no time today.|A
+nicht|negation|not|Ich kann heute Abend nicht kommen.|I cannot come this evening.|A
+nichts|–|nothing|Ich habe heute noch nichts gegessen.|I have not eaten anything yet today.|A
+nirgendwo|–|nowhere|Ich kann meine Brille nirgendwo finden.|I cannot find my glasses anywhere.|B
+noch|–|still|Mein Bruder wohnt noch bei unseren Eltern.|My brother still lives with our parents.|A
+nochmals|–|once again|Nochmals vielen Dank für Ihre Hilfe.|Once again, many thanks for your help.|B
+rechts|–|on the right|An der Ampel müssen Sie rechts abbiegen.|You have to turn right at the traffic lights.|A
+schade|–|a pity|Es ist schade, dass du nicht mitkommen kannst.|It is a pity that you cannot come along.|A
+schon|–|already|Ich bin schon seit einer Stunde hier.|I have already been here for an hour.|A
+selber|colloquial for selbst|oneself|Den Kuchen habe ich selber gebacken.|I baked the cake myself.|B
+sich|reflexive pronoun|oneself|Er hat sich sehr über das Geschenk gefreut.|He was very pleased with the present.|A
+so|–|so, like this|Warum bist du heute so müde?|Why are you so tired today?|A
+soviel|verb at the end|as far as|Soviel ich weiß, hat das Geschäft heute geschlossen.|As far as I know, the shop is closed today.|B
+spätestens|–|at the latest|Ich bin spätestens um acht Uhr zurück.|I will be back by eight o'clock at the latest.|B
+total|colloquial|totally|Nach der Arbeit war ich total müde.|After work I was totally tired.|B
+umgekehrt|–|the other way round|Nein, es war genau umgekehrt.|No, it was exactly the other way round.|B
+umso|with je + comparative|all the more|Je mehr du übst, umso besser sprichst du.|The more you practise, the better you speak.|B
+unten|–|downstairs, below|Die Waschmaschine steht unten im Keller.|The washing machine is downstairs in the cellar.|A
+vermutlich|–|presumably|Er kommt vermutlich etwas später.|He will presumably come a little later.|B
+voneinander|–|from each other|Wir können viel voneinander lernen.|We can learn a lot from each other.|B
+voraus|often: im Voraus|ahead, in advance|Vielen Dank im Voraus für Ihre Antwort.|Many thanks in advance for your reply.|B
+voraussichtlich|–|probably, expected to|Der Zug kommt voraussichtlich zehn Minuten später an.|The train is expected to arrive ten minutes late.|B
+vorgestern|–|the day before yesterday|Vorgestern waren wir im Kino.|We were at the cinema the day before yesterday.|A
+vorhin|–|a moment ago|Deine Mutter hat vorhin angerufen.|Your mother rang a moment ago.|B
+vorn|–|at the front|Im Bus sitze ich am liebsten vorn.|On the bus I prefer to sit at the front.|A
+völlig|–|completely|Ich habe den Termin völlig vergessen.|I completely forgot the appointment.|B
+wann|question word|when|Wann fängt der Deutschkurs an?|When does the German course start?|A
+weshalb|question word|why|Weshalb bist du gestern nicht gekommen?|Why did you not come yesterday?|B
+wie|question word|how|Wie komme ich am besten zum Bahnhof?|What is the best way to get to the station?|A
+wirklich|–|really|Der Kuchen schmeckt wirklich gut.|The cake tastes really good.|A
+wohl|expresses probability|probably|Er ist wohl noch im Büro.|He is probably still at the office.|B
+zuletzt|–|last, finally|Wann hast du ihn zuletzt gesehen?|When did you last see him?|B
+zumindest|–|at least|Du hättest zumindest anrufen können.|You could at least have rung.|B
+zunächst|–|first of all|Zunächst möchte ich mich kurz vorstellen.|First of all I would like to introduce myself briefly.|B
+zwar|with aber|admittedly|Die Wohnung ist zwar klein, aber sehr gemütlich.|The flat is admittedly small, but very cosy.|B
+übermorgen|–|the day after tomorrow|Übermorgen fahren wir in den Urlaub.|The day after tomorrow we are going on holiday.|A`;
