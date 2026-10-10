@@ -107,7 +107,9 @@ details.topics summary small{color:var(--muted);font-weight:500}
 .row{display:flex;flex-wrap:wrap;gap:10px}
 .row>*{flex:1 1 120px}
 .btn{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;font-weight:600;text-align:center}
-.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary,.btn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+#auxRow .btn{font-family:var(--word);font-size:1.15rem}
+#auxRow.need .btn{border-color:var(--die)}
 .btn kbd{font:inherit;font-size:.75rem;color:var(--muted);margin-left:.5em;font-weight:500}
 .btn.primary kbd{color:inherit;opacity:.65}
 .artbtn{border:2px solid;border-radius:12px;padding:16px 8px;font-family:var(--word);font-weight:700;font-size:1.5rem}
@@ -643,14 +645,18 @@ function tipFor(w){
 }
 
 const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
-const MODES=[["cards","Cards"],["article","Artikel"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
+const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
 let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true};
 try{const s=JSON.parse(localStorage.getItem("b1wortschatz")||"null"); if(s&&s.p) store=Object.assign(store,s);}catch(e){}
 function save(){try{localStorage.setItem("b1wortschatz",JSON.stringify(store));}catch(e){}}
-const prog=w=>store.p[w.de]||{box:0,due:0};
+const key=w=>(store.mode==="perfekt"?"perf:":"")+w.de;
+const prog=(w,k=key(w))=>store.p[k]||{box:0,due:0};
+// "fährt ab · fuhr ab · ist abgefahren" -> {aux:"ist", mid:"", part:"abgefahren"}
+const perf=w=>{const t=w.pl.split(" · ")[2].split(" ");return {aux:t[0],mid:t.slice(1,-1).join(" "),part:t[t.length-1]};};
+const perfText=w=>{const f=perf(w);return "er "+[f.aux,f.mid,f.part].filter(Boolean).join(" ");};
 function grade(w,ok){
   const p=prog(w); const box=ok?Math.min(5,p.box+1):1;
-  store.p[w.de]={box,due:Date.now()+GAPS[box]*DAY}; save();
+  store.p[key(w)]={box,due:Date.now()+GAPS[box]*DAY}; save();
 }
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
@@ -659,31 +665,62 @@ const canSpeak="speechSynthesis" in window;
 function say(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="de-DE";u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
 const sayBtn=w=>canSpeak?`<button class="say" data-act="say" data-t="${esc(label(w))}">Listen</button>`:"";
 const $=id=>document.getElementById(id);
-// Answer sounds are small generated WAV clips played through <audio>, which phones play
-// more reliably than Web Audio (on iPhone, Web Audio is silenced by the ring/silent switch).
-function wav(notes,buzz){
-  const sr=22050, n=Math.floor(sr*(Math.max(...notes.map(x=>x[1]+x[2]))+.05)), d=new DataView(new ArrayBuffer(44+n*2));
+// Answer sounds: generated once, then played through Web Audio so they start the instant you tap.
+// <audio> is the fallback (slower to start), used where Web Audio is missing or would be silenced
+// by the iPhone ring/silent switch (older iOS without the audioSession API).
+const SR=22050, CLIPS={ok:[[[659,0,.14],[988,.12,.3]],false,1],no:[[[311,0,.18],[233,.17,.32]],true,1],next:[[[523,0,.09]],false,.8]};
+function synth(notes,buzz){
+  const n=Math.floor(SR*(Math.max(...notes.map(x=>x[1]+x[2]))+.05)), out=new Float32Array(n);
+  for(let i=0;i<n;i++){
+    const t=i/SR; let v=0;
+    notes.forEach(([f,at,len])=>{const x=t-at; if(x<0||x>len) return; const env=Math.min(1,x/.004)*Math.exp(-2.2*x/len), ph=x*f; v+=env*(buzz?(2*(ph%1)-1)*.8:Math.sin(2*Math.PI*ph)*.8+Math.sin(4*Math.PI*ph)*.2);});
+    out[i]=Math.max(-1,Math.min(1,v));
+  }
+  return out;
+}
+function wavUrl(pcm){
+  const n=pcm.length, d=new DataView(new ArrayBuffer(44+n*2));
   const str=(o,t)=>[...t].forEach((c,i)=>d.setUint8(o+i,c.charCodeAt(0)));
   str(0,"RIFF");d.setUint32(4,36+n*2,true);str(8,"WAVEfmt ");d.setUint32(16,16,true);d.setUint16(20,1,true);d.setUint16(22,1,true);
-  d.setUint32(24,sr,true);d.setUint32(28,sr*2,true);d.setUint16(32,2,true);d.setUint16(34,16,true);str(36,"data");d.setUint32(40,n*2,true);
-  for(let i=0;i<n;i++){
-    const t=i/sr; let v=0;
-    notes.forEach(([f,at,len])=>{const x=t-at; if(x<0||x>len) return; const env=Math.min(1,x/.008)*Math.exp(-4*x/len), ph=x*f; v+=env*(buzz?(2*(ph%1)-1)*.4:Math.sin(2*Math.PI*ph)*.7);});
-    d.setInt16(44+i*2,Math.max(-1,Math.min(1,v))*32767,true);
-  }
+  d.setUint32(24,SR,true);d.setUint32(28,SR*2,true);d.setUint16(32,2,true);d.setUint16(34,16,true);str(36,"data");d.setUint32(40,n*2,true);
+  for(let i=0;i<n;i++) d.setInt16(44+i*2,pcm[i]*32767,true);
   let bin=""; const u=new Uint8Array(d.buffer); for(let i=0;i<u.length;i++) bin+=String.fromCharCode(u[i]);
   return "data:audio/wav;base64,"+btoa(bin);
 }
-let snd=null;
-try{
-  snd={ok:new Audio(wav([[659,0,.14],[988,.12,.3]],false)),no:new Audio(wav([[208,0,.18],[156,.17,.32]],true)),next:new Audio(wav([[523,0,.07]],false))};
-  snd.next.volume=.6;
-  snd.ok.preload=snd.no.preload=snd.next.preload="auto";
-  if(navigator.audioSession) navigator.audioSession.type="playback";
-}catch(e){}
+const PCM={}, bufs={}, tags={};
+for(const k in CLIPS) PCM[k]=synth(CLIPS[k][0],CLIPS[k][1]);
+const AC=window.AudioContext||window.webkitAudioContext;
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+try{ if(navigator.audioSession) navigator.audioSession.type="playback"; }catch(e){}
+const fastAudio=!!AC&&(!isIOS||!!navigator.audioSession);
+let actx=null;
+// Runs on every touch or key press so the audio engine is already awake when an answer is given.
+function unlock(){
+  if(!fastAudio) return;
+  try{
+    if(!actx){
+      actx=new AC({latencyHint:"interactive"});
+      for(const k in PCM){const b=actx.createBuffer(1,PCM[k].length,SR); b.getChannelData(0).set(PCM[k]); bufs[k]=b;}
+    }
+    if(actx.state!=="running") actx.resume();
+  }catch(e){}
+}
+document.addEventListener("pointerdown",unlock,true);
+document.addEventListener("keydown",unlock,true);
+if(!fastAudio) try{ for(const k in PCM){tags[k]=new Audio(wavUrl(PCM[k])); tags[k].preload="auto";} }catch(e){}
 function tone(ok){
-  if(store.sound===false||!snd) return;
-  try{const a=ok==="next"?snd.next:ok?snd.ok:snd.no; a.currentTime=0; const p=a.play(); if(p&&p.catch) p.catch(()=>{});}catch(e){}
+  if(store.sound===false) return;
+  const k=ok==="next"?"next":ok?"ok":"no";
+  try{
+    unlock();
+    if(actx&&actx.state==="running"){
+      const src=actx.createBufferSource(), g=actx.createGain();
+      src.buffer=bufs[k]; g.gain.value=CLIPS[k][2]; src.connect(g); g.connect(actx.destination); src.start();
+      return;
+    }
+    const a=tags[k]||(tags[k]=new Audio(wavUrl(PCM[k]))); a.volume=CLIPS[k][2]; a.currentTime=0;
+    const p=a.play(); if(p&&p.catch) p.catch(()=>{});
+  }catch(e){}
 }
 
 let S=null, query="", confirmReset=false;
@@ -700,6 +737,7 @@ function prep(){
   S.phase="ask";S.picked=null;S.verdict=null;S.opts=null;S.tr=false;
   const w=S.queue[S.i]; if(!w) return;
   if(store.mode==="write") S.tiles=shuffle(w.de.split(""));
+  if(store.mode==="perfekt"){S.tiles=shuffle(perf(w).part.split(""));S.aux=null;}
   if(store.mode==="meaning"){
     const others=shuffle(WORDS.filter(x=>x.kind===w.kind&&x.en!==w.en)).slice(0,3).map(x=>x.en);
     S.opts=shuffle(others.concat(w.en));
@@ -714,9 +752,9 @@ function answer(ok){
 }
 function next(){S.i++;prep();render();}
 
-function stats(list){
+function stats(list,pre=""){
   const now=Date.now(); let m=0,l=0,d=0;
-  list.forEach(w=>{const p=prog(w); if(p.box>=4)m++; else if(p.box>0)l++; if(p.box>0&&p.due<=now)d++;});
+  list.forEach(w=>{const p=prog(w,pre+w.de); if(p.box>=4)m++; else if(p.box>0)l++; if(p.box>0&&p.due<=now)d++;});
   return {m,l,d,n:list.length};
 }
 const bar=s=>`<div class="bar" role="img" aria-label="${s.m} mastered, ${s.l} learning, ${s.n-s.m-s.l} new"><i class="m" style="width:${s.m/s.n*100}%"></i><i class="l" style="width:${s.l/s.n*100}%"></i></div>`;
@@ -725,6 +763,7 @@ function renderProfile(st){
   st.innerHTML=`<div class="done"><h2>Profile</h2></div>
   <div class="profile">${bar(all)}<div class="counts"><span><i class="dot m"></i><b>${all.m}</b> mastered</span><span><i class="dot l"></i><b>${all.l}</b> learning</span><span><i class="dot n"></i><b>${all.n-all.m-all.l}</b> new</span><span><b>${all.d}</b> due</span></div></div>`+
   KINDS.map(([id,name])=>{const k=stats(WORDS.filter(w=>w.kind===id));return `<div class="profile"><div class="meta"><span>${name}</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;}).join("")+
+  (()=>{const k=stats(WORDS.filter(w=>w.kind==="verb"),"perf:");return `<div class="profile"><div class="meta"><span>Perfekt</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   `<div class="sub">Correct words return after 1, 2, 4, 7 and 14 days.</div><div class="spacer"></div><div class="row">`+
   (confirmReset
     ?`<button class="btn" data-act="reset-no">Keep progress</button><button class="btn primary" data-act="reset-yes">Erase everything</button>`
@@ -739,7 +778,7 @@ function renderChrome(){
     NOUN_TOPICS.map(t=>`<button class="chip" data-act="topic" data-id="${t.id}" aria-pressed="${store.topics.includes(t.id)}" title="${esc(t.en)}">${esc(t.de)}</button>`).join("");
   $("topicsBox").hidden=prof||store.kind!=="noun";
   $("kinds").innerHTML=KINDS.map(([id,name])=>`<button data-act="kind" data-id="${id}" aria-pressed="${store.kind===id}">${name}</button>`).join("");
-  $("modes").innerHTML=MODES.filter(([id])=>id!=="article"||store.kind==="noun").map(([id,label])=>`<button role="tab" data-act="mode" data-id="${id}" aria-selected="${store.mode===id}">${label}</button>`).join("");
+  $("modes").innerHTML=MODES.filter(([id])=>(id!=="article"||store.kind==="noun")&&(id!=="perfekt"||store.kind==="verb")).map(([id,label])=>`<button role="tab" data-act="mode" data-id="${id}" aria-selected="${store.mode===id}">${label}</button>`).join("");
 }
 const head=w=>`<div class="meta"><span>${esc(TOPICS[w.topic].de)}</span><span>${Math.min(S.i+1,S.queue.length)} / ${S.queue.length}</span></div>`;
 const info=w=>w.pl==="–"?(w.kind==="noun"?`<div class="sub">Plural: not used</div>`:""):`<div class="sub">${INFO[w.kind]}: ${esc(w.pl)}</div>`;
@@ -787,6 +826,20 @@ function render(){
     h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt ${done&&o===w.en?"hit":""} ${done&&o===S.picked&&o!==w.en?"miss":""}" data-act="opt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
     if(done) h+=nextBtn;
   }
+  if(store.mode==="perfekt"){
+    const f=perf(w);
+    if(S.phase==="ask"){
+      h+=`<div class="prompt"><div class="sub">Perfekt: er${f.mid?" … "+esc(f.mid):""} …</div><p class="big">${esc(w.de)}</p><div class="en">${esc(w.en)}</div></div>
+      <form class="write" id="perfForm" autocomplete="off">
+      <div class="row" id="auxRow">${["hat","ist"].map(a=>`<button type="button" class="btn" data-act="aux" data-a="${a}" aria-pressed="false">${a}</button>`).join("")}</div>
+      <input id="answer" type="text" placeholder="Partizip II …" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Past participle">
+      <div class="keys" id="tiles">${S.tiles.map(c=>`<button type="button" data-act="key" data-k="${esc(c)}">${esc(c)}</button>`).join("")}<button type="button" data-act="back" aria-label="Delete last letter">⌫</button></div>
+      <div class="row"><button type="button" class="btn" data-act="giveup">I don't know</button><button class="btn primary" type="submit">Check <kbd>Enter</kbd></button></div></form>`;
+    }else{
+      h+=`<div class="verdict ${S.verdict?"ok":"no"}">${esc(S.picked)}</div>
+      <div class="prompt"><p class="big">${esc(perfText(w))}</p><div class="sub">${esc(w.de)} · ${esc(w.en)}</div>${canSpeak?`<button class="say" data-act="say" data-t="${esc(perfText(w))}">Listen</button>`:""}</div>${exBlock(w)}`+nextBtn;
+    }
+  }
   if(store.mode==="write"){
     if(S.phase==="ask"){
       h+=`<div class="prompt"><div class="sub">${{noun:"Write it in German, with its article",verb:"Write the German verb (infinitive)",adj:"Write the German adjective"}[w.kind]}</div><p class="big">${esc(w.en)}</p></div>
@@ -827,6 +880,13 @@ function updateTiles(){
     const k=left.findIndex(c=>f(c)===f(b.dataset.k)); if(k>=0){b.disabled=true;left.splice(k,1);}
   }));
 }
+function checkPerf(val,gaveUp){
+  const f=perf(S.queue[S.i]);
+  if(!gaveUp&&!S.aux){$("auxRow").classList.add("need");return;}
+  const partOk=norm(val).replace(/^sich /,"")===norm(f.part), auxOk=S.aux===f.aux, ok=partOk&&auxOk&&!gaveUp;
+  S.picked=ok?"Richtig!":gaveUp?"Here is the answer.":partOk?`Right participle, but this verb takes “${f.aux}”.`:auxOk?`“${f.aux}” is right, but the participle is different.`:"Not quite.";
+  answer(ok); render();
+}
 function checkWrite(val){
   const w=S.queue[S.i], v=norm(val), noun=norm(w.de);
   const ok=v===norm(label(w));
@@ -847,7 +907,7 @@ document.addEventListener("click",e=>{
     else{const id=+b.dataset.id,i=store.topics.indexOf(id); i<0?store.topics.push(id):store.topics.splice(i,1); if(store.topics.length===NOUN_TOPICS.length) store.topics=[];}
     save();S=null;return render();
   }
-  if(a==="kind"){store.kind=b.dataset.id;if(store.mode==="article"&&store.kind!=="noun")store.mode="cards";save();S=null;query="";return render();}
+  if(a==="kind"){store.kind=b.dataset.id;if((store.mode==="article"&&store.kind!=="noun")||(store.mode==="perfekt"&&store.kind!=="verb"))store.mode="cards";save();S=null;query="";return render();}
   if(a==="tr"){S.tr=!S.tr;return render();}
   if(a==="sound"){store.sound=store.sound===false;save();if(store.sound)tone(true);return render();}
   if(a==="reset"){confirmReset=true;return render();}
@@ -860,11 +920,13 @@ document.addEventListener("click",e=>{
   if(a==="key"){$("answer").value+=b.dataset.k;return updateTiles();}
   if(a==="artkey"){const i=$("answer");i.value=b.dataset.k+" "+i.value.replace(/^(der|die|das)\s*/i,"");return updateTiles();}
   if(a==="back"){const i=$("answer");i.value=i.value.slice(0,-1);return updateTiles();}
-  if(a==="giveup") return checkWrite("");
+  if(a==="giveup") return store.mode==="perfekt"?checkPerf("",true):checkWrite("");
+  if(a==="aux"){S.aux=b.dataset.a;$("auxRow").classList.remove("need");$("auxRow").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));return;}
   if(a==="next"){tone("next");return next();}
   if(a==="again"){tone("next");S=null;return render();}
 });
-document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventDefault();checkWrite($("answer").value);} });
+document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventDefault();checkWrite($("answer").value);}
+  if(e.target.id==="perfForm"){e.preventDefault();checkPerf($("answer").value,false);} });
 document.addEventListener("input",e=>{
   if(e.target.id==="answer") updateTiles();
   if(e.target.id==="search"){query=e.target.value;renderList($("stage"));const s=$("search");s.focus();s.setSelectionRange(query.length,query.length);}
