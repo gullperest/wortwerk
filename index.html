@@ -111,8 +111,9 @@ details.topics summary small{color:var(--muted);font-weight:500}
 .popt{font-family:var(--word);font-size:1.08rem}
 .sent{font-family:var(--word);font-weight:500;font-size:1.4rem;line-height:1.35;margin:0;overflow-wrap:anywhere}
 .sent b{color:var(--das)}
-.tabchips{padding:0}
 .tablewrap{overflow-x:auto}
+.tablewrap .meta{font-family:var(--word);text-transform:none;letter-spacing:0;font-size:1rem}
+.tablewrap .meta span:first-child{color:var(--ink);font-weight:700;font-size:1.15rem}
 .ptable{border-collapse:collapse;width:100%}
 .ptable th,.ptable td{padding:10px 6px;text-align:left;border-bottom:1px solid var(--line)}
 .ptable thead th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
@@ -221,14 +222,15 @@ function possForms(w){
 // Reference table: every form of each possessive article, by case and gender.
 const PTAB=[["mein","ich"],["dein","du"],["sein","er · es"],["ihr","sie (she · they)"],["unser","wir"],["euer","ihr"],["Ihr","Sie (formal)"]];
 const PEND=[["Nom.",["","e","","e"]],["Akk.",["en","e","","e"]],["Dat.",["em","er","em","en"]],["Gen.",["es","er","es","er"]]];
-let possTable=false, possIdx=0;
+let possTable=false;
 function renderPossTable(st){
-  const stem=PTAB[possIdx][0], base=stem==="euer"?"eur":stem;
-  st.innerHTML=`<div class="meta"><span>Possessivartikel</span><span>${esc(PTAB[possIdx][1])}</span></div>
-  <div class="chips tabchips">${PTAB.map(([t],i)=>`<button class="chip" data-act="pstem" data-i="${i}" aria-pressed="${i===possIdx}">${t}</button>`).join("")}</div>
-  <div class="tablewrap"><table class="ptable"><thead><tr><th></th><th class="der">mask.</th><th class="die">fem.</th><th class="das">neutr.</th><th>Plural</th></tr></thead>
-  <tbody>${PEND.map(([c,e])=>`<tr><th>${c}</th>${e.map(x=>`<td>${x?base:stem}<b>${x}</b></td>`).join("")}</tr>`).join("")}</tbody></table></div>
-  <div class="spacer"></div><div class="row"><button class="btn primary" data-act="ptab">Back to practice</button></div>`;
+  const head=`<thead><tr><th></th><th class="der">mask.</th><th class="die">fem.</th><th class="das">neutr.</th><th>Plural</th></tr></thead>`;
+  st.innerHTML=`<div class="row"><button class="btn primary" data-act="ptab">Back to practice</button></div>`+
+  PTAB.map(([stem,who])=>{
+    const base=stem==="euer"?"eur":stem;
+    return `<div class="tablewrap"><div class="meta"><span>${stem}</span><span>${esc(who)}</span></div><table class="ptable">${head}
+    <tbody>${PEND.map(([c,e])=>`<tr><th>${c}</th>${e.map(x=>`<td>${x?base:stem}<b>${x}</b></td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  }).join("")+`<div class="row"><button class="btn primary" data-act="ptab">Back to practice</button></div>`;
 }
 const KINDS=[["noun","Nomen"],["verb","Verben"],["adj","Adjektive"],["other","Andere"],["mine","Meine"]];
 const INFO={noun:"Plural",verb:"Forms",adj:"Opposite",other:"Use"};
@@ -596,7 +598,6 @@ document.addEventListener("click",e=>{
   if(a==="back"){const i=$("answer");i.value=i.value.slice(0,-1);return updateTiles();}
   if(a==="giveup") return checkWrite("");
   if(a==="ptab"){possTable=!possTable;return render();}
-  if(a==="pstem"){possIdx=+b.dataset.i;return render();}
   if(a==="sopt"){S.picked=S.opts[+b.dataset.i];answer(S.picked===S.queue[S.i].ans);return render();}
   if(a==="popt"){
     const f=perf(S.queue[S.i]); S.picked=S.opts[+b.dataset.i];
