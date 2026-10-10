@@ -98,7 +98,7 @@ details.topics summary small{color:var(--muted);font-weight:500}
 .ex p.tr{font-family:var(--ui);font-weight:400;color:var(--muted);font-size:.98rem}
 .ex .link{font-size:.85rem}
 .kinds{display:flex;gap:4px;background:var(--sunk);padding:4px;border-radius:10px}
-.kinds button{flex:1 1 0;min-width:0;border:0;background:transparent;padding:7px 4px;border-radius:7px;font-weight:600;color:var(--muted)}
+.kinds button{flex:1 1 0;min-width:0;border:0;background:transparent;padding:9px 2px;font-size:.95rem;border-radius:7px;font-weight:600;color:var(--muted)}
 .kinds button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
 .kinds small{display:block;font-weight:500;font-size:.76rem;font-variant-numeric:tabular-nums}
 .tip{font-size:.92rem;background:var(--mark-bg);border-radius:8px;padding:8px 12px}
@@ -184,449 +184,15 @@ footer .row>*{flex:0 0 auto}
   <main class="stage" id="stage"></main>
 </div>
 
+<script src="words.js"></script>
 <script>
-const DATA = [
-["Arbeit & Beruf","Work",`der|Arbeitgeber|die Arbeitgeber|employer|Mein Arbeitgeber bezahlt die Fahrkarte.|My employer pays for the ticket.
-der|Arbeitnehmer|die Arbeitnehmer|employee|Jeder Arbeitnehmer hat Anspruch auf Urlaub.|Every employee is entitled to holiday.
-die|Bewerbung|die Bewerbungen|job application|Ich habe gestern meine Bewerbung abgeschickt.|I sent off my application yesterday.
-der|Lebenslauf|die Lebensläufe|CV, résumé|Bitte schicken Sie uns Ihren Lebenslauf.|Please send us your CV.
-das|Vorstellungsgespräch|die Vorstellungsgespräche|job interview|Morgen habe ich ein Vorstellungsgespräch.|I have a job interview tomorrow.
-das|Gehalt|die Gehälter|salary|Das Gehalt wird am Monatsende überwiesen.|The salary is transferred at the end of the month.
-die|Stelle|die Stellen|position, job|Die Firma hat eine neue Stelle ausgeschrieben.|The company has advertised a new position.
-der|Betrieb|die Betriebe|company, business|In unserem Betrieb arbeiten fünfzig Personen.|Fifty people work in our company.
-die|Abteilung|die Abteilungen|department|Sie leitet die Abteilung für Kundenservice.|She heads the customer service department.
-der|Vertrag|die Verträge|contract|Ich habe den Vertrag schon unterschrieben.|I have already signed the contract.
-die|Kündigung|die Kündigungen|notice, dismissal|Er hat gestern seine Kündigung bekommen.|He received his notice yesterday.
-die|Überstunde|die Überstunden|hour of overtime|Diese Woche musste ich viele Überstunden machen.|I had to work a lot of overtime this week.
-die|Erfahrung|die Erfahrungen|experience (knowledge gained)|Sie hat viel Erfahrung im Verkauf.|She has a lot of experience in sales.
-die|Ausbildung|die Ausbildungen|vocational training|Nach der Schule macht er eine Ausbildung als Koch.|After school he is training as a chef.
-das|Praktikum|die Praktika|internship|Im Sommer mache ich ein Praktikum bei einer Zeitung.|In summer I am doing an internship at a newspaper.
-der|Kollege|die Kollegen|colleague|Mein Kollege hilft mir bei dem Projekt.|My colleague is helping me with the project.
-die|Besprechung|die Besprechungen|meeting|Die Besprechung beginnt um zehn Uhr.|The meeting starts at ten o'clock.
-der|Termin|die Termine|appointment|Können wir den Termin verschieben?|Can we move the appointment?
-die|Schicht|die Schichten|shift|Nächste Woche habe ich die frühe Schicht.|Next week I am on the early shift.
-der|Feierabend|die Feierabende|end of the working day|Nach Feierabend gehe ich ins Fitnessstudio.|After work I go to the gym.
-die|Verantwortung|–|responsibility|Als Chefin trägt sie viel Verantwortung.|As the boss she carries a lot of responsibility.
-der|Lohn|die Löhne|wage|Der Lohn ist in dieser Branche niedrig.|Wages are low in this industry.
-die|Gewerkschaft|die Gewerkschaften|trade union|Die Gewerkschaft fordert mehr Geld.|The union is demanding more money.
-das|Zeugnis|die Zeugnisse|certificate, school report|Bitte legen Sie Ihre Zeugnisse bei.|Please enclose your certificates.
-der|Rentner|die Rentner|pensioner|Mein Großvater ist seit zwei Jahren Rentner.|My grandfather has been a pensioner for two years.`],
-["Wohnen","Housing",`die|Miete|die Mieten|rent|Die Miete ist in dieser Stadt sehr hoch.|Rent is very high in this city.
-der|Vermieter|die Vermieter|landlord|Der Vermieter wohnt im selben Haus.|The landlord lives in the same building.
-der|Mieter|die Mieter|tenant|Der neue Mieter zieht im Mai ein.|The new tenant moves in in May.
-die|Kaution|die Kautionen|deposit|Die Kaution beträgt drei Monatsmieten.|The deposit is three months' rent.
-der|Umzug|die Umzüge|move (to a new home)|Beim Umzug haben mir Freunde geholfen.|Friends helped me with the move.
-das|Erdgeschoss|die Erdgeschosse|ground floor|Die Wohnung liegt im Erdgeschoss.|The flat is on the ground floor.
-das|Stockwerk|die Stockwerke|floor, storey|Das Haus hat fünf Stockwerke.|The building has five floors.
-der|Keller|die Keller|cellar|Die Fahrräder stehen im Keller.|The bikes are in the cellar.
-die|Heizung|die Heizungen|heating|Die Heizung funktioniert seit gestern nicht.|The heating has not been working since yesterday.
-der|Nachbar|die Nachbarn|neighbour|Unser Nachbar ist sehr hilfsbereit.|Our neighbour is very helpful.
-das|Gebäude|die Gebäude|building|Das Gebäude wurde 1950 gebaut.|The building was built in 1950.
-der|Aufzug|die Aufzüge|lift, elevator|Der Aufzug ist leider kaputt.|Unfortunately the lift is broken.
-die|Einrichtung|die Einrichtungen|furnishings|Die Einrichtung der Wohnung ist modern.|The flat's furnishings are modern.
-das|Möbelstück|die Möbelstücke|piece of furniture|Dieses Möbelstück habe ich geerbt.|I inherited this piece of furniture.
-der|Haushalt|die Haushalte|household|Wir teilen uns die Arbeit im Haushalt.|We share the housework.
-der|Müll|–|rubbish|Bringst du bitte den Müll raus?|Could you take the rubbish out, please?
-die|Steckdose|die Steckdosen|power socket|Neben dem Bett gibt es keine Steckdose.|There is no socket next to the bed.
-der|Schlüssel|die Schlüssel|key|Ich habe meinen Schlüssel verloren.|I have lost my key.
-die|Wohngemeinschaft|die Wohngemeinschaften|shared flat|Als Student habe ich in einer Wohngemeinschaft gelebt.|As a student I lived in a shared flat.
-das|Dach|die Dächer|roof|Das Dach muss repariert werden.|The roof needs to be repaired.
-der|Balkon|die Balkone|balcony|Im Sommer frühstücken wir auf dem Balkon.|In summer we have breakfast on the balcony.
-die|Umgebung|die Umgebungen|surroundings, area|In der Umgebung gibt es viele Parks.|There are many parks in the area.
-der|Vorort|die Vororte|suburb|Sie wohnen in einem ruhigen Vorort.|They live in a quiet suburb.
-das|Grundstück|die Grundstücke|plot of land|Das Grundstück ist sehr groß.|The plot is very large.
-die|Reparatur|die Reparaturen|repair|Die Reparatur hat zwei Stunden gedauert.|The repair took two hours.
-der|Hausmeister|die Hausmeister|caretaker|Der Hausmeister kümmert sich um den Garten.|The caretaker looks after the garden.
-der|Strom|–|electricity|Wir wollen weniger Strom verbrauchen.|We want to use less electricity.`],
-["Gesundheit","Health",`die|Gesundheit|–|health|Rauchen schadet der Gesundheit.|Smoking damages your health.
-die|Krankheit|die Krankheiten|illness|Diese Krankheit ist nicht gefährlich.|This illness is not dangerous.
-der|Schmerz|die Schmerzen|pain|Ich habe starke Schmerzen im Rücken.|I have severe pain in my back.
-das|Fieber|–|fever|Das Kind hat hohes Fieber.|The child has a high fever.
-die|Erkältung|die Erkältungen|cold (illness)|Ich habe eine leichte Erkältung.|I have a slight cold.
-der|Husten|–|cough|Gegen den Husten trinke ich Tee.|I drink tea for my cough.
-das|Rezept|die Rezepte|prescription; recipe|Dieses Medikament gibt es nur auf Rezept.|This medicine is only available on prescription.
-das|Medikament|die Medikamente|medicine, drug|Nehmen Sie das Medikament nach dem Essen.|Take the medicine after eating.
-die|Tablette|die Tabletten|pill, tablet|Ich nehme jeden Morgen eine Tablette.|I take a tablet every morning.
-die|Apotheke|die Apotheken|pharmacy|Die Apotheke hat heute Notdienst.|The pharmacy is on emergency duty today.
-die|Sprechstunde|die Sprechstunden|consultation hours|Die Sprechstunde ist von acht bis zwölf Uhr.|Consultation hours are from eight to twelve.
-die|Untersuchung|die Untersuchungen|medical examination|Die Untersuchung dauert nur zehn Minuten.|The examination only takes ten minutes.
-die|Krankenkasse|die Krankenkassen|health insurance fund|Die Krankenkasse bezahlt die Behandlung.|The health insurance pays for the treatment.
-die|Versicherung|die Versicherungen|insurance|Haben Sie eine Versicherung für das Auto?|Do you have insurance for the car?
-der|Unfall|die Unfälle|accident|Auf der Autobahn ist ein Unfall passiert.|There has been an accident on the motorway.
-die|Verletzung|die Verletzungen|injury|Die Verletzung war zum Glück nicht schwer.|Luckily the injury was not serious.
-der|Notfall|die Notfälle|emergency|Im Notfall rufen Sie bitte diese Nummer an.|In an emergency please call this number.
-das|Krankenhaus|die Krankenhäuser|hospital|Sie musste eine Woche im Krankenhaus bleiben.|She had to stay in hospital for a week.
-die|Operation|die Operationen|operation, surgery|Die Operation ist gut verlaufen.|The operation went well.
-der|Verband|die Verbände|bandage|Die Ärztin hat mir einen Verband gemacht.|The doctor put a bandage on me.
-die|Ernährung|–|diet, nutrition|Eine gesunde Ernährung ist wichtig.|A healthy diet is important.
-die|Bewegung|die Bewegungen|exercise, movement|Bewegung an der frischen Luft tut gut.|Exercise in the fresh air does you good.
-das|Gewicht|die Gewichte|weight|Der Arzt kontrolliert mein Gewicht.|The doctor checks my weight.
-der|Stress|–|stress|Bei der Arbeit habe ich zurzeit viel Stress.|I have a lot of stress at work at the moment.
-die|Impfung|die Impfungen|vaccination|Für die Reise brauchst du eine Impfung.|You need a vaccination for the trip.
-der|Krankenwagen|die Krankenwagen|ambulance|Der Krankenwagen kam nach fünf Minuten.|The ambulance came after five minutes.
-die|Besserung|–|recovery, improvement|Ich wünsche dir gute Besserung!|Get well soon!`],
-["Reisen & Verkehr","Travel & transport",`die|Abfahrt|die Abfahrten|departure|Die Abfahrt ist um 9:15 Uhr.|Departure is at 9:15.
-die|Ankunft|die Ankünfte|arrival|Die Ankunft in Berlin ist um 14 Uhr.|Arrival in Berlin is at 2 pm.
-die|Verspätung|die Verspätungen|delay|Der Zug hat zwanzig Minuten Verspätung.|The train is twenty minutes late.
-der|Anschluss|die Anschlüsse|connection|Wir haben den Anschluss in Köln verpasst.|We missed our connection in Cologne.
-der|Bahnsteig|die Bahnsteige|platform|Bitte warten Sie auf dem Bahnsteig.|Please wait on the platform.
-das|Gleis|die Gleise|track, platform number|Der Zug fährt heute von Gleis drei ab.|Today the train leaves from platform three.
-die|Fahrkarte|die Fahrkarten|ticket (transport)|Ich kaufe die Fahrkarte am Automaten.|I buy the ticket at the machine.
-der|Fahrplan|die Fahrpläne|timetable (transport)|Der neue Fahrplan gilt ab Dezember.|The new timetable applies from December.
-die|Haltestelle|die Haltestellen|stop (bus, tram)|Die Haltestelle ist direkt vor dem Haus.|The stop is right in front of the house.
-der|Stau|die Staus|traffic jam|Wir standen eine Stunde im Stau.|We were stuck in a traffic jam for an hour.
-die|Kreuzung|die Kreuzungen|crossroads, junction|An der Kreuzung müssen Sie links abbiegen.|You have to turn left at the junction.
-die|Ampel|die Ampeln|traffic light|Die Ampel ist rot.|The traffic light is red.
-der|Führerschein|die Führerscheine|driving licence|Mit achtzehn habe ich den Führerschein gemacht.|I got my driving licence at eighteen.
-die|Autobahn|die Autobahnen|motorway|Auf der Autobahn gibt es eine Baustelle.|There are roadworks on the motorway.
-die|Tankstelle|die Tankstellen|petrol station|Die nächste Tankstelle ist zehn Kilometer entfernt.|The nearest petrol station is ten kilometres away.
-das|Gepäck|–|luggage|Sie können Ihr Gepäck hier abgeben.|You can hand in your luggage here.
-der|Koffer|die Koffer|suitcase|Mein Koffer ist zu schwer.|My suitcase is too heavy.
-die|Unterkunft|die Unterkünfte|accommodation|Wir suchen eine günstige Unterkunft.|We are looking for cheap accommodation.
-die|Übernachtung|die Übernachtungen|overnight stay|Die Übernachtung kostet achtzig Euro.|One night costs eighty euros.
-der|Aufenthalt|die Aufenthalte|stay|Wir wünschen Ihnen einen schönen Aufenthalt.|We wish you a pleasant stay.
-das|Reisebüro|die Reisebüros|travel agency|Wir haben die Reise im Reisebüro gebucht.|We booked the trip at the travel agency.
-die|Sehenswürdigkeit|die Sehenswürdigkeiten|tourist sight|Der Dom ist die bekannteste Sehenswürdigkeit der Stadt.|The cathedral is the city's best-known sight.
-der|Ausflug|die Ausflüge|excursion, day trip|Am Sonntag machen wir einen Ausflug an den See.|On Sunday we are going on a trip to the lake.
-die|Grenze|die Grenzen|border|An der Grenze wurden die Pässe kontrolliert.|Passports were checked at the border.
-das|Ausland|–|foreign countries, abroad|Sie hat zwei Jahre im Ausland gearbeitet.|She worked abroad for two years.
-der|Flughafen|die Flughäfen|airport|Ich hole dich vom Flughafen ab.|I will pick you up from the airport.
-das|Verkehrsmittel|die Verkehrsmittel|means of transport|Ich fahre mit öffentlichen Verkehrsmitteln zur Arbeit.|I go to work by public transport.`],
-["Ämter & Behörden","Public offices",`das|Amt|die Ämter|public office|Das Amt ist nur vormittags geöffnet.|The office is only open in the mornings.
-die|Behörde|die Behörden|authority|Die Behörde hat meinen Brief beantwortet.|The authority has replied to my letter.
-der|Antrag|die Anträge|application, request|Sie müssen einen Antrag stellen.|You have to submit an application.
-das|Formular|die Formulare|form|Bitte füllen Sie dieses Formular aus.|Please fill in this form.
-die|Unterschrift|die Unterschriften|signature|Hier fehlt noch Ihre Unterschrift.|Your signature is still missing here.
-der|Ausweis|die Ausweise|ID card|Darf ich bitte Ihren Ausweis sehen?|May I see your ID, please?
-der|Reisepass|die Reisepässe|passport|Mein Reisepass ist abgelaufen.|My passport has expired.
-die|Aufenthaltserlaubnis|die Aufenthaltserlaubnisse|residence permit|Ich muss meine Aufenthaltserlaubnis verlängern.|I have to renew my residence permit.
-die|Genehmigung|die Genehmigungen|permit, approval|Für den Umbau braucht man eine Genehmigung.|You need a permit for the conversion.
-die|Bescheinigung|die Bescheinigungen|written confirmation|Ich brauche eine Bescheinigung vom Arzt.|I need a certificate from the doctor.
-die|Anmeldung|die Anmeldungen|registration|Die Anmeldung für den Kurs ist online möglich.|You can register for the course online.
-der|Wohnsitz|die Wohnsitze|place of residence|Mein Wohnsitz ist in Hamburg.|My place of residence is in Hamburg.
-die|Staatsangehörigkeit|die Staatsangehörigkeiten|nationality|Welche Staatsangehörigkeit haben Sie?|What is your nationality?
-die|Steuer|die Steuern|tax|Die Steuer wird direkt vom Gehalt abgezogen.|The tax is deducted directly from your salary.
-die|Gebühr|die Gebühren|fee|Die Gebühr für den Pass beträgt siebzig Euro.|The fee for the passport is seventy euros.
-die|Frist|die Fristen|deadline|Die Frist endet am 31. März.|The deadline ends on 31 March.
-das|Gesetz|die Gesetze|law (a statute)|Das neue Gesetz gilt ab Januar.|The new law applies from January.
-das|Recht|die Rechte|right; the law|Sie haben das Recht auf eine Beratung.|You have the right to a consultation.
-die|Pflicht|die Pflichten|duty, obligation|Es ist meine Pflicht, pünktlich zu sein.|It is my duty to be on time.
-die|Vorschrift|die Vorschriften|regulation, rule|Bitte beachten Sie die Vorschriften.|Please follow the regulations.
-das|Gericht|die Gerichte|court; dish|Der Fall kommt nächsten Monat vor Gericht.|The case goes to court next month.
-der|Anwalt|die Anwälte|lawyer|Ich möchte zuerst mit meinem Anwalt sprechen.|I would like to speak to my lawyer first.
-die|Polizei|–|police|Wir sollten die Polizei rufen.|We should call the police.
-die|Strafe|die Strafen|fine, punishment|Er musste eine Strafe von fünfzig Euro zahlen.|He had to pay a fine of fifty euros.
-der|Bürger|die Bürger|citizen|Jeder Bürger darf wählen.|Every citizen may vote.
-das|Rathaus|die Rathäuser|town hall|Das Rathaus liegt am Marktplatz.|The town hall is on the market square.
-die|Auskunft|die Auskünfte|information (given on request)|Können Sie mir eine Auskunft geben?|Can you give me some information?`],
-["Bildung","Education",`der|Unterricht|–|lessons, teaching|Der Unterricht beginnt um acht Uhr.|Lessons start at eight o'clock.
-die|Prüfung|die Prüfungen|exam|Ich habe die Prüfung bestanden.|I passed the exam.
-die|Note|die Noten|grade, mark|Sie hat eine gute Note bekommen.|She got a good grade.
-der|Abschluss|die Abschlüsse|qualification, degree|Welchen Abschluss haben Sie?|What qualification do you have?
-das|Abitur|–|school-leaving exam for university|Nach dem Abitur möchte er studieren.|After his Abitur he wants to go to university.
-das|Studium|die Studien|university studies|Das Studium dauert drei Jahre.|The degree course takes three years.
-das|Fach|die Fächer|school subject|Mathe ist mein liebstes Fach.|Maths is my favourite subject.
-der|Kurs|die Kurse|course|Der Kurs findet zweimal pro Woche statt.|The course takes place twice a week.
-die|Fortbildung|die Fortbildungen|further training|Meine Firma bezahlt die Fortbildung.|My company pays for the training.
-das|Wissen|–|knowledge|Für diesen Beruf braucht man viel Wissen.|You need a lot of knowledge for this job.
-die|Kenntnis|die Kenntnisse|knowledge, skills|Gute Kenntnisse in Englisch sind nötig.|A good knowledge of English is required.
-die|Fähigkeit|die Fähigkeiten|ability|Sie hat die Fähigkeit, gut zuzuhören.|She has the ability to listen well.
-die|Aufgabe|die Aufgaben|task, exercise|Diese Aufgabe ist ziemlich schwierig.|This task is quite difficult.
-die|Übung|die Übungen|practice, exercise|Übung macht den Meister.|Practice makes perfect.
-der|Fehler|die Fehler|mistake|Im Text sind noch drei Fehler.|There are still three mistakes in the text.
-die|Lösung|die Lösungen|solution, answer|Die Lösung steht auf Seite zwanzig.|The answer is on page twenty.
-der|Fortschritt|die Fortschritte|progress|Du hast große Fortschritte gemacht.|You have made great progress.
-das|Ergebnis|die Ergebnisse|result|Das Ergebnis der Prüfung kommt per Post.|The exam result comes by post.
-die|Fremdsprache|die Fremdsprachen|foreign language|Deutsch ist meine zweite Fremdsprache.|German is my second foreign language.
-die|Muttersprache|die Muttersprachen|native language|Was ist Ihre Muttersprache?|What is your native language?
-die|Aussprache|–|pronunciation|Ihre Aussprache ist sehr deutlich.|Your pronunciation is very clear.
-der|Wortschatz|–|vocabulary|Durch Lesen wird der Wortschatz größer.|Reading makes your vocabulary bigger.
-die|Bedeutung|die Bedeutungen|meaning|Dieses Wort hat mehr als eine Bedeutung.|This word has more than one meaning.
-das|Wörterbuch|die Wörterbücher|dictionary|Darf man in der Prüfung ein Wörterbuch benutzen?|Are you allowed to use a dictionary in the exam?
-die|Grundschule|die Grundschulen|primary school|Meine Tochter geht in die Grundschule.|My daughter goes to primary school.
-der|Stundenplan|die Stundenpläne|class timetable|Laut Stundenplan haben wir jetzt Sport.|According to the timetable we have PE now.
-das|Semester|die Semester|semester|Im nächsten Semester schreibe ich meine Arbeit.|Next semester I am writing my thesis.`],
-["Freizeit & Medien","Leisure & media",`die|Freizeit|–|free time|In meiner Freizeit spiele ich Gitarre.|In my free time I play the guitar.
-der|Verein|die Vereine|club, association|Er spielt Fußball in einem Verein.|He plays football in a club.
-die|Veranstaltung|die Veranstaltungen|event|Die Veranstaltung findet im Stadtpark statt.|The event takes place in the city park.
-die|Ausstellung|die Ausstellungen|exhibition|Im Museum gibt es eine neue Ausstellung.|There is a new exhibition at the museum.
-die|Vorstellung|die Vorstellungen|performance, showing|Die Vorstellung beginnt um acht Uhr.|The performance starts at eight o'clock.
-die|Eintrittskarte|die Eintrittskarten|admission ticket|Die Eintrittskarte kostet zwölf Euro.|The ticket costs twelve euros.
-das|Mitglied|die Mitglieder|member|Ich bin Mitglied in einem Sportverein.|I am a member of a sports club.
-der|Wettbewerb|die Wettbewerbe|competition, contest|Sie hat bei einem Wettbewerb gewonnen.|She won a competition.
-die|Mannschaft|die Mannschaften|team|Unsere Mannschaft hat zwei zu eins gewonnen.|Our team won two one.
-das|Spiel|die Spiele|game, match|Das Spiel war bis zum Ende spannend.|The match was exciting right to the end.
-der|Zuschauer|die Zuschauer|spectator, viewer|Die Zuschauer haben lange geklatscht.|The audience clapped for a long time.
-die|Sendung|die Sendungen|TV or radio programme|Diese Sendung sehe ich jeden Abend.|I watch this programme every evening.
-die|Nachricht|die Nachrichten|message, piece of news|Ich habe dir eine Nachricht geschickt.|I sent you a message.
-die|Zeitschrift|die Zeitschriften|magazine|Im Wartezimmer liegen viele Zeitschriften.|There are lots of magazines in the waiting room.
-die|Werbung|die Werbungen|advertising|Im Fernsehen kommt zu viel Werbung.|There is too much advertising on TV.
-der|Bildschirm|die Bildschirme|screen|Ich sitze den ganzen Tag vor dem Bildschirm.|I sit in front of the screen all day.
-das|Netzwerk|die Netzwerke|network|Viele Leute nutzen soziale Netzwerke.|Many people use social networks.
-die|Unterhaltung|die Unterhaltungen|entertainment; chat|Der Film bietet gute Unterhaltung.|The film is good entertainment.
-das|Gespräch|die Gespräche|conversation|Wir haben ein langes Gespräch geführt.|We had a long conversation.
-die|Einladung|die Einladungen|invitation|Vielen Dank für die Einladung!|Thank you very much for the invitation!
-das|Fest|die Feste|celebration, party|Zum Fest kamen über hundert Gäste.|More than a hundred guests came to the party.
-das|Geschenk|die Geschenke|gift, present|Ich suche ein Geschenk für meine Schwester.|I am looking for a present for my sister.
-die|Stimmung|die Stimmungen|mood, atmosphere|Die Stimmung auf der Party war super.|The atmosphere at the party was great.
-das|Erlebnis|die Erlebnisse|experience (an event you live through)|Die Reise war ein tolles Erlebnis.|The trip was a great experience.
-der|Roman|die Romane|novel|Ich lese gerade einen spannenden Roman.|I am reading an exciting novel at the moment.
-das|Instrument|die Instrumente|instrument|Spielst du ein Instrument?|Do you play an instrument?
-die|Bühne|die Bühnen|stage|Die Band steht schon auf der Bühne.|The band is already on stage.`],
-["Einkaufen & Geld","Shopping & money",`das|Angebot|die Angebote|offer|Heute gibt es Äpfel im Angebot.|Apples are on offer today.
-die|Nachfrage|die Nachfragen|demand|Die Nachfrage nach Fahrrädern ist gestiegen.|Demand for bicycles has risen.
-der|Preis|die Preise|price|Der Preis ist in Ordnung.|The price is fine.
-die|Rechnung|die Rechnungen|bill, invoice|Die Rechnung, bitte!|The bill, please!
-die|Quittung|die Quittungen|receipt|Brauchen Sie eine Quittung?|Do you need a receipt?
-der|Rabatt|die Rabatte|discount|Studenten bekommen zehn Prozent Rabatt.|Students get a ten percent discount.
-die|Ware|die Waren|goods, product|Die Ware wird morgen geliefert.|The goods will be delivered tomorrow.
-die|Qualität|die Qualitäten|quality|Die Qualität dieser Schuhe ist sehr gut.|The quality of these shoes is very good.
-die|Garantie|die Garantien|guarantee|Auf das Gerät gibt es zwei Jahre Garantie.|The appliance comes with a two-year guarantee.
-der|Umtausch|–|exchange (of goods)|Ein Umtausch ist nur mit Quittung möglich.|An exchange is only possible with a receipt.
-die|Reklamation|die Reklamationen|complaint (about a product)|Für Ihre Reklamation gehen Sie bitte zum Kundendienst.|For your complaint please go to customer service.
-der|Kunde|die Kunden|customer|Der Kunde möchte sein Geld zurück.|The customer wants his money back.
-die|Kasse|die Kassen|checkout, till|Bitte zahlen Sie an der Kasse.|Please pay at the till.
-das|Bargeld|–|cash|Ich habe leider kein Bargeld dabei.|Unfortunately I have no cash on me.
-das|Konto|die Konten|bank account|Ich möchte ein Konto eröffnen.|I would like to open an account.
-die|Überweisung|die Überweisungen|bank transfer|Die Überweisung dauert einen Tag.|The transfer takes one day.
-der|Kredit|die Kredite|loan|Für das Haus haben wir einen Kredit aufgenommen.|We took out a loan for the house.
-der|Zins|die Zinsen|interest (on money)|Die Zinsen sind im Moment hoch.|Interest rates are high at the moment.
-die|Ausgabe|die Ausgaben|expense|Unsere Ausgaben für Lebensmittel sind gestiegen.|Our spending on food has gone up.
-das|Einkommen|die Einkommen|income|Sein Einkommen reicht für die Familie.|His income is enough for the family.
-die|Lieferung|die Lieferungen|delivery|Die Lieferung ist kostenlos.|Delivery is free.
-die|Bestellung|die Bestellungen|order|Ihre Bestellung ist angekommen.|Your order has arrived.
-das|Paket|die Pakete|parcel|Das Paket liegt bei der Nachbarin.|The parcel is with the neighbour.
-die|Größe|die Größen|size|Haben Sie die Hose eine Größe kleiner?|Do you have the trousers one size smaller?
-das|Geschäft|die Geschäfte|shop; business|Das Geschäft schließt um zwanzig Uhr.|The shop closes at 8 pm.
-der|Geldautomat|die Geldautomaten|cash machine|Wo ist der nächste Geldautomat?|Where is the nearest cash machine?
-die|Währung|die Währungen|currency|Der Euro ist die Währung in vielen Ländern.|The euro is the currency in many countries.
-das|Sonderangebot|die Sonderangebote|special offer|Dieses Sonderangebot gilt nur heute.|This special offer is valid today only.`],
-["Umwelt & Natur","Environment & nature",`die|Umwelt|–|environment|Wir müssen die Umwelt schützen.|We must protect the environment.
-der|Umweltschutz|–|environmental protection|Umweltschutz beginnt zu Hause.|Environmental protection starts at home.
-das|Klima|–|climate|Das Klima hier ist mild.|The climate here is mild.
-der|Klimawandel|–|climate change|Der Klimawandel betrifft alle Länder.|Climate change affects every country.
-die|Luft|–|air|Die Luft in den Bergen ist frisch.|The air in the mountains is fresh.
-die|Verschmutzung|die Verschmutzungen|pollution|Die Verschmutzung der Meere nimmt zu.|Pollution of the seas is increasing.
-der|Abfall|die Abfälle|waste|Bitte werfen Sie keinen Abfall auf den Boden.|Please do not throw any waste on the ground.
-die|Mülltrennung|–|waste separation|In Deutschland ist Mülltrennung normal.|Separating waste is normal in Germany.
-die|Energie|die Energien|energy|Wir sollten mehr Energie sparen.|We should save more energy.
-die|Landschaft|die Landschaften|landscape|Die Landschaft im Norden ist flach.|The landscape in the north is flat.
-das|Gebirge|die Gebirge|mountain range|Im Gebirge liegt noch Schnee.|There is still snow in the mountains.
-der|Wald|die Wälder|forest|Wir gehen oft im Wald spazieren.|We often go for walks in the forest.
-die|Wiese|die Wiesen|meadow|Die Kinder spielen auf der Wiese.|The children are playing in the meadow.
-das|Ufer|die Ufer|bank, shore|Wir sitzen am Ufer des Flusses.|We are sitting on the river bank.
-die|Küste|die Küsten|coast|An der Küste weht immer Wind.|There is always a wind on the coast.
-die|Insel|die Inseln|island|Wir machen Urlaub auf einer kleinen Insel.|We are on holiday on a small island.
-die|Pflanze|die Pflanzen|plant|Diese Pflanze braucht viel Wasser.|This plant needs a lot of water.
-das|Tier|die Tiere|animal|Im Zoo leben Tiere aus aller Welt.|Animals from all over the world live in the zoo.
-die|Ernte|die Ernten|harvest|Die Ernte war dieses Jahr gut.|The harvest was good this year.
-der|Bauernhof|die Bauernhöfe|farm|Meine Großeltern haben einen Bauernhof.|My grandparents have a farm.
-das|Gewitter|die Gewitter|thunderstorm|Heute Abend gibt es ein Gewitter.|There will be a thunderstorm this evening.
-der|Sturm|die Stürme|storm|Der Sturm hat viele Bäume beschädigt.|The storm damaged many trees.
-die|Hitze|–|heat|Bei dieser Hitze bleibe ich zu Hause.|In this heat I am staying at home.
-die|Kälte|–|cold (temperature)|Die Kälte macht mir nichts aus.|The cold does not bother me.
-der|Wetterbericht|die Wetterberichte|weather forecast|Laut Wetterbericht regnet es morgen.|According to the forecast it will rain tomorrow.
-die|Jahreszeit|die Jahreszeiten|season|Der Herbst ist meine liebste Jahreszeit.|Autumn is my favourite season.
-das|Hochwasser|die Hochwasser|flood|Nach dem Regen gab es Hochwasser.|After the rain there was flooding.
-der|Schatten|die Schatten|shade, shadow|Setzen wir uns in den Schatten.|Let's sit in the shade.`],
-["Menschen & Beziehungen","People & relationships",`die|Beziehung|die Beziehungen|relationship|Sie haben eine gute Beziehung zueinander.|They have a good relationship with each other.
-die|Freundschaft|die Freundschaften|friendship|Unsere Freundschaft besteht seit der Schulzeit.|Our friendship goes back to our school days.
-die|Ehe|die Ehen|marriage|Sie führen eine glückliche Ehe.|They have a happy marriage.
-die|Hochzeit|die Hochzeiten|wedding|Die Hochzeit findet im Juni statt.|The wedding takes place in June.
-die|Scheidung|die Scheidungen|divorce|Nach der Scheidung ist er umgezogen.|After the divorce he moved away.
-der|Verwandte|die Verwandten|relative|Ein Verwandter von mir lebt in Wien.|A relative of mine lives in Vienna.
-die|Erziehung|–|upbringing|Die Erziehung der Kinder ist nicht immer leicht.|Bringing up children is not always easy.
-die|Kindheit|–|childhood|Ich hatte eine schöne Kindheit.|I had a lovely childhood.
-die|Jugend|–|youth|In meiner Jugend habe ich viel Sport gemacht.|I did a lot of sport in my youth.
-das|Alter|–|age; old age|Im Alter möchte er auf dem Land leben.|In old age he would like to live in the country.
-die|Generation|die Generationen|generation|In diesem Haus wohnen drei Generationen.|Three generations live in this house.
-das|Gefühl|die Gefühle|feeling|Ich habe ein gutes Gefühl bei der Sache.|I have a good feeling about this.
-die|Angst|die Ängste|fear|Er hat Angst vor der Prüfung.|He is afraid of the exam.
-die|Freude|die Freuden|joy|Das Geschenk hat ihr große Freude gemacht.|The present gave her great pleasure.
-der|Ärger|–|trouble, annoyance|Ich hatte Ärger mit dem Chef.|I had trouble with the boss.
-der|Streit|die Streite|argument, quarrel|Die Geschwister haben oft Streit.|The siblings often argue.
-das|Vertrauen|–|trust|Ich habe volles Vertrauen zu ihr.|I have complete trust in her.
-die|Geduld|–|patience|Mit Kindern braucht man viel Geduld.|You need a lot of patience with children.
-der|Charakter|die Charaktere|character|Sie hat einen starken Charakter.|She has a strong character.
-die|Eigenschaft|die Eigenschaften|characteristic, quality|Ehrlichkeit ist eine wichtige Eigenschaft.|Honesty is an important quality.
-die|Meinung|die Meinungen|opinion|Meiner Meinung nach ist das falsch.|In my opinion that is wrong.
-der|Rat|die Ratschläge|advice|Kannst du mir einen Rat geben?|Can you give me some advice?
-der|Vorschlag|die Vorschläge|suggestion|Ich finde deinen Vorschlag sehr gut.|I think your suggestion is very good.
-die|Entscheidung|die Entscheidungen|decision|Wir müssen bald eine Entscheidung treffen.|We have to make a decision soon.
-die|Entschuldigung|die Entschuldigungen|apology|Ich habe seine Entschuldigung angenommen.|I accepted his apology.
-das|Verhalten|–|behaviour|Sein Verhalten war nicht in Ordnung.|His behaviour was not acceptable.
-der|Unterschied|die Unterschiede|difference|Zwischen den Angeboten gibt es keinen großen Unterschied.|There is no big difference between the offers.
-die|Gesellschaft|die Gesellschaften|society; company|Die Gesellschaft verändert sich schnell.|Society is changing fast.
-das|Missverständnis|die Missverständnisse|misunderstanding|Das war nur ein Missverständnis.|That was just a misunderstanding.`]
-];
-
-// infinitive|forms|english|example|translation
-const VERBS = `sich bewerben|bewirbt sich · bewarb sich · hat sich beworben|to apply (for a job)|Ich bewerbe mich um die Stelle als Verkäufer.|I am applying for the job as a sales assistant.
-kündigen|kündigt · kündigte · hat gekündigt|to give notice, to cancel a contract|Sie hat ihre Wohnung zum ersten Mai gekündigt.|She has given notice on her flat for the first of May.
-verdienen|verdient · verdiente · hat verdient|to earn|In diesem Beruf verdient man gut.|You earn well in this job.
-einstellen|stellt ein · stellte ein · hat eingestellt|to hire, to take on|Die Firma stellt zwei neue Mitarbeiter ein.|The company is hiring two new employees.
-erledigen|erledigt · erledigte · hat erledigt|to get done, to deal with|Ich muss heute noch viel erledigen.|I still have a lot to get done today.
-vereinbaren|vereinbart · vereinbarte · hat vereinbart|to arrange, to agree on|Wir haben einen Termin für Montag vereinbart.|We have arranged an appointment for Monday.
-absagen|sagt ab · sagte ab · hat abgesagt|to cancel (an appointment)|Leider muss ich den Termin absagen.|Unfortunately I have to cancel the appointment.
-verschieben|verschiebt · verschob · hat verschoben|to postpone|Können wir das Treffen auf morgen verschieben?|Can we postpone the meeting until tomorrow?
-mieten|mietet · mietete · hat gemietet|to rent|Wir haben eine Wohnung im Zentrum gemietet.|We have rented a flat in the centre.
-umziehen|zieht um · zog um · ist umgezogen|to move house|Nächsten Monat ziehen wir nach Köln um.|Next month we are moving to Cologne.
-einziehen|zieht ein · zog ein · ist eingezogen|to move in|Wann können wir in die Wohnung einziehen?|When can we move into the flat?
-renovieren|renoviert · renovierte · hat renoviert|to renovate|Wir renovieren gerade das Badezimmer.|We are renovating the bathroom at the moment.
-reparieren|repariert · reparierte · hat repariert|to repair|Der Techniker hat die Waschmaschine repariert.|The technician repaired the washing machine.
-aufräumen|räumt auf · räumte auf · hat aufgeräumt|to tidy up|Die Kinder müssen ihr Zimmer aufräumen.|The children have to tidy their room.
-untersuchen|untersucht · untersuchte · hat untersucht|to examine|Die Ärztin hat mich gründlich untersucht.|The doctor examined me thoroughly.
-sich erkälten|erkältet sich · erkältete sich · hat sich erkältet|to catch a cold|Ich habe mich im Urlaub erkältet.|I caught a cold on holiday.
-sich verletzen|verletzt sich · verletzte sich · hat sich verletzt|to injure oneself|Er hat sich beim Fußball verletzt.|He injured himself playing football.
-sich erholen|erholt sich · erholte sich · hat sich erholt|to recover, to rest|Im Urlaub habe ich mich gut erholt.|I had a good rest on holiday.
-verschreiben|verschreibt · verschrieb · hat verschrieben|to prescribe|Der Arzt hat mir Tabletten verschrieben.|The doctor prescribed me tablets.
-abnehmen|nimmt ab · nahm ab · hat abgenommen|to lose weight|Er hat fünf Kilo abgenommen.|He has lost five kilos.
-abfahren|fährt ab · fuhr ab · ist abgefahren|to depart, to leave|Der Bus fährt in zehn Minuten ab.|The bus leaves in ten minutes.
-ankommen|kommt an · kam an · ist angekommen|to arrive|Wir sind pünktlich in München angekommen.|We arrived in Munich on time.
-umsteigen|steigt um · stieg um · ist umgestiegen|to change (trains, buses)|In Frankfurt müssen Sie umsteigen.|You have to change in Frankfurt.
-einsteigen|steigt ein · stieg ein · ist eingestiegen|to get on, to board|Bitte steigen Sie schnell ein.|Please board quickly.
-verpassen|verpasst · verpasste · hat verpasst|to miss (a train, a chance)|Ich habe den letzten Bus verpasst.|I missed the last bus.
-buchen|bucht · buchte · hat gebucht|to book|Wir haben das Hotel online gebucht.|We booked the hotel online.
-übernachten|übernachtet · übernachtete · hat übernachtet|to stay overnight|Wir übernachten bei Freunden.|We are staying the night with friends.
-besichtigen|besichtigt · besichtigte · hat besichtigt|to visit, to look round|Morgen besichtigen wir das Schloss.|Tomorrow we are visiting the castle.
-abholen|holt ab · holte ab · hat abgeholt|to pick up, to collect|Kannst du mich vom Bahnhof abholen?|Can you pick me up from the station?
-beantragen|beantragt · beantragte · hat beantragt|to apply for (officially)|Ich möchte ein Visum beantragen.|I would like to apply for a visa.
-ausfüllen|füllt aus · füllte aus · hat ausgefüllt|to fill in (a form)|Füllen Sie bitte das Formular aus.|Please fill in the form.
-unterschreiben|unterschreibt · unterschrieb · hat unterschrieben|to sign|Sie müssen hier unten unterschreiben.|You have to sign down here.
-verlängern|verlängert · verlängerte · hat verlängert|to extend, to renew|Ich muss meinen Pass verlängern lassen.|I have to get my passport renewed.
-sich anmelden|meldet sich an · meldete sich an · hat sich angemeldet|to register, to sign up|Ich habe mich für den Sprachkurs angemeldet.|I have signed up for the language course.
-erlauben|erlaubt · erlaubte · hat erlaubt|to allow|Rauchen ist hier nicht erlaubt.|Smoking is not allowed here.
-verbieten|verbietet · verbot · hat verboten|to forbid|Der Arzt hat ihm das Rauchen verboten.|The doctor has forbidden him to smoke.
-bestehen|besteht · bestand · hat bestanden|to pass (an exam)|Sie hat die Prüfung mit gutem Ergebnis bestanden.|She passed the exam with a good result.
-sich vorbereiten|bereitet sich vor · bereitete sich vor · hat sich vorbereitet|to prepare (oneself)|Ich bereite mich auf die Prüfung vor.|I am preparing for the exam.
-wiederholen|wiederholt · wiederholte · hat wiederholt|to repeat, to revise|Können Sie das bitte wiederholen?|Could you repeat that, please?
-erklären|erklärt · erklärte · hat erklärt|to explain|Die Lehrerin erklärt die Regel noch einmal.|The teacher explains the rule once more.
-verstehen|versteht · verstand · hat verstanden|to understand|Ich habe die Frage nicht verstanden.|I did not understand the question.
-übersetzen|übersetzt · übersetzte · hat übersetzt|to translate|Kannst du mir diesen Brief übersetzen?|Can you translate this letter for me?
-teilnehmen|nimmt teil · nahm teil · hat teilgenommen|to take part|An dem Kurs nehmen zwölf Personen teil.|Twelve people are taking part in the course.
-sich erinnern|erinnert sich · erinnerte sich · hat sich erinnert|to remember|Ich erinnere mich gern an meine Schulzeit.|I like to remember my school days.
-vergessen|vergisst · vergaß · hat vergessen|to forget|Ich habe meinen Schirm im Zug vergessen.|I left my umbrella on the train.
-einladen|lädt ein · lud ein · hat eingeladen|to invite|Wir möchten euch zum Essen einladen.|We would like to invite you to dinner.
-sich treffen|trifft sich · traf sich · hat sich getroffen|to meet up|Wir treffen uns um sieben vor dem Kino.|We are meeting at seven in front of the cinema.
-sich unterhalten|unterhält sich · unterhielt sich · hat sich unterhalten|to chat, to talk|Wir haben uns lange über den Film unterhalten.|We talked about the film for a long time.
-empfehlen|empfiehlt · empfahl · hat empfohlen|to recommend|Können Sie mir ein gutes Restaurant empfehlen?|Can you recommend a good restaurant?
-vorschlagen|schlägt vor · schlug vor · hat vorgeschlagen|to suggest|Ich schlage vor, dass wir zu Fuß gehen.|I suggest that we walk.
-sich freuen|freut sich · freute sich · hat sich gefreut|to be glad, to look forward|Ich freue mich schon auf das Wochenende.|I am already looking forward to the weekend.
-sich ärgern|ärgert sich · ärgerte sich · hat sich geärgert|to be annoyed|Er ärgert sich über die Verspätung.|He is annoyed about the delay.
-sich beschweren|beschwert sich · beschwerte sich · hat sich beschwert|to complain|Die Gäste haben sich über den Lärm beschwert.|The guests complained about the noise.
-sich entschuldigen|entschuldigt sich · entschuldigte sich · hat sich entschuldigt|to apologise|Ich möchte mich für den Fehler entschuldigen.|I would like to apologise for the mistake.
-sich entscheiden|entscheidet sich · entschied sich · hat sich entschieden|to decide|Ich kann mich nicht entscheiden.|I cannot decide.
-sich streiten|streitet sich · stritt sich · hat sich gestritten|to argue|Die Kinder streiten sich um das Spielzeug.|The children are arguing over the toy.
-vertrauen|vertraut · vertraute · hat vertraut|to trust|Du kannst mir vertrauen.|You can trust me.
-versprechen|verspricht · versprach · hat versprochen|to promise|Er hat versprochen, pünktlich zu sein.|He promised to be on time.
-bestellen|bestellt · bestellte · hat bestellt|to order|Ich habe die Schuhe im Internet bestellt.|I ordered the shoes online.
-liefern|liefert · lieferte · hat geliefert|to deliver|Die Möbel werden nächste Woche geliefert.|The furniture will be delivered next week.
-umtauschen|tauscht um · tauschte um · hat umgetauscht|to exchange (goods)|Kann ich diese Jacke umtauschen?|Can I exchange this jacket?
-überweisen|überweist · überwies · hat überwiesen|to transfer (money)|Bitte überweisen Sie den Betrag bis Freitag.|Please transfer the amount by Friday.
-sparen|spart · sparte · hat gespart|to save (money, energy)|Wir sparen für ein neues Auto.|We are saving for a new car.
-ausgeben|gibt aus · gab aus · hat ausgegeben|to spend (money)|Er gibt viel Geld für Kleidung aus.|He spends a lot of money on clothes.
-vergleichen|vergleicht · verglich · hat verglichen|to compare|Man sollte die Preise vergleichen.|You should compare prices.
-anprobieren|probiert an · probierte an · hat anprobiert|to try on|Kann ich die Hose anprobieren?|Can I try the trousers on?
-schützen|schützt · schützte · hat geschützt|to protect|Wir müssen das Klima schützen.|We must protect the climate.
-trennen|trennt · trennte · hat getrennt|to separate|In Deutschland trennt man den Müll.|In Germany people separate their rubbish.
-verbrauchen|verbraucht · verbrauchte · hat verbraucht|to use up, to consume|Das alte Auto verbraucht zu viel Benzin.|The old car uses too much petrol.
-wachsen|wächst · wuchs · ist gewachsen|to grow|Die Stadt ist in den letzten Jahren stark gewachsen.|The city has grown a lot in recent years.
-passieren|passiert · passierte · ist passiert|to happen|Was ist denn hier passiert?|What has happened here?
-sich gewöhnen|gewöhnt sich · gewöhnte sich · hat sich gewöhnt|to get used (to)|Ich habe mich an das Wetter gewöhnt.|I have got used to the weather.
-sich kümmern|kümmert sich · kümmerte sich · hat sich gekümmert|to take care (of)|Sie kümmert sich um ihre Großmutter.|She takes care of her grandmother.
-erfahren|erfährt · erfuhr · hat erfahren|to find out, to learn of|Ich habe es erst gestern erfahren.|I only found out yesterday.
-gelingen|gelingt · gelang · ist gelungen|to succeed, to turn out well|Der Kuchen ist mir gut gelungen.|My cake turned out well.
-beschließen|beschließt · beschloss · hat beschlossen|to decide, to resolve|Wir haben beschlossen, früher zu fahren.|We have decided to leave earlier.
-bemerken|bemerkt · bemerkte · hat bemerkt|to notice|Ich habe den Fehler zu spät bemerkt.|I noticed the mistake too late.`;
-// adjective|opposite|english|example|translation
-const ADJS = `zuverlässig|unzuverlässig|reliable|Meine Kollegin ist sehr zuverlässig.|My colleague is very reliable.
-pünktlich|unpünktlich|punctual, on time|Bitte seien Sie morgen pünktlich.|Please be on time tomorrow.
-selbstständig|angestellt|self-employed; independent|Er arbeitet seit zwei Jahren selbstständig.|He has been self-employed for two years.
-arbeitslos|berufstätig|unemployed|Sie war ein halbes Jahr arbeitslos.|She was unemployed for half a year.
-berufstätig|arbeitslos|working, in employment|Beide Eltern sind berufstätig.|Both parents work.
-anstrengend|erholsam|exhausting, tiring|Die Arbeit im Krankenhaus ist anstrengend.|Working in the hospital is tiring.
-erfolgreich|erfolglos|successful|Das Projekt war sehr erfolgreich.|The project was very successful.
-zufrieden|unzufrieden|satisfied, content|Ich bin mit meiner Arbeit zufrieden.|I am satisfied with my job.
-verantwortlich|–|responsible|Wer ist für diesen Fehler verantwortlich?|Who is responsible for this mistake?
-gemütlich|ungemütlich|cosy|Euer Wohnzimmer ist sehr gemütlich.|Your living room is very cosy.
-hell|dunkel|bright, light|Die Küche ist groß und hell.|The kitchen is big and bright.
-ruhig|laut|quiet, calm|Wir suchen eine ruhige Wohnung.|We are looking for a quiet flat.
-günstig|teuer|inexpensive, good-value|Die Wohnung ist günstig, aber klein.|The flat is cheap but small.
-preiswert|teuer|reasonably priced|In diesem Restaurant isst man gut und preiswert.|You can eat well and cheaply in this restaurant.
-möbliert|unmöbliert|furnished|Das Zimmer wird möbliert vermietet.|The room is let furnished.
-gesund|krank|healthy|Obst und Gemüse sind gesund.|Fruit and vegetables are healthy.
-erkältet|–|having a cold|Ich bin seit drei Tagen erkältet.|I have had a cold for three days.
-schwach|stark|weak|Nach der Krankheit fühlte er sich schwach.|After the illness he felt weak.
-müde|wach|tired|Nach der Arbeit bin ich immer müde.|I am always tired after work.
-gefährlich|ungefährlich|dangerous|Diese Kreuzung ist sehr gefährlich.|This junction is very dangerous.
-schädlich|unschädlich|harmful|Zu viel Zucker ist schädlich.|Too much sugar is harmful.
-dringend|–|urgent|Ich brauche dringend einen Termin.|I urgently need an appointment.
-verspätet|pünktlich|late, delayed|Der Zug kommt zehn Minuten verspätet an.|The train is arriving ten minutes late.
-bequem|unbequem|comfortable|Diese Schuhe sind sehr bequem.|These shoes are very comfortable.
-öffentlich|privat|public|Das ist ein öffentlicher Parkplatz.|This is a public car park.
-gültig|ungültig|valid|Die Fahrkarte ist zwei Stunden gültig.|The ticket is valid for two hours.
-notwendig|unnötig|necessary|Eine Anmeldung ist nicht notwendig.|Registration is not necessary.
-kostenlos|kostenpflichtig|free of charge|Der Eintritt ist für Kinder kostenlos.|Admission is free for children.
-zuständig|–|responsible, in charge|Für diese Frage ist das Bürgeramt zuständig.|The citizens' office is responsible for this matter.
-persönlich|–|personal, in person|Sie müssen den Ausweis persönlich abholen.|You have to collect the ID card in person.
-schriftlich|mündlich|written, in writing|Die Kündigung muss schriftlich sein.|Notice must be given in writing.
-mündlich|schriftlich|oral, spoken|Die mündliche Prüfung dauert fünfzehn Minuten.|The oral exam takes fifteen minutes.
-schwierig|einfach|difficult|Die deutsche Grammatik ist manchmal schwierig.|German grammar is sometimes difficult.
-deutlich|undeutlich|clear, distinct|Bitte sprechen Sie langsam und deutlich.|Please speak slowly and clearly.
-fleißig|faul|hard-working|Sie ist eine fleißige Schülerin.|She is a hard-working pupil.
-begabt|unbegabt|talented, gifted|Er ist musikalisch sehr begabt.|He is very gifted musically.
-neugierig|–|curious|Kinder sind von Natur aus neugierig.|Children are naturally curious.
-aufmerksam|unaufmerksam|attentive|Die Schüler hören aufmerksam zu.|The pupils listen attentively.
-spannend|langweilig|exciting, gripping|Das Buch war von Anfang an spannend.|The book was gripping from the start.
-langweilig|spannend|boring|Ich fand den Film ziemlich langweilig.|I found the film rather boring.
-beliebt|unbeliebt|popular|Fußball ist in Deutschland sehr beliebt.|Football is very popular in Germany.
-bekannt|unbekannt|well-known|Die Stadt ist für ihr Bier bekannt.|The city is known for its beer.
-berühmt|unbekannt|famous|Sie ist eine berühmte Schauspielerin.|She is a famous actress.
-lustig|ernst|funny|Er erzählt immer lustige Geschichten.|He always tells funny stories.
-gemeinsam|allein|together, joint|Wir kochen heute Abend gemeinsam.|We are cooking together this evening.
-ausverkauft|–|sold out|Das Konzert ist leider ausverkauft.|Unfortunately the concert is sold out.
-frisch|alt|fresh|Das Brot ist ganz frisch.|The bread is really fresh.
-haltbar|verderblich|long-lasting, keeps well|Die Milch ist bis Freitag haltbar.|The milk keeps until Friday.
-kaputt|ganz|broken|Mein Handy ist kaputt.|My mobile phone is broken.
-gebraucht|neu|second-hand, used|Wir haben ein gebrauchtes Auto gekauft.|We bought a second-hand car.
-umweltfreundlich|umweltschädlich|environmentally friendly|Das Fahrrad ist ein umweltfreundliches Verkehrsmittel.|The bicycle is an environmentally friendly means of transport.
-sauber|schmutzig|clean|Das Wasser im See ist sauber.|The water in the lake is clean.
-schmutzig|sauber|dirty|Deine Schuhe sind ganz schmutzig.|Your shoes are really dirty.
-trocken|nass|dry|Die Wäsche ist schon trocken.|The washing is already dry.
-feucht|trocken|damp|Der Keller ist leider etwas feucht.|Unfortunately the cellar is a bit damp.
-sparsam|verschwenderisch|economical, thrifty|Wir müssen sparsam mit Wasser umgehen.|We have to be economical with water.
-freundlich|unfreundlich|friendly|Die Verkäuferin war sehr freundlich.|The shop assistant was very friendly.
-höflich|unhöflich|polite|Er ist immer höflich zu den Kunden.|He is always polite to the customers.
-ehrlich|unehrlich|honest|Sag mir bitte ehrlich deine Meinung.|Please tell me your honest opinion.
-geduldig|ungeduldig|patient|Die Lehrerin ist sehr geduldig.|The teacher is very patient.
-großzügig|geizig|generous|Meine Tante ist ein großzügiger Mensch.|My aunt is a generous person.
-hilfsbereit|–|helpful|Unsere Nachbarn sind sehr hilfsbereit.|Our neighbours are very helpful.
-schüchtern|selbstbewusst|shy|Als Kind war ich sehr schüchtern.|As a child I was very shy.
-selbstbewusst|schüchtern|self-confident|Sie tritt sehr selbstbewusst auf.|She comes across as very self-confident.
-eifersüchtig|–|jealous|Er ist eifersüchtig auf seinen Bruder.|He is jealous of his brother.
-enttäuscht|–|disappointed|Ich war von dem Hotel enttäuscht.|I was disappointed with the hotel.
-überrascht|–|surprised|Wir waren von dem Ergebnis überrascht.|We were surprised by the result.
-stolz|–|proud|Die Eltern sind stolz auf ihre Tochter.|The parents are proud of their daughter.
-nervös|gelassen|nervous|Vor Prüfungen bin ich immer nervös.|I am always nervous before exams.
-traurig|fröhlich|sad|Sie war traurig über den Abschied.|She was sad about saying goodbye.
-fröhlich|traurig|cheerful|Die Kinder sind heute sehr fröhlich.|The children are very cheerful today.
-verheiratet|ledig|married|Meine Schwester ist seit einem Jahr verheiratet.|My sister has been married for a year.
-ledig|verheiratet|single, unmarried|Sind Sie ledig oder verheiratet?|Are you single or married?
-verwandt|–|related|Wir sind nicht miteinander verwandt.|We are not related to each other.
-ähnlich|verschieden|similar|Die beiden Brüder sehen sich sehr ähnlich.|The two brothers look very alike.
-verschieden|gleich|different, various|Wir haben verschiedene Meinungen.|We have different opinions.
-wichtig|unwichtig|important|Es ist wichtig, viel zu üben.|It is important to practise a lot.
-möglich|unmöglich|possible|Ist es möglich, den Termin zu ändern?|Is it possible to change the appointment?
-wahrscheinlich|unwahrscheinlich|probable, likely|Es ist wahrscheinlich, dass es regnet.|It is likely that it will rain.
-sicher|unsicher|safe; certain|Bist du sicher, dass der Laden geöffnet ist?|Are you sure the shop is open?`;
-
 const NOUN_TOPICS = DATA.map((t,i)=>({id:i,de:t[0],en:t[1]}));
-const TOPICS = NOUN_TOPICS.concat([{id:DATA.length,de:"Verben",en:"Verbs"},{id:DATA.length+1,de:"Adjektive",en:"Adjectives"}]);
-const plain=(src,kind,topic)=>src.split("\n").map(l=>{const [de,pl,en,ex,tr]=l.split("|");return {kind,art:"",de,pl,en,ex,tr,topic};});
-const WORDS = DATA.flatMap((t,i)=>t[2].split("\n").map(l=>{const [art,de,pl,en,ex,tr]=l.split("|");return {kind:"noun",art,de,pl,en,ex,tr,topic:i};}))
-  .concat(plain(VERBS,"verb",DATA.length),plain(ADJS,"adj",DATA.length+1));
-const KINDS=[["noun","Nomen"],["verb","Verben"],["adj","Adjektive"]];
-const INFO={noun:"Plural",verb:"Forms",adj:"Opposite"};
+const TOPICS = NOUN_TOPICS.concat([{id:DATA.length,de:"Verben",en:"Verbs"},{id:DATA.length+1,de:"Adjektive",en:"Adjectives"},{id:DATA.length+2,de:"Andere Wörter",en:"Other words"}]);
+const plain=(src,kind,topic)=>src.split("\n").filter(Boolean).map(l=>{const [de,pl,en,ex,tr,lv]=l.split("|");return {kind,art:"",de,pl,en,ex,tr,lv,topic};});
+const WORDS = DATA.flatMap((t,i)=>t[2].split("\n").map(l=>{const [art,de,pl,en,ex,tr,lv]=l.split("|");return {kind:"noun",art,de,pl,en,ex,tr,lv,topic:i};}))
+  .concat(plain(VERBS,"verb",DATA.length),plain(ADJS,"adj",DATA.length+1),plain(OTHERS,"other",DATA.length+2));
+const KINDS=[["noun","Nomen"],["verb","Verben"],["adj","Adjektive"],["other","Andere"]];
+const INFO={noun:"Plural",verb:"Forms",adj:"Opposite",other:"Use"};
 const label=w=>(w.art?w.art+" ":"")+w.de;
 
 // Ending patterns that reliably predict the article; shown only when they fit the word.
@@ -639,14 +205,14 @@ const RULES = [
   [/e$/, "die", ()=>"Most nouns ending in -e are feminine."]
 ];
 function tipFor(w){
-  if(w.kind!=="noun") return "";
+  if(w.kind!=="noun"||w.pl==="nur Plural") return "";
   for(const [re,art,say] of RULES){const m=w.de.match(re); if(m && art===w.art) return say(m[1]||"");}
   return "";
 }
 
 const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
 const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
-let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true};
+let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false};
 try{const s=JSON.parse(localStorage.getItem("b1wortschatz")||"null"); if(s&&s.p) store=Object.assign(store,s);}catch(e){}
 function save(){try{localStorage.setItem("b1wortschatz",JSON.stringify(store));}catch(e){}}
 const key=w=>(store.mode==="perfekt"?"perf:":"")+w.de;
@@ -660,7 +226,8 @@ function grade(w,ok){
 }
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
-const pool=()=>{const k=WORDS.filter(w=>w.kind===store.kind);return store.kind==="noun"&&store.topics.length?k.filter(w=>store.topics.includes(w.topic)):k;};
+const active=w=>store.basics||w.lv!=="A";
+const pool=()=>{const k=WORDS.filter(w=>w.kind===store.kind&&active(w));return store.kind==="noun"&&store.topics.length?k.filter(w=>store.topics.includes(w.topic)):k;};
 const canSpeak="speechSynthesis" in window;
 function say(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="de-DE";u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
 const sayBtn=w=>canSpeak?`<button class="say" data-act="say" data-t="${esc(label(w))}">Listen</button>`:"";
@@ -759,15 +326,15 @@ function stats(list,pre=""){
 }
 const bar=s=>`<div class="bar" role="img" aria-label="${s.m} mastered, ${s.l} learning, ${s.n-s.m-s.l} new"><i class="m" style="width:${s.m/s.n*100}%"></i><i class="l" style="width:${s.l/s.n*100}%"></i></div>`;
 function renderProfile(st){
-  const all=stats(WORDS);
+  const all=stats(WORDS.filter(active));
   st.innerHTML=`<div class="done"><h2>Profile</h2></div>
   <div class="profile">${bar(all)}<div class="counts"><span><i class="dot m"></i><b>${all.m}</b> mastered</span><span><i class="dot l"></i><b>${all.l}</b> learning</span><span><i class="dot n"></i><b>${all.n-all.m-all.l}</b> new</span><span><b>${all.d}</b> due</span></div></div>`+
-  KINDS.map(([id,name])=>{const k=stats(WORDS.filter(w=>w.kind===id));return `<div class="profile"><div class="meta"><span>${name}</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;}).join("")+
-  (()=>{const k=stats(WORDS.filter(w=>w.kind==="verb"),"perf:");return `<div class="profile"><div class="meta"><span>Perfekt</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
+  KINDS.map(([id,name])=>{const k=stats(WORDS.filter(w=>w.kind===id&&active(w)));return `<div class="profile"><div class="meta"><span>${name}</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;}).join("")+
+  (()=>{const k=stats(WORDS.filter(w=>w.kind==="verb"&&active(w)),"perf:");return `<div class="profile"><div class="meta"><span>Perfekt</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   `<div class="sub">Correct words return after 1, 2, 4, 7 and 14 days.</div><div class="spacer"></div><div class="row">`+
   (confirmReset
     ?`<button class="btn" data-act="reset-no">Keep progress</button><button class="btn primary" data-act="reset-yes">Erase everything</button>`
-    :`<button class="btn" data-act="sound">Sound: ${store.sound===false?"off":"on"}</button><button class="btn" data-act="reset">Reset progress</button>`)+`</div>`;
+    :`<button class="btn" data-act="basics" aria-pressed="${!!store.basics}">A1–A2 words: ${store.basics?"on":"off"}</button><button class="btn" data-act="sound">Sound: ${store.sound===false?"off":"on"}</button><button class="btn" data-act="reset">Reset progress</button>`)+`</div>`;
 }
 function renderChrome(){
   const prof=store.mode==="profile", n=pool().length;
@@ -781,7 +348,7 @@ function renderChrome(){
   $("modes").innerHTML=MODES.filter(([id])=>(id!=="article"||store.kind==="noun")&&(id!=="perfekt"||store.kind==="verb")).map(([id,label])=>`<button role="tab" data-act="mode" data-id="${id}" aria-selected="${store.mode===id}">${label}</button>`).join("");
 }
 const head=w=>`<div class="meta"><span>${esc(TOPICS[w.topic].de)}</span><span>${Math.min(S.i+1,S.queue.length)} / ${S.queue.length}</span></div>`;
-const info=w=>w.pl==="–"?(w.kind==="noun"?`<div class="sub">Plural: not used</div>`:""):`<div class="sub">${INFO[w.kind]}: ${esc(w.pl)}</div>`;
+const info=w=>w.pl==="–"?(w.kind==="noun"?`<div class="sub">Plural: not used</div>`:""):w.pl==="nur Plural"?`<div class="sub">Plural only</div>`:`<div class="sub">${INFO[w.kind]}: ${esc(w.pl)}</div>`;
 const full=w=>`<p class="big">${w.art?`<span class="art ${w.art}">${w.art}</span> `:""}${esc(w.de)}</p>${info(w)}`;
 const exBlock=w=>`<div class="ex"><p lang="de">${esc(w.ex)}</p>${S.tr?`<p class="tr">${esc(w.tr)}</p>`:""}<button class="link" data-act="tr" aria-expanded="${S.tr}">${S.tr?"Hide translation":"Show English translation"}</button></div>`;
 function reveal(w,withEn){
@@ -842,7 +409,7 @@ function render(){
   }
   if(store.mode==="write"){
     if(S.phase==="ask"){
-      h+=`<div class="prompt"><div class="sub">${{noun:"Write it in German, with its article",verb:"Write the German verb (infinitive)",adj:"Write the German adjective"}[w.kind]}</div><p class="big">${esc(w.en)}</p></div>
+      h+=`<div class="prompt"><div class="sub">${{noun:"Write it in German, with its article",verb:"Write the German verb (infinitive)",adj:"Write the German adjective",other:"Write it in German"}[w.kind]}</div><p class="big">${esc(w.en)}</p></div>
       <form class="write" id="writeForm" autocomplete="off"><input id="answer" type="text" placeholder="${w.kind==="noun"?"der / die / das …":"Deutsch …"}" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="German word">
       ${w.art?`<div class="keys">${["der","die","das"].map(a=>`<button type="button" class="${a}" data-act="artkey" data-k="${a}">${a}</button>`).join("")}</div>`:""}
       <div class="keys" id="tiles">${S.tiles.map(c=>`<button type="button" data-act="key" data-k="${esc(c)}">${c===" "?"␣":esc(c)}</button>`).join("")}<button type="button" data-act="back" aria-label="Delete last letter">⌫</button></div>
@@ -862,7 +429,7 @@ function renderList(st){
   rows.forEach(w=>{
     if(w.topic!==last){last=w.topic;h+=`<h3>${esc(TOPICS[last].de)} · ${esc(TOPICS[last].en)}</h3>`;}
     const b=prog(w).box;
-    h+=`<div class="w"><span class="a ${w.art}">${w.art}</span><span class="g">${esc(w.de)}<small>${w.pl==="–"?(w.kind==="noun"?"no plural":""):esc(w.pl)}</small></span><span class="e">${esc(w.en)}</span><span class="lv" title="Level ${b} of 5">${[1,2,3,4,5].map(i=>`<i class="${i<=b?"on":""}"></i>`).join("")}</span></div>`;
+    h+=`<div class="w"><span class="a ${w.art}">${w.art}</span><span class="g">${esc(w.de)}<small>${w.pl==="–"?(w.kind==="noun"?"no plural":""):w.pl==="nur Plural"?"plural only":esc(w.pl)}</small></span><span class="e">${esc(w.en)}</span><span class="lv" title="Level ${b} of 5">${[1,2,3,4,5].map(i=>`<i class="${i<=b?"on":""}"></i>`).join("")}</span></div>`;
   });
   if(!rows.length) h+=`<p class="sub">No word matches “${esc(query)}”.</p>`;
   st.innerHTML=h+"</div>";
@@ -909,6 +476,7 @@ document.addEventListener("click",e=>{
   }
   if(a==="kind"){store.kind=b.dataset.id;if((store.mode==="article"&&store.kind!=="noun")||(store.mode==="perfekt"&&store.kind!=="verb"))store.mode="cards";save();S=null;query="";return render();}
   if(a==="tr"){S.tr=!S.tr;return render();}
+  if(a==="basics"){store.basics=!store.basics;save();S=null;return render();}
   if(a==="sound"){store.sound=store.sound===false;save();if(store.sound)tone(true);return render();}
   if(a==="reset"){confirmReset=true;return render();}
   if(a==="reset-no"){confirmReset=false;return render();}

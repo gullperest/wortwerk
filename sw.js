@@ -1,6 +1,6 @@
 // Offline support: app shell is cached on install; everything else (fonts) is cached as it is used.
-const CACHE = "b1-wortschatz-v8";
-const SHELL = ["./", "index.html", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
+const CACHE = "b1-wortschatz-v9";
+const SHELL = ["./", "index.html", "words.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
