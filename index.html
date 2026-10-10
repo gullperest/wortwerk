@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wortwerk</title>
+<meta name="description" content="Practise German B1 nouns with their articles and English meanings for the telc B1 exam.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#edf0f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f151b" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Wortwerk">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bitter:wght@500;700&display=swap">
+<style>
+/* Layout: one narrow working column — status strip, mode switch, a single practice stage. Gender colour (der/die/das) is the only loud element. */
+:root{
+  --bg:#edf0f3; --surface:#ffffff; --sunk:#e2e7ec; --line:#cdd5dd;
+  --ink:#15212c; --muted:#5a6875;
+  --der:#1c5fc4; --der-bg:#e3edfb;
+  --die:#c22f3c; --die-bg:#fbe6e8;
+  --das:#1b7f52; --das-bg:#e0f3ea;
+  --mark:#b77a00; --mark-bg:#fbf0d2;
+  --ui:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --word:"Bitter",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f151b; --surface:#19222b; --sunk:#222d38; --line:#33414f;
+    --ink:#e7edf2; --muted:#96a4b1;
+    --der:#78abf7; --der-bg:#1b2c45;
+    --die:#f38891; --die-bg:#3f2025;
+    --das:#62cf9d; --das-bg:#17362a;
+    --mark:#e9b84a; --mark-bg:#3a2f14;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f151b; --surface:#19222b; --sunk:#222d38; --line:#33414f;
+  --ink:#e7edf2; --muted:#96a4b1;
+  --der:#78abf7; --der-bg:#1b2c45;
+  --die:#f38891; --die-bg:#3f2025;
+  --das:#62cf9d; --das-bg:#17362a;
+  --mark:#e9b84a; --mark-bg:#3a2f14;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--ui);font-size:16px;line-height:1.45;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:calc(20px + env(safe-area-inset-top,0px)) calc(48px + env(safe-area-inset-bottom,0px))}
+.app{max-width:680px;margin-inline:auto;display:flex;flex-direction:column;gap:18px}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px}
+h1{font-family:var(--word);font-size:1.5rem;font-weight:700;margin:0;letter-spacing:-.01em}
+h1 span{color:var(--muted);font-family:var(--ui);font-weight:500;font-size:.95rem;letter-spacing:0;margin-left:.4em}
+.legend{display:flex;gap:10px;font-weight:600;font-size:.9rem}
+.der{color:var(--der)} .die{color:var(--die)} .das{color:var(--das)}
+
+.status{display:flex;flex-direction:column;gap:8px}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--sunk)}
+.bar i{display:block;height:100%}
+.bar .m{background:var(--das)} .bar .l{background:var(--mark)}
+.counts{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.counts b{color:var(--ink);font-weight:600}
+.dot{display:inline-block;width:.6em;height:.6em;border-radius:50%;margin-right:.4em}
+.dot.m{background:var(--das)} .dot.l{background:var(--mark)} .dot.n{background:var(--line)}
+
+details.topics{border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+details.topics summary{padding:10px 14px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+details.topics summary small{color:var(--muted);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:4px 14px 14px}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 12px;font-size:.9rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.modes{display:flex;flex-wrap:wrap;gap:4px;background:var(--sunk);padding:4px;border-radius:10px}
+.modes button{flex:1 1 auto;border:0;background:transparent;padding:8px 10px;border-radius:7px;font-weight:600;color:var(--muted);white-space:nowrap}
+.modes button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:18px;min-height:340px}
+.meta{display:flex;justify-content:space-between;gap:12px;font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;font-weight:600;font-variant-numeric:tabular-nums}
+.meta span:last-child{white-space:nowrap}
+@media (hover:none){kbd{display:none}}
+.prompt{display:flex;flex-direction:column;gap:6px;align-items:flex-start;border-left:6px solid var(--line);padding-left:16px}
+.prompt.der{border-color:var(--der)} .prompt.die{border-color:var(--die)} .prompt.das{border-color:var(--das)}
+.prompt.der,.prompt.die,.prompt.das{color:var(--ink)}
+.big{font-family:var(--word);font-weight:700;font-size:clamp(1.8rem,7vw,2.7rem);line-height:1.12;overflow-wrap:anywhere;margin:0}
+.big .art{font-weight:500}
+.sub{color:var(--muted);font-size:.98rem}
+.en{font-size:1.2rem;font-weight:500}
+.ex{font-family:var(--word);font-weight:500;font-size:1.02rem;background:var(--bg);border-radius:8px;padding:10px 12px;margin:0}
+.tip{font-size:.92rem;background:var(--mark-bg);border-radius:8px;padding:8px 12px}
+.tip b{color:var(--mark)}
+.say{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:4px 12px;font-size:.85rem;font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.row>*{flex:1 1 120px}
+.btn{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;font-weight:600;text-align:center}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn kbd{font:inherit;font-size:.75rem;color:var(--muted);margin-left:.5em;font-weight:500}
+.btn.primary kbd{color:inherit;opacity:.65}
+.artbtn{border:2px solid;border-radius:12px;padding:16px 8px;font-family:var(--word);font-weight:700;font-size:1.5rem}
+.artbtn.der{color:var(--der);background:var(--der-bg);border-color:var(--der)}
+.artbtn.die{color:var(--die);background:var(--die-bg);border-color:var(--die)}
+.artbtn.das{color:var(--das);background:var(--das-bg);border-color:var(--das)}
+.artbtn:disabled,.opt:disabled{cursor:default}
+.artbtn:disabled:not(.hit):not(.miss){opacity:.35}
+.artbtn.miss{text-decoration:line-through;opacity:.7}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.opt{text-align:left}
+.opt.hit{background:var(--das-bg);border-color:var(--das)}
+.opt.miss{background:var(--die-bg);border-color:var(--die);text-decoration:line-through}
+.verdict{font-weight:700}
+.verdict.ok{color:var(--das)} .verdict.no{color:var(--die)}
+form.write{display:flex;flex-direction:column;gap:10px}
+form.write input{width:100%;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--bg);font-family:var(--word);font-size:1.2rem}
+.keys{display:flex;gap:6px}
+.keys button{border:1px solid var(--line);background:var(--bg);border-radius:7px;padding:4px 12px;font-family:var(--word)}
+.spacer{flex:1}
+.done h2{font-family:var(--word);margin:0;font-size:1.6rem}
+ul.miss{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+ul.miss li{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:6px}
+
+.search{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.list h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:14px 0 4px}
+.w{display:grid;grid-template-columns:2.4rem minmax(0,1.2fr) minmax(0,1fr) auto;gap:2px 10px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line)}
+.w .a{font-weight:700}
+.w .g{font-family:var(--word);font-weight:500;overflow-wrap:anywhere}
+.w .g small{display:block;font-family:var(--ui);color:var(--muted);font-size:.82rem}
+.w .e{color:var(--muted);min-width:0}
+.lv{display:flex;gap:2px}
+.lv i{width:6px;height:12px;border-radius:2px;background:var(--line)}
+.lv i.on{background:var(--das)}
+@media (max-width:520px){
+  .stage{padding:16px}
+  .w{grid-template-columns:2.4rem minmax(0,1fr) auto}
+  .w .e{grid-column:2 / -1;grid-row:2}
+}
+.install{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:var(--mark-bg);border-radius:10px;padding:10px 14px;font-size:.92rem}
+.install span{flex:1 1 200px;min-width:0}
+.install .btn{padding:6px 14px}
+@media (max-width:640px){
+  body{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}
+  .modes{position:fixed;left:0;right:0;bottom:0;z-index:5;flex-wrap:nowrap;border-radius:0;background:var(--surface);border-top:1px solid var(--line);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px))}
+  .modes button{flex:1 1 0;min-width:0;padding:11px 2px;font-size:.84rem}
+  .modes button[aria-selected="true"]{background:var(--sunk);box-shadow:none}
+}
+footer{font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:8px}
+footer .row>*{flex:0 0 auto}
+.link{border:0;background:none;padding:0;color:var(--muted);text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <h1>Wortwerk <span>B1 Wortschatz for telc practice</span></h1>
+    <div class="legend" aria-label="Colour code"><span class="der">der</span><span class="die">die</span><span class="das">das</span></div>
+  </header>
+  <div class="install" id="install" hidden><span id="installText"></span><button class="btn primary" id="installBtn" hidden>Install</button><button class="link" id="installNo">Dismiss</button></div>
+  <section class="status" id="status" aria-live="polite"></section>
+  <details class="topics" id="topicsBox">
+    <summary><span>Topics</span><small id="topicsSum"></small></summary>
+    <div class="chips" id="chips"></div>
+  </details>
+  <nav class="modes" role="tablist" id="modes"></nav>
+  <main class="stage" id="stage"></main>
+  <footer>
+    <div>Words you get right come back after 1, 2, 4, 7 and 14 days. A miss sends the word back to the start. Progress is saved on this device only.</div>
+    <div class="row" id="resetRow"><button class="link" data-act="reset" id="resetBtn">Reset my progress</button></div>
+  </footer>
+</div>
+
+<script>
+const DATA = [
+["Arbeit & Beruf","Work",`der|Arbeitgeber|die Arbeitgeber|employer|Mein Arbeitgeber bezahlt die Fahrkarte.
+der|Arbeitnehmer|die Arbeitnehmer|employee|Jeder Arbeitnehmer hat Anspruch auf Urlaub.
+die|Bewerbung|die Bewerbungen|job application|Ich habe gestern meine Bewerbung abgeschickt.
+der|Lebenslauf|die Lebensläufe|CV, résumé|Bitte schicken Sie uns Ihren Lebenslauf.
+das|Vorstellungsgespräch|die Vorstellungsgespräche|job interview|Morgen habe ich ein Vorstellungsgespräch.
+das|Gehalt|die Gehälter|salary|Das Gehalt wird am Monatsende überwiesen.
+die|Stelle|die Stellen|position, job|Die Firma hat eine neue Stelle ausgeschrieben.
+der|Betrieb|die Betriebe|company, business|In unserem Betrieb arbeiten fünfzig Personen.
+die|Abteilung|die Abteilungen|department|Sie leitet die Abteilung für Kundenservice.
+der|Vertrag|die Verträge|contract|Ich habe den Vertrag schon unterschrieben.
+die|Kündigung|die Kündigungen|notice, dismissal|Er hat gestern seine Kündigung bekommen.
+die|Überstunde|die Überstunden|hour of overtime|Diese Woche musste ich viele Überstunden machen.
+die|Erfahrung|die Erfahrungen|experience (knowledge gained)|Sie hat viel Erfahrung im Verkauf.
+die|Ausbildung|die Ausbildungen|vocational training|Nach der Schule macht er eine Ausbildung als Koch.
+das|Praktikum|die Praktika|internship|Im Sommer mache ich ein Praktikum bei einer Zeitung.
+der|Kollege|die Kollegen|colleague|Mein Kollege hilft mir bei dem Projekt.
+die|Besprechung|die Besprechungen|meeting|Die Besprechung beginnt um zehn Uhr.
+der|Termin|die Termine|appointment|Können wir den Termin verschieben?
+die|Schicht|die Schichten|shift|Nächste Woche habe ich die frühe Schicht.
+der|Feierabend|die Feierabende|end of the working day|Nach Feierabend gehe ich ins Fitnessstudio.
+die|Verantwortung|–|responsibility|Als Chefin trägt sie viel Verantwortung.
+der|Lohn|die Löhne|wage|Der Lohn ist in dieser Branche niedrig.
+die|Gewerkschaft|die Gewerkschaften|trade union|Die Gewerkschaft fordert mehr Geld.
+das|Zeugnis|die Zeugnisse|certificate, school report|Bitte legen Sie Ihre Zeugnisse bei.
+der|Rentner|die Rentner|pensioner|Mein Großvater ist seit zwei Jahren Rentner.`],
+["Wohnen","Housing",`die|Miete|die Mieten|rent|Die Miete ist in dieser Stadt sehr hoch.
+der|Vermieter|die Vermieter|landlord|Der Vermieter wohnt im selben Haus.
+der|Mieter|die Mieter|tenant|Der neue Mieter zieht im Mai ein.
+die|Kaution|die Kautionen|deposit|Die Kaution beträgt drei Monatsmieten.
+der|Umzug|die Umzüge|move (to a new home)|Beim Umzug haben mir Freunde geholfen.
+das|Erdgeschoss|die Erdgeschosse|ground floor|Die Wohnung liegt im Erdgeschoss.
+das|Stockwerk|die Stockwerke|floor, storey|Das Haus hat fünf Stockwerke.
+der|Keller|die Keller|cellar|Die Fahrräder stehen im Keller.
+die|Heizung|die Heizungen|heating|Die Heizung funktioniert seit gestern nicht.
+der|Nachbar|die Nachbarn|neighbour|Unser Nachbar ist sehr hilfsbereit.
+das|Gebäude|die Gebäude|building|Das Gebäude wurde 1950 gebaut.
+der|Aufzug|die Aufzüge|lift, elevator|Der Aufzug ist leider kaputt.
+die|Einrichtung|die Einrichtungen|furnishings|Die Einrichtung der Wohnung ist modern.
+das|Möbelstück|die Möbelstücke|piece of furniture|Dieses Möbelstück habe ich geerbt.
+der|Haushalt|die Haushalte|household|Wir teilen uns die Arbeit im Haushalt.
+der|Müll|–|rubbish|Bringst du bitte den Müll raus?
+die|Steckdose|die Steckdosen|power socket|Neben dem Bett gibt es keine Steckdose.
+der|Schlüssel|die Schlüssel|key|Ich habe meinen Schlüssel verloren.
+die|Wohngemeinschaft|die Wohngemeinschaften|shared flat|Als Student habe ich in einer Wohngemeinschaft gelebt.
+das|Dach|die Dächer|roof|Das Dach muss repariert werden.
+der|Balkon|die Balkone|balcony|Im Sommer frühstücken wir auf dem Balkon.
+die|Umgebung|die Umgebungen|surroundings, area|In der Umgebung gibt es viele Parks.
+der|Vorort|die Vororte|suburb|Sie wohnen in einem ruhigen Vorort.
+das|Grundstück|die Grundstücke|plot of land|Das Grundstück ist sehr groß.
+die|Reparatur|die Reparaturen|repair|Die Reparatur hat zwei Stunden gedauert.
+der|Hausmeister|die Hausmeister|caretaker|Der Hausmeister kümmert sich um den Garten.
+der|Strom|–|electricity|Wir wollen weniger Strom verbrauchen.`],
+["Gesundheit","Health",`die|Gesundheit|–|health|Rauchen schadet der Gesundheit.
+die|Krankheit|die Krankheiten|illness|Diese Krankheit ist nicht gefährlich.
+der|Schmerz|die Schmerzen|pain|Ich habe starke Schmerzen im Rücken.
+das|Fieber|–|fever|Das Kind hat hohes Fieber.
+die|Erkältung|die Erkältungen|cold (illness)|Ich habe eine leichte Erkältung.
+der|Husten|–|cough|Gegen den Husten trinke ich Tee.
+das|Rezept|die Rezepte|prescription; recipe|Dieses Medikament gibt es nur auf Rezept.
+das|Medikament|die Medikamente|medicine, drug|Nehmen Sie das Medikament nach dem Essen.
+die|Tablette|die Tabletten|pill, tablet|Ich nehme jeden Morgen eine Tablette.
+die|Apotheke|die Apotheken|pharmacy|Die Apotheke hat heute Notdienst.
+die|Sprechstunde|die Sprechstunden|consultation hours|Die Sprechstunde ist von acht bis zwölf Uhr.
+die|Untersuchung|die Untersuchungen|medical examination|Die Untersuchung dauert nur zehn Minuten.
+die|Krankenkasse|die Krankenkassen|health insurance fund|Die Krankenkasse bezahlt die Behandlung.
+die|Versicherung|die Versicherungen|insurance|Haben Sie eine Versicherung für das Auto?
+der|Unfall|die Unfälle|accident|Auf der Autobahn ist ein Unfall passiert.
+die|Verletzung|die Verletzungen|injury|Die Verletzung war zum Glück nicht schwer.
+der|Notfall|die Notfälle|emergency|Im Notfall rufen Sie bitte diese Nummer an.
+das|Krankenhaus|die Krankenhäuser|hospital|Sie musste eine Woche im Krankenhaus bleiben.
+die|Operation|die Operationen|operation, surgery|Die Operation ist gut verlaufen.
+der|Verband|die Verbände|bandage|Die Ärztin hat mir einen Verband gemacht.
+die|Ernährung|–|diet, nutrition|Eine gesunde Ernährung ist wichtig.
+die|Bewegung|die Bewegungen|exercise, movement|Bewegung an der frischen Luft tut gut.
+das|Gewicht|die Gewichte|weight|Der Arzt kontrolliert mein Gewicht.
+der|Stress|–|stress|Bei der Arbeit habe ich zurzeit viel Stress.
+die|Impfung|die Impfungen|vaccination|Für die Reise brauchst du eine Impfung.
+der|Krankenwagen|die Krankenwagen|ambulance|Der Krankenwagen kam nach fünf Minuten.
+die|Besserung|–|recovery, improvement|Ich wünsche dir gute Besserung!`],
+["Reisen & Verkehr","Travel & transport",`die|Abfahrt|die Abfahrten|departure|Die Abfahrt ist um 9:15 Uhr.
+die|Ankunft|die Ankünfte|arrival|Die Ankunft in Berlin ist um 14 Uhr.
+die|Verspätung|die Verspätungen|delay|Der Zug hat zwanzig Minuten Verspätung.
+der|Anschluss|die Anschlüsse|connection|Wir haben den Anschluss in Köln verpasst.
+der|Bahnsteig|die Bahnsteige|platform|Bitte warten Sie auf dem Bahnsteig.
+das|Gleis|die Gleise|track, platform number|Der Zug fährt heute von Gleis drei ab.
+die|Fahrkarte|die Fahrkarten|ticket (transport)|Ich kaufe die Fahrkarte am Automaten.
+der|Fahrplan|die Fahrpläne|timetable (transport)|Der neue Fahrplan gilt ab Dezember.
+die|Haltestelle|die Haltestellen|stop (bus, tram)|Die Haltestelle ist direkt vor dem Haus.
+der|Stau|die Staus|traffic jam|Wir standen eine Stunde im Stau.
+die|Kreuzung|die Kreuzungen|crossroads, junction|An der Kreuzung müssen Sie links abbiegen.
+die|Ampel|die Ampeln|traffic light|Die Ampel ist rot.
+der|Führerschein|die Führerscheine|driving licence|Mit achtzehn habe ich den Führerschein gemacht.
+die|Autobahn|die Autobahnen|motorway|Auf der Autobahn gibt es eine Baustelle.
+die|Tankstelle|die Tankstellen|petrol station|Die nächste Tankstelle ist zehn Kilometer entfernt.
+das|Gepäck|–|luggage|Sie können Ihr Gepäck hier abgeben.
+der|Koffer|die Koffer|suitcase|Mein Koffer ist zu schwer.
+die|Unterkunft|die Unterkünfte|accommodation|Wir suchen eine günstige Unterkunft.
+die|Übernachtung|die Übernachtungen|overnight stay|Die Übernachtung kostet achtzig Euro.
+der|Aufenthalt|die Aufenthalte|stay|Wir wünschen Ihnen einen schönen Aufenthalt.
+das|Reisebüro|die Reisebüros|travel agency|Wir haben die Reise im Reisebüro gebucht.
+die|Sehenswürdigkeit|die Sehenswürdigkeiten|tourist sight|Der Dom ist die bekannteste Sehenswürdigkeit der Stadt.
+der|Ausflug|die Ausflüge|excursion, day trip|Am Sonntag machen wir einen Ausflug an den See.
+die|Grenze|die Grenzen|border|An der Grenze wurden die Pässe kontrolliert.
+das|Ausland|–|foreign countries, abroad|Sie hat zwei Jahre im Ausland gearbeitet.
+der|Flughafen|die Flughäfen|airport|Ich hole dich vom Flughafen ab.
+das|Verkehrsmittel|die Verkehrsmittel|means of transport|Ich fahre mit öffentlichen Verkehrsmitteln zur Arbeit.`],
+["Ämter & Behörden","Public offices",`das|Amt|die Ämter|public office|Das Amt ist nur vormittags geöffnet.
+die|Behörde|die Behörden|authority|Die Behörde hat meinen Brief beantwortet.
+der|Antrag|die Anträge|application, request|Sie müssen einen Antrag stellen.
+das|Formular|die Formulare|form|Bitte füllen Sie dieses Formular aus.
+die|Unterschrift|die Unterschriften|signature|Hier fehlt noch Ihre Unterschrift.
+der|Ausweis|die Ausweise|ID card|Darf ich bitte Ihren Ausweis sehen?
+der|Reisepass|die Reisepässe|passport|Mein Reisepass ist abgelaufen.
+die|Aufenthaltserlaubnis|die Aufenthaltserlaubnisse|residence permit|Ich muss meine Aufenthaltserlaubnis verlängern.
+die|Genehmigung|die Genehmigungen|permit, approval|Für den Umbau braucht man eine Genehmigung.
+die|Bescheinigung|die Bescheinigungen|written confirmation|Ich brauche eine Bescheinigung vom Arzt.
+die|Anmeldung|die Anmeldungen|registration|Die Anmeldung für den Kurs ist online möglich.
+der|Wohnsitz|die Wohnsitze|place of residence|Mein Wohnsitz ist in Hamburg.
+die|Staatsangehörigkeit|die Staatsangehörigkeiten|nationality|Welche Staatsangehörigkeit haben Sie?
+die|Steuer|die Steuern|tax|Die Steuer wird direkt vom Gehalt abgezogen.
+die|Gebühr|die Gebühren|fee|Die Gebühr für den Pass beträgt siebzig Euro.
+die|Frist|die Fristen|deadline|Die Frist endet am 31. März.
+das|Gesetz|die Gesetze|law (a statute)|Das neue Gesetz gilt ab Januar.
+das|Recht|die Rechte|right; the law|Sie haben das Recht auf eine Beratung.
+die|Pflicht|die Pflichten|duty, obligation|Es ist meine Pflicht, pünktlich zu sein.
+die|Vorschrift|die Vorschriften|regulation, rule|Bitte beachten Sie die Vorschriften.
+das|Gericht|die Gerichte|court; dish|Der Fall kommt nächsten Monat vor Gericht.
+der|Anwalt|die Anwälte|lawyer|Ich möchte zuerst mit meinem Anwalt sprechen.
+die|Polizei|–|police|Wir sollten die Polizei rufen.
+die|Strafe|die Strafen|fine, punishment|Er musste eine Strafe von fünfzig Euro zahlen.
+der|Bürger|die Bürger|citizen|Jeder Bürger darf wählen.
+das|Rathaus|die Rathäuser|town hall|Das Rathaus liegt am Marktplatz.
+die|Auskunft|die Auskünfte|information (given on request)|Können Sie mir eine Auskunft geben?`],
+["Bildung","Education",`der|Unterricht|–|lessons, teaching|Der Unterricht beginnt um acht Uhr.
+die|Prüfung|die Prüfungen|exam|Ich habe die Prüfung bestanden.
+die|Note|die Noten|grade, mark|Sie hat eine gute Note bekommen.
+der|Abschluss|die Abschlüsse|qualification, degree|Welchen Abschluss haben Sie?
+das|Abitur|–|school-leaving exam for university|Nach dem Abitur möchte er studieren.
+das|Studium|die Studien|university studies|Das Studium dauert drei Jahre.
+das|Fach|die Fächer|school subject|Mathe ist mein liebstes Fach.
+der|Kurs|die Kurse|course|Der Kurs findet zweimal pro Woche statt.
+die|Fortbildung|die Fortbildungen|further training|Meine Firma bezahlt die Fortbildung.
+das|Wissen|–|knowledge|Für diesen Beruf braucht man viel Wissen.
+die|Kenntnis|die Kenntnisse|knowledge, skills|Gute Kenntnisse in Englisch sind nötig.
+die|Fähigkeit|die Fähigkeiten|ability|Sie hat die Fähigkeit, gut zuzuhören.
+die|Aufgabe|die Aufgaben|task, exercise|Diese Aufgabe ist ziemlich schwierig.
+die|Übung|die Übungen|practice, exercise|Übung macht den Meister.
+der|Fehler|die Fehler|mistake|Im Text sind noch drei Fehler.
+die|Lösung|die Lösungen|solution, answer|Die Lösung steht auf Seite zwanzig.
+der|Fortschritt|die Fortschritte|progress|Du hast große Fortschritte gemacht.
+das|Ergebnis|die Ergebnisse|result|Das Ergebnis der Prüfung kommt per Post.
+die|Fremdsprache|die Fremdsprachen|foreign language|Deutsch ist meine zweite Fremdsprache.
+die|Muttersprache|die Muttersprachen|native language|Was ist Ihre Muttersprache?
+die|Aussprache|–|pronunciation|Ihre Aussprache ist sehr deutlich.
+der|Wortschatz|–|vocabulary|Durch Lesen wird der Wortschatz größer.
+die|Bedeutung|die Bedeutungen|meaning|Dieses Wort hat mehr als eine Bedeutung.
+das|Wörterbuch|die Wörterbücher|dictionary|Darf man in der Prüfung ein Wörterbuch benutzen?
+die|Grundschule|die Grundschulen|primary school|Meine Tochter geht in die Grundschule.
+der|Stundenplan|die Stundenpläne|class timetable|Laut Stundenplan haben wir jetzt Sport.
+das|Semester|die Semester|semester|Im nächsten Semester schreibe ich meine Arbeit.`],
+["Freizeit & Medien","Leisure & media",`die|Freizeit|–|free time|In meiner Freizeit spiele ich Gitarre.
+der|Verein|die Vereine|club, association|Er spielt Fußball in einem Verein.
+die|Veranstaltung|die Veranstaltungen|event|Die Veranstaltung findet im Stadtpark statt.
+die|Ausstellung|die Ausstellungen|exhibition|Im Museum gibt es eine neue Ausstellung.
+die|Vorstellung|die Vorstellungen|performance, showing|Die Vorstellung beginnt um acht Uhr.
+die|Eintrittskarte|die Eintrittskarten|admission ticket|Die Eintrittskarte kostet zwölf Euro.
+das|Mitglied|die Mitglieder|member|Ich bin Mitglied in einem Sportverein.
+der|Wettbewerb|die Wettbewerbe|competition, contest|Sie hat bei einem Wettbewerb gewonnen.
+die|Mannschaft|die Mannschaften|team|Unsere Mannschaft hat zwei zu eins gewonnen.
+das|Spiel|die Spiele|game, match|Das Spiel war bis zum Ende spannend.
+der|Zuschauer|die Zuschauer|spectator, viewer|Die Zuschauer haben lange geklatscht.
+die|Sendung|die Sendungen|TV or radio programme|Diese Sendung sehe ich jeden Abend.
+die|Nachricht|die Nachrichten|message, piece of news|Ich habe dir eine Nachricht geschickt.
+die|Zeitschrift|die Zeitschriften|magazine|Im Wartezimmer liegen viele Zeitschriften.
+die|Werbung|die Werbungen|advertising|Im Fernsehen kommt zu viel Werbung.
+der|Bildschirm|die Bildschirme|screen|Ich sitze den ganzen Tag vor dem Bildschirm.
+das|Netzwerk|die Netzwerke|network|Viele Leute nutzen soziale Netzwerke.
+die|Unterhaltung|die Unterhaltungen|entertainment; chat|Der Film bietet gute Unterhaltung.
+das|Gespräch|die Gespräche|conversation|Wir haben ein langes Gespräch geführt.
+die|Einladung|die Einladungen|invitation|Vielen Dank für die Einladung!
+das|Fest|die Feste|celebration, party|Zum Fest kamen über hundert Gäste.
+das|Geschenk|die Geschenke|gift, present|Ich suche ein Geschenk für meine Schwester.
+die|Stimmung|die Stimmungen|mood, atmosphere|Die Stimmung auf der Party war super.
+das|Erlebnis|die Erlebnisse|experience (an event you live through)|Die Reise war ein tolles Erlebnis.
+der|Roman|die Romane|novel|Ich lese gerade einen spannenden Roman.
+das|Instrument|die Instrumente|instrument|Spielst du ein Instrument?
+die|Bühne|die Bühnen|stage|Die Band steht schon auf der Bühne.`],
+["Einkaufen & Geld","Shopping & money",`das|Angebot|die Angebote|offer|Heute gibt es Äpfel im Angebot.
+die|Nachfrage|die Nachfragen|demand|Die Nachfrage nach Fahrrädern ist gestiegen.
+der|Preis|die Preise|price|Der Preis ist in Ordnung.
+die|Rechnung|die Rechnungen|bill, invoice|Die Rechnung, bitte!
+die|Quittung|die Quittungen|receipt|Brauchen Sie eine Quittung?
+der|Rabatt|die Rabatte|discount|Studenten bekommen zehn Prozent Rabatt.
+die|Ware|die Waren|goods, product|Die Ware wird morgen geliefert.
+die|Qualität|die Qualitäten|quality|Die Qualität dieser Schuhe ist sehr gut.
+die|Garantie|die Garantien|guarantee|Auf das Gerät gibt es zwei Jahre Garantie.
+der|Umtausch|–|exchange (of goods)|Ein Umtausch ist nur mit Quittung möglich.
+die|Reklamation|die Reklamationen|complaint (about a product)|Für Ihre Reklamation gehen Sie bitte zum Kundendienst.
+der|Kunde|die Kunden|customer|Der Kunde möchte sein Geld zurück.
+die|Kasse|die Kassen|checkout, till|Bitte zahlen Sie an der Kasse.
+das|Bargeld|–|cash|Ich habe leider kein Bargeld dabei.
+das|Konto|die Konten|bank account|Ich möchte ein Konto eröffnen.
+die|Überweisung|die Überweisungen|bank transfer|Die Überweisung dauert einen Tag.
+der|Kredit|die Kredite|loan|Für das Haus haben wir einen Kredit aufgenommen.
+der|Zins|die Zinsen|interest (on money)|Die Zinsen sind im Moment hoch.
+die|Ausgabe|die Ausgaben|expense|Unsere Ausgaben für Lebensmittel sind gestiegen.
+das|Einkommen|die Einkommen|income|Sein Einkommen reicht für die Familie.
+die|Lieferung|die Lieferungen|delivery|Die Lieferung ist kostenlos.
+die|Bestellung|die Bestellungen|order|Ihre Bestellung ist angekommen.
+das|Paket|die Pakete|parcel|Das Paket liegt bei der Nachbarin.
+die|Größe|die Größen|size|Haben Sie die Hose eine Größe kleiner?
+das|Geschäft|die Geschäfte|shop; business|Das Geschäft schließt um zwanzig Uhr.
+der|Geldautomat|die Geldautomaten|cash machine|Wo ist der nächste Geldautomat?
+die|Währung|die Währungen|currency|Der Euro ist die Währung in vielen Ländern.
+das|Sonderangebot|die Sonderangebote|special offer|Dieses Sonderangebot gilt nur heute.`],
+["Umwelt & Natur","Environment & nature",`die|Umwelt|–|environment|Wir müssen die Umwelt schützen.
+der|Umweltschutz|–|environmental protection|Umweltschutz beginnt zu Hause.
+das|Klima|–|climate|Das Klima hier ist mild.
+der|Klimawandel|–|climate change|Der Klimawandel betrifft alle Länder.
+die|Luft|–|air|Die Luft in den Bergen ist frisch.
+die|Verschmutzung|die Verschmutzungen|pollution|Die Verschmutzung der Meere nimmt zu.
+der|Abfall|die Abfälle|waste|Bitte werfen Sie keinen Abfall auf den Boden.
+die|Mülltrennung|–|waste separation|In Deutschland ist Mülltrennung normal.
+die|Energie|die Energien|energy|Wir sollten mehr Energie sparen.
+die|Landschaft|die Landschaften|landscape|Die Landschaft im Norden ist flach.
+das|Gebirge|die Gebirge|mountain range|Im Gebirge liegt noch Schnee.
+der|Wald|die Wälder|forest|Wir gehen oft im Wald spazieren.
+die|Wiese|die Wiesen|meadow|Die Kinder spielen auf der Wiese.
+das|Ufer|die Ufer|bank, shore|Wir sitzen am Ufer des Flusses.
+die|Küste|die Küsten|coast|An der Küste weht immer Wind.
+die|Insel|die Inseln|island|Wir machen Urlaub auf einer kleinen Insel.
+die|Pflanze|die Pflanzen|plant|Diese Pflanze braucht viel Wasser.
+das|Tier|die Tiere|animal|Im Zoo leben Tiere aus aller Welt.
+die|Ernte|die Ernten|harvest|Die Ernte war dieses Jahr gut.
+der|Bauernhof|die Bauernhöfe|farm|Meine Großeltern haben einen Bauernhof.
+das|Gewitter|die Gewitter|thunderstorm|Heute Abend gibt es ein Gewitter.
+der|Sturm|die Stürme|storm|Der Sturm hat viele Bäume beschädigt.
+die|Hitze|–|heat|Bei dieser Hitze bleibe ich zu Hause.
+die|Kälte|–|cold (temperature)|Die Kälte macht mir nichts aus.
+der|Wetterbericht|die Wetterberichte|weather forecast|Laut Wetterbericht regnet es morgen.
+die|Jahreszeit|die Jahreszeiten|season|Der Herbst ist meine liebste Jahreszeit.
+das|Hochwasser|die Hochwasser|flood|Nach dem Regen gab es Hochwasser.
+der|Schatten|die Schatten|shade, shadow|Setzen wir uns in den Schatten.`],
+["Menschen & Beziehungen","People & relationships",`die|Beziehung|die Beziehungen|relationship|Sie haben eine gute Beziehung zueinander.
+die|Freundschaft|die Freundschaften|friendship|Unsere Freundschaft besteht seit der Schulzeit.
+die|Ehe|die Ehen|marriage|Sie führen eine glückliche Ehe.
+die|Hochzeit|die Hochzeiten|wedding|Die Hochzeit findet im Juni statt.
+die|Scheidung|die Scheidungen|divorce|Nach der Scheidung ist er umgezogen.
+der|Verwandte|die Verwandten|relative|Ein Verwandter von mir lebt in Wien.
+die|Erziehung|–|upbringing|Die Erziehung der Kinder ist nicht immer leicht.
+die|Kindheit|–|childhood|Ich hatte eine schöne Kindheit.
+die|Jugend|–|youth|In meiner Jugend habe ich viel Sport gemacht.
+das|Alter|–|age; old age|Im Alter möchte er auf dem Land leben.
+die|Generation|die Generationen|generation|In diesem Haus wohnen drei Generationen.
+das|Gefühl|die Gefühle|feeling|Ich habe ein gutes Gefühl bei der Sache.
+die|Angst|die Ängste|fear|Er hat Angst vor der Prüfung.
+die|Freude|die Freuden|joy|Das Geschenk hat ihr große Freude gemacht.
+der|Ärger|–|trouble, annoyance|Ich hatte Ärger mit dem Chef.
+der|Streit|die Streite|argument, quarrel|Die Geschwister haben oft Streit.
+das|Vertrauen|–|trust|Ich habe volles Vertrauen zu ihr.
+die|Geduld|–|patience|Mit Kindern braucht man viel Geduld.
+der|Charakter|die Charaktere|character|Sie hat einen starken Charakter.
+die|Eigenschaft|die Eigenschaften|characteristic, quality|Ehrlichkeit ist eine wichtige Eigenschaft.
+die|Meinung|die Meinungen|opinion|Meiner Meinung nach ist das falsch.
+der|Rat|die Ratschläge|advice|Kannst du mir einen Rat geben?
+der|Vorschlag|die Vorschläge|suggestion|Ich finde deinen Vorschlag sehr gut.
+die|Entscheidung|die Entscheidungen|decision|Wir müssen bald eine Entscheidung treffen.
+die|Entschuldigung|die Entschuldigungen|apology|Ich habe seine Entschuldigung angenommen.
+das|Verhalten|–|behaviour|Sein Verhalten war nicht in Ordnung.
+der|Unterschied|die Unterschiede|difference|Zwischen den Angeboten gibt es keinen großen Unterschied.
+die|Gesellschaft|die Gesellschaften|society; company|Die Gesellschaft verändert sich schnell.
+das|Missverständnis|die Missverständnisse|misunderstanding|Das war nur ein Missverständnis.`]
+];
+
+const TOPICS = DATA.map((t,i)=>({id:i,de:t[0],en:t[1]}));
+const WORDS = DATA.flatMap((t,i)=>t[2].split("\n").map(l=>{const [art,de,pl,en,ex]=l.split("|");return {art,de,pl,en,ex,topic:i};}));
+
+// Ending patterns that reliably predict the article; shown only when they fit the word.
+const RULES = [
+  [/(ung|heit|keit|schaft|tion|tät|ei|ie|ur)$/, "die", m=>`Nouns ending in -${m} are feminine.`],
+  [/(ment|um|chen|lein)$/, "das", m=>`Nouns ending in -${m} are neuter.`],
+  [/nis$/, "das", ()=>"Most nouns ending in -nis are neuter."],
+  [/^Ge/, "das", ()=>"Many nouns starting with Ge- are neuter."],
+  [/(er|ling|ismus)$/, "der", m=>m==="er"?"Nouns in -er for people and jobs are masculine.":`Nouns ending in -${m} are masculine.`],
+  [/e$/, "die", ()=>"Most nouns ending in -e are feminine."]
+];
+function tipFor(w){
+  for(const [re,art,say] of RULES){const m=w.de.match(re); if(m && art===w.art) return say(m[1]||"");}
+  return "";
+}
+
+const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
+const MODES=[["cards","Cards"],["article","Artikel"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
+let store={p:{},topics:[],mode:"cards"};
+try{const s=JSON.parse(localStorage.getItem("b1wortschatz")||"null"); if(s&&s.p) store=Object.assign(store,s);}catch(e){}
+function save(){try{localStorage.setItem("b1wortschatz",JSON.stringify(store));}catch(e){}}
+const prog=w=>store.p[w.de]||{box:0,due:0};
+function grade(w,ok){
+  const p=prog(w); const box=ok?Math.min(5,p.box+1):1;
+  store.p[w.de]={box,due:Date.now()+GAPS[box]*DAY}; save();
+}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const pool=()=>store.topics.length?WORDS.filter(w=>store.topics.includes(w.topic)):WORDS;
+const canSpeak="speechSynthesis" in window;
+function say(t){try{const u=new SpeechSynthesisUtterance(t);u.lang="de-DE";u.rate=.9;speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+const sayBtn=w=>canSpeak?`<button class="say" data-act="say" data-t="${esc(w.art+" "+w.de)}">Listen</button>`:"";
+const $=id=>document.getElementById(id);
+
+let S=null, query="", confirmReset=false;
+function newRound(){
+  const now=Date.now(), all=pool();
+  const due=shuffle(all.filter(w=>prog(w).box>0&&prog(w).due<=now)).sort((a,b)=>prog(a).box-prog(b).box);
+  const fresh=shuffle(all.filter(w=>prog(w).box===0));
+  const later=all.filter(w=>prog(w).box>0&&prog(w).due>now).sort((a,b)=>prog(a).due-prog(b).due);
+  const queue=shuffle(due.concat(fresh,later).slice(0,ROUND));
+  S={queue,i:0,size:queue.length,right:0,misses:[],retried:new Set(),phase:"ask",picked:null,opts:null,verdict:null};
+  prep();
+}
+function prep(){
+  S.phase="ask";S.picked=null;S.verdict=null;S.opts=null;
+  const w=S.queue[S.i]; if(!w) return;
+  if(store.mode==="meaning"){
+    const others=shuffle(WORDS.filter(x=>x.en!==w.en)).slice(0,3).map(x=>x.en);
+    S.opts=shuffle(others.concat(w.en));
+  }
+}
+function answer(ok){
+  const w=S.queue[S.i], first=!S.retried.has(w.de);
+  grade(w,ok);
+  if(first){ if(ok) S.right++; else {S.misses.push(w); S.retried.add(w.de); S.queue.push(w);} }
+  S.phase="shown"; S.verdict=ok;
+}
+function next(){S.i++;prep();render();}
+
+function renderStatus(){
+  const all=pool(), now=Date.now();
+  let m=0,l=0,d=0;
+  all.forEach(w=>{const p=prog(w); if(p.box>=4)m++; else if(p.box>0)l++; if(p.box>0&&p.due<=now)d++;});
+  const n=all.length;
+  $("status").innerHTML=`<div class="bar" role="img" aria-label="${m} mastered, ${l} learning, ${n-m-l} new"><i class="m" style="width:${m/n*100}%"></i><i class="l" style="width:${l/n*100}%"></i></div>
+  <div class="counts"><span><i class="dot m"></i><b>${m}</b> mastered</span><span><i class="dot l"></i><b>${l}</b> learning</span><span><i class="dot n"></i><b>${n-m-l}</b> new</span><span><b>${d}</b> due for review</span></div>`;
+  $("topicsSum").textContent=store.topics.length?`${store.topics.length} of ${TOPICS.length} · ${n} words`:`All ${TOPICS.length} · ${n} words`;
+}
+function renderChrome(){
+  $("chips").innerHTML=`<button class="chip" data-act="topic" data-id="all" aria-pressed="${!store.topics.length}">All topics</button>`+
+    TOPICS.map(t=>`<button class="chip" data-act="topic" data-id="${t.id}" aria-pressed="${store.topics.includes(t.id)}" title="${esc(t.en)}">${esc(t.de)}</button>`).join("");
+  $("modes").innerHTML=MODES.map(([id,label])=>`<button role="tab" data-act="mode" data-id="${id}" aria-selected="${store.mode===id}">${label}</button>`).join("");
+  $("resetRow").innerHTML=confirmReset
+    ?`<span>Erase progress for all ${WORDS.length} words?</span><button class="link" data-act="reset-yes">Yes, erase</button><button class="link" data-act="reset-no">Keep it</button>`
+    :`<button class="link" data-act="reset">Reset my progress</button>`;
+}
+const head=w=>`<div class="meta"><span>${esc(TOPICS[w.topic].de)} · ${esc(TOPICS[w.topic].en)}</span><span>${Math.min(S.i+1,S.queue.length)} / ${S.queue.length}</span></div>`;
+const full=w=>`<p class="big"><span class="art ${w.art}">${w.art}</span> ${esc(w.de)}</p><div class="sub">Plural: ${esc(w.pl==="–"?"not used":w.pl)}</div>`;
+function reveal(w,withEn){
+  const tip=tipFor(w);
+  return `<div class="prompt ${w.art}">${full(w)}${withEn?`<div class="en">${esc(w.en)}</div>`:""}${sayBtn(w)}</div>
+  <p class="ex">${esc(w.ex)}</p>${tip?`<div class="tip"><b>Pattern</b> ${esc(tip)}</div>`:""}`;
+}
+const nextBtn=`<div class="spacer"></div><div class="row"><button class="btn primary" data-act="next" id="nextBtn">Next <kbd>Enter</kbd></button></div>`;
+
+function render(){
+  renderStatus(); renderChrome();
+  const st=$("stage");
+  if(store.mode==="list"){ renderList(st); return; }
+  if(!S) newRound();
+  const w=S.queue[S.i];
+  if(!w){
+    st.innerHTML=`<div class="done"><h2>${S.right} of ${S.size} right first time</h2></div>`+
+      (S.misses.length?`<div class="sub">Worth another look:</div><ul class="miss">${S.misses.map(x=>`<li><span><b class="${x.art}">${x.art}</b> ${esc(x.de)}</span><span class="sub">${esc(x.en)}</span></li>`).join("")}</ul>`:`<div class="sub">No misses in this round.</div>`)+
+      `<div class="spacer"></div><div class="row"><button class="btn primary" data-act="again" id="nextBtn">Next round <kbd>Enter</kbd></button></div>`;
+    return;
+  }
+  let h=head(w);
+  if(store.mode==="cards"){
+    if(S.phase==="ask"){
+      h+=`<div class="prompt ${w.art}">${full(w)}${sayBtn(w)}</div><p class="ex">${esc(w.ex)}</p>
+      <div class="spacer"></div><div class="row"><button class="btn primary" data-act="flip">Show English <kbd>Space</kbd></button></div>`;
+    }else{
+      h+=reveal(w,true)+`<div class="spacer"></div><div class="row"><button class="btn" data-act="rate" data-ok="0">Still learning <kbd>1</kbd></button><button class="btn primary" data-act="rate" data-ok="1">I knew it <kbd>2</kbd></button></div>`;
+    }
+  }
+  if(store.mode==="article"){
+    const done=S.phase==="shown";
+    h+=done?reveal(w,true):`<div class="prompt"><p class="big">${esc(w.de)}</p><div class="en">${esc(w.en)}</div></div>`;
+    if(done) h+=`<div class="verdict ${S.verdict?"ok":"no"}">${S.verdict?"Richtig!":`Not ${S.picked}. It is ${w.art} ${esc(w.de)}.`}</div>`;
+    h+=`<div class="row">${["der","die","das"].map((a,i)=>`<button class="artbtn ${a} ${done&&a===w.art?"hit":""} ${done&&a===S.picked&&a!==w.art?"miss":""}" data-act="art" data-a="${a}" ${done?"disabled":""}>${a}</button>`).join("")}</div>`;
+    h+=done?nextBtn:`<div class="sub">Pick the article, or press 1, 2 or 3.</div>`;
+  }
+  if(store.mode==="meaning"){
+    const done=S.phase==="shown";
+    h+=done?reveal(w,false):`<div class="prompt ${w.art}">${full(w)}${sayBtn(w)}</div>`;
+    h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt ${done&&o===w.en?"hit":""} ${done&&o===S.picked&&o!==w.en?"miss":""}" data-act="opt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
+    if(done) h+=nextBtn;
+  }
+  if(store.mode==="write"){
+    if(S.phase==="ask"){
+      h+=`<div class="prompt"><div class="sub">Write it in German, with its article</div><p class="big">${esc(w.en)}</p></div>
+      <form class="write" id="writeForm" autocomplete="off"><input id="answer" type="text" placeholder="der / die / das …" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="German word with article">
+      <div class="keys">${["ä","ö","ü","ß"].map(k=>`<button type="button" data-act="key" data-k="${k}">${k}</button>`).join("")}</div>
+      <div class="row"><button type="button" class="btn" data-act="giveup">I don't know</button><button class="btn primary" type="submit">Check <kbd>Enter</kbd></button></div></form>`;
+    }else{
+      h+=`<div class="verdict ${S.verdict?"ok":"no"}">${esc(S.picked)}</div>`+reveal(w,true)+nextBtn;
+    }
+  }
+  st.innerHTML=h;
+  const f=$("answer")||(S.phase==="shown"&&$("nextBtn")); if(f) f.focus({preventScroll:true});
+}
+function renderList(st){
+  const q=query.trim().toLowerCase();
+  const rows=pool().filter(w=>!q||(w.art+" "+w.de+" "+w.en).toLowerCase().includes(q));
+  let h=`<input class="search" id="search" type="search" placeholder="Search German or English" value="${esc(query)}" aria-label="Search words"><div class="list" id="listRows">`;
+  let last=-1;
+  rows.forEach(w=>{
+    if(w.topic!==last){last=w.topic;h+=`<h3>${esc(TOPICS[last].de)} · ${esc(TOPICS[last].en)}</h3>`;}
+    const b=prog(w).box;
+    h+=`<div class="w"><span class="a ${w.art}">${w.art}</span><span class="g">${esc(w.de)}<small>${w.pl==="–"?"no plural":esc(w.pl)}</small></span><span class="e">${esc(w.en)}</span><span class="lv" title="Level ${b} of 5">${[1,2,3,4,5].map(i=>`<i class="${i<=b?"on":""}"></i>`).join("")}</span></div>`;
+  });
+  if(!rows.length) h+=`<p class="sub">No word matches “${esc(query)}”.</p>`;
+  st.innerHTML=h+"</div>";
+}
+const norm=s=>s.trim().toLowerCase().replace(/\s+/g," ").replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss");
+function checkWrite(val){
+  const w=S.queue[S.i], v=norm(val), noun=norm(w.de);
+  const ok=v===w.art+" "+noun;
+  if(ok) S.picked="Richtig!";
+  else if(v===noun) S.picked="Right noun, but the article is missing.";
+  else if(/^(der|die|das) /.test(v)&&v.slice(4)===noun) S.picked=`Right noun, wrong article. You wrote “${v.slice(0,3)}”.`;
+  else S.picked=val.trim()?`Not quite. You wrote “${val.trim()}”.`:"Here is the answer.";
+  answer(ok); render();
+}
+
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-act]"); if(!b) return;
+  const a=b.dataset.act;
+  if(a==="say") return say(b.dataset.t);
+  if(a==="mode"){store.mode=b.dataset.id;save();S=null;return render();}
+  if(a==="topic"){
+    if(b.dataset.id==="all") store.topics=[];
+    else{const id=+b.dataset.id,i=store.topics.indexOf(id); i<0?store.topics.push(id):store.topics.splice(i,1); if(store.topics.length===TOPICS.length) store.topics=[];}
+    save();S=null;return render();
+  }
+  if(a==="reset"){confirmReset=true;return renderChrome();}
+  if(a==="reset-no"){confirmReset=false;return renderChrome();}
+  if(a==="reset-yes"){confirmReset=false;store.p={};save();S=null;return render();}
+  if(a==="flip"){S.phase="shown";return render();}
+  if(a==="rate"){answer(b.dataset.ok==="1");return next();}
+  if(a==="art"){S.picked=b.dataset.a;answer(S.picked===S.queue[S.i].art);return render();}
+  if(a==="opt"){S.picked=S.opts[+b.dataset.i];answer(S.picked===S.queue[S.i].en);return render();}
+  if(a==="key"){const i=$("answer"),p=i.selectionStart??i.value.length;i.value=i.value.slice(0,p)+b.dataset.k+i.value.slice(i.selectionEnd??p);i.focus();i.setSelectionRange(p+1,p+1);return;}
+  if(a==="giveup") return checkWrite("");
+  if(a==="next") return next();
+  if(a==="again"){S=null;return render();}
+});
+document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventDefault();checkWrite($("answer").value);} });
+document.addEventListener("input",e=>{
+  if(e.target.id==="search"){query=e.target.value;renderList($("stage"));const s=$("search");s.focus();s.setSelectionRange(query.length,query.length);}
+});
+document.addEventListener("keydown",e=>{
+  if(e.target.matches("input")||e.metaKey||e.ctrlKey||e.altKey||store.mode==="list"||!S) return;
+  const w=S.queue[S.i], k=e.key, click=sel=>{const el=document.querySelector(sel); if(el){e.preventDefault();el.click();}};
+  if(k==="Enter"&&(!w||S.phase==="shown")&&store.mode!=="cards") return click("#nextBtn");
+  if(!w){ if(k==="Enter") click("#nextBtn"); return; }
+  if(store.mode==="cards"){
+    if(S.phase==="ask"&&(k===" "||k==="Enter")) return click('[data-act="flip"]');
+    if(S.phase==="shown"&&(k==="1"||k==="2")) return click(`[data-act="rate"][data-ok="${k==="2"?1:0}"]`);
+  }
+  if(S.phase==="ask"&&store.mode==="article"&&"123".includes(k)) return click(`[data-a="${["der","die","das"][k-1]}"]`);
+  if(S.phase==="ask"&&store.mode==="meaning"&&"1234".includes(k)) return click(`[data-act="opt"][data-i="${k-1}"]`);
+});
+render();
+
+// Install prompt and offline support
+(function(){
+  const box=$("install"), txt=$("installText"), btn=$("installBtn");
+  let dismissed=false, deferred=null;
+  try{dismissed=localStorage.getItem("b1install")==="no";}catch(e){}
+  const standalone=matchMedia("(display-mode: standalone)").matches||navigator.standalone===true;
+  function show(t,withBtn){ if(dismissed||standalone) return; txt.textContent=t; btn.hidden=!withBtn; box.hidden=false; }
+  addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;show("Install Wortwerk on this device. It works offline.",true);});
+  addEventListener("appinstalled",()=>{box.hidden=true;});
+  btn.addEventListener("click",()=>{ if(deferred){deferred.prompt();deferred=null;box.hidden=true;} });
+  $("installNo").addEventListener("click",()=>{box.hidden=true;try{localStorage.setItem("b1install","no");}catch(e){}});
+  if(/iphone|ipad|ipod/i.test(navigator.userAgent)) show("To install: tap the Share button, then “Add to Home Screen”.",false);
+  if("serviceWorker" in navigator && location.protocol.indexOf("http")===0) navigator.serviceWorker.register("sw.js").catch(()=>{});
+})();
+</script>
+</body>
+</html>
