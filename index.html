@@ -108,8 +108,7 @@ details.topics summary small{color:var(--muted);font-weight:500}
 .row>*{flex:1 1 120px}
 .btn{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:12px 14px;font-weight:600;text-align:center}
 .btn.primary,.btn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-#auxRow .btn{font-family:var(--word);font-size:1.15rem}
-#auxRow.need .btn{border-color:var(--die)}
+.popt{font-family:var(--word);font-size:1.08rem}
 .btn kbd{font:inherit;font-size:.75rem;color:var(--muted);margin-left:.5em;font-weight:500}
 .btn.primary kbd{color:inherit;opacity:.65}
 .artbtn{border:2px solid;border-radius:12px;padding:16px 8px;font-family:var(--word);font-weight:700;font-size:1.5rem}
@@ -357,7 +356,13 @@ function prep(){
   S.phase="ask";S.picked=null;S.verdict=null;S.opts=null;S.tr=false;
   const w=S.queue[S.i]; if(!w) return;
   if(store.mode==="write") S.tiles=shuffle(w.de.split(""));
-  if(store.mode==="perfekt"){S.tiles=shuffle(perf(w).part.split(""));S.aux=null;}
+  if(store.mode==="perfekt"){
+    const f=perf(w), other=f.aux==="hat"?"ist":"hat";
+    const wrong=/en$/.test(f.part)?f.part.replace(/en$/,"t"):/t$/.test(f.part)?f.part.replace(/t$/,"en"):f.part.replace(/.$/,"t");
+    const form=(a,pt)=>[a,f.mid,pt].filter(Boolean).join(" ");
+    S.right=form(f.aux,f.part);
+    S.opts=shuffle([S.right,form(other,f.part),form(f.aux,wrong),form(other,wrong)]);
+  }
   if(store.mode==="meaning"){
     const others=shuffle(WORDS.filter(x=>(w.kind==="mine"||x.kind===w.kind)&&x.en!==w.en)).slice(0,3).map(x=>x.en);
     S.opts=shuffle(others.concat(w.en));
@@ -450,18 +455,12 @@ function render(){
     if(done) h+=nextBtn;
   }
   if(store.mode==="perfekt"){
-    const f=perf(w);
-    if(S.phase==="ask"){
-      h+=`<div class="prompt"><div class="sub">Perfekt: er${f.mid?" … "+esc(f.mid):""} …</div><p class="big">${esc(w.de)}</p><div class="en">${esc(w.en)}</div></div>
-      <form class="write" id="perfForm" autocomplete="off">
-      <div class="row" id="auxRow">${["hat","ist"].map(a=>`<button type="button" class="btn" data-act="aux" data-a="${a}" aria-pressed="false">${a}</button>`).join("")}</div>
-      <input id="answer" type="text" placeholder="Partizip II …" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Past participle">
-      <div class="keys" id="tiles">${S.tiles.map(c=>`<button type="button" data-act="key" data-k="${esc(c)}">${esc(c)}</button>`).join("")}<button type="button" data-act="back" aria-label="Delete last letter">⌫</button></div>
-      <div class="row"><button type="button" class="btn" data-act="giveup">I don't know</button><button class="btn primary" type="submit">Check <kbd>Enter</kbd></button></div></form>`;
-    }else{
-      h+=`<div class="verdict ${S.verdict?"ok":"no"}">${esc(S.picked)}</div>
-      <div class="prompt"><p class="big">${esc(perfText(w))}</p><div class="sub">${esc(w.de)} · ${esc(w.en)}</div>${canSpeak?`<button class="say" data-act="say" data-t="${esc(perfText(w))}">Listen</button>`:""}</div>${exBlock(w)}`+nextBtn;
-    }
+    const done=S.phase==="shown";
+    h+=done?`<div class="prompt"><p class="big">${esc(perfText(w))}</p><div class="sub">${esc(w.de)} · ${esc(w.en)}</div>${canSpeak?`<button class="say" data-act="say" data-t="${esc(perfText(w))}">Listen</button>`:""}</div>${exBlock(w)}`
+           :`<div class="prompt"><div class="sub">Perfekt: er …</div><p class="big">${esc(w.de)}</p><div class="en">${esc(w.en)}</div></div>`;
+    if(done) h+=`<div class="verdict ${S.verdict?"ok":"no"}">${esc(S.msg)}</div>`;
+    h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt popt ${done&&o===S.right?"hit":""} ${done&&o===S.picked&&o!==S.right?"miss":""}" data-act="popt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
+    if(done) h+=nextBtn;
   }
   if(store.mode==="write"){
     if(S.phase==="ask"){
@@ -512,13 +511,6 @@ function updateTiles(){
     const k=left.findIndex(c=>f(c)===f(b.dataset.k)); if(k>=0){b.disabled=true;left.splice(k,1);}
   }));
 }
-function checkPerf(val,gaveUp){
-  const f=perf(S.queue[S.i]);
-  if(!gaveUp&&!S.aux){$("auxRow").classList.add("need");return;}
-  const partOk=norm(val).replace(/^sich /,"")===norm(f.part), auxOk=S.aux===f.aux, ok=partOk&&auxOk&&!gaveUp;
-  S.picked=ok?"Richtig!":gaveUp?"Here is the answer.":partOk?`Right participle, but this verb takes “${f.aux}”.`:auxOk?`“${f.aux}” is right, but the participle is different.`:"Not quite.";
-  answer(ok); render();
-}
 function checkWrite(val){
   const w=S.queue[S.i], v=norm(val), noun=norm(w.de);
   const ok=v===norm(label(w));
@@ -554,13 +546,17 @@ document.addEventListener("click",e=>{
   if(a==="key"){$("answer").value+=b.dataset.k;return updateTiles();}
   if(a==="artkey"){const i=$("answer");i.value=b.dataset.k+" "+i.value.replace(/^(der|die|das)\s*/i,"");return updateTiles();}
   if(a==="back"){const i=$("answer");i.value=i.value.slice(0,-1);return updateTiles();}
-  if(a==="giveup") return store.mode==="perfekt"?checkPerf("",true):checkWrite("");
-  if(a==="aux"){S.aux=b.dataset.a;$("auxRow").classList.remove("need");$("auxRow").querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));return;}
+  if(a==="giveup") return checkWrite("");
+  if(a==="popt"){
+    const f=perf(S.queue[S.i]); S.picked=S.opts[+b.dataset.i];
+    const ok=S.picked===S.right, auxOk=S.picked.split(" ")[0]===f.aux, partOk=S.picked.split(" ").pop()===f.part;
+    S.msg=ok?"Richtig!":partOk?`Right participle, but this verb takes “${f.aux}”.`:auxOk?`“${f.aux}” is right, but the participle is ${f.part}.`:`It is ${S.right}.`;
+    answer(ok); return render();
+  }
   if(a==="next"){tone("next");return next();}
   if(a==="again"){tone("next");S=null;return render();}
 });
 document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventDefault();checkWrite($("answer").value);}
-  if(e.target.id==="perfForm"){e.preventDefault();checkPerf($("answer").value,false);}
   if(e.target.id==="mineForm"){
     e.preventDefault();
     const err=addMine($("mineDe").value,$("mineEn").value,$("mineEx").value);
@@ -585,6 +581,7 @@ document.addEventListener("keydown",e=>{
   }
   if(S.phase==="ask"&&store.mode==="article"&&"123".includes(k)) return click(`[data-a="${["der","die","das"][k-1]}"]`);
   if(S.phase==="ask"&&store.mode==="meaning"&&"1234".includes(k)) return click(`[data-act="opt"][data-i="${k-1}"]`);
+  if(S.phase==="ask"&&store.mode==="perfekt"&&"1234".includes(k)) return click(`[data-act="popt"][data-i="${k-1}"]`);
 });
 render();
 
