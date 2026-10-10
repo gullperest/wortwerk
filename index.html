@@ -132,6 +132,7 @@ form.write input{width:100%;padding:12px 14px;border:2px solid var(--line);borde
 .keys button:disabled{opacity:.25;cursor:default}
 .keys button.der{color:var(--der);border-color:var(--der)} .keys button.die{color:var(--die);border-color:var(--die)} .keys button.das{color:var(--das);border-color:var(--das)}
 .profile{display:flex;flex-direction:column;gap:8px}
+.today{margin-left:auto;font-size:.85rem;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
 #profileBtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .spacer{flex:1}
 .done h2{font-family:var(--word);margin:0;font-size:1.6rem}
@@ -172,6 +173,7 @@ footer .row>*{flex:0 0 auto}
 <div class="app">
   <header>
     <h1>Wortwerk <span>B1</span></h1>
+    <span class="today" id="today" hidden></span>
     <button class="say" data-act="mode" data-id="profile" id="profileBtn">Profile</button>
   </header>
   <nav class="kinds" id="kinds" aria-label="Word type"></nav>
@@ -212,7 +214,7 @@ function tipFor(w){
 
 const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
 const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
-let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false};
+let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false,exam:"",day:{d:"",n:0}};
 try{const s=JSON.parse(localStorage.getItem("b1wortschatz")||"null"); if(s&&s.p) store=Object.assign(store,s);}catch(e){}
 function save(){try{localStorage.setItem("b1wortschatz",JSON.stringify(store));}catch(e){}}
 const key=w=>(store.mode==="perfekt"?"perf:":"")+w.de;
@@ -220,7 +222,19 @@ const prog=(w,k=key(w))=>store.p[k]||{box:0,due:0};
 // "fährt ab · fuhr ab · ist abgefahren" -> {aux:"ist", mid:"", part:"abgefahren"}
 const perf=w=>{const t=w.pl.split(" · ")[2].split(" ");return {aux:t[0],mid:t.slice(1,-1).join(" "),part:t[t.length-1]};};
 const perfText=w=>{const f=perf(w);return "er "+[f.aux,f.mid,f.part].filter(Boolean).join(" ");};
+const todayStr=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");};
+// Daily plan: spread the words not yet started over the days until the exam,
+// keeping the last week free for revision when there is room for it.
+function plan(){
+  if(!store.exam) return null;
+  const t=todayStr(), left=Math.round((new Date(store.exam+"T00:00")-new Date(t+"T00:00"))/DAY);
+  const done=store.day&&store.day.d===t?store.day.n:0;
+  const fresh=WORDS.filter(w=>active(w)&&!store.p[w.de]).length;
+  const study=Math.max(1,left>14?left-7:left);
+  return {left,done,target:left<0?0:Math.ceil((fresh+done)/study)};
+}
 function grade(w,ok){
+  if(!store.p[key(w)]&&store.mode!=="perfekt"){const t=todayStr(); if(!store.day||store.day.d!==t) store.day={d:t,n:0}; store.day.n++;}
   const p=prog(w); const box=ok?Math.min(5,p.box+1):1;
   store.p[key(w)]={box,due:Date.now()+GAPS[box]*DAY}; save();
 }
@@ -345,6 +359,7 @@ function renderProfile(st){
   <div class="profile">${bar(all)}<div class="counts"><span><i class="dot m"></i><b>${all.m}</b> mastered</span><span><i class="dot l"></i><b>${all.l}</b> learning</span><span><i class="dot n"></i><b>${all.n-all.m-all.l}</b> new</span><span><b>${all.d}</b> due</span></div></div>`+
   KINDS.map(([id,name])=>{const k=stats(WORDS.filter(w=>w.kind===id&&active(w)));return `<div class="profile"><div class="meta"><span>${name}</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;}).join("")+
   (()=>{const k=stats(WORDS.filter(w=>w.kind==="verb"&&active(w)),"perf:");return `<div class="profile"><div class="meta"><span>Perfekt</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
+  (()=>{const pl=plan();return `<div class="profile"><div class="meta"><span>Exam date</span><span>${pl?(pl.left>=0?pl.left+" days left":"passed"):"not set"}</span></div><input class="search" type="date" id="exam" value="${esc(store.exam||"")}" aria-label="Exam date">${pl&&pl.left>=0?`<div class="meta"><span>New words today</span><span>${pl.done} / ${pl.target}</span></div><div class="bar"><i class="m" style="width:${Math.min(100,pl.done/Math.max(1,pl.target)*100)}%"></i></div>`:""}</div>`;})()+
   `<div class="sub">Correct words return after 1, 2, 4, 7 and 14 days.</div><div class="spacer"></div><div class="row">`+
   (confirmReset
     ?`<button class="btn" data-act="reset-no">Keep progress</button><button class="btn primary" data-act="reset-yes">Erase everything</button>`
@@ -353,6 +368,7 @@ function renderProfile(st){
 function renderChrome(){
   const prof=store.mode==="profile", n=pool().length;
   $("profileBtn").setAttribute("aria-pressed",prof);
+  const pl=plan(); $("today").hidden=!pl||pl.left<0; if(pl) $("today").textContent=pl.done+" / "+pl.target+" today";
   $("kinds").hidden=prof;
   $("topicsSum").textContent=store.topics.length?`${store.topics.length} of ${NOUN_TOPICS.length}`:"All";
   $("chips").innerHTML=`<button class="chip" data-act="topic" data-id="all" aria-pressed="${!store.topics.length}">All topics</button>`+
@@ -509,6 +525,7 @@ document.addEventListener("click",e=>{
 });
 document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventDefault();checkWrite($("answer").value);}
   if(e.target.id==="perfForm"){e.preventDefault();checkPerf($("answer").value,false);} });
+document.addEventListener("change",e=>{ if(e.target.id==="exam"){store.exam=e.target.value;save();render();} });
 document.addEventListener("input",e=>{
   if(e.target.id==="answer") updateTiles();
   if(e.target.id==="search"){query=e.target.value;renderList($("stage"));const s=$("search");s.focus();s.setSelectionRange(query.length,query.length);}
