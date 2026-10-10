@@ -3072,4 +3072,11 @@ zuletzt|–|last, finally|Wann hast du ihn zuletzt gesehen?|When did you last se
 zumindest|–|at least|Du hättest zumindest anrufen können.|You could at least have rung.|B
 zunächst|–|first of all|Zunächst möchte ich mich kurz vorstellen.|First of all I would like to introduce myself briefly.|B
 zwar|with aber|admittedly|Die Wohnung ist zwar klein, aber sehr gemütlich.|The flat is admittedly small, but very cosy.|B
-übermorgen|–|the day after tomorrow|Übermorgen fahren wir in den Urlaub.|The day after tomorrow we are going on holiday.|A`;
+übermorgen|–|the day after tomorrow|Übermorgen fahren wir in den Urlaub.|The day after tomorrow we are going on holiday.|A
+mein|Possessivartikel (ich)|my|Mein Bruder wohnt in Berlin.|My brother lives in Berlin.|B
+dein|Possessivartikel (du)|your (informal, one person)|Ist das dein Fahrrad?|Is that your bike?|B
+sein|Possessivartikel (er, es)|his, its|Er besucht am Wochenende seine Eltern.|He is visiting his parents at the weekend.|B
+ihr|Possessivartikel (sie)|her; their|Sie hat ihren Schlüssel verloren.|She has lost her key.|B
+unser|Possessivartikel (wir)|our|Unser Zug fährt um acht Uhr ab.|Our train leaves at eight o'clock.|B
+euer|Possessivartikel (ihr)|your (informal, several people)|Wo steht euer Auto?|Where is your car parked?|B
+Ihr|Possessivartikel (Sie)|your (formal)|Darf ich Ihren Ausweis sehen?|May I see your ID?|B`;

@@ -193,6 +193,8 @@ const TOPICS = NOUN_TOPICS.concat([{id:DATA.length,de:"Verben",en:"Verbs"},{id:D
 const plain=(src,kind,topic)=>src.split("\n").filter(Boolean).map(l=>{const [de,pl,en,ex,tr,lv]=l.split("|");return {kind,art:"",de,pl,en,ex,tr,lv,topic};});
 const WORDS = DATA.flatMap((t,i)=>t[2].split("\n").map(l=>{const [art,de,pl,en,ex,tr,lv]=l.split("|");return {kind:"noun",art,de,pl,en,ex,tr,lv,topic:i};}))
   .concat(plain(VERBS,"verb",DATA.length),plain(ADJS,"adj",DATA.length+1),plain(OTHERS,"other",DATA.length+2));
+// Progress id: the word itself, except when two sections share a spelling (verb "sein" and possessive "sein").
+{const seen=new Set(); WORDS.forEach(w=>{w.k=seen.has(w.de)?w.kind+":"+w.de:w.de; seen.add(w.de);});}
 const KINDS=[["noun","Nomen"],["verb","Verben"],["adj","Adjektive"],["other","Andere"],["mine","Meine"]];
 const INFO={noun:"Plural",verb:"Forms",adj:"Opposite",other:"Use"};
 const label=w=>(w.art?w.art+" ":"")+w.de;
@@ -240,7 +242,7 @@ function delMine(de){
 }
 function save(){try{localStorage.setItem("b1wortschatz",JSON.stringify(store));}catch(e){}}
 // Own words keep their progress apart from the built-in entry of the same word.
-const bk=w=>(w.kind==="mine"?"my:":"")+w.de;
+const bk=w=>w.kind==="mine"?"my:"+w.de:w.k;
 const key=w=>(store.mode==="perfekt"?"perf:":"")+bk(w);
 const prog=(w,k=key(w))=>store.p[k]||{box:0,due:0};
 // "fährt ab · fuhr ab · ist abgefahren" -> {aux:"ist", mid:"", part:"abgefahren"}
@@ -253,7 +255,7 @@ function plan(){
   if(!store.exam) return null;
   const t=todayStr(), left=Math.round((new Date(store.exam+"T00:00")-new Date(t+"T00:00"))/DAY);
   const done=store.day&&store.day.d===t?store.day.n:0;
-  const fresh=WORDS.filter(w=>w.kind!=="mine"&&active(w)&&!store.p[w.de]).length;
+  const fresh=WORDS.filter(w=>w.kind!=="mine"&&active(w)&&!store.p[bk(w)]).length;
   const study=Math.max(1,left>14?left-7:left);
   return {left,done,target:left<0?0:Math.ceil((fresh+done)/study)};
 }
@@ -478,7 +480,7 @@ function render(){
 }
 function renderList(st){
   const q=query.trim().toLowerCase();
-  const rows=pool().filter(w=>!q||(label(w)+" "+w.en).toLowerCase().includes(q));
+  const rows=pool().filter(w=>!q||(label(w)+" "+w.en+" "+w.pl).toLowerCase().includes(q));
   const mine=store.kind==="mine";
   let h=mine?`<form class="write" id="mineForm" autocomplete="off">
     <input id="mineDe" type="text" placeholder="German: der Tisch, laufen …" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="German word">
