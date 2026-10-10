@@ -1,5 +1,5 @@
 // Offline support: app shell is cached on install; everything else (fonts) is cached as it is used.
-const CACHE = "b1-wortschatz-v1";
+const CACHE = "b1-wortschatz-v3";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
