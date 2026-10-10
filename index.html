@@ -274,21 +274,35 @@ function unlock(){
 }
 document.addEventListener("pointerdown",unlock,true);
 document.addEventListener("keydown",unlock,true);
+document.addEventListener("touchend",unlock,true);
 if(!fastAudio) try{ for(const k in PCM){tags[k]=new Audio(wavUrl(PCM[k])); tags[k].preload="auto";} }catch(e){}
+function playBuf(k){
+  const src=actx.createBufferSource(), g=actx.createGain();
+  src.buffer=bufs[k]; g.gain.value=CLIPS[k][2]; src.connect(g); g.connect(actx.destination); src.start();
+}
+function playTag(k){
+  const a=tags[k]||(tags[k]=new Audio(wavUrl(PCM[k]))); a.volume=CLIPS[k][2]; a.currentTime=0;
+  const p=a.play(); if(p&&p.catch) p.catch(()=>{});
+}
 function tone(ok){
   if(store.sound===false) return;
   const k=ok==="next"?"next":ok?"ok":"no";
   try{
     unlock();
-    if(actx&&actx.state==="running"){
-      const src=actx.createBufferSource(), g=actx.createGain();
-      src.buffer=bufs[k]; g.gain.value=CLIPS[k][2]; src.connect(g); g.connect(actx.destination); src.start();
-      return;
-    }
-    const a=tags[k]||(tags[k]=new Audio(wavUrl(PCM[k]))); a.volume=CLIPS[k][2]; a.currentTime=0;
-    const p=a.play(); if(p&&p.catch) p.catch(()=>{});
-  }catch(e){}
+    if(!actx) return playTag(k);
+    if(actx.state==="running") return playBuf(k);
+    // engine asleep (idle, phone call, screen lock): wake it, then play; fall back if it will not wake
+    const ctx=actx; let done=false;
+    const fallback=()=>{ if(!done){done=true; try{playTag(k);}catch(e){}} };
+    ctx.resume().then(()=>{ if(!done&&actx===ctx&&ctx.state==="running"){done=true;playBuf(k);} else fallback(); },fallback);
+    setTimeout(fallback,250);
+  }catch(e){ try{playTag(k);}catch(_){} }
 }
+// Phones can leave the audio engine silently dead after the app was in the background.
+// Throw it away when the app is hidden; the next touch builds a fresh one.
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden&&actx){ try{actx.close();}catch(e){} actx=null; }
+});
 
 let S=null, query="", confirmReset=false;
 function newRound(){
@@ -313,7 +327,7 @@ function prep(){
 function answer(ok){
   const w=S.queue[S.i], first=!S.retried.has(w.de);
   grade(w,ok);
-  if(store.mode!=="cards") tone(ok);
+  tone(ok);
   if(first){ if(ok) S.right++; else {S.misses.push(w); S.retried.add(w.de); S.queue.push(w);} }
   S.phase="shown"; S.verdict=ok;
 }
@@ -348,7 +362,7 @@ function renderChrome(){
   $("modes").innerHTML=MODES.filter(([id])=>(id!=="article"||store.kind==="noun")&&(id!=="perfekt"||store.kind==="verb")).map(([id,label])=>`<button role="tab" data-act="mode" data-id="${id}" aria-selected="${store.mode===id}">${label}</button>`).join("");
 }
 const head=w=>`<div class="meta"><span>${esc(TOPICS[w.topic].de)}</span><span>${Math.min(S.i+1,S.queue.length)} / ${S.queue.length}</span></div>`;
-const info=w=>w.pl==="–"?(w.kind==="noun"?`<div class="sub">Plural: not used</div>`:""):w.pl==="nur Plural"?`<div class="sub">Plural only</div>`:`<div class="sub">${INFO[w.kind]}: ${esc(w.pl)}</div>`;
+const info=w=>w.kind==="adj"?"":w.pl==="–"?(w.kind==="noun"?`<div class="sub">Plural: not used</div>`:""):w.pl==="nur Plural"?`<div class="sub">Plural only</div>`:`<div class="sub">${INFO[w.kind]}: ${esc(w.pl)}</div>`;
 const full=w=>`<p class="big">${w.art?`<span class="art ${w.art}">${w.art}</span> `:""}${esc(w.de)}</p>${info(w)}`;
 const exBlock=w=>`<div class="ex"><p lang="de">${esc(w.ex)}</p>${S.tr?`<p class="tr">${esc(w.tr)}</p>`:""}<button class="link" data-act="tr" aria-expanded="${S.tr}">${S.tr?"Hide translation":"Show English translation"}</button></div>`;
 function reveal(w,withEn){
@@ -429,7 +443,7 @@ function renderList(st){
   rows.forEach(w=>{
     if(w.topic!==last){last=w.topic;h+=`<h3>${esc(TOPICS[last].de)} · ${esc(TOPICS[last].en)}</h3>`;}
     const b=prog(w).box;
-    h+=`<div class="w"><span class="a ${w.art}">${w.art}</span><span class="g">${esc(w.de)}<small>${w.pl==="–"?(w.kind==="noun"?"no plural":""):w.pl==="nur Plural"?"plural only":esc(w.pl)}</small></span><span class="e">${esc(w.en)}</span><span class="lv" title="Level ${b} of 5">${[1,2,3,4,5].map(i=>`<i class="${i<=b?"on":""}"></i>`).join("")}</span></div>`;
+    h+=`<div class="w"><span class="a ${w.art}">${w.art}</span><span class="g">${esc(w.de)}<small>${w.kind==="adj"?"":w.pl==="–"?(w.kind==="noun"?"no plural":""):w.pl==="nur Plural"?"plural only":esc(w.pl)}</small></span><span class="e">${esc(w.en)}</span><span class="lv" title="Level ${b} of 5">${[1,2,3,4,5].map(i=>`<i class="${i<=b?"on":""}"></i>`).join("")}</span></div>`;
   });
   if(!rows.length) h+=`<p class="sub">No word matches “${esc(query)}”.</p>`;
   st.innerHTML=h+"</div>";
