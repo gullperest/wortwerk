@@ -111,6 +111,15 @@ details.topics summary small{color:var(--muted);font-weight:500}
 .popt{font-family:var(--word);font-size:1.08rem}
 .sent{font-family:var(--word);font-weight:500;font-size:1.4rem;line-height:1.35;margin:0;overflow-wrap:anywhere}
 .sent b{color:var(--das)}
+.tabchips{padding:0}
+.tablewrap{overflow-x:auto}
+.ptable{border-collapse:collapse;width:100%}
+.ptable th,.ptable td{padding:10px 6px;text-align:left;border-bottom:1px solid var(--line)}
+.ptable thead th{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+.ptable thead th:last-child{color:var(--muted)}
+.ptable tbody th{font-size:.82rem;color:var(--muted);font-weight:600}
+.ptable td{font-family:var(--word);font-weight:500;font-size:1.02rem}
+.ptable td b{color:var(--mark)}
 .gap{display:inline-block;width:3.2em;border-bottom:3px solid var(--mark);margin:0 .15em;vertical-align:baseline}
 .btn kbd{font:inherit;font-size:.75rem;color:var(--muted);margin-left:.5em;font-weight:500}
 .btn.primary kbd{color:inherit;opacity:.65}
@@ -153,6 +162,9 @@ ul.miss li{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-betwee
 .lv i.on{background:var(--das)}
 @media (max-width:520px){
   .stage{padding:16px}
+  .ptable th,.ptable td{padding:10px 3px}
+  .ptable td{font-size:.9rem}
+  .ptable thead th{font-size:.7rem;letter-spacing:.03em}
   .kinds button{font-size:.82rem}
   .w{grid-template-columns:2.4rem minmax(0,1fr) auto}
   .w .e{grid-column:2 / -1;grid-row:2}
@@ -205,6 +217,18 @@ const POSS=(typeof POSSESSIVE==="string"?POSSESSIVE:"").split("\n").filter(Boole
 function possForms(w){
   const stem=STEMS[w.cue], base=stem==="euer"?"eur":stem, up=/^[A-ZÄÖÜ]/.test(w.ans);
   return [stem,base+"e",base+"en",base+"em",base+"er",base+"es"].map(f=>up?f[0].toUpperCase()+f.slice(1):f);
+}
+// Reference table: every form of each possessive article, by case and gender.
+const PTAB=[["mein","ich"],["dein","du"],["sein","er · es"],["ihr","sie (she · they)"],["unser","wir"],["euer","ihr"],["Ihr","Sie (formal)"]];
+const PEND=[["Nom.",["","e","","e"]],["Akk.",["en","e","","e"]],["Dat.",["em","er","em","en"]],["Gen.",["es","er","es","er"]]];
+let possTable=false, possIdx=0;
+function renderPossTable(st){
+  const stem=PTAB[possIdx][0], base=stem==="euer"?"eur":stem;
+  st.innerHTML=`<div class="meta"><span>Possessivartikel</span><span>${esc(PTAB[possIdx][1])}</span></div>
+  <div class="chips tabchips">${PTAB.map(([t],i)=>`<button class="chip" data-act="pstem" data-i="${i}" aria-pressed="${i===possIdx}">${t}</button>`).join("")}</div>
+  <div class="tablewrap"><table class="ptable"><thead><tr><th></th><th class="der">mask.</th><th class="die">fem.</th><th class="das">neutr.</th><th>Plural</th></tr></thead>
+  <tbody>${PEND.map(([c,e])=>`<tr><th>${c}</th>${e.map(x=>`<td>${x?base:stem}<b>${x}</b></td>`).join("")}</tr>`).join("")}</tbody></table></div>
+  <div class="spacer"></div><div class="row"><button class="btn primary" data-act="ptab">Back to practice</button></div>`;
 }
 const KINDS=[["noun","Nomen"],["verb","Verben"],["adj","Adjektive"],["other","Andere"],["mine","Meine"]];
 const INFO={noun:"Plural",verb:"Forms",adj:"Opposite",other:"Use"};
@@ -439,6 +463,7 @@ function render(){
   const st=$("stage");
   if(store.mode==="profile"){ renderProfile(st); return; }
   if(store.mode==="list"||(store.kind==="mine"&&!pool().length)){ renderList(st); return; }
+  if(store.mode==="poss"&&possTable){ renderPossTable(st); return; }
   if(!S) newRound();
   const w=S.queue[S.i];
   if(!w){
@@ -471,7 +496,7 @@ function render(){
   }
   if(store.mode==="poss"){
     const done=S.phase==="shown", parts=w.de.split("___");
-    h+=`<div class="prompt"><div class="sub">Possessivartikel · ${esc(CUES[w.cue])}</div><p class="sent" lang="de">${esc(parts[0])}${done?`<b>${esc(w.ans)}</b>`:`<span class="gap"></span>`}${esc(parts[1]||"")}</p>${done&&canSpeak?`<button class="say" data-act="say" data-t="${esc(w.de.replace("___",w.ans))}">Listen</button>`:""}</div>`;
+    h+=`<div><button class="say" data-act="ptab">Tabelle</button></div><div class="prompt"><div class="sub">Possessivartikel · ${esc(CUES[w.cue])}</div><p class="sent" lang="de">${esc(parts[0])}${done?`<b>${esc(w.ans)}</b>`:`<span class="gap"></span>`}${esc(parts[1]||"")}</p>${done&&canSpeak?`<button class="say" data-act="say" data-t="${esc(w.de.replace("___",w.ans))}">Listen</button>`:""}</div>`;
     h+=`<div class="ex">${S.tr?`<p class="tr">${esc(w.tr)}</p>`:""}<button class="link" data-act="tr" aria-expanded="${S.tr}">${S.tr?"Hide translation":"Show English translation"}</button></div>`;
     if(done) h+=`<div class="verdict ${S.verdict?"ok":"no"}">${S.verdict?"Richtig!":`It is ${esc(w.ans)}.`}</div><div class="tip"><b>Why</b> ${esc(w.pl)}</div>`;
     h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt popt ${done&&o===w.ans?"hit":""} ${done&&o===S.picked&&o!==w.ans?"miss":""}" data-act="sopt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
@@ -548,7 +573,7 @@ document.addEventListener("click",e=>{
   const b=e.target.closest("[data-act]"); if(!b) return;
   const a=b.dataset.act;
   if(a==="say") return say(b.dataset.t);
-  if(a==="mode"){store.mode=b.dataset.id;confirmReset=false;delAsk="";save();S=null;return render();}
+  if(a==="mode"){store.mode=b.dataset.id;confirmReset=false;delAsk="";possTable=false;save();S=null;return render();}
   if(a==="topic"){
     if(b.dataset.id==="all") store.topics=[];
     else{const id=+b.dataset.id,i=store.topics.indexOf(id); i<0?store.topics.push(id):store.topics.splice(i,1); if(store.topics.length===NOUN_TOPICS.length) store.topics=[];}
@@ -570,6 +595,8 @@ document.addEventListener("click",e=>{
   if(a==="artkey"){const i=$("answer");i.value=b.dataset.k+" "+i.value.replace(/^(der|die|das)\s*/i,"");return updateTiles();}
   if(a==="back"){const i=$("answer");i.value=i.value.slice(0,-1);return updateTiles();}
   if(a==="giveup") return checkWrite("");
+  if(a==="ptab"){possTable=!possTable;return render();}
+  if(a==="pstem"){possIdx=+b.dataset.i;return render();}
   if(a==="sopt"){S.picked=S.opts[+b.dataset.i];answer(S.picked===S.queue[S.i].ans);return render();}
   if(a==="popt"){
     const f=perf(S.queue[S.i]); S.picked=S.opts[+b.dataset.i];
