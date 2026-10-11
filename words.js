@@ -1740,637 +1740,637 @@ die|Änderung|die Änderungen|change|Im Fahrplan gibt es einige Änderungen.|The
 die|Überzeugung|die Überzeugungen|conviction, belief|Ich bin der Überzeugung, dass er recht hat.|I am of the conviction that he is right.|B
 der|Hinweis|die Hinweise|hint, piece of information|Vielen Dank für den Hinweis.|Thank you for the tip.|B`]
 ];
-const VERBS = `sich bewerben|bewirbt sich · bewarb sich · hat sich beworben|to apply (for a job)|Ich bewerbe mich um die Stelle als Verkäufer.|I am applying for the job as a sales assistant.|B
-kündigen|kündigt · kündigte · hat gekündigt|to give notice, to cancel a contract|Sie hat ihre Wohnung zum ersten Mai gekündigt.|She has given notice on her flat for the first of May.|B
-verdienen|verdient · verdiente · hat verdient|to earn|In diesem Beruf verdient man gut.|You earn well in this job.|B
-einstellen|stellt ein · stellte ein · hat eingestellt|to hire, to take on|Die Firma stellt zwei neue Mitarbeiter ein.|The company is hiring two new employees.|B
-erledigen|erledigt · erledigte · hat erledigt|to get done, to deal with|Ich muss heute noch viel erledigen.|I still have a lot to get done today.|B
-vereinbaren|vereinbart · vereinbarte · hat vereinbart|to arrange, to agree on|Wir haben einen Termin für Montag vereinbart.|We have arranged an appointment for Monday.|B
-absagen|sagt ab · sagte ab · hat abgesagt|to cancel (an appointment)|Leider muss ich den Termin absagen.|Unfortunately I have to cancel the appointment.|B
-verschieben|verschiebt · verschob · hat verschoben|to postpone|Können wir das Treffen auf morgen verschieben?|Can we postpone the meeting until tomorrow?|B
-mieten|mietet · mietete · hat gemietet|to rent|Wir haben eine Wohnung im Zentrum gemietet.|We have rented a flat in the centre.|B
-umziehen|zieht um · zog um · ist umgezogen|to move house|Nächsten Monat ziehen wir nach Köln um.|Next month we are moving to Cologne.|B
-einziehen|zieht ein · zog ein · ist eingezogen|to move in|Wann können wir in die Wohnung einziehen?|When can we move into the flat?|B
-renovieren|renoviert · renovierte · hat renoviert|to renovate|Wir renovieren gerade das Badezimmer.|We are renovating the bathroom at the moment.|B
-reparieren|repariert · reparierte · hat repariert|to repair|Der Techniker hat die Waschmaschine repariert.|The technician repaired the washing machine.|B
-aufräumen|räumt auf · räumte auf · hat aufgeräumt|to tidy up|Die Kinder müssen ihr Zimmer aufräumen.|The children have to tidy their room.|B
-untersuchen|untersucht · untersuchte · hat untersucht|to examine|Die Ärztin hat mich gründlich untersucht.|The doctor examined me thoroughly.|B
-sich erkälten|erkältet sich · erkältete sich · hat sich erkältet|to catch a cold|Ich habe mich im Urlaub erkältet.|I caught a cold on holiday.|B
-sich verletzen|verletzt sich · verletzte sich · hat sich verletzt|to injure oneself|Er hat sich beim Fußball verletzt.|He injured himself playing football.|B
-sich erholen|erholt sich · erholte sich · hat sich erholt|to recover, to rest|Im Urlaub habe ich mich gut erholt.|I had a good rest on holiday.|B
-verschreiben|verschreibt · verschrieb · hat verschrieben|to prescribe|Der Arzt hat mir Tabletten verschrieben.|The doctor prescribed me tablets.|B
-abnehmen|nimmt ab · nahm ab · hat abgenommen|to lose weight|Er hat fünf Kilo abgenommen.|He has lost five kilos.|B
-abfahren|fährt ab · fuhr ab · ist abgefahren|to depart, to leave|Der Bus fährt in zehn Minuten ab.|The bus leaves in ten minutes.|B
-ankommen|kommt an · kam an · ist angekommen|to arrive|Wir sind pünktlich in München angekommen.|We arrived in Munich on time.|B
-umsteigen|steigt um · stieg um · ist umgestiegen|to change (trains, buses)|In Frankfurt müssen Sie umsteigen.|You have to change in Frankfurt.|B
-einsteigen|steigt ein · stieg ein · ist eingestiegen|to get on, to board|Bitte steigen Sie schnell ein.|Please board quickly.|B
-verpassen|verpasst · verpasste · hat verpasst|to miss (a train, a chance)|Ich habe den letzten Bus verpasst.|I missed the last bus.|B
-buchen|bucht · buchte · hat gebucht|to book|Wir haben das Hotel online gebucht.|We booked the hotel online.|B
-übernachten|übernachtet · übernachtete · hat übernachtet|to stay overnight|Wir übernachten bei Freunden.|We are staying the night with friends.|B
-besichtigen|besichtigt · besichtigte · hat besichtigt|to visit, to look round|Morgen besichtigen wir das Schloss.|Tomorrow we are visiting the castle.|B
-abholen|holt ab · holte ab · hat abgeholt|to pick up, to collect|Kannst du mich vom Bahnhof abholen?|Can you pick me up from the station?|B
-beantragen|beantragt · beantragte · hat beantragt|to apply for (officially)|Ich möchte ein Visum beantragen.|I would like to apply for a visa.|B
-ausfüllen|füllt aus · füllte aus · hat ausgefüllt|to fill in (a form)|Füllen Sie bitte das Formular aus.|Please fill in the form.|B
-unterschreiben|unterschreibt · unterschrieb · hat unterschrieben|to sign|Sie müssen hier unten unterschreiben.|You have to sign down here.|B
-verlängern|verlängert · verlängerte · hat verlängert|to extend, to renew|Ich muss meinen Pass verlängern lassen.|I have to get my passport renewed.|B
-sich anmelden|meldet sich an · meldete sich an · hat sich angemeldet|to register, to sign up|Ich habe mich für den Sprachkurs angemeldet.|I have signed up for the language course.|B
-erlauben|erlaubt · erlaubte · hat erlaubt|to allow|Rauchen ist hier nicht erlaubt.|Smoking is not allowed here.|B
-verbieten|verbietet · verbot · hat verboten|to forbid|Der Arzt hat ihm das Rauchen verboten.|The doctor has forbidden him to smoke.|B
-bestehen|besteht · bestand · hat bestanden|to pass (an exam)|Sie hat die Prüfung mit gutem Ergebnis bestanden.|She passed the exam with a good result.|B
-sich vorbereiten|bereitet sich vor · bereitete sich vor · hat sich vorbereitet|to prepare (oneself)|Ich bereite mich auf die Prüfung vor.|I am preparing for the exam.|B
-wiederholen|wiederholt · wiederholte · hat wiederholt|to repeat, to revise|Können Sie das bitte wiederholen?|Could you repeat that, please?|B
-erklären|erklärt · erklärte · hat erklärt|to explain|Die Lehrerin erklärt die Regel noch einmal.|The teacher explains the rule once more.|B
-verstehen|versteht · verstand · hat verstanden|to understand|Ich habe die Frage nicht verstanden.|I did not understand the question.|B
-übersetzen|übersetzt · übersetzte · hat übersetzt|to translate|Kannst du mir diesen Brief übersetzen?|Can you translate this letter for me?|B
-teilnehmen|nimmt teil · nahm teil · hat teilgenommen|to take part|An dem Kurs nehmen zwölf Personen teil.|Twelve people are taking part in the course.|B
-sich erinnern|erinnert sich · erinnerte sich · hat sich erinnert|to remember|Ich erinnere mich gern an meine Schulzeit.|I like to remember my school days.|B
-vergessen|vergisst · vergaß · hat vergessen|to forget|Ich habe meinen Schirm im Zug vergessen.|I left my umbrella on the train.|B
-einladen|lädt ein · lud ein · hat eingeladen|to invite|Wir möchten euch zum Essen einladen.|We would like to invite you to dinner.|B
-sich treffen|trifft sich · traf sich · hat sich getroffen|to meet up|Wir treffen uns um sieben vor dem Kino.|We are meeting at seven in front of the cinema.|B
-sich unterhalten|unterhält sich · unterhielt sich · hat sich unterhalten|to chat, to talk|Wir haben uns lange über den Film unterhalten.|We talked about the film for a long time.|B
-empfehlen|empfiehlt · empfahl · hat empfohlen|to recommend|Können Sie mir ein gutes Restaurant empfehlen?|Can you recommend a good restaurant?|B
-vorschlagen|schlägt vor · schlug vor · hat vorgeschlagen|to suggest|Ich schlage vor, dass wir zu Fuß gehen.|I suggest that we walk.|B
-sich freuen|freut sich · freute sich · hat sich gefreut|to be glad, to look forward|Ich freue mich schon auf das Wochenende.|I am already looking forward to the weekend.|B
-sich ärgern|ärgert sich · ärgerte sich · hat sich geärgert|to be annoyed|Er ärgert sich über die Verspätung.|He is annoyed about the delay.|B
-sich beschweren|beschwert sich · beschwerte sich · hat sich beschwert|to complain|Die Gäste haben sich über den Lärm beschwert.|The guests complained about the noise.|B
-sich entschuldigen|entschuldigt sich · entschuldigte sich · hat sich entschuldigt|to apologise|Ich möchte mich für den Fehler entschuldigen.|I would like to apologise for the mistake.|B
-sich entscheiden|entscheidet sich · entschied sich · hat sich entschieden|to decide|Ich kann mich nicht entscheiden.|I cannot decide.|B
-sich streiten|streitet sich · stritt sich · hat sich gestritten|to argue|Die Kinder streiten sich um das Spielzeug.|The children are arguing over the toy.|B
-vertrauen|vertraut · vertraute · hat vertraut|to trust|Du kannst mir vertrauen.|You can trust me.|B
-versprechen|verspricht · versprach · hat versprochen|to promise|Er hat versprochen, pünktlich zu sein.|He promised to be on time.|B
-bestellen|bestellt · bestellte · hat bestellt|to order|Ich habe die Schuhe im Internet bestellt.|I ordered the shoes online.|B
-liefern|liefert · lieferte · hat geliefert|to deliver|Die Möbel werden nächste Woche geliefert.|The furniture will be delivered next week.|B
-umtauschen|tauscht um · tauschte um · hat umgetauscht|to exchange (goods)|Kann ich diese Jacke umtauschen?|Can I exchange this jacket?|B
-überweisen|überweist · überwies · hat überwiesen|to transfer (money)|Bitte überweisen Sie den Betrag bis Freitag.|Please transfer the amount by Friday.|B
-sparen|spart · sparte · hat gespart|to save (money, energy)|Wir sparen für ein neues Auto.|We are saving for a new car.|B
-ausgeben|gibt aus · gab aus · hat ausgegeben|to spend (money)|Er gibt viel Geld für Kleidung aus.|He spends a lot of money on clothes.|B
-vergleichen|vergleicht · verglich · hat verglichen|to compare|Man sollte die Preise vergleichen.|You should compare prices.|B
-anprobieren|probiert an · probierte an · hat anprobiert|to try on|Kann ich die Hose anprobieren?|Can I try the trousers on?|B
-schützen|schützt · schützte · hat geschützt|to protect|Wir müssen das Klima schützen.|We must protect the climate.|B
-trennen|trennt · trennte · hat getrennt|to separate|In Deutschland trennt man den Müll.|In Germany people separate their rubbish.|B
-verbrauchen|verbraucht · verbrauchte · hat verbraucht|to use up, to consume|Das alte Auto verbraucht zu viel Benzin.|The old car uses too much petrol.|B
-wachsen|wächst · wuchs · ist gewachsen|to grow|Die Stadt ist in den letzten Jahren stark gewachsen.|The city has grown a lot in recent years.|B
-passieren|passiert · passierte · ist passiert|to happen|Was ist denn hier passiert?|What has happened here?|B
-sich gewöhnen|gewöhnt sich · gewöhnte sich · hat sich gewöhnt|to get used (to)|Ich habe mich an das Wetter gewöhnt.|I have got used to the weather.|B
-sich kümmern|kümmert sich · kümmerte sich · hat sich gekümmert|to take care (of)|Sie kümmert sich um ihre Großmutter.|She takes care of her grandmother.|B
-erfahren|erfährt · erfuhr · hat erfahren|to find out, to learn of|Ich habe es erst gestern erfahren.|I only found out yesterday.|B
-gelingen|gelingt · gelang · ist gelungen|to succeed, to turn out well|Der Kuchen ist mir gut gelungen.|My cake turned out well.|B
-beschließen|beschließt · beschloss · hat beschlossen|to decide, to resolve|Wir haben beschlossen, früher zu fahren.|We have decided to leave earlier.|B
-bemerken|bemerkt · bemerkte · hat bemerkt|to notice|Ich habe den Fehler zu spät bemerkt.|I noticed the mistake too late.|B
-abbiegen|biegt ab · bog ab · ist abgebogen|to turn (off)|An der Ampel biegen Sie bitte links ab.|Please turn left at the traffic lights.|B
-abbrechen|bricht ab · brach ab · hat abgebrochen|to break off, to drop out of|Sie hat ihr Studium nach einem Jahr abgebrochen.|She dropped out of her degree after one year.|B
-abgeben|gibt ab · gab ab · hat abgegeben|to hand in|Bitte geben Sie das Formular bis Freitag ab.|Please hand in the form by Friday.|A
-abhängen|hängt ab · hing ab · hat abgehangen|to depend (von + Dat.)|Das hängt vom Wetter ab.|That depends on the weather.|B
-abheben|hebt ab · hob ab · hat abgehoben|to withdraw (money)|Ich muss noch Geld am Automaten abheben.|I still need to withdraw money at the cash machine.|B
-ablehnen|lehnt ab · lehnte ab · hat abgelehnt|to reject, to turn down|Er hat das Angebot leider abgelehnt.|Unfortunately, he turned down the offer.|B
-sich abmelden|meldet sich ab · meldete sich ab · hat sich abgemeldet|to deregister, to sign out|Ich habe mich vom Kurs abgemeldet.|I have deregistered from the course.|B
-abschicken|schickt ab · schickte ab · hat abgeschickt|to send off|Hast du die E-Mail schon abgeschickt?|Have you already sent off the email?|B
-abschließen|schließt ab · schloss ab · hat abgeschlossen|to lock; to complete|Vergiss nicht, die Tür abzuschließen.|Don't forget to lock the door.|B
-abstellen|stellt ab · stellte ab · hat abgestellt|to park, to put down|Du kannst dein Fahrrad im Hof abstellen.|You can park your bike in the courtyard.|B
-abwaschen|wäscht ab · wusch ab · hat abgewaschen|to wash up|Nach dem Essen wäscht er das Geschirr ab.|After the meal he washes the dishes.|A
-achten|achtet · achtete · hat geachtet|to pay attention (auf + Akk.)|Bitte achten Sie auf die Stufe.|Please mind the step.|B
-ändern|ändert · änderte · hat geändert|to change|Ich möchte meinen Termin ändern.|I would like to change my appointment.|A
-anbieten|bietet an · bot an · hat angeboten|to offer|Darf ich Ihnen einen Kaffee anbieten?|May I offer you a coffee?|A
-anfangen|fängt an · fing an · hat angefangen|to begin, to start|Der Kurs fängt um neun Uhr an.|The course starts at nine o'clock.|A
-angeben|gibt an · gab an · hat angegeben|to state, to give (details)|Bitte geben Sie Ihre Adresse an.|Please give your address.|B
-anhaben|hat an · hatte an · hat angehabt|to wear, to have on|Sie hat heute ein rotes Kleid an.|She is wearing a red dress today.|B
-anhalten|hält an · hielt an · hat angehalten|to stop|Der Bus hält hier leider nicht an.|Unfortunately, the bus does not stop here.|B
-anklicken|klickt an · klickte an · hat angeklickt|to click on|Klicken Sie bitte den Link an.|Please click on the link.|A
-ankreuzen|kreuzt an · kreuzte an · hat angekreuzt|to tick, to mark with a cross|Kreuzen Sie die richtige Antwort an.|Tick the correct answer.|A
-anmachen|macht an · machte an · hat angemacht|to switch on|Kannst du bitte das Licht anmachen?|Can you switch on the light, please?|A
-annehmen|nimmt an · nahm an · hat angenommen|to accept; to assume|Sie hat die Stelle sofort angenommen.|She accepted the job straight away.|B
-anrufen|ruft an · rief an · hat angerufen|to phone, to call|Ich rufe dich heute Abend an.|I'll call you this evening.|A
-anschauen|schaut an · schaute an · hat angeschaut|to look at, to watch|Wir schauen heute Abend einen Film an.|We are watching a film this evening.|A
-ansehen|sieht an · sah an · hat angesehen|to look at|Sieh mich bitte an, wenn ich mit dir rede.|Please look at me when I am talking to you.|A
-sich anstrengen|strengt sich an · strengte sich an · hat sich angestrengt|to make an effort|Du musst dich in der Schule mehr anstrengen.|You have to make more of an effort at school.|B
-antworten|antwortet · antwortete · hat geantwortet|to answer (auf + Akk.)|Er hat noch nicht auf meine E-Mail geantwortet.|He has not replied to my email yet.|A
-anziehen|zieht an · zog an · hat angezogen|to put on (clothes)|Zieh eine Jacke an, es ist kalt.|Put a jacket on, it is cold.|A
-arbeiten|arbeitet · arbeitete · hat gearbeitet|to work|Sie arbeitet in einem Krankenhaus.|She works in a hospital.|A
-atmen|atmet · atmete · hat geatmet|to breathe|Atmen Sie bitte tief durch die Nase.|Please breathe deeply through your nose.|B
-auffallen|fällt auf · fiel auf · ist aufgefallen|to be noticeable, to strike|Mir ist nichts Besonderes aufgefallen.|I did not notice anything special.|B
-aufgeben|gibt auf · gab auf · hat aufgegeben|to give up; to post|Gib nicht auf, du schaffst das!|Don't give up, you can do it!|B
-aufhängen|hängt auf · hängte auf · hat aufgehängt|to hang up|Ich hänge die Wäsche im Garten auf.|I am hanging the washing up in the garden.|B
-aufheben|hebt auf · hob auf · hat aufgehoben|to pick up; to keep|Bitte heben Sie die Quittung gut auf.|Please keep the receipt safe.|B
-aufhören|hört auf · hörte auf · hat aufgehört|to stop (mit + Dat.)|Es hat endlich aufgehört zu regnen.|It has finally stopped raining.|A
-aufladen|lädt auf · lud auf · hat aufgeladen|to charge|Ich muss mein Handy aufladen.|I need to charge my mobile.|B
-aufmachen|macht auf · machte auf · hat aufgemacht|to open|Kannst du bitte das Fenster aufmachen?|Can you open the window, please?|A
-aufnehmen|nimmt auf · nahm auf · hat aufgenommen|to record; to take in|Ich nehme die Sendung heute Abend auf.|I am recording the programme this evening.|B
-aufpassen|passt auf · passte auf · hat aufgepasst|to watch out, to look after (auf + Akk.)|Meine Mutter passt heute auf die Kinder auf.|My mother is looking after the children today.|A
-sich aufregen|regt sich auf · regte sich auf · hat sich aufgeregt|to get upset (über + Akk.)|Er regt sich über jede Kleinigkeit auf.|He gets upset about every little thing.|B
-aufschreiben|schreibt auf · schrieb auf · hat aufgeschrieben|to write down|Ich schreibe mir die Adresse auf.|I'll write down the address.|A
-aufstehen|steht auf · stand auf · ist aufgestanden|to get up|Ich stehe jeden Tag um sechs Uhr auf.|I get up at six o'clock every day.|A
-aufwachen|wacht auf · wachte auf · ist aufgewacht|to wake up|Heute bin ich sehr früh aufgewacht.|I woke up very early today.|A
-aufwachsen|wächst auf · wuchs auf · ist aufgewachsen|to grow up|Sie ist in einem kleinen Dorf aufgewachsen.|She grew up in a small village.|B
-ausdrucken|druckt aus · druckte aus · hat ausgedruckt|to print out|Ich drucke das Ticket zu Hause aus.|I'll print out the ticket at home.|A
-ausfallen|fällt aus · fiel aus · ist ausgefallen|to be cancelled|Der Unterricht fällt morgen aus.|Lessons are cancelled tomorrow.|B
-ausgehen|geht aus · ging aus · ist ausgegangen|to go out|Am Samstag gehen wir zusammen aus.|We are going out together on Saturday.|A
-sich auskennen|kennt sich aus · kannte sich aus · hat sich ausgekannt|to know one's way around|Ich kenne mich in dieser Stadt gut aus.|I know my way around this city well.|B
-ausleihen|leiht aus · lieh aus · hat ausgeliehen|to borrow, to lend|Ich habe das Buch in der Bibliothek ausgeliehen.|I borrowed the book from the library.|B
-ausmachen|macht aus · machte aus · hat ausgemacht|to switch off|Mach bitte den Fernseher aus.|Please switch off the television.|A
-auspacken|packt aus · packte aus · hat ausgepackt|to unpack|Die Kinder packen ihre Geschenke aus.|The children are unwrapping their presents.|A
-ausprobieren|probiert aus · probierte aus · hat ausprobiert|to try out|Ich möchte das neue Rezept ausprobieren.|I would like to try out the new recipe.|B
-sich ausruhen|ruht sich aus · ruhte sich aus · hat sich ausgeruht|to rest|Nach der Arbeit ruhe ich mich kurz aus.|After work I rest for a little while.|A
-ausschalten|schaltet aus · schaltete aus · hat ausgeschaltet|to switch off|Bitte schalten Sie Ihre Handys aus.|Please switch off your mobile phones.|A
-aussehen|sieht aus · sah aus · hat ausgesehen|to look, to appear|Du siehst heute sehr müde aus.|You look very tired today.|A
-aussprechen|spricht aus · sprach aus · hat ausgesprochen|to pronounce|Wie spricht man dieses Wort aus?|How do you pronounce this word?|B
-aussteigen|steigt aus · stieg aus · ist ausgestiegen|to get off, to get out|Wir steigen an der nächsten Haltestelle aus.|We are getting off at the next stop.|A
-ausstellen|stellt aus · stellte aus · hat ausgestellt|to issue; to exhibit|Der Arzt stellt Ihnen ein Rezept aus.|The doctor will issue you a prescription.|B
-aussuchen|sucht aus · suchte aus · hat ausgesucht|to choose, to pick|Du darfst dir ein Geschenk aussuchen.|You may choose a present for yourself.|B
-auswählen|wählt aus · wählte aus · hat ausgewählt|to select|Wählen Sie bitte eine Sprache aus.|Please select a language.|B
-ausziehen|zieht aus · zog aus · ist ausgezogen|to move out|Mein Sohn zieht nächsten Monat aus.|My son is moving out next month.|A
-backen|backt · backte · hat gebacken|to bake|Meine Oma backt jeden Sonntag einen Kuchen.|My grandma bakes a cake every Sunday.|A
-baden|badet · badete · hat gebadet|to bathe, to have a bath|Im Sommer baden wir gern im See.|In summer we like to bathe in the lake.|A
-basteln|bastelt · bastelte · hat gebastelt|to make things, to do handicrafts|Die Kinder basteln Karten für Weihnachten.|The children are making cards for Christmas.|A
-bauen|baut · baute · hat gebaut|to build|Sie bauen ein Haus am Stadtrand.|They are building a house on the edge of town.|A
-beachten|beachtet · beachtete · hat beachtet|to observe, to pay attention to|Bitte beachten Sie die Hinweise auf dem Schild.|Please observe the instructions on the sign.|B
-beantworten|beantwortet · beantwortete · hat beantwortet|to answer (a question)|Können Sie bitte meine Frage beantworten?|Can you answer my question, please?|A
-sich bedanken|bedankt sich · bedankte sich · hat sich bedankt|to say thank you (für + Akk.)|Ich möchte mich für Ihre Hilfe bedanken.|I would like to thank you for your help.|A
-bedeuten|bedeutet · bedeutete · hat bedeutet|to mean|Was bedeutet dieses Wort auf Englisch?|What does this word mean in English?|A
-bedienen|bedient · bediente · hat bedient|to serve; to operate|Der Kellner bedient die Gäste sehr freundlich.|The waiter serves the guests in a very friendly way.|B
-sich beeilen|beeilt sich · beeilte sich · hat sich beeilt|to hurry|Beeil dich, der Zug fährt gleich!|Hurry up, the train is about to leave!|A
-beenden|beendet · beendete · hat beendet|to finish, to end|Sie hat ihre Ausbildung im Juni beendet.|She finished her training in June.|B
-sich befinden|befindet sich · befand sich · hat sich befunden|to be located|Die Toiletten befinden sich im ersten Stock.|The toilets are on the first floor.|B
-begegnen|begegnet · begegnete · ist begegnet|to meet, to come across (+ Dat.)|Ich bin ihm gestern in der Stadt begegnet.|I came across him in town yesterday.|B
-beginnen|beginnt · begann · hat begonnen|to begin|Der Film beginnt um acht Uhr.|The film begins at eight o'clock.|A
-begleiten|begleitet · begleitete · hat begleitet|to accompany|Ich begleite dich gern zum Bahnhof.|I'll happily go with you to the station.|B
-begründen|begründet · begründete · hat begründet|to give reasons for|Bitte begründen Sie Ihre Meinung.|Please give reasons for your opinion.|B
-begrüßen|begrüßt · begrüßte · hat begrüßt|to greet, to welcome|Die Chefin begrüßt die neuen Kollegen.|The boss welcomes the new colleagues.|B
-behalten|behält · behielt · hat behalten|to keep|Sie können den Stift gern behalten.|You are welcome to keep the pen.|B
-behandeln|behandelt · behandelte · hat behandelt|to treat|Der Arzt behandelt den Patienten sofort.|The doctor treats the patient immediately.|B
-behaupten|behauptet · behauptete · hat behauptet|to claim|Er behauptet, dass er nichts gesehen hat.|He claims that he saw nothing.|B
-beibringen|bringt bei · brachte bei · hat beigebracht|to teach|Mein Vater hat mir das Schwimmen beigebracht.|My father taught me to swim.|B
-beißen|beißt · biss · hat gebissen|to bite|Keine Angst, der Hund beißt nicht.|Don't worry, the dog doesn't bite.|B
-bekommen|bekommt · bekam · hat bekommen|to get, to receive|Ich habe heute einen Brief bekommen.|I got a letter today.|A
-benötigen|benötigt · benötigte · hat benötigt|to need, to require|Für die Reise benötigen Sie einen Pass.|You need a passport for the trip.|B
-benutzen|benutzt · benutzte · hat benutzt|to use|Darf ich kurz dein Telefon benutzen?|May I use your phone for a moment?|A
-beobachten|beobachtet · beobachtete · hat beobachtet|to observe, to watch|Wir beobachten die Vögel im Garten.|We are watching the birds in the garden.|B
-beraten|berät · beriet · hat beraten|to advise|Die Verkäuferin hat uns sehr gut beraten.|The shop assistant advised us very well.|B
-berichten|berichtet · berichtete · hat berichtet|to report (über + Akk.)|Die Zeitung berichtet über den Unfall.|The newspaper reports on the accident.|B
-sich beruhigen|beruhigt sich · beruhigte sich · hat sich beruhigt|to calm down|Beruhige dich, es ist nichts passiert.|Calm down, nothing has happened.|B
-sich beschäftigen|beschäftigt sich · beschäftigte sich · hat sich beschäftigt|to occupy oneself, to deal (mit + Dat.)|Er beschäftigt sich viel mit Musik.|He spends a lot of time on music.|B
-beschreiben|beschreibt · beschrieb · hat beschrieben|to describe|Können Sie den Weg zum Bahnhof beschreiben?|Can you describe the way to the station?|A
-besitzen|besitzt · besaß · hat besessen|to own|Meine Eltern besitzen ein kleines Haus.|My parents own a small house.|B
-besorgen|besorgt · besorgte · hat besorgt|to get, to obtain|Ich besorge noch schnell Brot und Milch.|I'll just quickly get bread and milk.|B
-besprechen|bespricht · besprach · hat besprochen|to discuss|Das besprechen wir morgen in der Sitzung.|We will discuss that in the meeting tomorrow.|B
-bestätigen|bestätigt · bestätigte · hat bestätigt|to confirm|Bitte bestätigen Sie den Termin per E-Mail.|Please confirm the appointment by email.|B
-bestimmen|bestimmt · bestimmte · hat bestimmt|to decide, to determine|Das bestimmt der Chef allein.|The boss decides that on his own.|B
-besuchen|besucht · besuchte · hat besucht|to visit|Am Wochenende besuchen wir meine Großeltern.|At the weekend we are visiting my grandparents.|A
-betragen|beträgt · betrug · hat betragen|to amount to|Die Miete beträgt 700 Euro im Monat.|The rent is 700 euros a month.|B
-betreuen|betreut · betreute · hat betreut|to look after|Sie betreut alte Menschen im Pflegeheim.|She looks after old people in the care home.|B
-sich bewegen|bewegt sich · bewegte sich · hat sich bewegt|to move, to take exercise|Sie sollten sich mehr bewegen.|You should take more exercise.|B
-beweisen|beweist · bewies · hat bewiesen|to prove|Können Sie das beweisen?|Can you prove that?|B
-bezahlen|bezahlt · bezahlte · hat bezahlt|to pay|Kann ich mit Karte bezahlen?|Can I pay by card?|A
-bieten|bietet · bot · hat geboten|to offer|Die Stadt bietet viele Freizeitmöglichkeiten.|The town offers many leisure activities.|B
-bitten|bittet · bat · hat gebeten|to ask, to request (um + Akk.)|Darf ich Sie um einen Gefallen bitten?|May I ask you a favour?|A
-bleiben|bleibt · blieb · ist geblieben|to stay, to remain|Wir bleiben heute Abend zu Hause.|We are staying at home this evening.|A
-braten|brät · briet · hat gebraten|to fry, to roast|Er brät das Fleisch in der Pfanne.|He fries the meat in the pan.|A
-brauchen|braucht · brauchte · hat gebraucht|to need|Ich brauche einen neuen Pass.|I need a new passport.|A
-brechen|bricht · brach · hat gebrochen|to break|Er hat sich beim Skifahren das Bein gebrochen.|He broke his leg while skiing.|B
-bremsen|bremst · bremste · hat gebremst|to brake|Der Fahrer musste plötzlich stark bremsen.|The driver suddenly had to brake hard.|B
-brennen|brennt · brannte · hat gebrannt|to burn, to be on fire|Im Wohnzimmer brennt noch Licht.|There is still a light on in the living room.|B
-bringen|bringt · brachte · hat gebracht|to bring, to take|Ich bringe die Kinder zur Schule.|I take the children to school.|A
-buchstabieren|buchstabiert · buchstabierte · hat buchstabiert|to spell|Können Sie bitte Ihren Namen buchstabieren?|Can you spell your name, please?|A
-campen|campt · campte · hat gecampt|to camp|Im Urlaub campen wir am Meer.|On holiday we camp by the sea.|A
-chatten|chattet · chattete · hat gechattet|to chat (online)|Sie chattet jeden Abend mit ihren Freunden.|She chats online with her friends every evening.|A
-danken|dankt · dankte · hat gedankt|to thank (+ Dat., für + Akk.)|Ich danke Ihnen für Ihre Hilfe.|I thank you for your help.|A
-dauern|dauert · dauerte · hat gedauert|to last, to take (time)|Die Fahrt dauert ungefähr zwei Stunden.|The journey takes about two hours.|A
-decken|deckt · deckte · hat gedeckt|to lay (the table), to cover|Kannst du bitte den Tisch decken?|Can you lay the table, please?|B
-denken|denkt · dachte · hat gedacht|to think (an + Akk.)|Ich denke oft an meine Familie.|I often think of my family.|A
-diskutieren|diskutiert · diskutierte · hat diskutiert|to discuss (über + Akk.)|Wir haben lange über das Thema diskutiert.|We discussed the topic for a long time.|B
-drehen|dreht · drehte · hat gedreht|to turn; to shoot (a film)|Drehen Sie den Schlüssel nach rechts.|Turn the key to the right.|B
-drucken|druckt · druckte · hat gedruckt|to print|Der Drucker druckt nur schwarz-weiß.|The printer only prints in black and white.|A
-drücken|drückt · drückte · hat gedrückt|to press, to push|Drücken Sie bitte den grünen Knopf.|Please press the green button.|A
-durchfallen|fällt durch · fiel durch · ist durchgefallen|to fail (an exam)|Er ist leider bei der Prüfung durchgefallen.|Unfortunately, he failed the exam.|B
-durchführen|führt durch · führte durch · hat durchgeführt|to carry out|Die Firma führt eine Umfrage durch.|The company is carrying out a survey.|B
-durchlesen|liest durch · las durch · hat durchgelesen|to read through|Lesen Sie den Vertrag bitte genau durch.|Please read through the contract carefully.|B
-dürfen|darf · durfte · hat gedurft|to be allowed to, may|Hier darf man nicht parken.|You are not allowed to park here.|A
-duschen|duscht · duschte · hat geduscht|to have a shower|Ich dusche jeden Morgen vor dem Frühstück.|I have a shower every morning before breakfast.|A
-sich eignen|eignet sich · eignete sich · hat sich geeignet|to be suitable (für + Akk.)|Dieses Buch eignet sich gut für Anfänger.|This book is well suited to beginners.|B
-einfallen|fällt ein · fiel ein · ist eingefallen|to occur to, to come to mind (+ Dat.)|Mir fällt sein Name nicht ein.|I cannot think of his name.|B
-einführen|führt ein · führte ein · hat eingeführt|to introduce|Die Schule hat neue Regeln eingeführt.|The school has introduced new rules.|B
-eingeben|gibt ein · gab ein · hat eingegeben|to enter, to type in|Geben Sie bitte Ihr Passwort ein.|Please enter your password.|B
-sich einigen|einigt sich · einigte sich · hat sich geeinigt|to agree (auf + Akk.)|Wir haben uns auf einen Preis geeinigt.|We have agreed on a price.|B
-einkaufen|kauft ein · kaufte ein · hat eingekauft|to shop, to go shopping|Wir kaufen meistens am Samstag ein.|We usually go shopping on Saturday.|A
-einnehmen|nimmt ein · nahm ein · hat eingenommen|to take (medicine)|Nehmen Sie die Tabletten nach dem Essen ein.|Take the tablets after meals.|B
-einpacken|packt ein · packte ein · hat eingepackt|to pack, to wrap|Hast du die Badesachen schon eingepackt?|Have you already packed the swimming things?|A
-einrichten|richtet ein · richtete ein · hat eingerichtet|to furnish, to set up|Sie haben ihre Wohnung modern eingerichtet.|They have furnished their flat in a modern style.|B
-einschalten|schaltet ein · schaltete ein · hat eingeschaltet|to switch on|Schalten Sie zuerst den Computer ein.|Switch on the computer first.|A
-einschlafen|schläft ein · schlief ein · ist eingeschlafen|to fall asleep|Das Kind ist sofort eingeschlafen.|The child fell asleep straight away.|A
-eintragen|trägt ein · trug ein · hat eingetragen|to enter, to write in|Tragen Sie bitte Ihren Namen in die Liste ein.|Please enter your name in the list.|B
-eintreten|tritt ein · trat ein · ist eingetreten|to enter; to join (in + Akk.)|Er ist vor zwei Jahren in den Verein eingetreten.|He joined the club two years ago.|B
-einzahlen|zahlt ein · zahlte ein · hat eingezahlt|to pay in|Ich möchte Geld auf mein Konto einzahlen.|I would like to pay money into my account.|B
-empfangen|empfängt · empfing · hat empfangen|to receive, to welcome|Sie empfängt die Gäste an der Tür.|She welcomes the guests at the door.|B
-enden|endet · endete · hat geendet|to end|Der Kurs endet am 30. Juni.|The course ends on 30 June.|A
-entdecken|entdeckt · entdeckte · hat entdeckt|to discover|Ich habe ein schönes Café entdeckt.|I have discovered a lovely café.|B
-entfernen|entfernt · entfernte · hat entfernt|to remove|Wie kann man diesen Fleck entfernen?|How can you remove this stain?|B
-enthalten|enthält · enthielt · hat enthalten|to contain|Dieser Saft enthält viel Zucker.|This juice contains a lot of sugar.|B
-entlassen|entlässt · entließ · hat entlassen|to dismiss, to discharge|Die Firma hat zwanzig Mitarbeiter entlassen.|The company has dismissed twenty employees.|B
-sich entspannen|entspannt sich · entspannte sich · hat sich entspannt|to relax|Im Urlaub kann ich mich richtig entspannen.|On holiday I can really relax.|B
-entstehen|entsteht · entstand · ist entstanden|to arise, to come into being|Hier entsteht ein neues Einkaufszentrum.|A new shopping centre is being built here.|B
-enttäuschen|enttäuscht · enttäuschte · hat enttäuscht|to disappoint|Der Film hat mich sehr enttäuscht.|The film disappointed me very much.|B
-entwickeln|entwickelt · entwickelte · hat entwickelt|to develop|Die Firma entwickelt ein neues Produkt.|The company is developing a new product.|B
-erfinden|erfindet · erfand · hat erfunden|to invent|Wer hat das Telefon erfunden?|Who invented the telephone?|B
-erfüllen|erfüllt · erfüllte · hat erfüllt|to fulfil, to meet|Sie erfüllt alle Bedingungen für die Stelle.|She meets all the requirements for the job.|B
-ergänzen|ergänzt · ergänzte · hat ergänzt|to complete, to add|Ergänzen Sie bitte die fehlenden Wörter.|Please fill in the missing words.|B
-erhalten|erhält · erhielt · hat erhalten|to receive|Sie erhalten die Rechnung per Post.|You will receive the invoice by post.|B
-erhöhen|erhöht · erhöhte · hat erhöht|to raise, to increase|Der Vermieter will die Miete erhöhen.|The landlord wants to raise the rent.|B
-erkennen|erkennt · erkannte · hat erkannt|to recognise|Ich habe dich fast nicht erkannt.|I almost did not recognise you.|B
-sich erkundigen|erkundigt sich · erkundigte sich · hat sich erkundigt|to enquire (nach + Dat.)|Ich möchte mich nach den Preisen erkundigen.|I would like to enquire about the prices.|B
-erleben|erlebt · erlebte · hat erlebt|to experience|Im Urlaub haben wir viel erlebt.|We experienced a lot on holiday.|B
-sich ernähren|ernährt sich · ernährte sich · hat sich ernährt|to eat, to feed oneself|Sie ernährt sich sehr gesund.|She eats very healthily.|B
-eröffnen|eröffnet · eröffnete · hat eröffnet|to open (a shop, an account)|Ich möchte ein Konto eröffnen.|I would like to open an account.|B
-erreichen|erreicht · erreichte · hat erreicht|to reach|Sie können mich jederzeit telefonisch erreichen.|You can reach me by phone at any time.|B
-erscheinen|erscheint · erschien · ist erschienen|to appear, to be published|Die Zeitung erscheint jeden Tag.|The newspaper comes out every day.|B
-erschrecken|erschrickt · erschrak · ist erschrocken|to get a fright|Ich bin bei dem lauten Geräusch erschrocken.|The loud noise gave me a fright.|B
-ersetzen|ersetzt · ersetzte · hat ersetzt|to replace, to reimburse|Die Versicherung ersetzt den Schaden.|The insurance covers the damage.|B
-erwarten|erwartet · erwartete · hat erwartet|to expect|Wir erwarten heute Abend Gäste.|We are expecting guests this evening.|B
-erzählen|erzählt · erzählte · hat erzählt|to tell (von + Dat.)|Erzähl mir von deinem Urlaub!|Tell me about your holiday!|A
-erziehen|erzieht · erzog · hat erzogen|to bring up, to raise|Sie erzieht ihre zwei Kinder allein.|She is bringing up her two children on her own.|B
-essen|isst · aß · hat gegessen|to eat|Wir essen heute Abend Fisch.|We are having fish this evening.|A
-fahren|fährt · fuhr · ist gefahren|to drive, to go (by vehicle)|Ich fahre jeden Tag mit dem Bus zur Arbeit.|I go to work by bus every day.|A
-fallen|fällt · fiel · ist gefallen|to fall|Das Glas ist auf den Boden gefallen.|The glass fell on the floor.|A
-fangen|fängt · fing · hat gefangen|to catch|Der Hund fängt den Ball im Garten.|The dog catches the ball in the garden.|B
-fehlen|fehlt · fehlte · hat gefehlt|to be missing, to be absent|In der Suppe fehlt noch etwas Salz.|The soup still needs a little salt.|A
-fernsehen|sieht fern · sah fern · hat ferngesehen|to watch television|Abends sehen wir oft zusammen fern.|In the evenings we often watch television together.|A
-festlegen|legt fest · legte fest · hat festgelegt|to fix, to set|Wir müssen noch einen Termin festlegen.|We still have to fix a date.|B
-feststellen|stellt fest · stellte fest · hat festgestellt|to notice, to find out|Der Arzt hat nichts Schlimmes festgestellt.|The doctor found nothing serious.|B
-finden|findet · fand · hat gefunden|to find|Ich kann meinen Schlüssel nicht finden.|I cannot find my key.|A
-fliegen|fliegt · flog · ist geflogen|to fly|Im Sommer fliegen wir nach Spanien.|In the summer we are flying to Spain.|A
-folgen|folgt · folgte · ist gefolgt|to follow (+ Dat.)|Bitte folgen Sie mir ins Büro.|Please follow me into the office.|B
-fordern|fordert · forderte · hat gefordert|to demand|Die Mitarbeiter fordern mehr Lohn.|The employees are demanding higher wages.|B
-fördern|fördert · förderte · hat gefördert|to support, to promote|Die Stadt fördert junge Künstler.|The city supports young artists.|B
-fragen|fragt · fragte · hat gefragt|to ask (nach + Dat.)|Darf ich Sie etwas fragen?|May I ask you something?|A
-frieren|friert · fror · hat gefroren|to be cold, to freeze|Ohne Jacke friere ich im Winter sofort.|Without a jacket I get cold straight away in winter.|B
-sich fühlen|fühlt sich · fühlte sich · hat sich gefühlt|to feel|Heute fühle ich mich viel besser.|I feel much better today.|A
-führen|führt · führte · hat geführt|to lead, to run|Diese Straße führt direkt zum Bahnhof.|This street leads straight to the station.|B
-funktionieren|funktioniert · funktionierte · hat funktioniert|to work, to function|Der Drucker funktioniert leider nicht mehr.|Unfortunately the printer no longer works.|A
-geben|gibt · gab · hat gegeben|to give|Kannst du mir bitte das Buch geben?|Can you give me the book, please?|A
-gefallen|gefällt · gefiel · hat gefallen|to please, to like (+ Dat.)|Die neue Wohnung gefällt mir sehr gut.|I like the new flat very much.|A
-gehen|geht · ging · ist gegangen|to go, to walk|Wir gehen heute Abend ins Kino.|We are going to the cinema this evening.|A
-gehören|gehört · gehörte · hat gehört|to belong (+ Dat.)|Wem gehört diese Tasche?|Who does this bag belong to?|A
-genießen|genießt · genoss · hat genossen|to enjoy|Wir genießen die Ruhe auf dem Land.|We enjoy the peace and quiet in the country.|B
-geschehen|geschieht · geschah · ist geschehen|to happen|Der Unfall ist gestern Abend geschehen.|The accident happened yesterday evening.|B
-gewinnen|gewinnt · gewann · hat gewonnen|to win|Unsere Mannschaft hat das Spiel gewonnen.|Our team won the match.|A
-glauben|glaubt · glaubte · hat geglaubt|to believe, to think (an + Akk.)|Ich glaube, dass er heute nicht kommt.|I think that he is not coming today.|A
-haben|hat · hatte · hat gehabt|to have|Ich habe heute leider keine Zeit.|Unfortunately I have no time today.|A
-halten|hält · hielt · hat gehalten|to hold, to stop|Der Bus hält direkt vor dem Rathaus.|The bus stops right in front of the town hall.|A
-handeln|handelt · handelte · hat gehandelt|to act, to be about (von + Dat.)|Der Film handelt von einer jungen Ärztin.|The film is about a young doctor.|B
-heißen|heißt · hieß · hat geheißen|to be called, to mean|Wie heißt die neue Kollegin?|What is the new colleague called?|A
-helfen|hilft · half · hat geholfen|to help (+ Dat.)|Kannst du mir beim Umzug helfen?|Can you help me with the move?|A
-herstellen|stellt her · stellte her · hat hergestellt|to produce, to manufacture|Die Firma stellt Möbel aus Holz her.|The company manufactures furniture from wood.|B
-herunterladen|lädt herunter · lud herunter · hat heruntergeladen|to download|Du kannst das Formular im Internet herunterladen.|You can download the form on the internet.|B
-hinfallen|fällt hin · fiel hin · ist hingefallen|to fall down|Das Kind ist auf der Treppe hingefallen.|The child fell down on the stairs.|B
-hoffen|hofft · hoffte · hat gehofft|to hope (auf + Akk.)|Ich hoffe, dass du bald wieder gesund bist.|I hope that you are well again soon.|A
-holen|holt · holte · hat geholt|to fetch, to get|Ich hole schnell Brötchen vom Bäcker.|I will quickly fetch rolls from the baker's.|A
-hören|hört · hörte · hat gehört|to hear, to listen to|Ich höre gern Musik beim Kochen.|I like listening to music while cooking.|A
-sich informieren|informiert sich · informierte sich · hat sich informiert|to find out, to get information (über + Akk.)|Ich möchte mich über den Kurs informieren.|I would like to find out about the course.|B
-sich interessieren|interessiert sich · interessierte sich · hat sich interessiert|to be interested (für + Akk.)|Meine Tochter interessiert sich für Technik.|My daughter is interested in technology.|B
-sich irren|irrt sich · irrte sich · hat sich geirrt|to be mistaken|Entschuldigung, ich habe mich im Datum geirrt.|Sorry, I got the date wrong.|B
-kaufen|kauft · kaufte · hat gekauft|to buy|Ich habe mir ein neues Fahrrad gekauft.|I have bought myself a new bicycle.|A
-kennen|kennt · kannte · hat gekannt|to know (a person or place)|Kennst du ein gutes Restaurant hier?|Do you know a good restaurant here?|A
-kennenlernen|lernt kennen · lernte kennen · hat kennengelernt|to get to know, to meet|Wir haben uns im Sprachkurs kennengelernt.|We met on the language course.|A
-klappen|klappt · klappte · hat geklappt|to work out|Mit dem Termin hat alles gut geklappt.|Everything worked out well with the appointment.|B
-klären|klärt · klärte · hat geklärt|to clarify, to sort out|Wir müssen diese Frage noch klären.|We still have to clarify this question.|B
-klingen|klingt · klang · hat geklungen|to sound|Dein Vorschlag klingt sehr interessant.|Your suggestion sounds very interesting.|B
-kommen|kommt · kam · ist gekommen|to come|Kommst du morgen mit zur Party?|Are you coming along to the party tomorrow?|A
-können|kann · konnte · hat gekonnt|to be able to, can|Ich kann morgen leider nicht kommen.|Unfortunately I cannot come tomorrow.|A
-kontrollieren|kontrolliert · kontrollierte · hat kontrolliert|to check, to inspect|Im Zug werden die Fahrkarten kontrolliert.|The tickets are checked on the train.|B
-sich konzentrieren|konzentriert sich · konzentrierte sich · hat sich konzentriert|to concentrate (auf + Akk.)|Bei dem Lärm kann ich mich nicht konzentrieren.|I cannot concentrate with that noise.|B
-kosten|kostet · kostete · hat gekostet|to cost|Wie viel kostet eine Fahrkarte nach Berlin?|How much does a ticket to Berlin cost?|A
-kriegen|kriegt · kriegte · hat gekriegt|to get (informal)|Ich habe heute ein Paket gekriegt.|I got a parcel today.|B
-lächeln|lächelt · lächelte · hat gelächelt|to smile|Die Verkäuferin lächelt immer freundlich.|The shop assistant always smiles in a friendly way.|B
-lassen|lässt · ließ · hat gelassen|to let, to leave|Ich habe mein Handy zu Hause gelassen.|I left my mobile phone at home.|A
-laufen|läuft · lief · ist gelaufen|to run, to walk|Wir sind zu Fuß zum Bahnhof gelaufen.|We walked to the station on foot.|A
-leben|lebt · lebte · hat gelebt|to live|Meine Eltern leben seit zehn Jahren in Wien.|My parents have lived in Vienna for ten years.|A
-legen|legt · legte · hat gelegt|to put, to lay|Leg die Zeitung bitte auf den Tisch.|Please put the newspaper on the table.|A
-leiden|leidet · litt · hat gelitten|to suffer (an + Dat., unter + Dat.)|Viele Menschen leiden unter dem Lärm.|Many people suffer from the noise.|B
-leihen|leiht · lieh · hat geliehen|to lend, to borrow|Kannst du mir bis morgen zehn Euro leihen?|Can you lend me ten euros until tomorrow?|B
-sich leisten|leistet sich · leistete sich · hat sich geleistet|to afford|Ein neues Auto können wir uns nicht leisten.|We cannot afford a new car.|B
-leiten|leitet · leitete · hat geleitet|to lead, to manage|Frau Berger leitet die Abteilung seit Mai.|Ms Berger has managed the department since May.|B
-lernen|lernt · lernte · hat gelernt|to learn, to study|Ich lerne seit zwei Jahren Deutsch.|I have been learning German for two years.|A
-lesen|liest · las · hat gelesen|to read|Hast du die E-Mail schon gelesen?|Have you read the email yet?|A
-liegen|liegt · lag · hat gelegen|to lie, to be situated|Das Hotel liegt direkt am See.|The hotel is situated right by the lake.|A
-sich lohnen|lohnt sich · lohnte sich · hat sich gelohnt|to be worth it|Der Besuch im Museum hat sich gelohnt.|The visit to the museum was worth it.|B
-löschen|löscht · löschte · hat gelöscht|to delete, to put out|Ich habe die Datei aus Versehen gelöscht.|I deleted the file by mistake.|B
-lösen|löst · löste · hat gelöst|to solve|Wir haben das Problem gemeinsam gelöst.|We solved the problem together.|B
-lügen|lügt · log · hat gelogen|to lie, to tell a lie|Ich glaube ihm nicht, er hat gelogen.|I do not believe him, he lied.|B
-machen|macht · machte · hat gemacht|to do, to make|Was machst du am Wochenende?|What are you doing at the weekend?|A
-meinen|meint · meinte · hat gemeint|to mean, to think|Was meinst du zu diesem Vorschlag?|What do you think of this suggestion?|A
-melden|meldet · meldete · hat gemeldet|to report|Sie müssen den Schaden sofort melden.|You must report the damage immediately.|B
-merken|merkt · merkte · hat gemerkt|to notice|Ich habe den Fehler zu spät gemerkt.|I noticed the mistake too late.|B
-messen|misst · maß · hat gemessen|to measure|Die Ärztin misst zuerst das Fieber.|The doctor takes the temperature first.|B
-mitbringen|bringt mit · brachte mit · hat mitgebracht|to bring along|Soll ich etwas zum Essen mitbringen?|Shall I bring something to eat?|A
-mitnehmen|nimmt mit · nahm mit · hat mitgenommen|to take along|Nimm bitte einen Regenschirm mit.|Please take an umbrella with you.|A
-mitteilen|teilt mit · teilte mit · hat mitgeteilt|to inform, to tell|Bitte teilen Sie uns Ihre neue Adresse mit.|Please tell us your new address.|B
-mögen|mag · mochte · hat gemocht|to like|Ich mag keinen Kaffee ohne Milch.|I do not like coffee without milk.|A
-müssen|muss · musste · hat gemusst|to have to, must|Ich muss morgen früh aufstehen.|I have to get up early tomorrow.|A
-nachdenken|denkt nach · dachte nach · hat nachgedacht|to think, to reflect (über + Akk.)|Ich muss noch über das Angebot nachdenken.|I still have to think about the offer.|B
-nachfragen|fragt nach · fragte nach · hat nachgefragt|to enquire, to ask again|Ich frage morgen beim Amt noch einmal nach.|I will ask again at the office tomorrow.|B
-nehmen|nimmt · nahm · hat genommen|to take|Ich nehme heute lieber das Fahrrad.|I would rather take the bicycle today.|A
-nennen|nennt · nannte · hat genannt|to name, to call|Können Sie mir einen Grund nennen?|Can you give me a reason?|B
-nutzen|nutzt · nutzte · hat genutzt|to use|Viele Leute nutzen das Handy zum Bezahlen.|Many people use their mobile phone to pay.|B
-öffnen|öffnet · öffnete · hat geöffnet|to open|Kannst du bitte das Fenster öffnen?|Can you open the window, please?|A
-organisieren|organisiert · organisierte · hat organisiert|to organise|Wer organisiert das Fest für die Nachbarn?|Who is organising the party for the neighbours?|B
-pflegen|pflegt · pflegte · hat gepflegt|to care for, to look after|Sie pflegt ihre kranke Mutter zu Hause.|She looks after her sick mother at home.|B
-planen|plant · plante · hat geplant|to plan|Wir planen eine Reise nach Italien.|We are planning a trip to Italy.|B
-prüfen|prüft · prüfte · hat geprüft|to check, to examine|Bitte prüfen Sie die Rechnung genau.|Please check the invoice carefully.|B
-raten|rät · riet · hat geraten|to advise, to guess (zu + Dat.)|Der Arzt rät mir zu mehr Bewegung.|The doctor advises me to take more exercise.|B
-reagieren|reagiert · reagierte · hat reagiert|to react (auf + Akk.)|Wie hat dein Chef auf die Nachricht reagiert?|How did your boss react to the news?|B
-reichen|reicht · reichte · hat gereicht|to be enough, to pass|Das Geld reicht nicht für den Urlaub.|The money is not enough for the holiday.|B
-reinigen|reinigt · reinigte · hat gereinigt|to clean|Ich muss meinen Mantel reinigen lassen.|I have to have my coat cleaned.|B
-reisen|reist · reiste · ist gereist|to travel|Meine Großeltern reisen gern mit dem Zug.|My grandparents like travelling by train.|A
-retten|rettet · rettete · hat gerettet|to save, to rescue|Die Feuerwehr hat alle Bewohner gerettet.|The fire brigade rescued all the residents.|B
-riechen|riecht · roch · hat gerochen|to smell (nach + Dat.)|In der Küche riecht es nach frischem Brot.|It smells of fresh bread in the kitchen.|B
-rufen|ruft · rief · hat gerufen|to call, to shout|Wir müssen sofort einen Arzt rufen.|We have to call a doctor immediately.|A
-sagen|sagt · sagte · hat gesagt|to say, to tell|Kannst du mir sagen, wie spät es ist?|Can you tell me what time it is?|A
-sammeln|sammelt · sammelte · hat gesammelt|to collect|Mein Bruder sammelt alte Münzen.|My brother collects old coins.|B
-schaden|schadet · schadete · hat geschadet|to harm, to damage (+ Dat.)|Zu viel Zucker schadet der Gesundheit.|Too much sugar is bad for your health.|B
-schaffen|schafft · schaffte · hat geschafft|to manage, to achieve|Ich habe die Prüfung endlich geschafft.|I have finally passed the exam.|B
-schicken|schickt · schickte · hat geschickt|to send|Ich schicke Ihnen die Unterlagen per Post.|I will send you the documents by post.|A
-schlafen|schläft · schlief · hat geschlafen|to sleep|Ich habe letzte Nacht schlecht geschlafen.|I slept badly last night.|A
-schlagen|schlägt · schlug · hat geschlagen|to hit, to beat|Man darf Kinder nicht schlagen.|You must not hit children.|B
-schließen|schließt · schloss · hat geschlossen|to close, to shut|Das Geschäft schließt um 20 Uhr.|The shop closes at 8 pm.|A
-schmecken|schmeckt · schmeckte · hat geschmeckt|to taste (good)|Der Kuchen schmeckt wirklich sehr gut.|The cake really tastes very good.|A
-schneiden|schneidet · schnitt · hat geschnitten|to cut|Ich habe mich in den Finger geschnitten.|I have cut my finger.|B
-schreiben|schreibt · schrieb · hat geschrieben|to write|Ich schreibe dir morgen eine E-Mail.|I will write you an email tomorrow.|A
-sehen|sieht · sah · hat gesehen|to see|Hast du meine Brille gesehen?|Have you seen my glasses?|A
-sein|ist · war · ist gewesen|to be|Ich bin noch nie in Hamburg gewesen.|I have never been to Hamburg.|A
-senden|sendet · sendete · hat gesendet|to send, to broadcast|Bitte senden Sie uns Ihre Bewerbung per E-Mail.|Please send us your application by email.|B
-sitzen|sitzt · saß · hat gesessen|to sit|Wir saßen den ganzen Abend auf dem Balkon.|We sat on the balcony all evening.|A
-sollen|soll · sollte · hat gesollt|to be supposed to, should|Der Arzt sagt, ich soll mehr Wasser trinken.|The doctor says I should drink more water.|A
-sorgen|sorgt · sorgte · hat gesorgt|to take care, to provide (für + Akk.)|Die Eltern sorgen für ihre Kinder.|The parents take care of their children.|B
-speichern|speichert · speicherte · hat gespeichert|to save (data)|Vergiss nicht, den Text zu speichern.|Do not forget to save the text.|B
-spielen|spielt · spielte · hat gespielt|to play|Die Kinder spielen draußen im Hof.|The children are playing outside in the courtyard.|A
-sprechen|spricht · sprach · hat gesprochen|to speak (mit + Dat., über + Akk.)|Kann ich bitte mit Herrn Wagner sprechen?|Can I speak to Mr Wagner, please?|A
-springen|springt · sprang · ist gesprungen|to jump|Die Katze ist auf den Tisch gesprungen.|The cat jumped onto the table.|B
-stattfinden|findet statt · fand statt · hat stattgefunden|to take place|Das Konzert findet im Stadtpark statt.|The concert takes place in the town park.|B
-stehen|steht · stand · hat gestanden|to stand, to be (written)|Das steht heute in der Zeitung.|That is in the newspaper today.|A
-steigen|steigt · stieg · ist gestiegen|to rise, to climb|Die Mieten sind stark gestiegen.|Rents have risen sharply.|B
-stellen|stellt · stellte · hat gestellt|to put, to place|Stell die Flaschen bitte in den Kühlschrank.|Please put the bottles in the fridge.|A
-sterben|stirbt · starb · ist gestorben|to die (an + Dat.)|Mein Großvater ist letztes Jahr gestorben.|My grandfather died last year.|B
-stören|stört · störte · hat gestört|to disturb, to bother|Entschuldigung, störe ich Sie gerade?|Excuse me, am I disturbing you?|B
-suchen|sucht · suchte · hat gesucht|to look for (nach + Dat.)|Wir suchen eine größere Wohnung.|We are looking for a bigger flat.|A
-tauschen|tauscht · tauschte · hat getauscht|to swap, to exchange|Wollen wir die Plätze tauschen?|Shall we swap seats?|B
-teilen|teilt · teilte · hat geteilt|to share, to divide|Ich teile die Wohnung mit zwei Freunden.|I share the flat with two friends.|B
-tragen|trägt · trug · hat getragen|to carry, to wear|Kannst du mir helfen, die Kiste zu tragen?|Can you help me carry the box?|A
-träumen|träumt · träumte · hat geträumt|to dream (von + Dat.)|Sie träumt von einem Haus am Meer.|She dreams of a house by the sea.|B
-trinken|trinkt · trank · hat getrunken|to drink|Möchtest du etwas trinken?|Would you like something to drink?|A
-tun|tut · tat · hat getan|to do|Was kann ich für Sie tun?|What can I do for you?|A
-überlegen|überlegt · überlegte · hat überlegt|to consider, to think over|Ich überlege, ob ich den Job annehme.|I am considering whether to accept the job.|B
-übernehmen|übernimmt · übernahm · hat übernommen|to take over, to take on|Die Firma übernimmt die Kosten für den Kurs.|The company is covering the cost of the course.|B
-überprüfen|überprüft · überprüfte · hat überprüft|to check, to verify|Bitte überprüfen Sie Ihre Angaben noch einmal.|Please check your details once more.|B
-überraschen|überrascht · überraschte · hat überrascht|to surprise|Wir wollen Oma mit einem Besuch überraschen.|We want to surprise Grandma with a visit.|B
-überzeugen|überzeugt · überzeugte · hat überzeugt|to convince (von + Dat.)|Seine Argumente haben mich nicht überzeugt.|His arguments did not convince me.|B
-unterbrechen|unterbricht · unterbrach · hat unterbrochen|to interrupt|Entschuldigung, darf ich Sie kurz unterbrechen?|Excuse me, may I interrupt you briefly?|B
-unternehmen|unternimmt · unternahm · hat unternommen|to do, to undertake|Am Wochenende unternehmen wir oft etwas zusammen.|At the weekend we often do something together.|B
-unterrichten|unterrichtet · unterrichtete · hat unterrichtet|to teach|Herr Lang unterrichtet Deutsch und Geschichte.|Mr Lang teaches German and history.|B
-unterscheiden|unterscheidet · unterschied · hat unterschieden|to distinguish, to tell apart|Ich kann die Zwillinge kaum unterscheiden.|I can hardly tell the twins apart.|B
-unterstützen|unterstützt · unterstützte · hat unterstützt|to support|Meine Familie unterstützt mich beim Studium.|My family supports me in my studies.|B
-sich verabreden|verabredet sich · verabredete sich · hat sich verabredet|to arrange to meet (mit + Dat.)|Ich habe mich mit Anna zum Essen verabredet.|I have arranged to meet Anna for a meal.|B
-sich verabschieden|verabschiedet sich · verabschiedete sich · hat sich verabschiedet|to say goodbye (von + Dat.)|Ich muss mich leider schon verabschieden.|Unfortunately I have to say goodbye already.|B
-verändern|verändert · veränderte · hat verändert|to change|Das Internet hat unser Leben stark verändert.|The internet has changed our lives a great deal.|B
-verbessern|verbessert · verbesserte · hat verbessert|to improve, to correct|Ich möchte mein Deutsch verbessern.|I would like to improve my German.|B
-verbinden|verbindet · verband · hat verbunden|to connect, to put through|Können Sie mich bitte mit Frau Klein verbinden?|Can you put me through to Ms Klein, please?|B
-verbringen|verbringt · verbrachte · hat verbracht|to spend (time)|Wir haben den Urlaub an der Ostsee verbracht.|We spent the holiday on the Baltic coast.|B
-verhindern|verhindert · verhinderte · hat verhindert|to prevent|Der Fahrer konnte den Unfall nicht verhindern.|The driver could not prevent the accident.|B
-verkaufen|verkauft · verkaufte · hat verkauft|to sell|Ich möchte mein altes Auto verkaufen.|I would like to sell my old car.|A
-verlangen|verlangt · verlangte · hat verlangt|to demand, to ask for|Der Vermieter verlangt drei Monatsmieten Kaution.|The landlord is asking for three months' rent as a deposit.|B
-verlassen|verlässt · verließ · hat verlassen|to leave|Er verlässt das Haus jeden Morgen um sieben.|He leaves the house every morning at seven.|B
-sich verlieben|verliebt sich · verliebte sich · hat sich verliebt|to fall in love (in + Akk.)|Er hat sich in seine Nachbarin verliebt.|He has fallen in love with his neighbour.|B
-verlieren|verliert · verlor · hat verloren|to lose|Ich habe gestern meinen Ausweis verloren.|I lost my identity card yesterday.|A
-vermeiden|vermeidet · vermied · hat vermieden|to avoid|Wir sollten unnötigen Müll vermeiden.|We should avoid unnecessary waste.|B
-vermieten|vermietet · vermietete · hat vermietet|to rent out, to let|Sie vermietet ein Zimmer an Studenten.|She lets a room to students.|B
-vermissen|vermisst · vermisste · hat vermisst|to miss|Ich vermisse meine Freunde aus der Heimat.|I miss my friends from home.|B
-verschwinden|verschwindet · verschwand · ist verschwunden|to disappear|Mein Fahrrad ist aus dem Keller verschwunden.|My bicycle has disappeared from the cellar.|B
-versuchen|versucht · versuchte · hat versucht|to try|Ich versuche, pünktlich zu sein.|I am trying to be on time.|A
-verteilen|verteilt · verteilte · hat verteilt|to distribute, to hand out|Die Lehrerin verteilt die Arbeitsblätter.|The teacher hands out the worksheets.|B
-verwenden|verwendet · verwendete · hat verwendet|to use|Für dieses Rezept verwende ich nur frisches Gemüse.|For this recipe I only use fresh vegetables.|B
-verzichten|verzichtet · verzichtete · hat verzichtet|to do without (auf + Akk.)|Ich verzichte seit einem Jahr auf Fleisch.|I have been doing without meat for a year.|B
-vorbeikommen|kommt vorbei · kam vorbei · ist vorbeigekommen|to drop by|Komm doch morgen nach der Arbeit vorbei.|Do drop by tomorrow after work.|B
-vorhaben|hat vor · hatte vor · hat vorgehabt|to plan, to intend|Hast du am Samstag schon etwas vor?|Do you already have plans for Saturday?|B
-sich vorstellen|stellt sich vor · stellte sich vor · hat sich vorgestellt|to introduce oneself, to imagine|Darf ich mich kurz vorstellen?|May I briefly introduce myself?|B
-wählen|wählt · wählte · hat gewählt|to choose, to vote, to dial|Sie können zwischen zwei Menüs wählen.|You can choose between two set meals.|B
-warnen|warnt · warnte · hat gewarnt|to warn (vor + Dat.)|Die Polizei warnt vor Glatteis.|The police are warning of black ice.|B
-warten|wartet · wartete · hat gewartet|to wait (auf + Akk.)|Ich warte seit zwanzig Minuten auf den Bus.|I have been waiting for the bus for twenty minutes.|A
-waschen|wäscht · wusch · hat gewaschen|to wash|Ich muss heute noch Wäsche waschen.|I still have to do the washing today.|A
-wechseln|wechselt · wechselte · hat gewechselt|to change|Ich möchte gern die Arbeitsstelle wechseln.|I would like to change jobs.|B
-wegwerfen|wirft weg · warf weg · hat weggeworfen|to throw away|Wirf die alten Zeitungen bitte nicht weg.|Please do not throw the old newspapers away.|B
-wehtun|tut weh · tat weh · hat wehgetan|to hurt|Mein Rücken tut seit gestern weh.|My back has been hurting since yesterday.|A
-sich weiterbilden|bildet sich weiter · bildete sich weiter · hat sich weitergebildet|to do further training|Sie will sich im Beruf weiterbilden.|She wants to do further training in her job.|B
-werden|wird · wurde · ist geworden|to become|Meine Schwester will Ärztin werden.|My sister wants to become a doctor.|A
-werfen|wirft · warf · hat geworfen|to throw|Bitte werfen Sie den Müll in die Tonne.|Please throw the rubbish in the bin.|B
-wiegen|wiegt · wog · hat gewogen|to weigh|Das Paket wiegt fast fünf Kilo.|The parcel weighs almost five kilos.|B
-wissen|weiß · wusste · hat gewusst|to know (a fact)|Weißt du, wann der Zug abfährt?|Do you know when the train leaves?|A
-wollen|will · wollte · hat gewollt|to want (to)|Ich will nächstes Jahr eine Ausbildung machen.|I want to do an apprenticeship next year.|A
-sich wundern|wundert sich · wunderte sich · hat sich gewundert|to be surprised (über + Akk.)|Ich wundere mich über die hohe Rechnung.|I am surprised at the high bill.|B
-wünschen|wünscht · wünschte · hat gewünscht|to wish|Ich wünsche dir viel Glück für die Prüfung.|I wish you good luck for the exam.|A
-zahlen|zahlt · zahlte · hat gezahlt|to pay|Kann ich mit Karte zahlen?|Can I pay by card?|A
-zählen|zählt · zählte · hat gezählt|to count|Die Kassiererin zählt das Geld noch einmal.|The cashier counts the money once more.|B
-zeigen|zeigt · zeigte · hat gezeigt|to show|Können Sie mir den Weg zum Bahnhof zeigen?|Can you show me the way to the station?|A
-zerstören|zerstört · zerstörte · hat zerstört|to destroy|Das Feuer hat das ganze Haus zerstört.|The fire destroyed the whole house.|B
-ziehen|zieht · zog · hat gezogen|to pull|Sie müssen an der Tür ziehen, nicht drücken.|You have to pull the door, not push.|B
-zuhören|hört zu · hörte zu · hat zugehört|to listen (+ Dat.)|Bitte hören Sie jetzt gut zu.|Please listen carefully now.|A
-zunehmen|nimmt zu · nahm zu · hat zugenommen|to increase, to put on weight|Im Urlaub habe ich zwei Kilo zugenommen.|I put on two kilos on holiday.|B
-zurückgeben|gibt zurück · gab zurück · hat zurückgegeben|to give back, to return|Ich gebe dir das Buch morgen zurück.|I will give you the book back tomorrow.|B
-zurückrufen|ruft zurück · rief zurück · hat zurückgerufen|to call back|Können Sie mich bitte später zurückrufen?|Can you call me back later, please?|B
-zusammenarbeiten|arbeitet zusammen · arbeitete zusammen · hat zusammengearbeitet|to work together (mit + Dat.)|Wir arbeiten eng mit anderen Schulen zusammen.|We work closely with other schools.|B
-zusammenfassen|fasst zusammen · fasste zusammen · hat zusammengefasst|to summarise|Können Sie den Text kurz zusammenfassen?|Can you summarise the text briefly?|B
-zuschauen|schaut zu · schaute zu · hat zugeschaut|to watch (+ Dat.)|Ich schaue den Kindern gern beim Spielen zu.|I like watching the children play.|B
-zustimmen|stimmt zu · stimmte zu · hat zugestimmt|to agree (+ Dat.)|In diesem Punkt stimme ich Ihnen zu.|I agree with you on this point.|B
-feiern|feiert · feierte · hat gefeiert|to celebrate|Wir feiern heute meinen Geburtstag.|We are celebrating my birthday today.|A
-kochen|kocht · kochte · hat gekocht|to cook|Am Wochenende koche ich gern.|I like cooking at the weekend.|A
-lachen|lacht · lachte · hat gelacht|to laugh|Die Kinder lachen über den Witz.|The children are laughing at the joke.|A
-lieben|liebt · liebte · hat geliebt|to love|Sie liebt ihre Arbeit.|She loves her job.|A
-putzen|putzt · putzte · hat geputzt|to clean|Samstags putze ich die Wohnung.|On Saturdays I clean the flat.|A
-wohnen|wohnt · wohnte · hat gewohnt|to live (reside)|Wir wohnen seit drei Jahren in Hamburg.|We have lived in Hamburg for three years.|A
-tanzen|tanzt · tanzte · hat getanzt|to dance|Auf der Hochzeit haben alle getanzt.|Everyone danced at the wedding.|A
-studieren|studiert · studierte · hat studiert|to study (at university)|Mein Bruder studiert Medizin in Wien.|My brother studies medicine in Vienna.|A
-schwimmen|schwimmt · schwamm · ist geschwommen|to swim|Im Sommer schwimmen wir oft im See.|In summer we often swim in the lake.|A
-heiraten|heiratet · heiratete · hat geheiratet|to marry, to get married|Sie haben letztes Jahr geheiratet.|They got married last year.|A
-regnen|regnet · regnete · hat geregnet|to rain|Es hat den ganzen Tag geregnet.|It rained all day.|A
-schenken|schenkt · schenkte · hat geschenkt|to give (as a present)|Was schenkst du ihm zum Geburtstag?|What are you giving him for his birthday?|A
-reservieren|reserviert · reservierte · hat reserviert|to reserve|Ich möchte einen Tisch für vier Personen reservieren.|I would like to reserve a table for four.|A
-telefonieren|telefoniert · telefonierte · hat telefoniert|to talk on the phone|Ich telefoniere jeden Sonntag mit meinen Eltern.|I phone my parents every Sunday.|A
-reden|redet · redete · hat geredet|to talk|Wir müssen über das Problem reden.|We need to talk about the problem.|A
-zurückkommen|kommt zurück · kam zurück · ist zurückgekommen|to come back|Wann kommst du aus dem Urlaub zurück?|When are you coming back from holiday?|A
-hängen|hängt · hing · hat gehangen|to hang (be hanging)|Das Bild hängt über dem Sofa.|The picture hangs above the sofa.|B
-abstimmen|stimmt ab · stimmte ab · hat abgestimmt|to vote (on something)|Wir stimmen jetzt über den Vorschlag ab.|We are now voting on the proposal.|B
-ankündigen|kündigt an · kündigte an · hat angekündigt|to announce|Die Firma hat neue Preise angekündigt.|The company has announced new prices.|B
-auswandern|wandert aus · wanderte aus · ist ausgewandert|to emigrate|Meine Großeltern sind nach Kanada ausgewandert.|My grandparents emigrated to Canada.|B
-berücksichtigen|berücksichtigt · berücksichtigte · hat berücksichtigt|to take into account|Bitte berücksichtigen Sie auch meine Erfahrung.|Please take my experience into account too.|B
-bügeln|bügelt · bügelte · hat gebügelt|to iron|Ich muss noch mein Hemd bügeln.|I still have to iron my shirt.|B
-entsorgen|entsorgt · entsorgte · hat entsorgt|to dispose of|Alte Batterien muss man richtig entsorgen.|Old batteries must be disposed of properly.|B
-erwähnen|erwähnt · erwähnte · hat erwähnt|to mention|Er hat das Problem nicht erwähnt.|He did not mention the problem.|B
-akzeptieren|akzeptiert · akzeptierte · hat akzeptiert|to accept|Wir akzeptieren Ihre Entscheidung.|We accept your decision.|B
-anerkennen|erkennt an · erkannte an · hat anerkannt|to recognise, to acknowledge|Mein Zeugnis wurde in Deutschland anerkannt.|My certificate was recognised in Germany.|B
-anschaffen|schafft an · schaffte an · hat angeschafft|to buy, to acquire|Wir haben uns ein neues Auto angeschafft.|We have bought ourselves a new car.|B
-anschließen|schließt an · schloss an · hat angeschlossen|to connect|Der Techniker schließt die Waschmaschine an.|The technician is connecting the washing machine.|B
-sich anschnallen|schnallt sich an · schnallte sich an · hat sich angeschnallt|to fasten one's seat belt|Bitte schnallen Sie sich vor dem Start an.|Please fasten your seat belt before take-off.|B
-ansprechen|spricht an · sprach an · hat angesprochen|to speak to, to address|Auf der Straße hat mich ein Tourist angesprochen.|A tourist spoke to me in the street.|B
-anstellen|stellt an · stellte an · hat angestellt|to employ, to take on|Die Firma stellt zwei neue Mitarbeiter an.|The company is taking on two new employees.|B
-anzeigen|zeigt an · zeigte an · hat angezeigt|to report (to the police)|Sie hat den Diebstahl bei der Polizei angezeigt.|She reported the theft to the police.|B
-auftreten|tritt auf · trat auf · ist aufgetreten|to perform, to appear|Die Band tritt heute Abend in Köln auf.|The band is performing in Cologne tonight.|B
-ausreichen|reicht aus · reichte aus · hat ausgereicht|to be enough|Das Geld reicht für die Reise nicht aus.|The money is not enough for the trip.|B
-ausrichten|richtet aus · richtete aus · hat ausgerichtet|to pass on (a message)|Kann ich ihm etwas ausrichten?|Can I pass on a message to him?|B
-ausschließen|schließt aus · schloss aus · hat ausgeschlossen|to rule out, to exclude|Der Arzt schließt eine Operation nicht aus.|The doctor does not rule out an operation.|B
-beeinflussen|beeinflusst · beeinflusste · hat beeinflusst|to influence|Die Werbung beeinflusst unsere Entscheidungen.|Advertising influences our decisions.|B
-behindern|behindert · behinderte · hat behindert|to obstruct, to hinder|Der Unfall behindert den Verkehr.|The accident is obstructing the traffic.|B
-beleidigen|beleidigt · beleidigte · hat beleidigt|to insult|Ich wollte dich nicht beleidigen.|I did not want to insult you.|B
-sich bemühen|bemüht sich · bemühte sich · hat sich bemüht|to make an effort (um + Akk.)|Er bemüht sich um eine neue Stelle.|He is making an effort to get a new job.|B
-berechnen|berechnet · berechnete · hat berechnet|to calculate, to charge|Für die Lieferung berechnen wir zehn Euro.|We charge ten euros for delivery.|B
-beschädigen|beschädigt · beschädigte · hat beschädigt|to damage|Der Sturm hat viele Dächer beschädigt.|The storm damaged many roofs.|B
-besetzen|besetzt · besetzte · hat besetzt|to occupy, to fill|Die Stelle wurde schon besetzt.|The position has already been filled.|B
-bestrafen|bestraft · bestrafte · hat bestraft|to punish|Der Richter hat den Dieb bestraft.|The judge punished the thief.|B
-sich beteiligen|beteiligt sich · beteiligte sich · hat sich beteiligt|to take part (an + Dat.)|Alle beteiligen sich an den Kosten.|Everyone is contributing to the costs.|B
-betrügen|betrügt · betrog · hat betrogen|to cheat, to deceive|Der Verkäufer hat seine Kunden betrogen.|The salesman cheated his customers.|B
-blitzen|blitzt · blitzte · hat geblitzt|to flash (lightning)|Draußen blitzt und donnert es.|There is thunder and lightning outside.|B
-bluten|blutet · blutete · hat geblutet|to bleed|Dein Finger blutet ja!|Your finger is bleeding!|B
-blühen|blüht · blühte · hat geblüht|to bloom, to flower|Im Frühling blühen die Bäume im Park.|In spring the trees in the park are in bloom.|B
-darstellen|stellt dar · stellte dar · hat dargestellt|to show, to represent|Die Grafik stellt die Ergebnisse dar.|The chart shows the results.|B
-dekorieren|dekoriert · dekorierte · hat dekoriert|to decorate|Wir dekorieren das Zimmer für die Party.|We are decorating the room for the party.|B
-dienen|dient · diente · hat gedient|to serve (as)|Dieser Raum dient als Büro.|This room serves as an office.|B
-duzen|duzt · duzte · hat geduzt|to address somebody as du|In unserer Firma duzen sich alle.|In our company everyone uses du with each other.|B
-eilen|eilt · eilte · ist geeilt|to hurry|Sie eilte sofort nach Hause.|She hurried home at once.|B
-einbrechen|bricht ein · brach ein · ist eingebrochen|to break in (in + Akk.)|Jemand ist in unser Haus eingebrochen.|Somebody has broken into our house.|B
-einfügen|fügt ein · fügte ein · hat eingefügt|to insert|Bitte fügen Sie hier Ihren Namen ein.|Please insert your name here.|B
-einsetzen|setzt ein · setzte ein · hat eingesetzt|to put in, to use|Setzen Sie das richtige Wort ein.|Put in the correct word.|B
-sich entschließen|entschließt sich · entschloss sich · hat sich entschlossen|to decide (zu + Dat.)|Sie hat sich zu einem Umzug entschlossen.|She has decided to move house.|B
-erleichtern|erleichtert · erleichterte · hat erleichtert|to make easier|Das neue Programm erleichtert die Arbeit.|The new programme makes the work easier.|B
-erstellen|erstellt · erstellte · hat erstellt|to create, to draw up|Ich erstelle eine Liste mit allen Namen.|I am drawing up a list of all the names.|B
-festsetzen|setzt fest · setzte fest · hat festgesetzt|to fix, to set|Wir müssen noch einen Termin festsetzen.|We still have to fix a date.|B
-feststehen|steht fest · stand fest · hat festgestanden|to be certain, to be fixed|Der Termin steht noch nicht fest.|The date has not been fixed yet.|B
-finanzieren|finanziert · finanzierte · hat finanziert|to finance, to pay for|Meine Eltern finanzieren mein Studium.|My parents are paying for my studies.|B
-fliehen|flieht · floh · ist geflohen|to flee, to escape|Viele Menschen sind vor dem Krieg geflohen.|Many people have fled from the war.|B
-fließen|fließt · floss · ist geflossen|to flow|Der Rhein fließt durch Köln.|The Rhine flows through Cologne.|B
-fortsetzen|setzt fort · setzte fort · hat fortgesetzt|to continue|Nach der Pause setzen wir das Gespräch fort.|After the break we will continue the conversation.|B
-fotografieren|fotografiert · fotografierte · hat fotografiert|to photograph|Im Museum darf man nicht fotografieren.|You are not allowed to take photographs in the museum.|A
-frühstücken|frühstückt · frühstückte · hat gefrühstückt|to have breakfast|Am Sonntag frühstücken wir immer lange.|On Sundays we always have a long breakfast.|A
-fürchten|fürchtet · fürchtete · hat gefürchtet|to fear, to be afraid|Ich fürchte, wir kommen zu spät.|I am afraid we are going to be late.|B
-füttern|füttert · fütterte · hat gefüttert|to feed|Kannst du bitte die Katze füttern?|Can you feed the cat, please?|B
-garantieren|garantiert · garantierte · hat garantiert|to guarantee|Ich kann Ihnen nichts garantieren.|I cannot guarantee you anything.|B
-gebrauchen|gebraucht · gebrauchte · hat gebraucht|to use|Das alte Fahrrad kann ich gut gebrauchen.|I can make good use of the old bicycle.|B
-gelten|gilt · galt · hat gegolten|to be valid, to apply|Die Fahrkarte gilt nur heute.|The ticket is only valid today.|B
-genehmigen|genehmigt · genehmigte · hat genehmigt|to approve|Der Chef hat meinen Urlaub genehmigt.|The boss has approved my holiday.|B
-genügen|genügt · genügte · hat genügt|to be enough|Ein kurzer Anruf genügt.|A short phone call is enough.|B
-gießen|gießt · goss · hat gegossen|to water, to pour|Ich gieße die Blumen jeden zweiten Tag.|I water the flowers every other day.|B
-gratulieren|gratuliert · gratulierte · hat gratuliert|to congratulate (zu + Dat.)|Ich gratuliere dir herzlich zum Geburtstag.|I wish you a very happy birthday.|A
-greifen|greift · griff · hat gegriffen|to reach, to grab (nach + Dat.)|Das Kind greift nach dem Ball.|The child is reaching for the ball.|B
-grillen|grillt · grillte · hat gegrillt|to barbecue, to grill|Am Wochenende grillen wir im Garten.|At the weekend we are having a barbecue in the garden.|A
-grüßen|grüßt · grüßte · hat gegrüßt|to greet, to say hello to|Unser Nachbar grüßt immer freundlich.|Our neighbour always says hello in a friendly way.|A
-gucken|guckt · guckte · hat geguckt|to look|Guck mal, da kommt der Bus!|Look, here comes the bus!|A
-hassen|hasst · hasste · hat gehasst|to hate|Ich hasse es, früh aufzustehen.|I hate getting up early.|B
-heben|hebt · hob · hat gehoben|to lift, to raise|Ich kann den schweren Koffer nicht heben.|I cannot lift the heavy suitcase.|B
-heizen|heizt · heizte · hat geheizt|to heat|Im Winter heizen wir mit Gas.|In winter we heat with gas.|B
-hochladen|lädt hoch · lud hoch · hat hochgeladen|to upload|Ich lade die Fotos später hoch.|I will upload the photos later.|B
-hupen|hupt · hupte · hat gehupt|to sound the horn|Der Fahrer hinter uns hupt ständig.|The driver behind us keeps sounding his horn.|B
-husten|hustet · hustete · hat gehustet|to cough|Das Kind hustet seit drei Tagen.|The child has been coughing for three days.|A
-installieren|installiert · installierte · hat installiert|to install|Ich muss das Programm neu installieren.|I have to install the programme again.|B
-integrieren|integriert · integrierte · hat integriert|to integrate|Die Schule will alle Kinder gut integrieren.|The school wants to integrate all the children well.|B
-klagen|klagt · klagte · hat geklagt|to complain (über + Akk.)|Sie klagt oft über Kopfschmerzen.|She often complains of headaches.|B
-kleben|klebt · klebte · hat geklebt|to stick, to glue|Er klebt eine Briefmarke auf den Brief.|He is sticking a stamp on the letter.|B
-klettern|klettert · kletterte · ist geklettert|to climb|Die Kinder klettern auf den Baum.|The children are climbing up the tree.|B
-klicken|klickt · klickte · hat geklickt|to click (auf + Akk.)|Klicken Sie bitte auf das Symbol.|Please click on the icon.|A
-klingeln|klingelt · klingelte · hat geklingelt|to ring|Es hat an der Tür geklingelt.|The doorbell rang.|A
-klopfen|klopft · klopfte · hat geklopft|to knock|Jemand klopft an die Tür.|Somebody is knocking at the door.|A
-konsumieren|konsumiert · konsumierte · hat konsumiert|to consume|Wir konsumieren zu viel Zucker.|We consume too much sugar.|B
-küssen|küsst · küsste · hat geküsst|to kiss|Zum Abschied küsst sie ihre Kinder.|She kisses her children goodbye.|A
-sich langweilen|langweilt sich · langweilte sich · hat sich gelangweilt|to be bored|Ohne Handy langweilt er sich schnell.|Without his mobile he quickly gets bored.|B
-loben|lobt · lobte · hat gelobt|to praise|Die Lehrerin lobt die Schüler oft.|The teacher often praises the pupils.|B
-losfahren|fährt los · fuhr los · ist losgefahren|to set off, to drive off|Wir fahren morgen früh um sechs los.|We are setting off at six tomorrow morning.|A
-malen|malt · malte · hat gemalt|to paint|Meine Tochter malt gern Tiere.|My daughter likes painting animals.|A
-mischen|mischt · mischte · hat gemischt|to mix|Zuerst mischt man Mehl und Zucker.|First you mix flour and sugar.|B
-nachschlagen|schlägt nach · schlug nach · hat nachgeschlagen|to look up|Ich schlage das Wort im Wörterbuch nach.|I am looking the word up in the dictionary.|B
-nähen|näht · nähte · hat genäht|to sew|Meine Oma näht ihre Kleider selbst.|My grandma sews her dresses herself.|B
-sich nähern|nähert sich · näherte sich · hat sich genähert|to approach (+ Dat.)|Der Zug nähert sich dem Bahnhof.|The train is approaching the station.|B
-nützen|nützt · nützte · hat genützt|to be of use|Das Wörterbuch nützt mir sehr.|The dictionary is very useful to me.|B
-ordnen|ordnet · ordnete · hat geordnet|to put in order, to arrange|Ich muss meine Unterlagen ordnen.|I have to put my papers in order.|B
-packen|packt · packte · hat gepackt|to pack|Hast du deinen Koffer schon gepackt?|Have you packed your suitcase yet?|A
-parken|parkt · parkte · hat geparkt|to park|Hier darf man nicht parken.|You are not allowed to park here.|A
-passen|passt · passte · hat gepasst|to fit, to suit|Die Hose passt mir nicht mehr.|The trousers do not fit me any more.|A
-pflanzen|pflanzt · pflanzte · hat gepflanzt|to plant|Wir pflanzen einen Apfelbaum im Garten.|We are planting an apple tree in the garden.|B
-probieren|probiert · probierte · hat probiert|to try, to taste|Möchtest du den Kuchen probieren?|Would you like to try the cake?|A
-protestieren|protestiert · protestierte · hat protestiert|to protest (gegen + Akk.)|Die Studenten protestieren gegen die neuen Gebühren.|The students are protesting against the new fees.|B
-realisieren|realisiert · realisierte · hat realisiert|to realise, to carry out|Wir wollen das Projekt nächstes Jahr realisieren.|We want to carry out the project next year.|B
-rechnen|rechnet · rechnete · hat gerechnet|to calculate, to expect (mit + Dat.)|Mit so viel Regen habe ich nicht gerechnet.|I did not expect so much rain.|A
-reduzieren|reduziert · reduzierte · hat reduziert|to reduce|Das Geschäft hat alle Preise reduziert.|The shop has reduced all its prices.|B
-regeln|regelt · regelte · hat geregelt|to sort out, to regulate|Das müssen wir noch heute regeln.|We have to sort that out today.|B
-schalten|schaltet · schaltete · hat geschaltet|to switch, to change gear|Die Ampel schaltet auf Grün.|The traffic lights are changing to green.|B
-schauen|schaut · schaute · hat geschaut|to look|Er schaut aus dem Fenster.|He is looking out of the window.|A
-scheiden|scheidet · schied · hat geschieden|to divorce, to dissolve (a marriage)|Das Gericht hat die Ehe geschieden.|The court dissolved the marriage.|B
-scheinen|scheint · schien · hat geschienen|to shine, to seem|Heute scheint den ganzen Tag die Sonne.|The sun is shining all day today.|A
-schieben|schiebt · schob · hat geschoben|to push|Er schiebt sein Fahrrad den Berg hinauf.|He is pushing his bicycle up the hill.|B
-schießen|schießt · schoss · hat geschossen|to shoot, to score|Er hat zwei Tore geschossen.|He scored two goals.|B
-schimpfen|schimpft · schimpfte · hat geschimpft|to grumble, to scold (über + Akk.)|Der Nachbar schimpft über den Lärm.|The neighbour is grumbling about the noise.|B
-sich schminken|schminkt sich · schminkte sich · hat sich geschminkt|to put on make-up|Sie schminkt sich jeden Morgen im Bad.|She puts on her make-up in the bathroom every morning.|B
-schneien|schneit · schneite · hat geschneit|to snow|In den Bergen schneit es seit gestern.|It has been snowing in the mountains since yesterday.|A
-schweigen|schweigt · schwieg · hat geschwiegen|to be silent|Er schwieg und sah aus dem Fenster.|He was silent and looked out of the window.|B
-siegen|siegt · siegte · hat gesiegt|to win|Unsere Mannschaft hat gestern gesiegt.|Our team won yesterday.|B
-siezen|siezt · siezte · hat gesiezt|to address somebody as Sie|Ich sieze meine Chefin immer noch.|I still use Sie with my boss.|B
-singen|singt · sang · hat gesungen|to sing|Sie singt seit Jahren im Chor.|She has been singing in the choir for years.|A
-sinken|sinkt · sank · ist gesunken|to sink, to fall|Die Temperaturen sinken heute Nacht unter null.|Temperatures will fall below zero tonight.|B
-spazieren|spaziert · spazierte · ist spaziert|to stroll|Wir sind durch die Altstadt spaziert.|We strolled through the old town.|A
-spülen|spült · spülte · hat gespült|to wash up, to rinse|Ich koche und du spülst das Geschirr.|I cook and you do the washing-up.|A
-spüren|spürt · spürte · hat gespürt|to feel, to sense|Ich spüre einen Schmerz im Rücken.|I can feel a pain in my back.|B
-stammen|stammt · stammte · hat gestammt|to come from (aus + Dat.)|Meine Familie stammt aus Polen.|My family comes from Poland.|B
-starten|startet · startete · hat gestartet|to start|Er hat den Motor gestartet.|He started the engine.|A
-staubsaugen|staubsaugt · staubsaugte · hat gestaubsaugt|to vacuum, to hoover|Ich staubsauge jeden Samstag die Wohnung.|I hoover the flat every Saturday.|B
-stechen|sticht · stach · hat gestochen|to sting, to prick|Eine Biene hat mich gestochen.|A bee stung me.|B
-stecken|steckt · steckte · hat gesteckt|to put, to be stuck|Der Schlüssel steckt noch in der Tür.|The key is still in the door.|B
-stehlen|stiehlt · stahl · hat gestohlen|to steal|Jemand hat mein Fahrrad gestohlen.|Somebody has stolen my bicycle.|B
-stimmen|stimmt · stimmte · hat gestimmt|to be right, to be correct|Die Rechnung stimmt leider nicht.|Unfortunately the bill is not right.|A
-stinken|stinkt · stank · hat gestunken|to stink, to smell bad|Der Müll in der Küche stinkt.|The rubbish in the kitchen stinks.|B
-stoppen|stoppt · stoppte · hat gestoppt|to stop|Die Polizei hat den Wagen gestoppt.|The police stopped the car.|B
-stoßen|stößt · stieß · hat gestoßen|to push, to bump|Er hat mich aus Versehen gestoßen.|He pushed me by accident.|B
-stürzen|stürzt · stürzte · ist gestürzt|to fall|Sie ist mit dem Fahrrad gestürzt.|She fell off her bicycle.|B
-tanken|tankt · tankte · hat getankt|to fill up (with petrol)|Wir müssen vor der Fahrt noch tanken.|We still have to fill up before the journey.|A
-tauchen|taucht · tauchte · ist getaucht|to dive|Im Urlaub sind wir im Meer getaucht.|On holiday we went diving in the sea.|B
-testen|testet · testete · hat getestet|to test|Wir testen das neue Gerät zuerst.|We are testing the new device first.|B
-tippen|tippt · tippte · hat getippt|to type|Sie tippt sehr schnell auf dem Handy.|She types very fast on her mobile.|B
-trainieren|trainiert · trainierte · hat trainiert|to train|Er trainiert dreimal pro Woche.|He trains three times a week.|A
-umarmen|umarmt · umarmte · hat umarmt|to hug|Zur Begrüßung umarmt sie ihre Freundin.|She hugs her friend to say hello.|B
-umdrehen|dreht um · drehte um · hat umgedreht|to turn over, to turn round|Bitte drehen Sie das Blatt um.|Please turn the sheet over.|B
-umgehen|geht um · ging um · ist umgegangen|to deal with, to handle (mit + Dat.)|Sie kann gut mit Kindern umgehen.|She is good with children.|B
-unterlassen|unterlässt · unterließ · hat unterlassen|to refrain from|Bitte unterlassen Sie das Rauchen.|Please refrain from smoking.|B
-unterstreichen|unterstreicht · unterstrich · hat unterstrichen|to underline|Unterstreichen Sie bitte alle Verben im Text.|Please underline all the verbs in the text.|B
-verbrennen|verbrennt · verbrannte · hat verbrannt|to burn|Er hat die alten Briefe verbrannt.|He burnt the old letters.|B
-vergrößern|vergrößert · vergrößerte · hat vergrößert|to enlarge|Kannst du das Foto vergrößern?|Can you enlarge the photo?|B
-verhaften|verhaftet · verhaftete · hat verhaftet|to arrest|Die Polizei hat zwei Männer verhaftet.|The police have arrested two men.|B
-sich verhalten|verhält sich · verhielt sich · hat sich verhalten|to behave|Er hat sich sehr höflich verhalten.|He behaved very politely.|B
-sich verlaufen|verläuft sich · verlief sich · hat sich verlaufen|to get lost (on foot)|Wir haben uns im Wald verlaufen.|We got lost in the woods.|B
-vermuten|vermutet · vermutete · hat vermutet|to suspect, to assume|Ich vermute, dass er krank ist.|I suspect that he is ill.|B
-verpacken|verpackt · verpackte · hat verpackt|to pack, to wrap|Ich verpacke das Geschenk heute Abend.|I am wrapping the present this evening.|B
-verpflegen|verpflegt · verpflegte · hat verpflegt|to feed, to cater for|Das Hotel verpflegt seine Gäste sehr gut.|The hotel feeds its guests very well.|B
-verraten|verrät · verriet · hat verraten|to reveal, to betray|Ich verrate dir ein Geheimnis.|I am going to tell you a secret.|B
-verreisen|verreist · verreiste · ist verreist|to go away (on a trip)|Unsere Nachbarn sind für zwei Wochen verreist.|Our neighbours have gone away for two weeks.|B
-verschmutzen|verschmutzt · verschmutzte · hat verschmutzt|to pollute, to make dirty|Zu viele Autos verschmutzen die Luft.|Too many cars pollute the air.|B
-versichern|versichert · versicherte · hat versichert|to insure, to assure|Wir haben das Haus gegen Feuer versichert.|We have insured the house against fire.|B
-verstecken|versteckt · versteckte · hat versteckt|to hide|Sie versteckt die Geschenke im Schrank.|She is hiding the presents in the wardrobe.|B
-versäumen|versäumt · versäumte · hat versäumt|to miss|Er hat wegen der Krankheit viel Unterricht versäumt.|He missed a lot of lessons because of his illness.|B
-vertreten|vertritt · vertrat · hat vertreten|to stand in for, to represent|Frau Lang vertritt heute unseren Lehrer.|Ms Lang is standing in for our teacher today.|B
-verursachen|verursacht · verursachte · hat verursacht|to cause|Wer hat den Unfall verursacht?|Who caused the accident?|B
-verurteilen|verurteilt · verurteilte · hat verurteilt|to sentence, to condemn|Das Gericht verurteilte ihn zu einer Geldstrafe.|The court sentenced him to a fine.|B
-verwechseln|verwechselt · verwechselte · hat verwechselt|to mix up, to confuse (mit + Dat.)|Ich verwechsle ihn immer mit seinem Bruder.|I always mix him up with his brother.|B
-verzeihen|verzeiht · verzieh · hat verziehen|to forgive|Kannst du mir bitte verzeihen?|Can you please forgive me?|B
-vorkommen|kommt vor · kam vor · ist vorgekommen|to happen, to occur|So etwas kommt bei uns selten vor.|That sort of thing rarely happens here.|B
-vorlesen|liest vor · las vor · hat vorgelesen|to read aloud|Abends liest er den Kindern eine Geschichte vor.|In the evening he reads the children a story.|A
-wandern|wandert · wanderte · ist gewandert|to hike|Wir sind drei Stunden durch den Wald gewandert.|We hiked through the forest for three hours.|A
-wecken|weckt · weckte · hat geweckt|to wake (somebody) up|Kannst du mich um sieben Uhr wecken?|Can you wake me at seven o'clock?|A
-sich weigern|weigert sich · weigerte sich · hat sich geweigert|to refuse|Er weigert sich, die Rechnung zu bezahlen.|He refuses to pay the bill.|B
-weinen|weint · weinte · hat geweint|to cry|Das Baby weint schon wieder.|The baby is crying again.|A
-wetten|wettet · wettete · hat gewettet|to bet|Ich wette, dass er wieder zu spät kommt.|I bet he will be late again.|B
-widersprechen|widerspricht · widersprach · hat widersprochen|to contradict (+ Dat.)|Da muss ich Ihnen leider widersprechen.|I am afraid I have to disagree with you there.|B
-winken|winkt · winkte · hat gewinkt|to wave|Die Kinder winken dem Zug.|The children are waving at the train.|B
-wirken|wirkt · wirkte · hat gewirkt|to work, to seem|Die Tablette wirkt nach einer halben Stunde.|The tablet works after half an hour.|B
-zeichnen|zeichnet · zeichnete · hat gezeichnet|to draw|Sie zeichnet ein Haus mit Garten.|She is drawing a house with a garden.|A
-zelten|zeltet · zeltete · hat gezeltet|to camp|Im Sommer zelten wir am See.|In summer we go camping by the lake.|B
-zubereiten|bereitet zu · bereitete zu · hat zubereitet|to prepare (food)|Er bereitet das Abendessen für die Gäste zu.|He is preparing dinner for the guests.|B
-zugehen|geht zu · ging zu · ist zugegangen|to walk up to (auf + Akk.)|Sie ging freundlich auf die neuen Nachbarn zu.|She walked up to the new neighbours in a friendly way.|B
-zumachen|macht zu · machte zu · hat zugemacht|to close, to shut|Mach bitte das Fenster zu.|Please shut the window.|A
-zweifeln|zweifelt · zweifelte · hat gezweifelt|to doubt (an + Dat.)|Ich zweifle an seiner Geschichte.|I doubt his story.|B
-zwingen|zwingt · zwang · hat gezwungen|to force (zu + Dat.)|Niemand kann dich dazu zwingen.|Nobody can force you to do that.|B
-überqueren|überquert · überquerte · hat überquert|to cross|Überqueren Sie die Straße nur bei Grün.|Only cross the road when the light is green.|B
-überreden|überredet · überredete · hat überredet|to persuade|Sie hat mich zum Mitkommen überredet.|She persuaded me to come along.|B
-übertreiben|übertreibt · übertrieb · hat übertrieben|to exaggerate|Du übertreibst mal wieder!|You are exaggerating again!|B`;
+const VERBS = `sich bewerben|bewirbt sich · bewarb sich · hat sich beworben|to apply (for a job)|Ich bewerbe mich um die Stelle als Verkäufer.|I am applying for the job as a sales assistant.|B|Ich habe mich um die Stelle als Verkäufer beworben.|I applied for the job as a sales assistant.
+kündigen|kündigt · kündigte · hat gekündigt|to give notice, to cancel a contract|Sie hat ihre Wohnung zum ersten Mai gekündigt.|She has given notice on her flat for the first of May.|B|Sie hat ihre Wohnung zum ersten Mai gekündigt.|She has given notice on her flat for the first of May.
+verdienen|verdient · verdiente · hat verdient|to earn|In diesem Beruf verdient man gut.|You earn well in this job.|B|In diesem Beruf hat er gut verdient.|He earned well in this job.
+einstellen|stellt ein · stellte ein · hat eingestellt|to hire, to take on|Die Firma stellt zwei neue Mitarbeiter ein.|The company is hiring two new employees.|B|Die Firma hat zwei neue Mitarbeiter eingestellt.|The company has taken on two new employees.
+erledigen|erledigt · erledigte · hat erledigt|to get done, to deal with|Ich muss heute noch viel erledigen.|I still have a lot to get done today.|B|Ich habe heute schon viel erledigt.|I have already got a lot done today.
+vereinbaren|vereinbart · vereinbarte · hat vereinbart|to arrange, to agree on|Wir haben einen Termin für Montag vereinbart.|We have arranged an appointment for Monday.|B|Wir haben einen Termin für Montag vereinbart.|We have arranged an appointment for Monday.
+absagen|sagt ab · sagte ab · hat abgesagt|to cancel (an appointment)|Leider muss ich den Termin absagen.|Unfortunately I have to cancel the appointment.|B|Ich habe den Termin leider abgesagt.|Unfortunately, I cancelled the appointment.
+verschieben|verschiebt · verschob · hat verschoben|to postpone|Können wir das Treffen auf morgen verschieben?|Can we postpone the meeting until tomorrow?|B|Wir haben das Treffen auf morgen verschoben.|We have postponed the meeting until tomorrow.
+mieten|mietet · mietete · hat gemietet|to rent|Wir haben eine Wohnung im Zentrum gemietet.|We have rented a flat in the centre.|B|Wir haben eine Wohnung im Zentrum gemietet.|We have rented a flat in the centre.
+umziehen|zieht um · zog um · ist umgezogen|to move house|Nächsten Monat ziehen wir nach Köln um.|Next month we are moving to Cologne.|B|Letzten Monat sind wir nach Köln umgezogen.|Last month we moved to Cologne.
+einziehen|zieht ein · zog ein · ist eingezogen|to move in|Wann können wir in die Wohnung einziehen?|When can we move into the flat?|B|Wir sind gestern in die Wohnung eingezogen.|We moved into the flat yesterday.
+renovieren|renoviert · renovierte · hat renoviert|to renovate|Wir renovieren gerade das Badezimmer.|We are renovating the bathroom at the moment.|B|Wir haben gerade das Badezimmer renoviert.|We have just renovated the bathroom.
+reparieren|repariert · reparierte · hat repariert|to repair|Der Techniker hat die Waschmaschine repariert.|The technician repaired the washing machine.|B|Der Techniker hat die Waschmaschine repariert.|The technician has repaired the washing machine.
+aufräumen|räumt auf · räumte auf · hat aufgeräumt|to tidy up|Die Kinder müssen ihr Zimmer aufräumen.|The children have to tidy their room.|B|Die Kinder haben ihr Zimmer aufgeräumt.|The children have tidied up their room.
+untersuchen|untersucht · untersuchte · hat untersucht|to examine|Die Ärztin hat mich gründlich untersucht.|The doctor examined me thoroughly.|B|Die Ärztin hat mich gründlich untersucht.|The doctor examined me thoroughly.
+sich erkälten|erkältet sich · erkältete sich · hat sich erkältet|to catch a cold|Ich habe mich im Urlaub erkältet.|I caught a cold on holiday.|B|Ich habe mich im Urlaub erkältet.|I caught a cold on holiday.
+sich verletzen|verletzt sich · verletzte sich · hat sich verletzt|to injure oneself|Er hat sich beim Fußball verletzt.|He injured himself playing football.|B|Er hat sich beim Fußball verletzt.|He injured himself playing football.
+sich erholen|erholt sich · erholte sich · hat sich erholt|to recover, to rest|Im Urlaub habe ich mich gut erholt.|I had a good rest on holiday.|B|Im Urlaub habe ich mich gut erholt.|I had a good rest on holiday.
+verschreiben|verschreibt · verschrieb · hat verschrieben|to prescribe|Der Arzt hat mir Tabletten verschrieben.|The doctor prescribed me tablets.|B|Der Arzt hat mir Tabletten verschrieben.|The doctor prescribed me tablets.
+abnehmen|nimmt ab · nahm ab · hat abgenommen|to lose weight|Er hat fünf Kilo abgenommen.|He has lost five kilos.|B|Er hat fünf Kilo abgenommen.|He has lost five kilos.
+abfahren|fährt ab · fuhr ab · ist abgefahren|to depart, to leave|Der Bus fährt in zehn Minuten ab.|The bus leaves in ten minutes.|B|Der Bus ist vor zehn Minuten abgefahren.|The bus left ten minutes ago.
+ankommen|kommt an · kam an · ist angekommen|to arrive|Wir sind pünktlich in München angekommen.|We arrived in Munich on time.|B|Wir sind pünktlich in München angekommen.|We arrived in Munich on time.
+umsteigen|steigt um · stieg um · ist umgestiegen|to change (trains, buses)|In Frankfurt müssen Sie umsteigen.|You have to change in Frankfurt.|B|In Frankfurt sind wir umgestiegen.|We changed trains in Frankfurt.
+einsteigen|steigt ein · stieg ein · ist eingestiegen|to get on, to board|Bitte steigen Sie schnell ein.|Please board quickly.|B|Wir sind schnell in den Zug eingestiegen.|We quickly got on the train.
+verpassen|verpasst · verpasste · hat verpasst|to miss (a train, a chance)|Ich habe den letzten Bus verpasst.|I missed the last bus.|B|Ich habe den letzten Bus verpasst.|I missed the last bus.
+buchen|bucht · buchte · hat gebucht|to book|Wir haben das Hotel online gebucht.|We booked the hotel online.|B|Wir haben das Hotel online gebucht.|We booked the hotel online.
+übernachten|übernachtet · übernachtete · hat übernachtet|to stay overnight|Wir übernachten bei Freunden.|We are staying the night with friends.|B|Wir haben bei Freunden übernachtet.|We stayed overnight with friends.
+besichtigen|besichtigt · besichtigte · hat besichtigt|to visit, to look round|Morgen besichtigen wir das Schloss.|Tomorrow we are visiting the castle.|B|Gestern haben wir das Schloss besichtigt.|Yesterday we visited the castle.
+abholen|holt ab · holte ab · hat abgeholt|to pick up, to collect|Kannst du mich vom Bahnhof abholen?|Can you pick me up from the station?|B|Er hat mich vom Bahnhof abgeholt.|He picked me up from the station.
+beantragen|beantragt · beantragte · hat beantragt|to apply for (officially)|Ich möchte ein Visum beantragen.|I would like to apply for a visa.|B|Ich habe ein Visum beantragt.|I have applied for a visa.
+ausfüllen|füllt aus · füllte aus · hat ausgefüllt|to fill in (a form)|Füllen Sie bitte das Formular aus.|Please fill in the form.|B|Ich habe das Formular schon ausgefüllt.|I have already filled in the form.
+unterschreiben|unterschreibt · unterschrieb · hat unterschrieben|to sign|Sie müssen hier unten unterschreiben.|You have to sign down here.|B|Sie hat den Vertrag gestern unterschrieben.|She signed the contract yesterday.
+verlängern|verlängert · verlängerte · hat verlängert|to extend, to renew|Ich muss meinen Pass verlängern lassen.|I have to get my passport renewed.|B|Ich habe meinen Vertrag um ein Jahr verlängert.|I have extended my contract by a year.
+sich anmelden|meldet sich an · meldete sich an · hat sich angemeldet|to register, to sign up|Ich habe mich für den Sprachkurs angemeldet.|I have signed up for the language course.|B|Ich habe mich für den Sprachkurs angemeldet.|I have signed up for the language course.
+erlauben|erlaubt · erlaubte · hat erlaubt|to allow|Rauchen ist hier nicht erlaubt.|Smoking is not allowed here.|B|Meine Eltern haben mir die Reise erlaubt.|My parents allowed me to go on the trip.
+verbieten|verbietet · verbot · hat verboten|to forbid|Der Arzt hat ihm das Rauchen verboten.|The doctor has forbidden him to smoke.|B|Der Arzt hat ihm das Rauchen verboten.|The doctor has forbidden him to smoke.
+bestehen|besteht · bestand · hat bestanden|to pass (an exam)|Sie hat die Prüfung mit gutem Ergebnis bestanden.|She passed the exam with a good result.|B|Sie hat die Prüfung mit gutem Ergebnis bestanden.|She passed the exam with a good result.
+sich vorbereiten|bereitet sich vor · bereitete sich vor · hat sich vorbereitet|to prepare (oneself)|Ich bereite mich auf die Prüfung vor.|I am preparing for the exam.|B|Ich habe mich gut auf die Prüfung vorbereitet.|I prepared well for the exam.
+wiederholen|wiederholt · wiederholte · hat wiederholt|to repeat, to revise|Können Sie das bitte wiederholen?|Could you repeat that, please?|B|Wir haben die Grammatik noch einmal wiederholt.|We revised the grammar once more.
+erklären|erklärt · erklärte · hat erklärt|to explain|Die Lehrerin erklärt die Regel noch einmal.|The teacher explains the rule once more.|B|Die Lehrerin hat die Regel noch einmal erklärt.|The teacher explained the rule once more.
+verstehen|versteht · verstand · hat verstanden|to understand|Ich habe die Frage nicht verstanden.|I did not understand the question.|B|Ich habe die Frage nicht verstanden.|I did not understand the question.
+übersetzen|übersetzt · übersetzte · hat übersetzt|to translate|Kannst du mir diesen Brief übersetzen?|Can you translate this letter for me?|B|Sie hat mir diesen Brief übersetzt.|She translated this letter for me.
+teilnehmen|nimmt teil · nahm teil · hat teilgenommen|to take part|An dem Kurs nehmen zwölf Personen teil.|Twelve people are taking part in the course.|B|An dem Kurs haben zwölf Personen teilgenommen.|Twelve people took part in the course.
+sich erinnern|erinnert sich · erinnerte sich · hat sich erinnert|to remember|Ich erinnere mich gern an meine Schulzeit.|I like to remember my school days.|B|Ich habe mich sofort an ihn erinnert.|I remembered him straight away.
+vergessen|vergisst · vergaß · hat vergessen|to forget|Ich habe meinen Schirm im Zug vergessen.|I left my umbrella on the train.|B|Ich habe meinen Schirm im Zug vergessen.|I left my umbrella on the train.
+einladen|lädt ein · lud ein · hat eingeladen|to invite|Wir möchten euch zum Essen einladen.|We would like to invite you to dinner.|B|Wir haben unsere Nachbarn zum Essen eingeladen.|We have invited our neighbours for a meal.
+sich treffen|trifft sich · traf sich · hat sich getroffen|to meet up|Wir treffen uns um sieben vor dem Kino.|We are meeting at seven in front of the cinema.|B|Wir haben uns um sieben vor dem Kino getroffen.|We met up at seven outside the cinema.
+sich unterhalten|unterhält sich · unterhielt sich · hat sich unterhalten|to chat, to talk|Wir haben uns lange über den Film unterhalten.|We talked about the film for a long time.|B|Wir haben uns lange über den Film unterhalten.|We talked about the film for a long time.
+empfehlen|empfiehlt · empfahl · hat empfohlen|to recommend|Können Sie mir ein gutes Restaurant empfehlen?|Can you recommend a good restaurant?|B|Der Kellner hat uns den Fisch empfohlen.|The waiter recommended the fish to us.
+vorschlagen|schlägt vor · schlug vor · hat vorgeschlagen|to suggest|Ich schlage vor, dass wir zu Fuß gehen.|I suggest that we walk.|B|Sie hat einen Spaziergang vorgeschlagen.|She suggested a walk.
+sich freuen|freut sich · freute sich · hat sich gefreut|to be glad, to look forward|Ich freue mich schon auf das Wochenende.|I am already looking forward to the weekend.|B|Ich habe mich sehr über das Geschenk gefreut.|I was very pleased with the present.
+sich ärgern|ärgert sich · ärgerte sich · hat sich geärgert|to be annoyed|Er ärgert sich über die Verspätung.|He is annoyed about the delay.|B|Er hat sich über die Verspätung geärgert.|He was annoyed about the delay.
+sich beschweren|beschwert sich · beschwerte sich · hat sich beschwert|to complain|Die Gäste haben sich über den Lärm beschwert.|The guests complained about the noise.|B|Die Gäste haben sich über den Lärm beschwert.|The guests complained about the noise.
+sich entschuldigen|entschuldigt sich · entschuldigte sich · hat sich entschuldigt|to apologise|Ich möchte mich für den Fehler entschuldigen.|I would like to apologise for the mistake.|B|Ich habe mich für den Fehler entschuldigt.|I apologised for the mistake.
+sich entscheiden|entscheidet sich · entschied sich · hat sich entschieden|to decide|Ich kann mich nicht entscheiden.|I cannot decide.|B|Ich habe mich für das rote Kleid entschieden.|I decided on the red dress.
+sich streiten|streitet sich · stritt sich · hat sich gestritten|to argue|Die Kinder streiten sich um das Spielzeug.|The children are arguing over the toy.|B|Die Kinder haben sich um das Spielzeug gestritten.|The children argued over the toy.
+vertrauen|vertraut · vertraute · hat vertraut|to trust|Du kannst mir vertrauen.|You can trust me.|B|Ich habe ihm immer vertraut.|I have always trusted him.
+versprechen|verspricht · versprach · hat versprochen|to promise|Er hat versprochen, pünktlich zu sein.|He promised to be on time.|B|Er hat versprochen, pünktlich zu sein.|He promised to be on time.
+bestellen|bestellt · bestellte · hat bestellt|to order|Ich habe die Schuhe im Internet bestellt.|I ordered the shoes online.|B|Ich habe die Schuhe im Internet bestellt.|I ordered the shoes online.
+liefern|liefert · lieferte · hat geliefert|to deliver|Die Möbel werden nächste Woche geliefert.|The furniture will be delivered next week.|B|Die Firma hat die Möbel letzte Woche geliefert.|The company delivered the furniture last week.
+umtauschen|tauscht um · tauschte um · hat umgetauscht|to exchange (goods)|Kann ich diese Jacke umtauschen?|Can I exchange this jacket?|B|Ich habe die Jacke gestern umgetauscht.|I exchanged the jacket yesterday.
+überweisen|überweist · überwies · hat überwiesen|to transfer (money)|Bitte überweisen Sie den Betrag bis Freitag.|Please transfer the amount by Friday.|B|Ich habe den Betrag am Freitag überwiesen.|I transferred the amount on Friday.
+sparen|spart · sparte · hat gespart|to save (money, energy)|Wir sparen für ein neues Auto.|We are saving for a new car.|B|Wir haben lange für ein neues Auto gespart.|We saved for a new car for a long time.
+ausgeben|gibt aus · gab aus · hat ausgegeben|to spend (money)|Er gibt viel Geld für Kleidung aus.|He spends a lot of money on clothes.|B|Er hat viel Geld für Kleidung ausgegeben.|He spent a lot of money on clothes.
+vergleichen|vergleicht · verglich · hat verglichen|to compare|Man sollte die Preise vergleichen.|You should compare prices.|B|Wir haben die Preise im Internet verglichen.|We compared the prices online.
+anprobieren|probiert an · probierte an · hat anprobiert|to try on|Kann ich die Hose anprobieren?|Can I try the trousers on?|B|Ich habe die Hose im Geschäft anprobiert.|I tried the trousers on in the shop.
+schützen|schützt · schützte · hat geschützt|to protect|Wir müssen das Klima schützen.|We must protect the climate.|B|Die Jacke hat mich gut vor dem Regen geschützt.|The jacket protected me well from the rain.
+trennen|trennt · trennte · hat getrennt|to separate|In Deutschland trennt man den Müll.|In Germany people separate their rubbish.|B|Wir haben den Müll immer getrennt.|We have always separated our rubbish.
+verbrauchen|verbraucht · verbrauchte · hat verbraucht|to use up, to consume|Das alte Auto verbraucht zu viel Benzin.|The old car uses too much petrol.|B|Das alte Auto hat zu viel Benzin verbraucht.|The old car used too much petrol.
+wachsen|wächst · wuchs · ist gewachsen|to grow|Die Stadt ist in den letzten Jahren stark gewachsen.|The city has grown a lot in recent years.|B|Die Stadt ist in den letzten Jahren stark gewachsen.|The town has grown a lot in recent years.
+passieren|passiert · passierte · ist passiert|to happen|Was ist denn hier passiert?|What has happened here?|B|Was ist denn hier passiert?|What on earth has happened here?
+sich gewöhnen|gewöhnt sich · gewöhnte sich · hat sich gewöhnt|to get used (to)|Ich habe mich an das Wetter gewöhnt.|I have got used to the weather.|B|Ich habe mich an das Wetter gewöhnt.|I have got used to the weather.
+sich kümmern|kümmert sich · kümmerte sich · hat sich gekümmert|to take care (of)|Sie kümmert sich um ihre Großmutter.|She takes care of her grandmother.|B|Sie hat sich um ihre Großmutter gekümmert.|She took care of her grandmother.
+erfahren|erfährt · erfuhr · hat erfahren|to find out, to learn of|Ich habe es erst gestern erfahren.|I only found out yesterday.|B|Ich habe es erst gestern erfahren.|I only found out yesterday.
+gelingen|gelingt · gelang · ist gelungen|to succeed, to turn out well|Der Kuchen ist mir gut gelungen.|My cake turned out well.|B|Der Kuchen ist mir gut gelungen.|My cake turned out well.
+beschließen|beschließt · beschloss · hat beschlossen|to decide, to resolve|Wir haben beschlossen, früher zu fahren.|We have decided to leave earlier.|B|Wir haben beschlossen, früher zu fahren.|We have decided to leave earlier.
+bemerken|bemerkt · bemerkte · hat bemerkt|to notice|Ich habe den Fehler zu spät bemerkt.|I noticed the mistake too late.|B|Ich habe den Fehler zu spät bemerkt.|I noticed the mistake too late.
+abbiegen|biegt ab · bog ab · ist abgebogen|to turn (off)|An der Ampel biegen Sie bitte links ab.|Please turn left at the traffic lights.|B|An der Ampel sind wir links abgebogen.|We turned left at the traffic lights.
+abbrechen|bricht ab · brach ab · hat abgebrochen|to break off, to drop out of|Sie hat ihr Studium nach einem Jahr abgebrochen.|She dropped out of her degree after one year.|B|Sie hat ihr Studium nach einem Jahr abgebrochen.|She dropped out of university after a year.
+abgeben|gibt ab · gab ab · hat abgegeben|to hand in|Bitte geben Sie das Formular bis Freitag ab.|Please hand in the form by Friday.|A|Ich habe das Formular am Freitag abgegeben.|I handed in the form on Friday.
+abhängen|hängt ab · hing ab · hat abgehangen|to depend (von + Dat.)|Das hängt vom Wetter ab.|That depends on the weather.|B|Alles hat vom Wetter abgehangen.|Everything depended on the weather.
+abheben|hebt ab · hob ab · hat abgehoben|to withdraw (money)|Ich muss noch Geld am Automaten abheben.|I still need to withdraw money at the cash machine.|B|Ich habe Geld am Automaten abgehoben.|I withdrew money from the cash machine.
+ablehnen|lehnt ab · lehnte ab · hat abgelehnt|to reject, to turn down|Er hat das Angebot leider abgelehnt.|Unfortunately, he turned down the offer.|B|Er hat das Angebot leider abgelehnt.|Unfortunately, he turned down the offer.
+sich abmelden|meldet sich ab · meldete sich ab · hat sich abgemeldet|to deregister, to sign out|Ich habe mich vom Kurs abgemeldet.|I have deregistered from the course.|B|Ich habe mich vom Kurs abgemeldet.|I have withdrawn from the course.
+abschicken|schickt ab · schickte ab · hat abgeschickt|to send off|Hast du die E-Mail schon abgeschickt?|Have you already sent off the email?|B|Hast du die E-Mail schon abgeschickt?|Have you sent the email off yet?
+abschließen|schließt ab · schloss ab · hat abgeschlossen|to lock; to complete|Vergiss nicht, die Tür abzuschließen.|Don't forget to lock the door.|B|Ich habe die Tür abgeschlossen.|I have locked the door.
+abstellen|stellt ab · stellte ab · hat abgestellt|to park, to put down|Du kannst dein Fahrrad im Hof abstellen.|You can park your bike in the courtyard.|B|Ich habe mein Fahrrad im Hof abgestellt.|I parked my bike in the courtyard.
+abwaschen|wäscht ab · wusch ab · hat abgewaschen|to wash up|Nach dem Essen wäscht er das Geschirr ab.|After the meal he washes the dishes.|A|Nach dem Essen hat er das Geschirr abgewaschen.|After the meal he washed the dishes.
+achten|achtet · achtete · hat geachtet|to pay attention (auf + Akk.)|Bitte achten Sie auf die Stufe.|Please mind the step.|B|Ich habe nicht auf die Stufe geachtet.|I did not pay attention to the step.
+ändern|ändert · änderte · hat geändert|to change|Ich möchte meinen Termin ändern.|I would like to change my appointment.|A|Ich habe meinen Termin geändert.|I have changed my appointment.
+anbieten|bietet an · bot an · hat angeboten|to offer|Darf ich Ihnen einen Kaffee anbieten?|May I offer you a coffee?|A|Sie hat mir einen Kaffee angeboten.|She offered me a coffee.
+anfangen|fängt an · fing an · hat angefangen|to begin, to start|Der Kurs fängt um neun Uhr an.|The course starts at nine o'clock.|A|Der Kurs hat um neun Uhr angefangen.|The course started at nine o'clock.
+angeben|gibt an · gab an · hat angegeben|to state, to give (details)|Bitte geben Sie Ihre Adresse an.|Please give your address.|B|Ich habe meine Adresse im Formular angegeben.|I gave my address on the form.
+anhaben|hat an · hatte an · hat angehabt|to wear, to have on|Sie hat heute ein rotes Kleid an.|She is wearing a red dress today.|B|Sie hat gestern ein rotes Kleid angehabt.|She was wearing a red dress yesterday.
+anhalten|hält an · hielt an · hat angehalten|to stop|Der Bus hält hier leider nicht an.|Unfortunately, the bus does not stop here.|B|Der Bus hat hier leider nicht angehalten.|Unfortunately, the bus did not stop here.
+anklicken|klickt an · klickte an · hat angeklickt|to click on|Klicken Sie bitte den Link an.|Please click on the link.|A|Ich habe den Link angeklickt.|I clicked on the link.
+ankreuzen|kreuzt an · kreuzte an · hat angekreuzt|to tick, to mark with a cross|Kreuzen Sie die richtige Antwort an.|Tick the correct answer.|A|Ich habe die richtige Antwort angekreuzt.|I ticked the correct answer.
+anmachen|macht an · machte an · hat angemacht|to switch on|Kannst du bitte das Licht anmachen?|Can you switch on the light, please?|A|Ich habe das Licht angemacht.|I switched the light on.
+annehmen|nimmt an · nahm an · hat angenommen|to accept; to assume|Sie hat die Stelle sofort angenommen.|She accepted the job straight away.|B|Sie hat die Stelle sofort angenommen.|She accepted the job straight away.
+anrufen|ruft an · rief an · hat angerufen|to phone, to call|Ich rufe dich heute Abend an.|I'll call you this evening.|A|Ich habe dich gestern Abend angerufen.|I phoned you yesterday evening.
+anschauen|schaut an · schaute an · hat angeschaut|to look at, to watch|Wir schauen heute Abend einen Film an.|We are watching a film this evening.|A|Wir haben gestern Abend einen Film angeschaut.|We watched a film yesterday evening.
+ansehen|sieht an · sah an · hat angesehen|to look at|Sieh mich bitte an, wenn ich mit dir rede.|Please look at me when I am talking to you.|A|Er hat mich überrascht angesehen.|He looked at me in surprise.
+sich anstrengen|strengt sich an · strengte sich an · hat sich angestrengt|to make an effort|Du musst dich in der Schule mehr anstrengen.|You have to make more of an effort at school.|B|Du hast dich in der Schule sehr angestrengt.|You made a great effort at school.
+antworten|antwortet · antwortete · hat geantwortet|to answer (auf + Akk.)|Er hat noch nicht auf meine E-Mail geantwortet.|He has not replied to my email yet.|A|Er hat noch nicht auf meine E-Mail geantwortet.|He has not answered my email yet.
+anziehen|zieht an · zog an · hat angezogen|to put on (clothes)|Zieh eine Jacke an, es ist kalt.|Put a jacket on, it is cold.|A|Ich habe eine warme Jacke angezogen.|I put on a warm jacket.
+arbeiten|arbeitet · arbeitete · hat gearbeitet|to work|Sie arbeitet in einem Krankenhaus.|She works in a hospital.|A|Sie hat in einem Krankenhaus gearbeitet.|She worked in a hospital.
+atmen|atmet · atmete · hat geatmet|to breathe|Atmen Sie bitte tief durch die Nase.|Please breathe deeply through your nose.|B|Der Patient hat ruhig und tief geatmet.|The patient breathed calmly and deeply.
+auffallen|fällt auf · fiel auf · ist aufgefallen|to be noticeable, to strike|Mir ist nichts Besonderes aufgefallen.|I did not notice anything special.|B|Mir ist nichts Besonderes aufgefallen.|I did not notice anything special.
+aufgeben|gibt auf · gab auf · hat aufgegeben|to give up; to post|Gib nicht auf, du schaffst das!|Don't give up, you can do it!|B|Sie hat nie aufgegeben.|She never gave up.
+aufhängen|hängt auf · hängte auf · hat aufgehängt|to hang up|Ich hänge die Wäsche im Garten auf.|I am hanging the washing up in the garden.|B|Ich habe die Wäsche im Garten aufgehängt.|I hung the washing up in the garden.
+aufheben|hebt auf · hob auf · hat aufgehoben|to pick up; to keep|Bitte heben Sie die Quittung gut auf.|Please keep the receipt safe.|B|Ich habe die Quittung gut aufgehoben.|I have kept the receipt safe.
+aufhören|hört auf · hörte auf · hat aufgehört|to stop (mit + Dat.)|Es hat endlich aufgehört zu regnen.|It has finally stopped raining.|A|Es hat endlich aufgehört zu regnen.|It has finally stopped raining.
+aufladen|lädt auf · lud auf · hat aufgeladen|to charge|Ich muss mein Handy aufladen.|I need to charge my mobile.|B|Ich habe mein Handy über Nacht aufgeladen.|I charged my mobile overnight.
+aufmachen|macht auf · machte auf · hat aufgemacht|to open|Kannst du bitte das Fenster aufmachen?|Can you open the window, please?|A|Ich habe das Fenster aufgemacht.|I opened the window.
+aufnehmen|nimmt auf · nahm auf · hat aufgenommen|to record; to take in|Ich nehme die Sendung heute Abend auf.|I am recording the programme this evening.|B|Ich habe die Sendung gestern Abend aufgenommen.|I recorded the programme yesterday evening.
+aufpassen|passt auf · passte auf · hat aufgepasst|to watch out, to look after (auf + Akk.)|Meine Mutter passt heute auf die Kinder auf.|My mother is looking after the children today.|A|Meine Mutter hat gestern auf die Kinder aufgepasst.|My mother looked after the children yesterday.
+sich aufregen|regt sich auf · regte sich auf · hat sich aufgeregt|to get upset (über + Akk.)|Er regt sich über jede Kleinigkeit auf.|He gets upset about every little thing.|B|Er hat sich über jede Kleinigkeit aufgeregt.|He got upset about every little thing.
+aufschreiben|schreibt auf · schrieb auf · hat aufgeschrieben|to write down|Ich schreibe mir die Adresse auf.|I'll write down the address.|A|Ich habe mir die Adresse aufgeschrieben.|I wrote down the address.
+aufstehen|steht auf · stand auf · ist aufgestanden|to get up|Ich stehe jeden Tag um sechs Uhr auf.|I get up at six o'clock every day.|A|Ich bin heute um sechs Uhr aufgestanden.|I got up at six o'clock today.
+aufwachen|wacht auf · wachte auf · ist aufgewacht|to wake up|Heute bin ich sehr früh aufgewacht.|I woke up very early today.|A|Heute bin ich sehr früh aufgewacht.|I woke up very early today.
+aufwachsen|wächst auf · wuchs auf · ist aufgewachsen|to grow up|Sie ist in einem kleinen Dorf aufgewachsen.|She grew up in a small village.|B|Sie ist in einem kleinen Dorf aufgewachsen.|She grew up in a small village.
+ausdrucken|druckt aus · druckte aus · hat ausgedruckt|to print out|Ich drucke das Ticket zu Hause aus.|I'll print out the ticket at home.|A|Ich habe das Ticket zu Hause ausgedruckt.|I printed the ticket out at home.
+ausfallen|fällt aus · fiel aus · ist ausgefallen|to be cancelled|Der Unterricht fällt morgen aus.|Lessons are cancelled tomorrow.|B|Der Unterricht ist gestern ausgefallen.|The lesson was cancelled yesterday.
+ausgehen|geht aus · ging aus · ist ausgegangen|to go out|Am Samstag gehen wir zusammen aus.|We are going out together on Saturday.|A|Am Samstag sind wir zusammen ausgegangen.|On Saturday we went out together.
+sich auskennen|kennt sich aus · kannte sich aus · hat sich ausgekannt|to know one's way around|Ich kenne mich in dieser Stadt gut aus.|I know my way around this city well.|B|Er hat sich in der Stadt gut ausgekannt.|He knew his way around the town well.
+ausleihen|leiht aus · lieh aus · hat ausgeliehen|to borrow, to lend|Ich habe das Buch in der Bibliothek ausgeliehen.|I borrowed the book from the library.|B|Ich habe das Buch in der Bibliothek ausgeliehen.|I borrowed the book from the library.
+ausmachen|macht aus · machte aus · hat ausgemacht|to switch off|Mach bitte den Fernseher aus.|Please switch off the television.|A|Ich habe den Fernseher ausgemacht.|I switched the television off.
+auspacken|packt aus · packte aus · hat ausgepackt|to unpack|Die Kinder packen ihre Geschenke aus.|The children are unwrapping their presents.|A|Die Kinder haben ihre Geschenke ausgepackt.|The children unwrapped their presents.
+ausprobieren|probiert aus · probierte aus · hat ausprobiert|to try out|Ich möchte das neue Rezept ausprobieren.|I would like to try out the new recipe.|B|Ich habe das neue Rezept ausprobiert.|I tried out the new recipe.
+sich ausruhen|ruht sich aus · ruhte sich aus · hat sich ausgeruht|to rest|Nach der Arbeit ruhe ich mich kurz aus.|After work I rest for a little while.|A|Nach der Arbeit habe ich mich kurz ausgeruht.|After work I had a short rest.
+ausschalten|schaltet aus · schaltete aus · hat ausgeschaltet|to switch off|Bitte schalten Sie Ihre Handys aus.|Please switch off your mobile phones.|A|Alle haben ihre Handys ausgeschaltet.|Everyone switched off their mobiles.
+aussehen|sieht aus · sah aus · hat ausgesehen|to look, to appear|Du siehst heute sehr müde aus.|You look very tired today.|A|Du hast gestern sehr müde ausgesehen.|You looked very tired yesterday.
+aussprechen|spricht aus · sprach aus · hat ausgesprochen|to pronounce|Wie spricht man dieses Wort aus?|How do you pronounce this word?|B|Ich habe das Wort falsch ausgesprochen.|I pronounced the word wrongly.
+aussteigen|steigt aus · stieg aus · ist ausgestiegen|to get off, to get out|Wir steigen an der nächsten Haltestelle aus.|We are getting off at the next stop.|A|Wir sind an der nächsten Haltestelle ausgestiegen.|We got off at the next stop.
+ausstellen|stellt aus · stellte aus · hat ausgestellt|to issue; to exhibit|Der Arzt stellt Ihnen ein Rezept aus.|The doctor will issue you a prescription.|B|Der Arzt hat mir ein Rezept ausgestellt.|The doctor issued me a prescription.
+aussuchen|sucht aus · suchte aus · hat ausgesucht|to choose, to pick|Du darfst dir ein Geschenk aussuchen.|You may choose a present for yourself.|B|Ich habe mir ein Geschenk ausgesucht.|I picked out a present for myself.
+auswählen|wählt aus · wählte aus · hat ausgewählt|to select|Wählen Sie bitte eine Sprache aus.|Please select a language.|B|Ich habe Deutsch als Sprache ausgewählt.|I selected German as the language.
+ausziehen|zieht aus · zog aus · ist ausgezogen|to move out|Mein Sohn zieht nächsten Monat aus.|My son is moving out next month.|A|Mein Sohn ist letzten Monat ausgezogen.|My son moved out last month.
+backen|backt · backte · hat gebacken|to bake|Meine Oma backt jeden Sonntag einen Kuchen.|My grandma bakes a cake every Sunday.|A|Meine Oma hat am Sonntag einen Kuchen gebacken.|My grandma baked a cake on Sunday.
+baden|badet · badete · hat gebadet|to bathe, to have a bath|Im Sommer baden wir gern im See.|In summer we like to bathe in the lake.|A|Im Sommer haben wir oft im See gebadet.|In summer we often bathed in the lake.
+basteln|bastelt · bastelte · hat gebastelt|to make things, to do handicrafts|Die Kinder basteln Karten für Weihnachten.|The children are making cards for Christmas.|A|Die Kinder haben Karten für Weihnachten gebastelt.|The children made cards for Christmas.
+bauen|baut · baute · hat gebaut|to build|Sie bauen ein Haus am Stadtrand.|They are building a house on the edge of town.|A|Sie haben ein Haus am Stadtrand gebaut.|They have built a house on the edge of town.
+beachten|beachtet · beachtete · hat beachtet|to observe, to pay attention to|Bitte beachten Sie die Hinweise auf dem Schild.|Please observe the instructions on the sign.|B|Er hat die Hinweise auf dem Schild nicht beachtet.|He did not pay attention to the notices on the sign.
+beantworten|beantwortet · beantwortete · hat beantwortet|to answer (a question)|Können Sie bitte meine Frage beantworten?|Can you answer my question, please?|A|Sie hat meine Frage sofort beantwortet.|She answered my question straight away.
+sich bedanken|bedankt sich · bedankte sich · hat sich bedankt|to say thank you (für + Akk.)|Ich möchte mich für Ihre Hilfe bedanken.|I would like to thank you for your help.|A|Ich habe mich für die Hilfe bedankt.|I said thank you for the help.
+bedeuten|bedeutet · bedeutete · hat bedeutet|to mean|Was bedeutet dieses Wort auf Englisch?|What does this word mean in English?|A|Das hat mir sehr viel bedeutet.|That meant a great deal to me.
+bedienen|bedient · bediente · hat bedient|to serve; to operate|Der Kellner bedient die Gäste sehr freundlich.|The waiter serves the guests in a very friendly way.|B|Der Kellner hat die Gäste sehr freundlich bedient.|The waiter served the guests very pleasantly.
+sich beeilen|beeilt sich · beeilte sich · hat sich beeilt|to hurry|Beeil dich, der Zug fährt gleich!|Hurry up, the train is about to leave!|A|Wir haben uns sehr beeilt.|We hurried a lot.
+beenden|beendet · beendete · hat beendet|to finish, to end|Sie hat ihre Ausbildung im Juni beendet.|She finished her training in June.|B|Sie hat ihre Ausbildung im Juni beendet.|She finished her training in June.
+sich befinden|befindet sich · befand sich · hat sich befunden|to be located|Die Toiletten befinden sich im ersten Stock.|The toilets are on the first floor.|B|Das Büro hat sich früher im ersten Stock befunden.|The office used to be on the first floor.
+begegnen|begegnet · begegnete · ist begegnet|to meet, to come across (+ Dat.)|Ich bin ihm gestern in der Stadt begegnet.|I came across him in town yesterday.|B|Ich bin ihm gestern in der Stadt begegnet.|I came across him in town yesterday.
+beginnen|beginnt · begann · hat begonnen|to begin|Der Film beginnt um acht Uhr.|The film begins at eight o'clock.|A|Der Film hat um acht Uhr begonnen.|The film began at eight o'clock.
+begleiten|begleitet · begleitete · hat begleitet|to accompany|Ich begleite dich gern zum Bahnhof.|I'll happily go with you to the station.|B|Ich habe sie zum Bahnhof begleitet.|I accompanied her to the station.
+begründen|begründet · begründete · hat begründet|to give reasons for|Bitte begründen Sie Ihre Meinung.|Please give reasons for your opinion.|B|Sie hat ihre Meinung gut begründet.|She gave good reasons for her opinion.
+begrüßen|begrüßt · begrüßte · hat begrüßt|to greet, to welcome|Die Chefin begrüßt die neuen Kollegen.|The boss welcomes the new colleagues.|B|Die Chefin hat die neuen Kollegen begrüßt.|The boss welcomed the new colleagues.
+behalten|behält · behielt · hat behalten|to keep|Sie können den Stift gern behalten.|You are welcome to keep the pen.|B|Ich habe den Stift behalten.|I kept the pen.
+behandeln|behandelt · behandelte · hat behandelt|to treat|Der Arzt behandelt den Patienten sofort.|The doctor treats the patient immediately.|B|Der Arzt hat den Patienten sofort behandelt.|The doctor treated the patient immediately.
+behaupten|behauptet · behauptete · hat behauptet|to claim|Er behauptet, dass er nichts gesehen hat.|He claims that he saw nothing.|B|Das hat er nie behauptet.|He never claimed that.
+beibringen|bringt bei · brachte bei · hat beigebracht|to teach|Mein Vater hat mir das Schwimmen beigebracht.|My father taught me to swim.|B|Mein Vater hat mir das Schwimmen beigebracht.|My father taught me to swim.
+beißen|beißt · biss · hat gebissen|to bite|Keine Angst, der Hund beißt nicht.|Don't worry, the dog doesn't bite.|B|Der Hund hat mich ins Bein gebissen.|The dog bit me in the leg.
+bekommen|bekommt · bekam · hat bekommen|to get, to receive|Ich habe heute einen Brief bekommen.|I got a letter today.|A|Ich habe heute einen Brief bekommen.|I got a letter today.
+benötigen|benötigt · benötigte · hat benötigt|to need, to require|Für die Reise benötigen Sie einen Pass.|You need a passport for the trip.|B|Für die Reise haben wir einen Pass benötigt.|We needed a passport for the trip.
+benutzen|benutzt · benutzte · hat benutzt|to use|Darf ich kurz dein Telefon benutzen?|May I use your phone for a moment?|A|Ich habe kurz dein Telefon benutzt.|I used your phone for a moment.
+beobachten|beobachtet · beobachtete · hat beobachtet|to observe, to watch|Wir beobachten die Vögel im Garten.|We are watching the birds in the garden.|B|Wir haben die Vögel im Garten beobachtet.|We watched the birds in the garden.
+beraten|berät · beriet · hat beraten|to advise|Die Verkäuferin hat uns sehr gut beraten.|The shop assistant advised us very well.|B|Die Verkäuferin hat uns sehr gut beraten.|The shop assistant advised us very well.
+berichten|berichtet · berichtete · hat berichtet|to report (über + Akk.)|Die Zeitung berichtet über den Unfall.|The newspaper reports on the accident.|B|Die Zeitung hat über den Unfall berichtet.|The newspaper reported on the accident.
+sich beruhigen|beruhigt sich · beruhigte sich · hat sich beruhigt|to calm down|Beruhige dich, es ist nichts passiert.|Calm down, nothing has happened.|B|Das Kind hat sich schnell beruhigt.|The child calmed down quickly.
+sich beschäftigen|beschäftigt sich · beschäftigte sich · hat sich beschäftigt|to occupy oneself, to deal (mit + Dat.)|Er beschäftigt sich viel mit Musik.|He spends a lot of time on music.|B|Er hat sich viel mit Musik beschäftigt.|He spent a lot of time on music.
+beschreiben|beschreibt · beschrieb · hat beschrieben|to describe|Können Sie den Weg zum Bahnhof beschreiben?|Can you describe the way to the station?|A|Sie hat mir den Weg zum Bahnhof beschrieben.|She described the way to the station to me.
+besitzen|besitzt · besaß · hat besessen|to own|Meine Eltern besitzen ein kleines Haus.|My parents own a small house.|B|Meine Eltern haben früher ein kleines Haus besessen.|My parents used to own a small house.
+besorgen|besorgt · besorgte · hat besorgt|to get, to obtain|Ich besorge noch schnell Brot und Milch.|I'll just quickly get bread and milk.|B|Ich habe noch schnell Brot und Milch besorgt.|I quickly got some bread and milk.
+besprechen|bespricht · besprach · hat besprochen|to discuss|Das besprechen wir morgen in der Sitzung.|We will discuss that in the meeting tomorrow.|B|Das haben wir gestern in der Sitzung besprochen.|We discussed that in the meeting yesterday.
+bestätigen|bestätigt · bestätigte · hat bestätigt|to confirm|Bitte bestätigen Sie den Termin per E-Mail.|Please confirm the appointment by email.|B|Ich habe den Termin per E-Mail bestätigt.|I confirmed the appointment by email.
+bestimmen|bestimmt · bestimmte · hat bestimmt|to decide, to determine|Das bestimmt der Chef allein.|The boss decides that on his own.|B|Das hat der Chef allein bestimmt.|The boss decided that on his own.
+besuchen|besucht · besuchte · hat besucht|to visit|Am Wochenende besuchen wir meine Großeltern.|At the weekend we are visiting my grandparents.|A|Am Wochenende haben wir meine Großeltern besucht.|At the weekend we visited my grandparents.
+betragen|beträgt · betrug · hat betragen|to amount to|Die Miete beträgt 700 Euro im Monat.|The rent is 700 euros a month.|B|Die Miete hat früher 700 Euro betragen.|The rent used to be 700 euros.
+betreuen|betreut · betreute · hat betreut|to look after|Sie betreut alte Menschen im Pflegeheim.|She looks after old people in the care home.|B|Sie hat alte Menschen im Pflegeheim betreut.|She looked after elderly people in the care home.
+sich bewegen|bewegt sich · bewegte sich · hat sich bewegt|to move, to take exercise|Sie sollten sich mehr bewegen.|You should take more exercise.|B|Ich habe mich heute zu wenig bewegt.|I have not taken enough exercise today.
+beweisen|beweist · bewies · hat bewiesen|to prove|Können Sie das beweisen?|Can you prove that?|B|Das hat noch niemand bewiesen.|Nobody has proved that yet.
+bezahlen|bezahlt · bezahlte · hat bezahlt|to pay|Kann ich mit Karte bezahlen?|Can I pay by card?|A|Ich habe mit Karte bezahlt.|I paid by card.
+bieten|bietet · bot · hat geboten|to offer|Die Stadt bietet viele Freizeitmöglichkeiten.|The town offers many leisure activities.|B|Die Stadt hat uns viele Freizeitmöglichkeiten geboten.|The town offered us lots of leisure activities.
+bitten|bittet · bat · hat gebeten|to ask, to request (um + Akk.)|Darf ich Sie um einen Gefallen bitten?|May I ask you a favour?|A|Ich habe ihn um einen Gefallen gebeten.|I asked him for a favour.
+bleiben|bleibt · blieb · ist geblieben|to stay, to remain|Wir bleiben heute Abend zu Hause.|We are staying at home this evening.|A|Wir sind gestern Abend zu Hause geblieben.|We stayed at home yesterday evening.
+braten|brät · briet · hat gebraten|to fry, to roast|Er brät das Fleisch in der Pfanne.|He fries the meat in the pan.|A|Er hat das Fleisch in der Pfanne gebraten.|He fried the meat in the pan.
+brauchen|braucht · brauchte · hat gebraucht|to need|Ich brauche einen neuen Pass.|I need a new passport.|A|Für den Weg habe ich eine Stunde gebraucht.|The journey took me an hour.
+brechen|bricht · brach · hat gebrochen|to break|Er hat sich beim Skifahren das Bein gebrochen.|He broke his leg while skiing.|B|Er hat sich beim Skifahren das Bein gebrochen.|He broke his leg skiing.
+bremsen|bremst · bremste · hat gebremst|to brake|Der Fahrer musste plötzlich stark bremsen.|The driver suddenly had to brake hard.|B|Der Fahrer hat plötzlich stark gebremst.|The driver suddenly braked hard.
+brennen|brennt · brannte · hat gebrannt|to burn, to be on fire|Im Wohnzimmer brennt noch Licht.|There is still a light on in the living room.|B|Im Wohnzimmer hat noch Licht gebrannt.|There was still a light on in the living room.
+bringen|bringt · brachte · hat gebracht|to bring, to take|Ich bringe die Kinder zur Schule.|I take the children to school.|A|Ich habe die Kinder zur Schule gebracht.|I took the children to school.
+buchstabieren|buchstabiert · buchstabierte · hat buchstabiert|to spell|Können Sie bitte Ihren Namen buchstabieren?|Can you spell your name, please?|A|Ich habe meinen Namen buchstabiert.|I spelt my name.
+campen|campt · campte · hat gecampt|to camp|Im Urlaub campen wir am Meer.|On holiday we camp by the sea.|A|Im Urlaub haben wir am Meer gecampt.|On holiday we camped by the sea.
+chatten|chattet · chattete · hat gechattet|to chat (online)|Sie chattet jeden Abend mit ihren Freunden.|She chats online with her friends every evening.|A|Sie hat gestern Abend mit ihren Freunden gechattet.|She chatted with her friends online yesterday evening.
+danken|dankt · dankte · hat gedankt|to thank (+ Dat., für + Akk.)|Ich danke Ihnen für Ihre Hilfe.|I thank you for your help.|A|Ich habe ihm für seine Hilfe gedankt.|I thanked him for his help.
+dauern|dauert · dauerte · hat gedauert|to last, to take (time)|Die Fahrt dauert ungefähr zwei Stunden.|The journey takes about two hours.|A|Die Fahrt hat ungefähr zwei Stunden gedauert.|The journey took about two hours.
+decken|deckt · deckte · hat gedeckt|to lay (the table), to cover|Kannst du bitte den Tisch decken?|Can you lay the table, please?|B|Ich habe schon den Tisch gedeckt.|I have already laid the table.
+denken|denkt · dachte · hat gedacht|to think (an + Akk.)|Ich denke oft an meine Familie.|I often think of my family.|A|Ich habe oft an meine Familie gedacht.|I often thought of my family.
+diskutieren|diskutiert · diskutierte · hat diskutiert|to discuss (über + Akk.)|Wir haben lange über das Thema diskutiert.|We discussed the topic for a long time.|B|Wir haben lange über das Thema diskutiert.|We discussed the topic for a long time.
+drehen|dreht · drehte · hat gedreht|to turn; to shoot (a film)|Drehen Sie den Schlüssel nach rechts.|Turn the key to the right.|B|Ich habe den Schlüssel nach rechts gedreht.|I turned the key to the right.
+drucken|druckt · druckte · hat gedruckt|to print|Der Drucker druckt nur schwarz-weiß.|The printer only prints in black and white.|A|Der Drucker hat nur schwarz-weiß gedruckt.|The printer only printed in black and white.
+drücken|drückt · drückte · hat gedrückt|to press, to push|Drücken Sie bitte den grünen Knopf.|Please press the green button.|A|Ich habe den grünen Knopf gedrückt.|I pressed the green button.
+durchfallen|fällt durch · fiel durch · ist durchgefallen|to fail (an exam)|Er ist leider bei der Prüfung durchgefallen.|Unfortunately, he failed the exam.|B|Er ist leider bei der Prüfung durchgefallen.|Unfortunately, he failed the exam.
+durchführen|führt durch · führte durch · hat durchgeführt|to carry out|Die Firma führt eine Umfrage durch.|The company is carrying out a survey.|B|Die Firma hat eine Umfrage durchgeführt.|The company carried out a survey.
+durchlesen|liest durch · las durch · hat durchgelesen|to read through|Lesen Sie den Vertrag bitte genau durch.|Please read through the contract carefully.|B|Ich habe den Vertrag genau durchgelesen.|I read through the contract carefully.
+dürfen|darf · durfte · hat gedurft|to be allowed to, may|Hier darf man nicht parken.|You are not allowed to park here.|A|Das habe ich als Kind nicht gedurft.|I was not allowed to do that as a child.
+duschen|duscht · duschte · hat geduscht|to have a shower|Ich dusche jeden Morgen vor dem Frühstück.|I have a shower every morning before breakfast.|A|Ich habe heute Morgen vor dem Frühstück geduscht.|I had a shower before breakfast this morning.
+sich eignen|eignet sich · eignete sich · hat sich geeignet|to be suitable (für + Akk.)|Dieses Buch eignet sich gut für Anfänger.|This book is well suited to beginners.|B|Das Buch hat sich gut für Anfänger geeignet.|The book was well suited to beginners.
+einfallen|fällt ein · fiel ein · ist eingefallen|to occur to, to come to mind (+ Dat.)|Mir fällt sein Name nicht ein.|I cannot think of his name.|B|Mir ist sein Name nicht eingefallen.|I could not think of his name.
+einführen|führt ein · führte ein · hat eingeführt|to introduce|Die Schule hat neue Regeln eingeführt.|The school has introduced new rules.|B|Die Schule hat neue Regeln eingeführt.|The school has introduced new rules.
+eingeben|gibt ein · gab ein · hat eingegeben|to enter, to type in|Geben Sie bitte Ihr Passwort ein.|Please enter your password.|B|Ich habe mein Passwort falsch eingegeben.|I typed my password in wrongly.
+sich einigen|einigt sich · einigte sich · hat sich geeinigt|to agree (auf + Akk.)|Wir haben uns auf einen Preis geeinigt.|We have agreed on a price.|B|Wir haben uns auf einen Preis geeinigt.|We agreed on a price.
+einkaufen|kauft ein · kaufte ein · hat eingekauft|to shop, to go shopping|Wir kaufen meistens am Samstag ein.|We usually go shopping on Saturday.|A|Wir haben am Samstag eingekauft.|We went shopping on Saturday.
+einnehmen|nimmt ein · nahm ein · hat eingenommen|to take (medicine)|Nehmen Sie die Tabletten nach dem Essen ein.|Take the tablets after meals.|B|Ich habe die Tabletten nach dem Essen eingenommen.|I took the tablets after the meal.
+einpacken|packt ein · packte ein · hat eingepackt|to pack, to wrap|Hast du die Badesachen schon eingepackt?|Have you already packed the swimming things?|A|Hast du die Badesachen schon eingepackt?|Have you packed the swimming things yet?
+einrichten|richtet ein · richtete ein · hat eingerichtet|to furnish, to set up|Sie haben ihre Wohnung modern eingerichtet.|They have furnished their flat in a modern style.|B|Sie haben ihre Wohnung modern eingerichtet.|They have furnished their flat in a modern style.
+einschalten|schaltet ein · schaltete ein · hat eingeschaltet|to switch on|Schalten Sie zuerst den Computer ein.|Switch on the computer first.|A|Ich habe zuerst den Computer eingeschaltet.|I switched the computer on first.
+einschlafen|schläft ein · schlief ein · ist eingeschlafen|to fall asleep|Das Kind ist sofort eingeschlafen.|The child fell asleep straight away.|A|Das Kind ist sofort eingeschlafen.|The child fell asleep straight away.
+eintragen|trägt ein · trug ein · hat eingetragen|to enter, to write in|Tragen Sie bitte Ihren Namen in die Liste ein.|Please enter your name in the list.|B|Ich habe meinen Namen in die Liste eingetragen.|I have entered my name on the list.
+eintreten|tritt ein · trat ein · ist eingetreten|to enter; to join (in + Akk.)|Er ist vor zwei Jahren in den Verein eingetreten.|He joined the club two years ago.|B|Er ist vor zwei Jahren in den Verein eingetreten.|He joined the club two years ago.
+einzahlen|zahlt ein · zahlte ein · hat eingezahlt|to pay in|Ich möchte Geld auf mein Konto einzahlen.|I would like to pay money into my account.|B|Ich habe gestern Geld auf mein Konto eingezahlt.|I paid money into my account yesterday.
+empfangen|empfängt · empfing · hat empfangen|to receive, to welcome|Sie empfängt die Gäste an der Tür.|She welcomes the guests at the door.|B|Sie hat die Gäste an der Tür empfangen.|She welcomed the guests at the door.
+enden|endet · endete · hat geendet|to end|Der Kurs endet am 30. Juni.|The course ends on 30 June.|A|Der Kurs hat am 30. Juni geendet.|The course ended on 30 June.
+entdecken|entdeckt · entdeckte · hat entdeckt|to discover|Ich habe ein schönes Café entdeckt.|I have discovered a lovely café.|B|Ich habe ein schönes Café entdeckt.|I have discovered a lovely café.
+entfernen|entfernt · entfernte · hat entfernt|to remove|Wie kann man diesen Fleck entfernen?|How can you remove this stain?|B|Ich habe den Fleck mit Wasser entfernt.|I removed the stain with water.
+enthalten|enthält · enthielt · hat enthalten|to contain|Dieser Saft enthält viel Zucker.|This juice contains a lot of sugar.|B|Der Brief hat wichtige Informationen enthalten.|The letter contained important information.
+entlassen|entlässt · entließ · hat entlassen|to dismiss, to discharge|Die Firma hat zwanzig Mitarbeiter entlassen.|The company has dismissed twenty employees.|B|Die Firma hat zwanzig Mitarbeiter entlassen.|The company has dismissed twenty employees.
+sich entspannen|entspannt sich · entspannte sich · hat sich entspannt|to relax|Im Urlaub kann ich mich richtig entspannen.|On holiday I can really relax.|B|Im Urlaub habe ich mich richtig entspannt.|I really relaxed on holiday.
+entstehen|entsteht · entstand · ist entstanden|to arise, to come into being|Hier entsteht ein neues Einkaufszentrum.|A new shopping centre is being built here.|B|Hier ist ein neues Einkaufszentrum entstanden.|A new shopping centre has been built here.
+enttäuschen|enttäuscht · enttäuschte · hat enttäuscht|to disappoint|Der Film hat mich sehr enttäuscht.|The film disappointed me very much.|B|Der Film hat mich sehr enttäuscht.|The film really disappointed me.
+entwickeln|entwickelt · entwickelte · hat entwickelt|to develop|Die Firma entwickelt ein neues Produkt.|The company is developing a new product.|B|Die Firma hat ein neues Produkt entwickelt.|The company has developed a new product.
+erfinden|erfindet · erfand · hat erfunden|to invent|Wer hat das Telefon erfunden?|Who invented the telephone?|B|Wer hat das Telefon erfunden?|Who invented the telephone?
+erfüllen|erfüllt · erfüllte · hat erfüllt|to fulfil, to meet|Sie erfüllt alle Bedingungen für die Stelle.|She meets all the requirements for the job.|B|Sie hat alle Bedingungen für die Stelle erfüllt.|She met all the requirements for the job.
+ergänzen|ergänzt · ergänzte · hat ergänzt|to complete, to add|Ergänzen Sie bitte die fehlenden Wörter.|Please fill in the missing words.|B|Ich habe die fehlenden Wörter ergänzt.|I have added the missing words.
+erhalten|erhält · erhielt · hat erhalten|to receive|Sie erhalten die Rechnung per Post.|You will receive the invoice by post.|B|Ich habe die Rechnung per Post erhalten.|I received the bill by post.
+erhöhen|erhöht · erhöhte · hat erhöht|to raise, to increase|Der Vermieter will die Miete erhöhen.|The landlord wants to raise the rent.|B|Der Vermieter hat die Miete erhöht.|The landlord has raised the rent.
+erkennen|erkennt · erkannte · hat erkannt|to recognise|Ich habe dich fast nicht erkannt.|I almost did not recognise you.|B|Ich habe dich fast nicht erkannt.|I almost didn't recognise you.
+sich erkundigen|erkundigt sich · erkundigte sich · hat sich erkundigt|to enquire (nach + Dat.)|Ich möchte mich nach den Preisen erkundigen.|I would like to enquire about the prices.|B|Ich habe mich nach den Preisen erkundigt.|I enquired about the prices.
+erleben|erlebt · erlebte · hat erlebt|to experience|Im Urlaub haben wir viel erlebt.|We experienced a lot on holiday.|B|Im Urlaub haben wir viel erlebt.|We experienced a lot on holiday.
+sich ernähren|ernährt sich · ernährte sich · hat sich ernährt|to eat, to feed oneself|Sie ernährt sich sehr gesund.|She eats very healthily.|B|Sie hat sich immer sehr gesund ernährt.|She has always eaten very healthily.
+eröffnen|eröffnet · eröffnete · hat eröffnet|to open (a shop, an account)|Ich möchte ein Konto eröffnen.|I would like to open an account.|B|Ich habe gestern ein Konto eröffnet.|I opened an account yesterday.
+erreichen|erreicht · erreichte · hat erreicht|to reach|Sie können mich jederzeit telefonisch erreichen.|You can reach me by phone at any time.|B|Ich habe dich gestern telefonisch nicht erreicht.|I couldn't reach you by phone yesterday.
+erscheinen|erscheint · erschien · ist erschienen|to appear, to be published|Die Zeitung erscheint jeden Tag.|The newspaper comes out every day.|B|Das Buch ist letztes Jahr erschienen.|The book was published last year.
+erschrecken|erschrickt · erschrak · ist erschrocken|to get a fright|Ich bin bei dem lauten Geräusch erschrocken.|The loud noise gave me a fright.|B|Ich bin bei dem lauten Geräusch erschrocken.|The loud noise gave me a fright.
+ersetzen|ersetzt · ersetzte · hat ersetzt|to replace, to reimburse|Die Versicherung ersetzt den Schaden.|The insurance covers the damage.|B|Die Versicherung hat den Schaden ersetzt.|The insurance has paid for the damage.
+erwarten|erwartet · erwartete · hat erwartet|to expect|Wir erwarten heute Abend Gäste.|We are expecting guests this evening.|B|Das habe ich wirklich nicht erwartet.|I really didn't expect that.
+erzählen|erzählt · erzählte · hat erzählt|to tell (von + Dat.)|Erzähl mir von deinem Urlaub!|Tell me about your holiday!|A|Er hat mir von seinem Urlaub erzählt.|He told me about his holiday.
+erziehen|erzieht · erzog · hat erzogen|to bring up, to raise|Sie erzieht ihre zwei Kinder allein.|She is bringing up her two children on her own.|B|Sie hat ihre zwei Kinder allein erzogen.|She brought up her two children on her own.
+essen|isst · aß · hat gegessen|to eat|Wir essen heute Abend Fisch.|We are having fish this evening.|A|Wir haben gestern Abend Fisch gegessen.|We ate fish yesterday evening.
+fahren|fährt · fuhr · ist gefahren|to drive, to go (by vehicle)|Ich fahre jeden Tag mit dem Bus zur Arbeit.|I go to work by bus every day.|A|Ich bin gestern mit dem Bus zur Arbeit gefahren.|I went to work by bus yesterday.
+fallen|fällt · fiel · ist gefallen|to fall|Das Glas ist auf den Boden gefallen.|The glass fell on the floor.|A|Das Glas ist auf den Boden gefallen.|The glass fell on the floor.
+fangen|fängt · fing · hat gefangen|to catch|Der Hund fängt den Ball im Garten.|The dog catches the ball in the garden.|B|Der Hund hat den Ball im Garten gefangen.|The dog caught the ball in the garden.
+fehlen|fehlt · fehlte · hat gefehlt|to be missing, to be absent|In der Suppe fehlt noch etwas Salz.|The soup still needs a little salt.|A|In der Suppe hat noch etwas Salz gefehlt.|The soup still needed a little salt.
+fernsehen|sieht fern · sah fern · hat ferngesehen|to watch television|Abends sehen wir oft zusammen fern.|In the evenings we often watch television together.|A|Gestern Abend haben wir zusammen ferngesehen.|We watched television together yesterday evening.
+festlegen|legt fest · legte fest · hat festgelegt|to fix, to set|Wir müssen noch einen Termin festlegen.|We still have to fix a date.|B|Wir haben schon einen Termin festgelegt.|We have already fixed a date.
+feststellen|stellt fest · stellte fest · hat festgestellt|to notice, to find out|Der Arzt hat nichts Schlimmes festgestellt.|The doctor found nothing serious.|B|Der Arzt hat nichts Schlimmes festgestellt.|The doctor didn't find anything serious.
+finden|findet · fand · hat gefunden|to find|Ich kann meinen Schlüssel nicht finden.|I cannot find my key.|A|Ich habe meinen Schlüssel nicht gefunden.|I didn't find my key.
+fliegen|fliegt · flog · ist geflogen|to fly|Im Sommer fliegen wir nach Spanien.|In the summer we are flying to Spain.|A|Im Sommer sind wir nach Spanien geflogen.|We flew to Spain in the summer.
+folgen|folgt · folgte · ist gefolgt|to follow (+ Dat.)|Bitte folgen Sie mir ins Büro.|Please follow me into the office.|B|Ich bin ihm ins Büro gefolgt.|I followed him into the office.
+fordern|fordert · forderte · hat gefordert|to demand|Die Mitarbeiter fordern mehr Lohn.|The employees are demanding higher wages.|B|Die Mitarbeiter haben mehr Lohn gefordert.|The employees demanded higher wages.
+fördern|fördert · förderte · hat gefördert|to support, to promote|Die Stadt fördert junge Künstler.|The city supports young artists.|B|Die Stadt hat junge Künstler gefördert.|The city has supported young artists.
+fragen|fragt · fragte · hat gefragt|to ask (nach + Dat.)|Darf ich Sie etwas fragen?|May I ask you something?|A|Ich habe den Lehrer nach der Prüfung gefragt.|I asked the teacher about the exam.
+frieren|friert · fror · hat gefroren|to be cold, to freeze|Ohne Jacke friere ich im Winter sofort.|Without a jacket I get cold straight away in winter.|B|Ohne Jacke habe ich sofort gefroren.|Without a jacket I was cold straight away.
+sich fühlen|fühlt sich · fühlte sich · hat sich gefühlt|to feel|Heute fühle ich mich viel besser.|I feel much better today.|A|Gestern habe ich mich viel besser gefühlt.|I felt much better yesterday.
+führen|führt · führte · hat geführt|to lead, to run|Diese Straße führt direkt zum Bahnhof.|This street leads straight to the station.|B|Die Chefin hat uns durch die Firma geführt.|The boss showed us round the company.
+funktionieren|funktioniert · funktionierte · hat funktioniert|to work, to function|Der Drucker funktioniert leider nicht mehr.|Unfortunately the printer no longer works.|A|Der Drucker hat gestern noch funktioniert.|The printer was still working yesterday.
+geben|gibt · gab · hat gegeben|to give|Kannst du mir bitte das Buch geben?|Can you give me the book, please?|A|Ich habe ihm das Buch gegeben.|I gave him the book.
+gefallen|gefällt · gefiel · hat gefallen|to please, to like (+ Dat.)|Die neue Wohnung gefällt mir sehr gut.|I like the new flat very much.|A|Die neue Wohnung hat mir sehr gut gefallen.|I liked the new flat very much.
+gehen|geht · ging · ist gegangen|to go, to walk|Wir gehen heute Abend ins Kino.|We are going to the cinema this evening.|A|Wir sind gestern Abend ins Kino gegangen.|We went to the cinema yesterday evening.
+gehören|gehört · gehörte · hat gehört|to belong (+ Dat.)|Wem gehört diese Tasche?|Who does this bag belong to?|A|Diese Tasche hat meiner Oma gehört.|This bag belonged to my grandma.
+genießen|genießt · genoss · hat genossen|to enjoy|Wir genießen die Ruhe auf dem Land.|We enjoy the peace and quiet in the country.|B|Wir haben die Ruhe auf dem Land genossen.|We enjoyed the peace and quiet in the country.
+geschehen|geschieht · geschah · ist geschehen|to happen|Der Unfall ist gestern Abend geschehen.|The accident happened yesterday evening.|B|Der Unfall ist gestern Abend geschehen.|The accident happened yesterday evening.
+gewinnen|gewinnt · gewann · hat gewonnen|to win|Unsere Mannschaft hat das Spiel gewonnen.|Our team won the match.|A|Unsere Mannschaft hat das Spiel gewonnen.|Our team won the match.
+glauben|glaubt · glaubte · hat geglaubt|to believe, to think (an + Akk.)|Ich glaube, dass er heute nicht kommt.|I think that he is not coming today.|A|Ich habe ihm kein Wort geglaubt.|I didn't believe a word he said.
+haben|hat · hatte · hat gehabt|to have|Ich habe heute leider keine Zeit.|Unfortunately I have no time today.|A|Ich habe gestern leider keine Zeit gehabt.|Unfortunately I had no time yesterday.
+halten|hält · hielt · hat gehalten|to hold, to stop|Der Bus hält direkt vor dem Rathaus.|The bus stops right in front of the town hall.|A|Der Bus hat direkt vor dem Rathaus gehalten.|The bus stopped right in front of the town hall.
+handeln|handelt · handelte · hat gehandelt|to act, to be about (von + Dat.)|Der Film handelt von einer jungen Ärztin.|The film is about a young doctor.|B|Der Film hat von einer jungen Ärztin gehandelt.|The film was about a young doctor.
+heißen|heißt · hieß · hat geheißen|to be called, to mean|Wie heißt die neue Kollegin?|What is the new colleague called?|A|Früher hat die Straße anders geheißen.|The street used to have a different name.
+helfen|hilft · half · hat geholfen|to help (+ Dat.)|Kannst du mir beim Umzug helfen?|Can you help me with the move?|A|Er hat mir beim Umzug geholfen.|He helped me with the move.
+herstellen|stellt her · stellte her · hat hergestellt|to produce, to manufacture|Die Firma stellt Möbel aus Holz her.|The company manufactures furniture from wood.|B|Die Firma hat früher Möbel aus Holz hergestellt.|The company used to make wooden furniture.
+herunterladen|lädt herunter · lud herunter · hat heruntergeladen|to download|Du kannst das Formular im Internet herunterladen.|You can download the form on the internet.|B|Ich habe das Formular im Internet heruntergeladen.|I downloaded the form from the internet.
+hinfallen|fällt hin · fiel hin · ist hingefallen|to fall down|Das Kind ist auf der Treppe hingefallen.|The child fell down on the stairs.|B|Das Kind ist auf der Treppe hingefallen.|The child fell down on the stairs.
+hoffen|hofft · hoffte · hat gehofft|to hope (auf + Akk.)|Ich hoffe, dass du bald wieder gesund bist.|I hope that you are well again soon.|A|Wir haben auf besseres Wetter gehofft.|We hoped for better weather.
+holen|holt · holte · hat geholt|to fetch, to get|Ich hole schnell Brötchen vom Bäcker.|I will quickly fetch rolls from the baker's.|A|Ich habe schnell Brötchen vom Bäcker geholt.|I quickly fetched some rolls from the baker's.
+hören|hört · hörte · hat gehört|to hear, to listen to|Ich höre gern Musik beim Kochen.|I like listening to music while cooking.|A|Ich habe beim Kochen Musik gehört.|I listened to music while cooking.
+sich informieren|informiert sich · informierte sich · hat sich informiert|to find out, to get information (über + Akk.)|Ich möchte mich über den Kurs informieren.|I would like to find out about the course.|B|Ich habe mich über den Kurs informiert.|I found out about the course.
+sich interessieren|interessiert sich · interessierte sich · hat sich interessiert|to be interested (für + Akk.)|Meine Tochter interessiert sich für Technik.|My daughter is interested in technology.|B|Meine Tochter hat sich schon immer für Technik interessiert.|My daughter has always been interested in technology.
+sich irren|irrt sich · irrte sich · hat sich geirrt|to be mistaken|Entschuldigung, ich habe mich im Datum geirrt.|Sorry, I got the date wrong.|B|Entschuldigung, ich habe mich im Datum geirrt.|Sorry, I got the date wrong.
+kaufen|kauft · kaufte · hat gekauft|to buy|Ich habe mir ein neues Fahrrad gekauft.|I have bought myself a new bicycle.|A|Ich habe mir ein neues Fahrrad gekauft.|I bought myself a new bike.
+kennen|kennt · kannte · hat gekannt|to know (a person or place)|Kennst du ein gutes Restaurant hier?|Do you know a good restaurant here?|A|Ich habe ihn schon als Kind gekannt.|I already knew him as a child.
+kennenlernen|lernt kennen · lernte kennen · hat kennengelernt|to get to know, to meet|Wir haben uns im Sprachkurs kennengelernt.|We met on the language course.|A|Wir haben uns im Sprachkurs kennengelernt.|We met on the language course.
+klappen|klappt · klappte · hat geklappt|to work out|Mit dem Termin hat alles gut geklappt.|Everything worked out well with the appointment.|B|Mit dem Termin hat alles gut geklappt.|Everything worked out well with the appointment.
+klären|klärt · klärte · hat geklärt|to clarify, to sort out|Wir müssen diese Frage noch klären.|We still have to clarify this question.|B|Wir haben diese Frage schon geklärt.|We have already sorted out this question.
+klingen|klingt · klang · hat geklungen|to sound|Dein Vorschlag klingt sehr interessant.|Your suggestion sounds very interesting.|B|Dein Vorschlag hat sehr interessant geklungen.|Your suggestion sounded very interesting.
+kommen|kommt · kam · ist gekommen|to come|Kommst du morgen mit zur Party?|Are you coming along to the party tomorrow?|A|Er ist gestern zu spät zur Arbeit gekommen.|He came to work late yesterday.
+können|kann · konnte · hat gekonnt|to be able to, can|Ich kann morgen leider nicht kommen.|Unfortunately I cannot come tomorrow.|A|Das habe ich leider nicht gekonnt.|Unfortunately I wasn't able to do that.
+kontrollieren|kontrolliert · kontrollierte · hat kontrolliert|to check, to inspect|Im Zug werden die Fahrkarten kontrolliert.|The tickets are checked on the train.|B|Im Zug hat jemand die Fahrkarten kontrolliert.|Someone checked the tickets on the train.
+sich konzentrieren|konzentriert sich · konzentrierte sich · hat sich konzentriert|to concentrate (auf + Akk.)|Bei dem Lärm kann ich mich nicht konzentrieren.|I cannot concentrate with that noise.|B|Ich habe mich ganz auf die Prüfung konzentriert.|I concentrated fully on the exam.
+kosten|kostet · kostete · hat gekostet|to cost|Wie viel kostet eine Fahrkarte nach Berlin?|How much does a ticket to Berlin cost?|A|Wie viel hat die Fahrkarte nach Berlin gekostet?|How much did the ticket to Berlin cost?
+kriegen|kriegt · kriegte · hat gekriegt|to get (informal)|Ich habe heute ein Paket gekriegt.|I got a parcel today.|B|Ich habe heute ein Paket gekriegt.|I got a parcel today.
+lächeln|lächelt · lächelte · hat gelächelt|to smile|Die Verkäuferin lächelt immer freundlich.|The shop assistant always smiles in a friendly way.|B|Die Verkäuferin hat freundlich gelächelt.|The shop assistant gave a friendly smile.
+lassen|lässt · ließ · hat gelassen|to let, to leave|Ich habe mein Handy zu Hause gelassen.|I left my mobile phone at home.|A|Ich habe mein Handy zu Hause gelassen.|I left my mobile at home.
+laufen|läuft · lief · ist gelaufen|to run, to walk|Wir sind zu Fuß zum Bahnhof gelaufen.|We walked to the station on foot.|A|Wir sind zu Fuß zum Bahnhof gelaufen.|We walked to the station.
+leben|lebt · lebte · hat gelebt|to live|Meine Eltern leben seit zehn Jahren in Wien.|My parents have lived in Vienna for ten years.|A|Meine Eltern haben zehn Jahre in Wien gelebt.|My parents lived in Vienna for ten years.
+legen|legt · legte · hat gelegt|to put, to lay|Leg die Zeitung bitte auf den Tisch.|Please put the newspaper on the table.|A|Ich habe die Zeitung auf den Tisch gelegt.|I put the newspaper on the table.
+leiden|leidet · litt · hat gelitten|to suffer (an + Dat., unter + Dat.)|Viele Menschen leiden unter dem Lärm.|Many people suffer from the noise.|B|Viele Menschen haben unter dem Lärm gelitten.|Many people suffered from the noise.
+leihen|leiht · lieh · hat geliehen|to lend, to borrow|Kannst du mir bis morgen zehn Euro leihen?|Can you lend me ten euros until tomorrow?|B|Er hat mir zehn Euro geliehen.|He lent me ten euros.
+sich leisten|leistet sich · leistete sich · hat sich geleistet|to afford|Ein neues Auto können wir uns nicht leisten.|We cannot afford a new car.|B|Wir haben uns ein neues Auto geleistet.|We treated ourselves to a new car.
+leiten|leitet · leitete · hat geleitet|to lead, to manage|Frau Berger leitet die Abteilung seit Mai.|Ms Berger has managed the department since May.|B|Frau Berger hat die Abteilung fünf Jahre geleitet.|Mrs Berger ran the department for five years.
+lernen|lernt · lernte · hat gelernt|to learn, to study|Ich lerne seit zwei Jahren Deutsch.|I have been learning German for two years.|A|Ich habe zwei Jahre Deutsch gelernt.|I studied German for two years.
+lesen|liest · las · hat gelesen|to read|Hast du die E-Mail schon gelesen?|Have you read the email yet?|A|Hast du die E-Mail schon gelesen?|Have you read the email yet?
+liegen|liegt · lag · hat gelegen|to lie, to be situated|Das Hotel liegt direkt am See.|The hotel is situated right by the lake.|A|Das Hotel hat direkt am See gelegen.|The hotel was right by the lake.
+sich lohnen|lohnt sich · lohnte sich · hat sich gelohnt|to be worth it|Der Besuch im Museum hat sich gelohnt.|The visit to the museum was worth it.|B|Der Besuch im Museum hat sich gelohnt.|The visit to the museum was worth it.
+löschen|löscht · löschte · hat gelöscht|to delete, to put out|Ich habe die Datei aus Versehen gelöscht.|I deleted the file by mistake.|B|Ich habe die Datei aus Versehen gelöscht.|I deleted the file by mistake.
+lösen|löst · löste · hat gelöst|to solve|Wir haben das Problem gemeinsam gelöst.|We solved the problem together.|B|Wir haben das Problem gemeinsam gelöst.|We solved the problem together.
+lügen|lügt · log · hat gelogen|to lie, to tell a lie|Ich glaube ihm nicht, er hat gelogen.|I do not believe him, he lied.|B|Ich glaube ihm nicht, er hat gelogen.|I don't believe him, he lied.
+machen|macht · machte · hat gemacht|to do, to make|Was machst du am Wochenende?|What are you doing at the weekend?|A|Was hast du am Wochenende gemacht?|What did you do at the weekend?
+meinen|meint · meinte · hat gemeint|to mean, to think|Was meinst du zu diesem Vorschlag?|What do you think of this suggestion?|A|Das habe ich nicht so gemeint.|I didn't mean it like that.
+melden|meldet · meldete · hat gemeldet|to report|Sie müssen den Schaden sofort melden.|You must report the damage immediately.|B|Ich habe den Schaden sofort gemeldet.|I reported the damage straight away.
+merken|merkt · merkte · hat gemerkt|to notice|Ich habe den Fehler zu spät gemerkt.|I noticed the mistake too late.|B|Ich habe den Fehler zu spät gemerkt.|I noticed the mistake too late.
+messen|misst · maß · hat gemessen|to measure|Die Ärztin misst zuerst das Fieber.|The doctor takes the temperature first.|B|Die Ärztin hat zuerst das Fieber gemessen.|The doctor took my temperature first.
+mitbringen|bringt mit · brachte mit · hat mitgebracht|to bring along|Soll ich etwas zum Essen mitbringen?|Shall I bring something to eat?|A|Ich habe etwas zum Essen mitgebracht.|I have brought something to eat.
+mitnehmen|nimmt mit · nahm mit · hat mitgenommen|to take along|Nimm bitte einen Regenschirm mit.|Please take an umbrella with you.|A|Ich habe einen Regenschirm mitgenommen.|I took an umbrella with me.
+mitteilen|teilt mit · teilte mit · hat mitgeteilt|to inform, to tell|Bitte teilen Sie uns Ihre neue Adresse mit.|Please tell us your new address.|B|Ich habe Ihnen meine neue Adresse mitgeteilt.|I have informed you of my new address.
+mögen|mag · mochte · hat gemocht|to like|Ich mag keinen Kaffee ohne Milch.|I do not like coffee without milk.|A|Als Kind habe ich keinen Spinat gemocht.|As a child I didn't like spinach.
+müssen|muss · musste · hat gemusst|to have to, must|Ich muss morgen früh aufstehen.|I have to get up early tomorrow.|A|Ich habe gestern früher nach Hause gemusst.|I had to go home earlier yesterday.
+nachdenken|denkt nach · dachte nach · hat nachgedacht|to think, to reflect (über + Akk.)|Ich muss noch über das Angebot nachdenken.|I still have to think about the offer.|B|Ich habe lange über das Angebot nachgedacht.|I thought about the offer for a long time.
+nachfragen|fragt nach · fragte nach · hat nachgefragt|to enquire, to ask again|Ich frage morgen beim Amt noch einmal nach.|I will ask again at the office tomorrow.|B|Ich habe beim Amt noch einmal nachgefragt.|I asked again at the office.
+nehmen|nimmt · nahm · hat genommen|to take|Ich nehme heute lieber das Fahrrad.|I would rather take the bicycle today.|A|Ich habe heute das Fahrrad genommen.|I took the bike today.
+nennen|nennt · nannte · hat genannt|to name, to call|Können Sie mir einen Grund nennen?|Can you give me a reason?|B|Er hat mir keinen Grund genannt.|He didn't give me a reason.
+nutzen|nutzt · nutzte · hat genutzt|to use|Viele Leute nutzen das Handy zum Bezahlen.|Many people use their mobile phone to pay.|B|Ich habe das Handy zum Bezahlen genutzt.|I used my mobile to pay.
+öffnen|öffnet · öffnete · hat geöffnet|to open|Kannst du bitte das Fenster öffnen?|Can you open the window, please?|A|Ich habe das Fenster geöffnet.|I have opened the window.
+organisieren|organisiert · organisierte · hat organisiert|to organise|Wer organisiert das Fest für die Nachbarn?|Who is organising the party for the neighbours?|B|Wer hat das Fest für die Nachbarn organisiert?|Who organised the party for the neighbours?
+pflegen|pflegt · pflegte · hat gepflegt|to care for, to look after|Sie pflegt ihre kranke Mutter zu Hause.|She looks after her sick mother at home.|B|Sie hat ihre kranke Mutter zu Hause gepflegt.|She looked after her sick mother at home.
+planen|plant · plante · hat geplant|to plan|Wir planen eine Reise nach Italien.|We are planning a trip to Italy.|B|Wir haben eine Reise nach Italien geplant.|We have planned a trip to Italy.
+prüfen|prüft · prüfte · hat geprüft|to check, to examine|Bitte prüfen Sie die Rechnung genau.|Please check the invoice carefully.|B|Ich habe die Rechnung genau geprüft.|I checked the bill carefully.
+raten|rät · riet · hat geraten|to advise, to guess (zu + Dat.)|Der Arzt rät mir zu mehr Bewegung.|The doctor advises me to take more exercise.|B|Der Arzt hat mir zu mehr Bewegung geraten.|The doctor advised me to get more exercise.
+reagieren|reagiert · reagierte · hat reagiert|to react (auf + Akk.)|Wie hat dein Chef auf die Nachricht reagiert?|How did your boss react to the news?|B|Wie hat dein Chef auf die Nachricht reagiert?|How did your boss react to the news?
+reichen|reicht · reichte · hat gereicht|to be enough, to pass|Das Geld reicht nicht für den Urlaub.|The money is not enough for the holiday.|B|Das Geld hat nicht für den Urlaub gereicht.|The money wasn't enough for the holiday.
+reinigen|reinigt · reinigte · hat gereinigt|to clean|Ich muss meinen Mantel reinigen lassen.|I have to have my coat cleaned.|B|Ich habe meinen Mantel gründlich gereinigt.|I cleaned my coat thoroughly.
+reisen|reist · reiste · ist gereist|to travel|Meine Großeltern reisen gern mit dem Zug.|My grandparents like travelling by train.|A|Meine Großeltern sind mit dem Zug nach Wien gereist.|My grandparents travelled to Vienna by train.
+retten|rettet · rettete · hat gerettet|to save, to rescue|Die Feuerwehr hat alle Bewohner gerettet.|The fire brigade rescued all the residents.|B|Die Feuerwehr hat alle Bewohner gerettet.|The fire brigade rescued all the residents.
+riechen|riecht · roch · hat gerochen|to smell (nach + Dat.)|In der Küche riecht es nach frischem Brot.|It smells of fresh bread in the kitchen.|B|In der Küche hat es nach frischem Brot gerochen.|The kitchen smelt of fresh bread.
+rufen|ruft · rief · hat gerufen|to call, to shout|Wir müssen sofort einen Arzt rufen.|We have to call a doctor immediately.|A|Wir haben sofort einen Arzt gerufen.|We called a doctor immediately.
+sagen|sagt · sagte · hat gesagt|to say, to tell|Kannst du mir sagen, wie spät es ist?|Can you tell me what time it is?|A|Was hast du gerade gesagt?|What did you just say?
+sammeln|sammelt · sammelte · hat gesammelt|to collect|Mein Bruder sammelt alte Münzen.|My brother collects old coins.|B|Mein Bruder hat früher alte Münzen gesammelt.|My brother used to collect old coins.
+schaden|schadet · schadete · hat geschadet|to harm, to damage (+ Dat.)|Zu viel Zucker schadet der Gesundheit.|Too much sugar is bad for your health.|B|Der Regen hat den Pflanzen nicht geschadet.|The rain didn't harm the plants.
+schaffen|schafft · schaffte · hat geschafft|to manage, to achieve|Ich habe die Prüfung endlich geschafft.|I have finally passed the exam.|B|Ich habe die Prüfung endlich geschafft.|I have finally passed the exam.
+schicken|schickt · schickte · hat geschickt|to send|Ich schicke Ihnen die Unterlagen per Post.|I will send you the documents by post.|A|Ich habe Ihnen die Unterlagen per Post geschickt.|I have sent you the documents by post.
+schlafen|schläft · schlief · hat geschlafen|to sleep|Ich habe letzte Nacht schlecht geschlafen.|I slept badly last night.|A|Ich habe letzte Nacht schlecht geschlafen.|I slept badly last night.
+schlagen|schlägt · schlug · hat geschlagen|to hit, to beat|Man darf Kinder nicht schlagen.|You must not hit children.|B|Er hat mit der Hand auf den Tisch geschlagen.|He hit the table with his hand.
+schließen|schließt · schloss · hat geschlossen|to close, to shut|Das Geschäft schließt um 20 Uhr.|The shop closes at 8 pm.|A|Das Geschäft hat schon um 18 Uhr geschlossen.|The shop closed as early as 6 pm.
+schmecken|schmeckt · schmeckte · hat geschmeckt|to taste (good)|Der Kuchen schmeckt wirklich sehr gut.|The cake really tastes very good.|A|Der Kuchen hat wirklich sehr gut geschmeckt.|The cake tasted really very good.
+schneiden|schneidet · schnitt · hat geschnitten|to cut|Ich habe mich in den Finger geschnitten.|I have cut my finger.|B|Ich habe mich in den Finger geschnitten.|I have cut my finger.
+schreiben|schreibt · schrieb · hat geschrieben|to write|Ich schreibe dir morgen eine E-Mail.|I will write you an email tomorrow.|A|Ich habe dir gestern eine E-Mail geschrieben.|I wrote you an email yesterday.
+sehen|sieht · sah · hat gesehen|to see|Hast du meine Brille gesehen?|Have you seen my glasses?|A|Hast du meine Brille gesehen?|Have you seen my glasses?
+sein|ist · war · ist gewesen|to be|Ich bin noch nie in Hamburg gewesen.|I have never been to Hamburg.|A|Ich bin noch nie in Hamburg gewesen.|I have never been to Hamburg.
+senden|sendet · sendete · hat gesendet|to send, to broadcast|Bitte senden Sie uns Ihre Bewerbung per E-Mail.|Please send us your application by email.|B|Ich habe Ihnen meine Bewerbung per E-Mail gesendet.|I have sent you my application by email.
+sitzen|sitzt · saß · hat gesessen|to sit|Wir saßen den ganzen Abend auf dem Balkon.|We sat on the balcony all evening.|A|Wir haben den ganzen Abend auf dem Balkon gesessen.|We sat on the balcony all evening.
+sollen|soll · sollte · hat gesollt|to be supposed to, should|Der Arzt sagt, ich soll mehr Wasser trinken.|The doctor says I should drink more water.|A|Das habe ich eigentlich nicht gesollt.|I wasn't really supposed to do that.
+sorgen|sorgt · sorgte · hat gesorgt|to take care, to provide (für + Akk.)|Die Eltern sorgen für ihre Kinder.|The parents take care of their children.|B|Die Eltern haben immer gut für ihre Kinder gesorgt.|The parents always took good care of their children.
+speichern|speichert · speicherte · hat gespeichert|to save (data)|Vergiss nicht, den Text zu speichern.|Do not forget to save the text.|B|Ich habe den Text schon gespeichert.|I have already saved the text.
+spielen|spielt · spielte · hat gespielt|to play|Die Kinder spielen draußen im Hof.|The children are playing outside in the courtyard.|A|Die Kinder haben draußen im Hof gespielt.|The children played outside in the yard.
+sprechen|spricht · sprach · hat gesprochen|to speak (mit + Dat., über + Akk.)|Kann ich bitte mit Herrn Wagner sprechen?|Can I speak to Mr Wagner, please?|A|Ich habe gestern mit Herrn Wagner gesprochen.|I spoke to Mr Wagner yesterday.
+springen|springt · sprang · ist gesprungen|to jump|Die Katze ist auf den Tisch gesprungen.|The cat jumped onto the table.|B|Die Katze ist auf den Tisch gesprungen.|The cat jumped onto the table.
+stattfinden|findet statt · fand statt · hat stattgefunden|to take place|Das Konzert findet im Stadtpark statt.|The concert takes place in the town park.|B|Das Konzert hat im Stadtpark stattgefunden.|The concert took place in the town park.
+stehen|steht · stand · hat gestanden|to stand, to be (written)|Das steht heute in der Zeitung.|That is in the newspaper today.|A|Das hat gestern in der Zeitung gestanden.|That was in the newspaper yesterday.
+steigen|steigt · stieg · ist gestiegen|to rise, to climb|Die Mieten sind stark gestiegen.|Rents have risen sharply.|B|Die Mieten sind stark gestiegen.|Rents have risen sharply.
+stellen|stellt · stellte · hat gestellt|to put, to place|Stell die Flaschen bitte in den Kühlschrank.|Please put the bottles in the fridge.|A|Ich habe die Flaschen in den Kühlschrank gestellt.|I put the bottles in the fridge.
+sterben|stirbt · starb · ist gestorben|to die (an + Dat.)|Mein Großvater ist letztes Jahr gestorben.|My grandfather died last year.|B|Mein Großvater ist letztes Jahr gestorben.|My grandfather died last year.
+stören|stört · störte · hat gestört|to disturb, to bother|Entschuldigung, störe ich Sie gerade?|Excuse me, am I disturbing you?|B|Der Lärm hat mich beim Lernen gestört.|The noise disturbed me while I was studying.
+suchen|sucht · suchte · hat gesucht|to look for (nach + Dat.)|Wir suchen eine größere Wohnung.|We are looking for a bigger flat.|A|Wir haben lange eine größere Wohnung gesucht.|We looked for a bigger flat for a long time.
+tauschen|tauscht · tauschte · hat getauscht|to swap, to exchange|Wollen wir die Plätze tauschen?|Shall we swap seats?|B|Wir haben die Plätze getauscht.|We swapped seats.
+teilen|teilt · teilte · hat geteilt|to share, to divide|Ich teile die Wohnung mit zwei Freunden.|I share the flat with two friends.|B|Ich habe die Wohnung mit zwei Freunden geteilt.|I shared the flat with two friends.
+tragen|trägt · trug · hat getragen|to carry, to wear|Kannst du mir helfen, die Kiste zu tragen?|Can you help me carry the box?|A|Er hat die schwere Kiste allein getragen.|He carried the heavy box on his own.
+träumen|träumt · träumte · hat geträumt|to dream (von + Dat.)|Sie träumt von einem Haus am Meer.|She dreams of a house by the sea.|B|Sie hat von einem Haus am Meer geträumt.|She dreamt of a house by the sea.
+trinken|trinkt · trank · hat getrunken|to drink|Möchtest du etwas trinken?|Would you like something to drink?|A|Ich habe heute zu wenig Wasser getrunken.|I haven't drunk enough water today.
+tun|tut · tat · hat getan|to do|Was kann ich für Sie tun?|What can I do for you?|A|Ich habe mein Bestes getan.|I did my best.
+überlegen|überlegt · überlegte · hat überlegt|to consider, to think over|Ich überlege, ob ich den Job annehme.|I am considering whether to accept the job.|B|Ich habe lange überlegt, ob ich den Job annehme.|I thought for a long time about whether to take the job.
+übernehmen|übernimmt · übernahm · hat übernommen|to take over, to take on|Die Firma übernimmt die Kosten für den Kurs.|The company is covering the cost of the course.|B|Die Firma hat die Kosten für den Kurs übernommen.|The company covered the cost of the course.
+überprüfen|überprüft · überprüfte · hat überprüft|to check, to verify|Bitte überprüfen Sie Ihre Angaben noch einmal.|Please check your details once more.|B|Ich habe meine Angaben noch einmal überprüft.|I checked my details once more.
+überraschen|überrascht · überraschte · hat überrascht|to surprise|Wir wollen Oma mit einem Besuch überraschen.|We want to surprise Grandma with a visit.|B|Wir haben Oma mit einem Besuch überrascht.|We surprised Grandma with a visit.
+überzeugen|überzeugt · überzeugte · hat überzeugt|to convince (von + Dat.)|Seine Argumente haben mich nicht überzeugt.|His arguments did not convince me.|B|Seine Argumente haben mich nicht überzeugt.|His arguments didn't convince me.
+unterbrechen|unterbricht · unterbrach · hat unterbrochen|to interrupt|Entschuldigung, darf ich Sie kurz unterbrechen?|Excuse me, may I interrupt you briefly?|B|Er hat mich mitten im Satz unterbrochen.|He interrupted me in the middle of a sentence.
+unternehmen|unternimmt · unternahm · hat unternommen|to do, to undertake|Am Wochenende unternehmen wir oft etwas zusammen.|At the weekend we often do something together.|B|Am Wochenende haben wir etwas zusammen unternommen.|We did something together at the weekend.
+unterrichten|unterrichtet · unterrichtete · hat unterrichtet|to teach|Herr Lang unterrichtet Deutsch und Geschichte.|Mr Lang teaches German and history.|B|Herr Lang hat früher Deutsch und Geschichte unterrichtet.|Mr Lang used to teach German and history.
+unterscheiden|unterscheidet · unterschied · hat unterschieden|to distinguish, to tell apart|Ich kann die Zwillinge kaum unterscheiden.|I can hardly tell the twins apart.|B|Der Lehrer hat zwischen leichten und schweren Fehlern unterschieden.|The teacher distinguished between minor and serious mistakes.
+unterstützen|unterstützt · unterstützte · hat unterstützt|to support|Meine Familie unterstützt mich beim Studium.|My family supports me in my studies.|B|Meine Familie hat mich beim Studium unterstützt.|My family supported me during my studies.
+sich verabreden|verabredet sich · verabredete sich · hat sich verabredet|to arrange to meet (mit + Dat.)|Ich habe mich mit Anna zum Essen verabredet.|I have arranged to meet Anna for a meal.|B|Ich habe mich mit Anna zum Essen verabredet.|I have arranged to meet Anna for a meal.
+sich verabschieden|verabschiedet sich · verabschiedete sich · hat sich verabschiedet|to say goodbye (von + Dat.)|Ich muss mich leider schon verabschieden.|Unfortunately I have to say goodbye already.|B|Ich habe mich schon von allen verabschiedet.|I have already said goodbye to everyone.
+verändern|verändert · veränderte · hat verändert|to change|Das Internet hat unser Leben stark verändert.|The internet has changed our lives a great deal.|B|Das Internet hat unser Leben stark verändert.|The internet has changed our lives a great deal.
+verbessern|verbessert · verbesserte · hat verbessert|to improve, to correct|Ich möchte mein Deutsch verbessern.|I would like to improve my German.|B|Ich habe mein Deutsch im Kurs verbessert.|I improved my German on the course.
+verbinden|verbindet · verband · hat verbunden|to connect, to put through|Können Sie mich bitte mit Frau Klein verbinden?|Can you put me through to Ms Klein, please?|B|Die Sekretärin hat mich mit Frau Klein verbunden.|The secretary put me through to Mrs Klein.
+verbringen|verbringt · verbrachte · hat verbracht|to spend (time)|Wir haben den Urlaub an der Ostsee verbracht.|We spent the holiday on the Baltic coast.|B|Wir haben den Urlaub an der Ostsee verbracht.|We spent the holiday on the Baltic coast.
+verhindern|verhindert · verhinderte · hat verhindert|to prevent|Der Fahrer konnte den Unfall nicht verhindern.|The driver could not prevent the accident.|B|Der Fahrer hat den Unfall gerade noch verhindert.|The driver only just prevented the accident.
+verkaufen|verkauft · verkaufte · hat verkauft|to sell|Ich möchte mein altes Auto verkaufen.|I would like to sell my old car.|A|Ich habe mein altes Auto verkauft.|I have sold my old car.
+verlangen|verlangt · verlangte · hat verlangt|to demand, to ask for|Der Vermieter verlangt drei Monatsmieten Kaution.|The landlord is asking for three months' rent as a deposit.|B|Der Vermieter hat drei Monatsmieten Kaution verlangt.|The landlord asked for three months' rent as a deposit.
+verlassen|verlässt · verließ · hat verlassen|to leave|Er verlässt das Haus jeden Morgen um sieben.|He leaves the house every morning at seven.|B|Er hat das Haus heute um sieben verlassen.|He left the house at seven today.
+sich verlieben|verliebt sich · verliebte sich · hat sich verliebt|to fall in love (in + Akk.)|Er hat sich in seine Nachbarin verliebt.|He has fallen in love with his neighbour.|B|Er hat sich in seine Nachbarin verliebt.|He has fallen in love with his neighbour.
+verlieren|verliert · verlor · hat verloren|to lose|Ich habe gestern meinen Ausweis verloren.|I lost my identity card yesterday.|A|Ich habe gestern meinen Ausweis verloren.|I lost my ID card yesterday.
+vermeiden|vermeidet · vermied · hat vermieden|to avoid|Wir sollten unnötigen Müll vermeiden.|We should avoid unnecessary waste.|B|Wir haben unnötigen Müll vermieden.|We avoided unnecessary waste.
+vermieten|vermietet · vermietete · hat vermietet|to rent out, to let|Sie vermietet ein Zimmer an Studenten.|She lets a room to students.|B|Sie hat ein Zimmer an Studenten vermietet.|She let a room to students.
+vermissen|vermisst · vermisste · hat vermisst|to miss|Ich vermisse meine Freunde aus der Heimat.|I miss my friends from home.|B|Ich habe meine Freunde sehr vermisst.|I missed my friends a lot.
+verschwinden|verschwindet · verschwand · ist verschwunden|to disappear|Mein Fahrrad ist aus dem Keller verschwunden.|My bicycle has disappeared from the cellar.|B|Mein Fahrrad ist aus dem Keller verschwunden.|My bike has disappeared from the cellar.
+versuchen|versucht · versuchte · hat versucht|to try|Ich versuche, pünktlich zu sein.|I am trying to be on time.|A|Ich habe es schon dreimal versucht.|I have already tried three times.
+verteilen|verteilt · verteilte · hat verteilt|to distribute, to hand out|Die Lehrerin verteilt die Arbeitsblätter.|The teacher hands out the worksheets.|B|Die Lehrerin hat die Arbeitsblätter verteilt.|The teacher handed out the worksheets.
+verwenden|verwendet · verwendete · hat verwendet|to use|Für dieses Rezept verwende ich nur frisches Gemüse.|For this recipe I only use fresh vegetables.|B|Für dieses Rezept habe ich nur frisches Gemüse verwendet.|I used only fresh vegetables for this recipe.
+verzichten|verzichtet · verzichtete · hat verzichtet|to do without (auf + Akk.)|Ich verzichte seit einem Jahr auf Fleisch.|I have been doing without meat for a year.|B|Ich habe ein Jahr lang auf Fleisch verzichtet.|I went without meat for a year.
+vorbeikommen|kommt vorbei · kam vorbei · ist vorbeigekommen|to drop by|Komm doch morgen nach der Arbeit vorbei.|Do drop by tomorrow after work.|B|Er ist gestern nach der Arbeit vorbeigekommen.|He dropped by after work yesterday.
+vorhaben|hat vor · hatte vor · hat vorgehabt|to plan, to intend|Hast du am Samstag schon etwas vor?|Do you already have plans for Saturday?|B|Ich habe am Samstag eigentlich nichts vorgehabt.|I didn't really have anything planned on Saturday.
+sich vorstellen|stellt sich vor · stellte sich vor · hat sich vorgestellt|to introduce oneself, to imagine|Darf ich mich kurz vorstellen?|May I briefly introduce myself?|B|Ich habe mich den neuen Kollegen vorgestellt.|I introduced myself to the new colleagues.
+wählen|wählt · wählte · hat gewählt|to choose, to vote, to dial|Sie können zwischen zwei Menüs wählen.|You can choose between two set meals.|B|Ich habe das vegetarische Menü gewählt.|I chose the vegetarian set meal.
+warnen|warnt · warnte · hat gewarnt|to warn (vor + Dat.)|Die Polizei warnt vor Glatteis.|The police are warning of black ice.|B|Die Polizei hat vor Glatteis gewarnt.|The police warned of black ice.
+warten|wartet · wartete · hat gewartet|to wait (auf + Akk.)|Ich warte seit zwanzig Minuten auf den Bus.|I have been waiting for the bus for twenty minutes.|A|Ich habe zwanzig Minuten auf den Bus gewartet.|I waited twenty minutes for the bus.
+waschen|wäscht · wusch · hat gewaschen|to wash|Ich muss heute noch Wäsche waschen.|I still have to do the washing today.|A|Ich habe heute schon Wäsche gewaschen.|I have already done the washing today.
+wechseln|wechselt · wechselte · hat gewechselt|to change|Ich möchte gern die Arbeitsstelle wechseln.|I would like to change jobs.|B|Ich habe letztes Jahr die Arbeitsstelle gewechselt.|I changed jobs last year.
+wegwerfen|wirft weg · warf weg · hat weggeworfen|to throw away|Wirf die alten Zeitungen bitte nicht weg.|Please do not throw the old newspapers away.|B|Ich habe die alten Zeitungen weggeworfen.|I threw the old newspapers away.
+wehtun|tut weh · tat weh · hat wehgetan|to hurt|Mein Rücken tut seit gestern weh.|My back has been hurting since yesterday.|A|Mein Rücken hat gestern sehr wehgetan.|My back hurt a lot yesterday.
+sich weiterbilden|bildet sich weiter · bildete sich weiter · hat sich weitergebildet|to do further training|Sie will sich im Beruf weiterbilden.|She wants to do further training in her job.|B|Sie hat sich im Beruf weitergebildet.|She did further training in her profession.
+werden|wird · wurde · ist geworden|to become|Meine Schwester will Ärztin werden.|My sister wants to become a doctor.|A|Meine Schwester ist Ärztin geworden.|My sister has become a doctor.
+werfen|wirft · warf · hat geworfen|to throw|Bitte werfen Sie den Müll in die Tonne.|Please throw the rubbish in the bin.|B|Ich habe den Müll in die Tonne geworfen.|I threw the rubbish in the bin.
+wiegen|wiegt · wog · hat gewogen|to weigh|Das Paket wiegt fast fünf Kilo.|The parcel weighs almost five kilos.|B|Das Paket hat fast fünf Kilo gewogen.|The parcel weighed almost five kilos.
+wissen|weiß · wusste · hat gewusst|to know (a fact)|Weißt du, wann der Zug abfährt?|Do you know when the train leaves?|A|Das habe ich leider nicht gewusst.|Unfortunately I didn't know that.
+wollen|will · wollte · hat gewollt|to want (to)|Ich will nächstes Jahr eine Ausbildung machen.|I want to do an apprenticeship next year.|A|Das habe ich wirklich nicht gewollt.|I really didn't want that to happen.
+sich wundern|wundert sich · wunderte sich · hat sich gewundert|to be surprised (über + Akk.)|Ich wundere mich über die hohe Rechnung.|I am surprised at the high bill.|B|Ich habe mich über die hohe Rechnung gewundert.|I was surprised at the high bill.
+wünschen|wünscht · wünschte · hat gewünscht|to wish|Ich wünsche dir viel Glück für die Prüfung.|I wish you good luck for the exam.|A|Ich habe dir viel Glück für die Prüfung gewünscht.|I wished you good luck for the exam.
+zahlen|zahlt · zahlte · hat gezahlt|to pay|Kann ich mit Karte zahlen?|Can I pay by card?|A|Ich habe im Restaurant mit Karte gezahlt.|I paid by card at the restaurant.
+zählen|zählt · zählte · hat gezählt|to count|Die Kassiererin zählt das Geld noch einmal.|The cashier counts the money once more.|B|Die Kassiererin hat das Geld noch einmal gezählt.|The cashier counted the money once more.
+zeigen|zeigt · zeigte · hat gezeigt|to show|Können Sie mir den Weg zum Bahnhof zeigen?|Can you show me the way to the station?|A|Eine Frau hat mir den Weg zum Bahnhof gezeigt.|A woman showed me the way to the station.
+zerstören|zerstört · zerstörte · hat zerstört|to destroy|Das Feuer hat das ganze Haus zerstört.|The fire destroyed the whole house.|B|Das Feuer hat das ganze Haus zerstört.|The fire destroyed the whole house.
+ziehen|zieht · zog · hat gezogen|to pull|Sie müssen an der Tür ziehen, nicht drücken.|You have to pull the door, not push.|B|Er hat fest an der Tür gezogen.|He pulled hard on the door.
+zuhören|hört zu · hörte zu · hat zugehört|to listen (+ Dat.)|Bitte hören Sie jetzt gut zu.|Please listen carefully now.|A|Die Schüler haben dem Lehrer gut zugehört.|The pupils listened carefully to the teacher.
+zunehmen|nimmt zu · nahm zu · hat zugenommen|to increase, to put on weight|Im Urlaub habe ich zwei Kilo zugenommen.|I put on two kilos on holiday.|B|Im Urlaub habe ich zwei Kilo zugenommen.|I put on two kilos on holiday.
+zurückgeben|gibt zurück · gab zurück · hat zurückgegeben|to give back, to return|Ich gebe dir das Buch morgen zurück.|I will give you the book back tomorrow.|B|Ich habe dir das Buch gestern zurückgegeben.|I gave the book back to you yesterday.
+zurückrufen|ruft zurück · rief zurück · hat zurückgerufen|to call back|Können Sie mich bitte später zurückrufen?|Can you call me back later, please?|B|Der Arzt hat mich am Nachmittag zurückgerufen.|The doctor called me back in the afternoon.
+zusammenarbeiten|arbeitet zusammen · arbeitete zusammen · hat zusammengearbeitet|to work together (mit + Dat.)|Wir arbeiten eng mit anderen Schulen zusammen.|We work closely with other schools.|B|Wir haben eng mit anderen Schulen zusammengearbeitet.|We worked closely with other schools.
+zusammenfassen|fasst zusammen · fasste zusammen · hat zusammengefasst|to summarise|Können Sie den Text kurz zusammenfassen?|Can you summarise the text briefly?|B|Sie hat den Text kurz zusammengefasst.|She summarised the text briefly.
+zuschauen|schaut zu · schaute zu · hat zugeschaut|to watch (+ Dat.)|Ich schaue den Kindern gern beim Spielen zu.|I like watching the children play.|B|Ich habe den Kindern beim Spielen zugeschaut.|I watched the children playing.
+zustimmen|stimmt zu · stimmte zu · hat zugestimmt|to agree (+ Dat.)|In diesem Punkt stimme ich Ihnen zu.|I agree with you on this point.|B|Alle haben dem Vorschlag zugestimmt.|Everyone agreed to the proposal.
+feiern|feiert · feierte · hat gefeiert|to celebrate|Wir feiern heute meinen Geburtstag.|We are celebrating my birthday today.|A|Wir haben gestern meinen Geburtstag gefeiert.|We celebrated my birthday yesterday.
+kochen|kocht · kochte · hat gekocht|to cook|Am Wochenende koche ich gern.|I like cooking at the weekend.|A|Am Wochenende habe ich für Freunde gekocht.|At the weekend I cooked for friends.
+lachen|lacht · lachte · hat gelacht|to laugh|Die Kinder lachen über den Witz.|The children are laughing at the joke.|A|Die Kinder haben über den Witz gelacht.|The children laughed at the joke.
+lieben|liebt · liebte · hat geliebt|to love|Sie liebt ihre Arbeit.|She loves her job.|A|Sie hat ihre Arbeit immer geliebt.|She has always loved her work.
+putzen|putzt · putzte · hat geputzt|to clean|Samstags putze ich die Wohnung.|On Saturdays I clean the flat.|A|Am Samstag habe ich die Wohnung geputzt.|On Saturday I cleaned the flat.
+wohnen|wohnt · wohnte · hat gewohnt|to live (reside)|Wir wohnen seit drei Jahren in Hamburg.|We have lived in Hamburg for three years.|A|Wir haben drei Jahre in Hamburg gewohnt.|We lived in Hamburg for three years.
+tanzen|tanzt · tanzte · hat getanzt|to dance|Auf der Hochzeit haben alle getanzt.|Everyone danced at the wedding.|A|Auf der Hochzeit haben alle getanzt.|Everyone danced at the wedding.
+studieren|studiert · studierte · hat studiert|to study (at university)|Mein Bruder studiert Medizin in Wien.|My brother studies medicine in Vienna.|A|Mein Bruder hat Medizin in Wien studiert.|My brother studied medicine in Vienna.
+schwimmen|schwimmt · schwamm · ist geschwommen|to swim|Im Sommer schwimmen wir oft im See.|In summer we often swim in the lake.|A|Im Sommer sind wir oft im See geschwommen.|In summer we often swam in the lake.
+heiraten|heiratet · heiratete · hat geheiratet|to marry, to get married|Sie haben letztes Jahr geheiratet.|They got married last year.|A|Sie haben letztes Jahr geheiratet.|They got married last year.
+regnen|regnet · regnete · hat geregnet|to rain|Es hat den ganzen Tag geregnet.|It rained all day.|A|Es hat den ganzen Tag geregnet.|It rained all day.
+schenken|schenkt · schenkte · hat geschenkt|to give (as a present)|Was schenkst du ihm zum Geburtstag?|What are you giving him for his birthday?|A|Was hast du ihm zum Geburtstag geschenkt?|What did you give him for his birthday?
+reservieren|reserviert · reservierte · hat reserviert|to reserve|Ich möchte einen Tisch für vier Personen reservieren.|I would like to reserve a table for four.|A|Ich habe einen Tisch für vier Personen reserviert.|I have reserved a table for four.
+telefonieren|telefoniert · telefonierte · hat telefoniert|to talk on the phone|Ich telefoniere jeden Sonntag mit meinen Eltern.|I phone my parents every Sunday.|A|Am Sonntag habe ich mit meinen Eltern telefoniert.|On Sunday I talked to my parents on the phone.
+reden|redet · redete · hat geredet|to talk|Wir müssen über das Problem reden.|We need to talk about the problem.|A|Wir haben lange über das Problem geredet.|We talked about the problem for a long time.
+zurückkommen|kommt zurück · kam zurück · ist zurückgekommen|to come back|Wann kommst du aus dem Urlaub zurück?|When are you coming back from holiday?|A|Wann bist du aus dem Urlaub zurückgekommen?|When did you come back from holiday?
+hängen|hängt · hing · hat gehangen|to hang (be hanging)|Das Bild hängt über dem Sofa.|The picture hangs above the sofa.|B|Das Bild hat früher über dem Sofa gehangen.|The picture used to hang above the sofa.
+abstimmen|stimmt ab · stimmte ab · hat abgestimmt|to vote (on something)|Wir stimmen jetzt über den Vorschlag ab.|We are now voting on the proposal.|B|Wir haben über den Vorschlag abgestimmt.|We voted on the proposal.
+ankündigen|kündigt an · kündigte an · hat angekündigt|to announce|Die Firma hat neue Preise angekündigt.|The company has announced new prices.|B|Die Firma hat neue Preise angekündigt.|The company has announced new prices.
+auswandern|wandert aus · wanderte aus · ist ausgewandert|to emigrate|Meine Großeltern sind nach Kanada ausgewandert.|My grandparents emigrated to Canada.|B|Meine Großeltern sind nach Kanada ausgewandert.|My grandparents emigrated to Canada.
+berücksichtigen|berücksichtigt · berücksichtigte · hat berücksichtigt|to take into account|Bitte berücksichtigen Sie auch meine Erfahrung.|Please take my experience into account too.|B|Die Firma hat auch meine Erfahrung berücksichtigt.|The company also took my experience into account.
+bügeln|bügelt · bügelte · hat gebügelt|to iron|Ich muss noch mein Hemd bügeln.|I still have to iron my shirt.|B|Ich habe heute Morgen mein Hemd gebügelt.|I ironed my shirt this morning.
+entsorgen|entsorgt · entsorgte · hat entsorgt|to dispose of|Alte Batterien muss man richtig entsorgen.|Old batteries must be disposed of properly.|B|Wir haben die alten Batterien richtig entsorgt.|We disposed of the old batteries properly.
+erwähnen|erwähnt · erwähnte · hat erwähnt|to mention|Er hat das Problem nicht erwähnt.|He did not mention the problem.|B|Er hat das Problem nicht erwähnt.|He didn't mention the problem.
+akzeptieren|akzeptiert · akzeptierte · hat akzeptiert|to accept|Wir akzeptieren Ihre Entscheidung.|We accept your decision.|B|Wir haben Ihre Entscheidung akzeptiert.|We have accepted your decision.
+anerkennen|erkennt an · erkannte an · hat anerkannt|to recognise, to acknowledge|Mein Zeugnis wurde in Deutschland anerkannt.|My certificate was recognised in Germany.|B|Die Behörde hat mein Zeugnis anerkannt.|The authorities have recognised my certificate.
+anschaffen|schafft an · schaffte an · hat angeschafft|to buy, to acquire|Wir haben uns ein neues Auto angeschafft.|We have bought ourselves a new car.|B|Wir haben uns ein neues Auto angeschafft.|We have bought ourselves a new car.
+anschließen|schließt an · schloss an · hat angeschlossen|to connect|Der Techniker schließt die Waschmaschine an.|The technician is connecting the washing machine.|B|Der Techniker hat die Waschmaschine angeschlossen.|The technician connected the washing machine.
+sich anschnallen|schnallt sich an · schnallte sich an · hat sich angeschnallt|to fasten one's seat belt|Bitte schnallen Sie sich vor dem Start an.|Please fasten your seat belt before take-off.|B|Wir haben uns vor dem Start angeschnallt.|We fastened our seat belts before take-off.
+ansprechen|spricht an · sprach an · hat angesprochen|to speak to, to address|Auf der Straße hat mich ein Tourist angesprochen.|A tourist spoke to me in the street.|B|Auf der Straße hat mich ein Tourist angesprochen.|A tourist spoke to me in the street.
+anstellen|stellt an · stellte an · hat angestellt|to employ, to take on|Die Firma stellt zwei neue Mitarbeiter an.|The company is taking on two new employees.|B|Die Firma hat zwei neue Mitarbeiter angestellt.|The company has taken on two new employees.
+anzeigen|zeigt an · zeigte an · hat angezeigt|to report (to the police)|Sie hat den Diebstahl bei der Polizei angezeigt.|She reported the theft to the police.|B|Sie hat den Diebstahl bei der Polizei angezeigt.|She reported the theft to the police.
+auftreten|tritt auf · trat auf · ist aufgetreten|to perform, to appear|Die Band tritt heute Abend in Köln auf.|The band is performing in Cologne tonight.|B|Die Band ist gestern Abend in Köln aufgetreten.|The band performed in Cologne last night.
+ausreichen|reicht aus · reichte aus · hat ausgereicht|to be enough|Das Geld reicht für die Reise nicht aus.|The money is not enough for the trip.|B|Das Geld hat für die Reise nicht ausgereicht.|The money wasn't enough for the trip.
+ausrichten|richtet aus · richtete aus · hat ausgerichtet|to pass on (a message)|Kann ich ihm etwas ausrichten?|Can I pass on a message to him?|B|Ich habe ihm deine Grüße ausgerichtet.|I passed on your regards to him.
+ausschließen|schließt aus · schloss aus · hat ausgeschlossen|to rule out, to exclude|Der Arzt schließt eine Operation nicht aus.|The doctor does not rule out an operation.|B|Der Arzt hat eine Operation nicht ausgeschlossen.|The doctor didn't rule out an operation.
+beeinflussen|beeinflusst · beeinflusste · hat beeinflusst|to influence|Die Werbung beeinflusst unsere Entscheidungen.|Advertising influences our decisions.|B|Die Werbung hat meine Entscheidung beeinflusst.|The advertising influenced my decision.
+behindern|behindert · behinderte · hat behindert|to obstruct, to hinder|Der Unfall behindert den Verkehr.|The accident is obstructing the traffic.|B|Der Unfall hat den Verkehr stundenlang behindert.|The accident held up the traffic for hours.
+beleidigen|beleidigt · beleidigte · hat beleidigt|to insult|Ich wollte dich nicht beleidigen.|I did not want to insult you.|B|Er hat mich vor allen Kollegen beleidigt.|He insulted me in front of all my colleagues.
+sich bemühen|bemüht sich · bemühte sich · hat sich bemüht|to make an effort (um + Akk.)|Er bemüht sich um eine neue Stelle.|He is making an effort to get a new job.|B|Er hat sich um eine neue Stelle bemüht.|He made an effort to get a new job.
+berechnen|berechnet · berechnete · hat berechnet|to calculate, to charge|Für die Lieferung berechnen wir zehn Euro.|We charge ten euros for delivery.|B|Für die Lieferung haben sie zehn Euro berechnet.|They charged ten euros for delivery.
+beschädigen|beschädigt · beschädigte · hat beschädigt|to damage|Der Sturm hat viele Dächer beschädigt.|The storm damaged many roofs.|B|Der Sturm hat viele Dächer beschädigt.|The storm damaged many roofs.
+besetzen|besetzt · besetzte · hat besetzt|to occupy, to fill|Die Stelle wurde schon besetzt.|The position has already been filled.|B|Die Firma hat die Stelle schon besetzt.|The company has already filled the post.
+bestrafen|bestraft · bestrafte · hat bestraft|to punish|Der Richter hat den Dieb bestraft.|The judge punished the thief.|B|Der Richter hat den Dieb bestraft.|The judge punished the thief.
+sich beteiligen|beteiligt sich · beteiligte sich · hat sich beteiligt|to take part (an + Dat.)|Alle beteiligen sich an den Kosten.|Everyone is contributing to the costs.|B|Alle haben sich an den Kosten beteiligt.|Everyone contributed to the costs.
+betrügen|betrügt · betrog · hat betrogen|to cheat, to deceive|Der Verkäufer hat seine Kunden betrogen.|The salesman cheated his customers.|B|Der Verkäufer hat seine Kunden betrogen.|The salesman cheated his customers.
+blitzen|blitzt · blitzte · hat geblitzt|to flash (lightning)|Draußen blitzt und donnert es.|There is thunder and lightning outside.|B|Draußen hat es geblitzt und gedonnert.|There was thunder and lightning outside.
+bluten|blutet · blutete · hat geblutet|to bleed|Dein Finger blutet ja!|Your finger is bleeding!|B|Mein Finger hat stark geblutet.|My finger bled heavily.
+blühen|blüht · blühte · hat geblüht|to bloom, to flower|Im Frühling blühen die Bäume im Park.|In spring the trees in the park are in bloom.|B|Im Frühling haben die Bäume im Park geblüht.|In spring the trees in the park were in bloom.
+darstellen|stellt dar · stellte dar · hat dargestellt|to show, to represent|Die Grafik stellt die Ergebnisse dar.|The chart shows the results.|B|Die Grafik hat die Ergebnisse klar dargestellt.|The chart showed the results clearly.
+dekorieren|dekoriert · dekorierte · hat dekoriert|to decorate|Wir dekorieren das Zimmer für die Party.|We are decorating the room for the party.|B|Wir haben das Zimmer für die Party dekoriert.|We decorated the room for the party.
+dienen|dient · diente · hat gedient|to serve (as)|Dieser Raum dient als Büro.|This room serves as an office.|B|Dieser Raum hat früher als Büro gedient.|This room used to serve as an office.
+duzen|duzt · duzte · hat geduzt|to address somebody as du|In unserer Firma duzen sich alle.|In our company everyone uses du with each other.|B|In meiner alten Firma haben sich alle geduzt.|At my old company everyone called each other du.
+eilen|eilt · eilte · ist geeilt|to hurry|Sie eilte sofort nach Hause.|She hurried home at once.|B|Sie ist sofort nach Hause geeilt.|She hurried home straight away.
+einbrechen|bricht ein · brach ein · ist eingebrochen|to break in (in + Akk.)|Jemand ist in unser Haus eingebrochen.|Somebody has broken into our house.|B|Jemand ist in unser Haus eingebrochen.|Someone broke into our house.
+einfügen|fügt ein · fügte ein · hat eingefügt|to insert|Bitte fügen Sie hier Ihren Namen ein.|Please insert your name here.|B|Ich habe hier meinen Namen eingefügt.|I have inserted my name here.
+einsetzen|setzt ein · setzte ein · hat eingesetzt|to put in, to use|Setzen Sie das richtige Wort ein.|Put in the correct word.|B|Ich habe das richtige Wort eingesetzt.|I put in the correct word.
+sich entschließen|entschließt sich · entschloss sich · hat sich entschlossen|to decide (zu + Dat.)|Sie hat sich zu einem Umzug entschlossen.|She has decided to move house.|B|Sie hat sich zu einem Umzug entschlossen.|She has decided to move.
+erleichtern|erleichtert · erleichterte · hat erleichtert|to make easier|Das neue Programm erleichtert die Arbeit.|The new programme makes the work easier.|B|Das neue Programm hat die Arbeit erleichtert.|The new program has made the work easier.
+erstellen|erstellt · erstellte · hat erstellt|to create, to draw up|Ich erstelle eine Liste mit allen Namen.|I am drawing up a list of all the names.|B|Ich habe eine Liste mit allen Namen erstellt.|I have drawn up a list of all the names.
+festsetzen|setzt fest · setzte fest · hat festgesetzt|to fix, to set|Wir müssen noch einen Termin festsetzen.|We still have to fix a date.|B|Wir haben einen Termin für Montag festgesetzt.|We have fixed an appointment for Monday.
+feststehen|steht fest · stand fest · hat festgestanden|to be certain, to be fixed|Der Termin steht noch nicht fest.|The date has not been fixed yet.|B|Der Termin hat lange nicht festgestanden.|The date wasn't fixed for a long time.
+finanzieren|finanziert · finanzierte · hat finanziert|to finance, to pay for|Meine Eltern finanzieren mein Studium.|My parents are paying for my studies.|B|Meine Eltern haben mein Studium finanziert.|My parents paid for my studies.
+fliehen|flieht · floh · ist geflohen|to flee, to escape|Viele Menschen sind vor dem Krieg geflohen.|Many people have fled from the war.|B|Viele Menschen sind vor dem Krieg geflohen.|Many people fled from the war.
+fließen|fließt · floss · ist geflossen|to flow|Der Rhein fließt durch Köln.|The Rhine flows through Cologne.|B|Nach dem Regen ist viel Wasser in den Keller geflossen.|After the rain a lot of water flowed into the cellar.
+fortsetzen|setzt fort · setzte fort · hat fortgesetzt|to continue|Nach der Pause setzen wir das Gespräch fort.|After the break we will continue the conversation.|B|Nach der Pause haben wir das Gespräch fortgesetzt.|After the break we continued the conversation.
+fotografieren|fotografiert · fotografierte · hat fotografiert|to photograph|Im Museum darf man nicht fotografieren.|You are not allowed to take photographs in the museum.|A|Im Museum habe ich viele Bilder fotografiert.|I photographed lots of pictures in the museum.
+frühstücken|frühstückt · frühstückte · hat gefrühstückt|to have breakfast|Am Sonntag frühstücken wir immer lange.|On Sundays we always have a long breakfast.|A|Am Sonntag haben wir lange gefrühstückt.|On Sunday we had a long breakfast.
+fürchten|fürchtet · fürchtete · hat gefürchtet|to fear, to be afraid|Ich fürchte, wir kommen zu spät.|I am afraid we are going to be late.|B|Als Kind habe ich die Dunkelheit gefürchtet.|As a child I was afraid of the dark.
+füttern|füttert · fütterte · hat gefüttert|to feed|Kannst du bitte die Katze füttern?|Can you feed the cat, please?|B|Hast du die Katze schon gefüttert?|Have you fed the cat yet?
+garantieren|garantiert · garantierte · hat garantiert|to guarantee|Ich kann Ihnen nichts garantieren.|I cannot guarantee you anything.|B|Der Verkäufer hat uns eine schnelle Lieferung garantiert.|The salesman guaranteed us fast delivery.
+gebrauchen|gebraucht · gebrauchte · hat gebraucht|to use|Das alte Fahrrad kann ich gut gebrauchen.|I can make good use of the old bicycle.|B|Er hat im Streit ein schlimmes Wort gebraucht.|He used a bad word during the argument.
+gelten|gilt · galt · hat gegolten|to be valid, to apply|Die Fahrkarte gilt nur heute.|The ticket is only valid today.|B|Die Fahrkarte hat nur gestern gegolten.|The ticket was only valid yesterday.
+genehmigen|genehmigt · genehmigte · hat genehmigt|to approve|Der Chef hat meinen Urlaub genehmigt.|The boss has approved my holiday.|B|Der Chef hat meinen Urlaub genehmigt.|The boss has approved my leave.
+genügen|genügt · genügte · hat genügt|to be enough|Ein kurzer Anruf genügt.|A short phone call is enough.|B|Ein kurzer Anruf hat genügt.|A quick phone call was enough.
+gießen|gießt · goss · hat gegossen|to water, to pour|Ich gieße die Blumen jeden zweiten Tag.|I water the flowers every other day.|B|Ich habe die Blumen gestern gegossen.|I watered the flowers yesterday.
+gratulieren|gratuliert · gratulierte · hat gratuliert|to congratulate (zu + Dat.)|Ich gratuliere dir herzlich zum Geburtstag.|I wish you a very happy birthday.|A|Ich habe ihr herzlich zum Geburtstag gratuliert.|I wished her a very happy birthday.
+greifen|greift · griff · hat gegriffen|to reach, to grab (nach + Dat.)|Das Kind greift nach dem Ball.|The child is reaching for the ball.|B|Das Kind hat nach dem Ball gegriffen.|The child reached for the ball.
+grillen|grillt · grillte · hat gegrillt|to barbecue, to grill|Am Wochenende grillen wir im Garten.|At the weekend we are having a barbecue in the garden.|A|Am Wochenende haben wir im Garten gegrillt.|At the weekend we had a barbecue in the garden.
+grüßen|grüßt · grüßte · hat gegrüßt|to greet, to say hello to|Unser Nachbar grüßt immer freundlich.|Our neighbour always says hello in a friendly way.|A|Unser Nachbar hat uns freundlich gegrüßt.|Our neighbour greeted us in a friendly way.
+gucken|guckt · guckte · hat geguckt|to look|Guck mal, da kommt der Bus!|Look, here comes the bus!|A|Ich habe schnell auf die Uhr geguckt.|I had a quick look at the clock.
+hassen|hasst · hasste · hat gehasst|to hate|Ich hasse es, früh aufzustehen.|I hate getting up early.|B|Als Kind habe ich Gemüse gehasst.|As a child I hated vegetables.
+heben|hebt · hob · hat gehoben|to lift, to raise|Ich kann den schweren Koffer nicht heben.|I cannot lift the heavy suitcase.|B|Er hat den schweren Koffer ins Auto gehoben.|He lifted the heavy suitcase into the car.
+heizen|heizt · heizte · hat geheizt|to heat|Im Winter heizen wir mit Gas.|In winter we heat with gas.|B|Im Winter haben wir mit Gas geheizt.|In winter we heated with gas.
+hochladen|lädt hoch · lud hoch · hat hochgeladen|to upload|Ich lade die Fotos später hoch.|I will upload the photos later.|B|Ich habe die Fotos gestern hochgeladen.|I uploaded the photos yesterday.
+hupen|hupt · hupte · hat gehupt|to sound the horn|Der Fahrer hinter uns hupt ständig.|The driver behind us keeps sounding his horn.|B|Der Fahrer hinter uns hat ständig gehupt.|The driver behind us kept sounding his horn.
+husten|hustet · hustete · hat gehustet|to cough|Das Kind hustet seit drei Tagen.|The child has been coughing for three days.|A|Das Kind hat die ganze Nacht gehustet.|The child coughed all night.
+installieren|installiert · installierte · hat installiert|to install|Ich muss das Programm neu installieren.|I have to install the programme again.|B|Ich habe das Programm neu installiert.|I have reinstalled the program.
+integrieren|integriert · integrierte · hat integriert|to integrate|Die Schule will alle Kinder gut integrieren.|The school wants to integrate all the children well.|B|Die Schule hat die neuen Kinder gut integriert.|The school integrated the new children well.
+klagen|klagt · klagte · hat geklagt|to complain (über + Akk.)|Sie klagt oft über Kopfschmerzen.|She often complains of headaches.|B|Sie hat oft über Kopfschmerzen geklagt.|She often complained of headaches.
+kleben|klebt · klebte · hat geklebt|to stick, to glue|Er klebt eine Briefmarke auf den Brief.|He is sticking a stamp on the letter.|B|Er hat eine Briefmarke auf den Brief geklebt.|He stuck a stamp on the letter.
+klettern|klettert · kletterte · ist geklettert|to climb|Die Kinder klettern auf den Baum.|The children are climbing up the tree.|B|Die Kinder sind auf den Baum geklettert.|The children climbed up the tree.
+klicken|klickt · klickte · hat geklickt|to click (auf + Akk.)|Klicken Sie bitte auf das Symbol.|Please click on the icon.|A|Ich habe auf das falsche Symbol geklickt.|I clicked on the wrong icon.
+klingeln|klingelt · klingelte · hat geklingelt|to ring|Es hat an der Tür geklingelt.|The doorbell rang.|A|Es hat an der Tür geklingelt.|The doorbell rang.
+klopfen|klopft · klopfte · hat geklopft|to knock|Jemand klopft an die Tür.|Somebody is knocking at the door.|A|Jemand hat an die Tür geklopft.|Someone knocked at the door.
+konsumieren|konsumiert · konsumierte · hat konsumiert|to consume|Wir konsumieren zu viel Zucker.|We consume too much sugar.|B|Früher haben wir zu viel Zucker konsumiert.|We used to consume too much sugar.
+küssen|küsst · küsste · hat geküsst|to kiss|Zum Abschied küsst sie ihre Kinder.|She kisses her children goodbye.|A|Zum Abschied hat sie ihre Kinder geküsst.|She kissed her children goodbye.
+sich langweilen|langweilt sich · langweilte sich · hat sich gelangweilt|to be bored|Ohne Handy langweilt er sich schnell.|Without his mobile he quickly gets bored.|B|Ohne Handy hat er sich schnell gelangweilt.|Without his mobile he quickly got bored.
+loben|lobt · lobte · hat gelobt|to praise|Die Lehrerin lobt die Schüler oft.|The teacher often praises the pupils.|B|Die Lehrerin hat die Schüler oft gelobt.|The teacher often praised the pupils.
+losfahren|fährt los · fuhr los · ist losgefahren|to set off, to drive off|Wir fahren morgen früh um sechs los.|We are setting off at six tomorrow morning.|A|Wir sind heute früh um sechs losgefahren.|We set off at six this morning.
+malen|malt · malte · hat gemalt|to paint|Meine Tochter malt gern Tiere.|My daughter likes painting animals.|A|Meine Tochter hat ein Pferd gemalt.|My daughter painted a horse.
+mischen|mischt · mischte · hat gemischt|to mix|Zuerst mischt man Mehl und Zucker.|First you mix flour and sugar.|B|Zuerst habe ich Mehl und Zucker gemischt.|First I mixed flour and sugar.
+nachschlagen|schlägt nach · schlug nach · hat nachgeschlagen|to look up|Ich schlage das Wort im Wörterbuch nach.|I am looking the word up in the dictionary.|B|Ich habe das Wort im Wörterbuch nachgeschlagen.|I looked the word up in the dictionary.
+nähen|näht · nähte · hat genäht|to sew|Meine Oma näht ihre Kleider selbst.|My grandma sews her dresses herself.|B|Meine Oma hat ihre Kleider selbst genäht.|My grandma sewed her dresses herself.
+sich nähern|nähert sich · näherte sich · hat sich genähert|to approach (+ Dat.)|Der Zug nähert sich dem Bahnhof.|The train is approaching the station.|B|Der Zug hat sich langsam dem Bahnhof genähert.|The train slowly approached the station.
+nützen|nützt · nützte · hat genützt|to be of use|Das Wörterbuch nützt mir sehr.|The dictionary is very useful to me.|B|Das Wörterbuch hat mir sehr genützt.|The dictionary was very useful to me.
+ordnen|ordnet · ordnete · hat geordnet|to put in order, to arrange|Ich muss meine Unterlagen ordnen.|I have to put my papers in order.|B|Ich habe meine Unterlagen geordnet.|I have put my documents in order.
+packen|packt · packte · hat gepackt|to pack|Hast du deinen Koffer schon gepackt?|Have you packed your suitcase yet?|A|Hast du deinen Koffer schon gepackt?|Have you packed your suitcase yet?
+parken|parkt · parkte · hat geparkt|to park|Hier darf man nicht parken.|You are not allowed to park here.|A|Ich habe direkt vor dem Haus geparkt.|I parked right in front of the house.
+passen|passt · passte · hat gepasst|to fit, to suit|Die Hose passt mir nicht mehr.|The trousers do not fit me any more.|A|Die Hose hat mir nicht mehr gepasst.|The trousers no longer fitted me.
+pflanzen|pflanzt · pflanzte · hat gepflanzt|to plant|Wir pflanzen einen Apfelbaum im Garten.|We are planting an apple tree in the garden.|B|Wir haben einen Apfelbaum im Garten gepflanzt.|We planted an apple tree in the garden.
+probieren|probiert · probierte · hat probiert|to try, to taste|Möchtest du den Kuchen probieren?|Would you like to try the cake?|A|Hast du den Kuchen schon probiert?|Have you tried the cake yet?
+protestieren|protestiert · protestierte · hat protestiert|to protest (gegen + Akk.)|Die Studenten protestieren gegen die neuen Gebühren.|The students are protesting against the new fees.|B|Die Studenten haben gegen die neuen Gebühren protestiert.|The students protested against the new fees.
+realisieren|realisiert · realisierte · hat realisiert|to realise, to carry out|Wir wollen das Projekt nächstes Jahr realisieren.|We want to carry out the project next year.|B|Wir haben das Projekt letztes Jahr realisiert.|We carried out the project last year.
+rechnen|rechnet · rechnete · hat gerechnet|to calculate, to expect (mit + Dat.)|Mit so viel Regen habe ich nicht gerechnet.|I did not expect so much rain.|A|Mit so viel Regen habe ich nicht gerechnet.|I didn't expect so much rain.
+reduzieren|reduziert · reduzierte · hat reduziert|to reduce|Das Geschäft hat alle Preise reduziert.|The shop has reduced all its prices.|B|Das Geschäft hat alle Preise reduziert.|The shop has reduced all its prices.
+regeln|regelt · regelte · hat geregelt|to sort out, to regulate|Das müssen wir noch heute regeln.|We have to sort that out today.|B|Das haben wir schon gestern geregelt.|We already sorted that out yesterday.
+schalten|schaltet · schaltete · hat geschaltet|to switch, to change gear|Die Ampel schaltet auf Grün.|The traffic lights are changing to green.|B|Die Ampel hat auf Grün geschaltet.|The traffic lights changed to green.
+schauen|schaut · schaute · hat geschaut|to look|Er schaut aus dem Fenster.|He is looking out of the window.|A|Er hat lange aus dem Fenster geschaut.|He looked out of the window for a long time.
+scheiden|scheidet · schied · hat geschieden|to divorce, to dissolve (a marriage)|Das Gericht hat die Ehe geschieden.|The court dissolved the marriage.|B|Das Gericht hat die Ehe geschieden.|The court dissolved the marriage.
+scheinen|scheint · schien · hat geschienen|to shine, to seem|Heute scheint den ganzen Tag die Sonne.|The sun is shining all day today.|A|Gestern hat den ganzen Tag die Sonne geschienen.|Yesterday the sun shone all day.
+schieben|schiebt · schob · hat geschoben|to push|Er schiebt sein Fahrrad den Berg hinauf.|He is pushing his bicycle up the hill.|B|Er hat sein Fahrrad über die Brücke geschoben.|He pushed his bike across the bridge.
+schießen|schießt · schoss · hat geschossen|to shoot, to score|Er hat zwei Tore geschossen.|He scored two goals.|B|Er hat zwei Tore geschossen.|He scored two goals.
+schimpfen|schimpft · schimpfte · hat geschimpft|to grumble, to scold (über + Akk.)|Der Nachbar schimpft über den Lärm.|The neighbour is grumbling about the noise.|B|Der Nachbar hat über den Lärm geschimpft.|The neighbour grumbled about the noise.
+sich schminken|schminkt sich · schminkte sich · hat sich geschminkt|to put on make-up|Sie schminkt sich jeden Morgen im Bad.|She puts on her make-up in the bathroom every morning.|B|Sie hat sich heute Morgen im Bad geschminkt.|She put on her make-up in the bathroom this morning.
+schneien|schneit · schneite · hat geschneit|to snow|In den Bergen schneit es seit gestern.|It has been snowing in the mountains since yesterday.|A|In den Bergen hat es gestern geschneit.|It snowed in the mountains yesterday.
+schweigen|schweigt · schwieg · hat geschwiegen|to be silent|Er schwieg und sah aus dem Fenster.|He was silent and looked out of the window.|B|Er hat die ganze Zeit geschwiegen.|He was silent the whole time.
+siegen|siegt · siegte · hat gesiegt|to win|Unsere Mannschaft hat gestern gesiegt.|Our team won yesterday.|B|Unsere Mannschaft hat gestern gesiegt.|Our team won yesterday.
+siezen|siezt · siezte · hat gesiezt|to address somebody as Sie|Ich sieze meine Chefin immer noch.|I still use Sie with my boss.|B|Ich habe meine Chefin jahrelang gesiezt.|For years I addressed my boss as Sie.
+singen|singt · sang · hat gesungen|to sing|Sie singt seit Jahren im Chor.|She has been singing in the choir for years.|A|Sie hat jahrelang im Chor gesungen.|She sang in the choir for years.
+sinken|sinkt · sank · ist gesunken|to sink, to fall|Die Temperaturen sinken heute Nacht unter null.|Temperatures will fall below zero tonight.|B|Die Temperaturen sind letzte Nacht unter null gesunken.|Temperatures fell below zero last night.
+spazieren|spaziert · spazierte · ist spaziert|to stroll|Wir sind durch die Altstadt spaziert.|We strolled through the old town.|A|Wir sind durch die Altstadt spaziert.|We strolled through the old town.
+spülen|spült · spülte · hat gespült|to wash up, to rinse|Ich koche und du spülst das Geschirr.|I cook and you do the washing-up.|A|Ich habe gekocht und du hast das Geschirr gespült.|I cooked and you washed the dishes.
+spüren|spürt · spürte · hat gespürt|to feel, to sense|Ich spüre einen Schmerz im Rücken.|I can feel a pain in my back.|B|Ich habe einen Schmerz im Rücken gespürt.|I felt a pain in my back.
+stammen|stammt · stammte · hat gestammt|to come from (aus + Dat.)|Meine Familie stammt aus Polen.|My family comes from Poland.|B|Sein Großvater hat aus Polen gestammt.|His grandfather came from Poland.
+starten|startet · startete · hat gestartet|to start|Er hat den Motor gestartet.|He started the engine.|A|Er hat den Motor gestartet.|He started the engine.
+staubsaugen|staubsaugt · staubsaugte · hat gestaubsaugt|to vacuum, to hoover|Ich staubsauge jeden Samstag die Wohnung.|I hoover the flat every Saturday.|B|Ich habe am Samstag die Wohnung gestaubsaugt.|I hoovered the flat on Saturday.
+stechen|sticht · stach · hat gestochen|to sting, to prick|Eine Biene hat mich gestochen.|A bee stung me.|B|Eine Biene hat mich gestochen.|A bee stung me.
+stecken|steckt · steckte · hat gesteckt|to put, to be stuck|Der Schlüssel steckt noch in der Tür.|The key is still in the door.|B|Der Schlüssel hat noch in der Tür gesteckt.|The key was still in the door.
+stehlen|stiehlt · stahl · hat gestohlen|to steal|Jemand hat mein Fahrrad gestohlen.|Somebody has stolen my bicycle.|B|Jemand hat mein Fahrrad gestohlen.|Someone has stolen my bike.
+stimmen|stimmt · stimmte · hat gestimmt|to be right, to be correct|Die Rechnung stimmt leider nicht.|Unfortunately the bill is not right.|A|Die Rechnung hat leider nicht gestimmt.|Unfortunately the bill wasn't right.
+stinken|stinkt · stank · hat gestunken|to stink, to smell bad|Der Müll in der Küche stinkt.|The rubbish in the kitchen stinks.|B|Der Müll in der Küche hat gestunken.|The rubbish in the kitchen stank.
+stoppen|stoppt · stoppte · hat gestoppt|to stop|Die Polizei hat den Wagen gestoppt.|The police stopped the car.|B|Die Polizei hat den Wagen gestoppt.|The police stopped the car.
+stoßen|stößt · stieß · hat gestoßen|to push, to bump|Er hat mich aus Versehen gestoßen.|He pushed me by accident.|B|Er hat mich aus Versehen gestoßen.|He pushed me by accident.
+stürzen|stürzt · stürzte · ist gestürzt|to fall|Sie ist mit dem Fahrrad gestürzt.|She fell off her bicycle.|B|Sie ist mit dem Fahrrad gestürzt.|She fell off her bike.
+tanken|tankt · tankte · hat getankt|to fill up (with petrol)|Wir müssen vor der Fahrt noch tanken.|We still have to fill up before the journey.|A|Wir haben vor der Fahrt noch getankt.|We filled up before the journey.
+tauchen|taucht · tauchte · ist getaucht|to dive|Im Urlaub sind wir im Meer getaucht.|On holiday we went diving in the sea.|B|Im Urlaub sind wir im Meer getaucht.|On holiday we went diving in the sea.
+testen|testet · testete · hat getestet|to test|Wir testen das neue Gerät zuerst.|We are testing the new device first.|B|Wir haben das neue Gerät zuerst getestet.|We tested the new device first.
+tippen|tippt · tippte · hat getippt|to type|Sie tippt sehr schnell auf dem Handy.|She types very fast on her mobile.|B|Sie hat die Nachricht schnell auf dem Handy getippt.|She quickly typed the message on her mobile.
+trainieren|trainiert · trainierte · hat trainiert|to train|Er trainiert dreimal pro Woche.|He trains three times a week.|A|Er hat dreimal pro Woche trainiert.|He trained three times a week.
+umarmen|umarmt · umarmte · hat umarmt|to hug|Zur Begrüßung umarmt sie ihre Freundin.|She hugs her friend to say hello.|B|Zur Begrüßung hat sie ihre Freundin umarmt.|She hugged her friend to say hello.
+umdrehen|dreht um · drehte um · hat umgedreht|to turn over, to turn round|Bitte drehen Sie das Blatt um.|Please turn the sheet over.|B|Ich habe das Blatt umgedreht.|I turned the sheet over.
+umgehen|geht um · ging um · ist umgegangen|to deal with, to handle (mit + Dat.)|Sie kann gut mit Kindern umgehen.|She is good with children.|B|Sie ist immer gut mit Kindern umgegangen.|She has always been good with children.
+unterlassen|unterlässt · unterließ · hat unterlassen|to refrain from|Bitte unterlassen Sie das Rauchen.|Please refrain from smoking.|B|Er hat es unterlassen, uns zu informieren.|He failed to inform us.
+unterstreichen|unterstreicht · unterstrich · hat unterstrichen|to underline|Unterstreichen Sie bitte alle Verben im Text.|Please underline all the verbs in the text.|B|Ich habe alle Verben im Text unterstrichen.|I underlined all the verbs in the text.
+verbrennen|verbrennt · verbrannte · hat verbrannt|to burn|Er hat die alten Briefe verbrannt.|He burnt the old letters.|B|Er hat die alten Briefe verbrannt.|He burnt the old letters.
+vergrößern|vergrößert · vergrößerte · hat vergrößert|to enlarge|Kannst du das Foto vergrößern?|Can you enlarge the photo?|B|Ich habe das Foto für dich vergrößert.|I have enlarged the photo for you.
+verhaften|verhaftet · verhaftete · hat verhaftet|to arrest|Die Polizei hat zwei Männer verhaftet.|The police have arrested two men.|B|Die Polizei hat zwei Männer verhaftet.|The police arrested two men.
+sich verhalten|verhält sich · verhielt sich · hat sich verhalten|to behave|Er hat sich sehr höflich verhalten.|He behaved very politely.|B|Er hat sich sehr höflich verhalten.|He behaved very politely.
+sich verlaufen|verläuft sich · verlief sich · hat sich verlaufen|to get lost (on foot)|Wir haben uns im Wald verlaufen.|We got lost in the woods.|B|Wir haben uns im Wald verlaufen.|We got lost in the woods.
+vermuten|vermutet · vermutete · hat vermutet|to suspect, to assume|Ich vermute, dass er krank ist.|I suspect that he is ill.|B|Das habe ich schon lange vermutet.|I have suspected that for a long time.
+verpacken|verpackt · verpackte · hat verpackt|to pack, to wrap|Ich verpacke das Geschenk heute Abend.|I am wrapping the present this evening.|B|Ich habe das Geschenk gestern Abend verpackt.|I wrapped the present last night.
+verpflegen|verpflegt · verpflegte · hat verpflegt|to feed, to cater for|Das Hotel verpflegt seine Gäste sehr gut.|The hotel feeds its guests very well.|B|Das Hotel hat seine Gäste sehr gut verpflegt.|The hotel catered very well for its guests.
+verraten|verrät · verriet · hat verraten|to reveal, to betray|Ich verrate dir ein Geheimnis.|I am going to tell you a secret.|B|Ich habe ihm das Geheimnis nicht verraten.|I didn't tell him the secret.
+verreisen|verreist · verreiste · ist verreist|to go away (on a trip)|Unsere Nachbarn sind für zwei Wochen verreist.|Our neighbours have gone away for two weeks.|B|Unsere Nachbarn sind für zwei Wochen verreist.|Our neighbours have gone away for two weeks.
+verschmutzen|verschmutzt · verschmutzte · hat verschmutzt|to pollute, to make dirty|Zu viele Autos verschmutzen die Luft.|Too many cars pollute the air.|B|Zu viele Autos haben die Luft verschmutzt.|Too many cars have polluted the air.
+versichern|versichert · versicherte · hat versichert|to insure, to assure|Wir haben das Haus gegen Feuer versichert.|We have insured the house against fire.|B|Wir haben das Haus gegen Feuer versichert.|We have insured the house against fire.
+verstecken|versteckt · versteckte · hat versteckt|to hide|Sie versteckt die Geschenke im Schrank.|She is hiding the presents in the wardrobe.|B|Sie hat die Geschenke im Schrank versteckt.|She hid the presents in the cupboard.
+versäumen|versäumt · versäumte · hat versäumt|to miss|Er hat wegen der Krankheit viel Unterricht versäumt.|He missed a lot of lessons because of his illness.|B|Er hat wegen der Krankheit viel Unterricht versäumt.|He missed a lot of lessons because of his illness.
+vertreten|vertritt · vertrat · hat vertreten|to stand in for, to represent|Frau Lang vertritt heute unseren Lehrer.|Ms Lang is standing in for our teacher today.|B|Frau Lang hat gestern unseren Lehrer vertreten.|Mrs Lang stood in for our teacher yesterday.
+verursachen|verursacht · verursachte · hat verursacht|to cause|Wer hat den Unfall verursacht?|Who caused the accident?|B|Wer hat den Unfall verursacht?|Who caused the accident?
+verurteilen|verurteilt · verurteilte · hat verurteilt|to sentence, to condemn|Das Gericht verurteilte ihn zu einer Geldstrafe.|The court sentenced him to a fine.|B|Das Gericht hat ihn zu einer Geldstrafe verurteilt.|The court sentenced him to pay a fine.
+verwechseln|verwechselt · verwechselte · hat verwechselt|to mix up, to confuse (mit + Dat.)|Ich verwechsle ihn immer mit seinem Bruder.|I always mix him up with his brother.|B|Ich habe ihn mit seinem Bruder verwechselt.|I mixed him up with his brother.
+verzeihen|verzeiht · verzieh · hat verziehen|to forgive|Kannst du mir bitte verzeihen?|Can you please forgive me?|B|Sie hat mir den Fehler verziehen.|She forgave me for the mistake.
+vorkommen|kommt vor · kam vor · ist vorgekommen|to happen, to occur|So etwas kommt bei uns selten vor.|That sort of thing rarely happens here.|B|So etwas ist bei uns selten vorgekommen.|That sort of thing has rarely happened here.
+vorlesen|liest vor · las vor · hat vorgelesen|to read aloud|Abends liest er den Kindern eine Geschichte vor.|In the evening he reads the children a story.|A|Abends hat er den Kindern eine Geschichte vorgelesen.|In the evening he read the children a story.
+wandern|wandert · wanderte · ist gewandert|to hike|Wir sind drei Stunden durch den Wald gewandert.|We hiked through the forest for three hours.|A|Wir sind drei Stunden durch den Wald gewandert.|We hiked through the forest for three hours.
+wecken|weckt · weckte · hat geweckt|to wake (somebody) up|Kannst du mich um sieben Uhr wecken?|Can you wake me at seven o'clock?|A|Meine Mutter hat mich um sieben Uhr geweckt.|My mother woke me up at seven o'clock.
+sich weigern|weigert sich · weigerte sich · hat sich geweigert|to refuse|Er weigert sich, die Rechnung zu bezahlen.|He refuses to pay the bill.|B|Er hat sich geweigert, die Rechnung zu bezahlen.|He refused to pay the bill.
+weinen|weint · weinte · hat geweint|to cry|Das Baby weint schon wieder.|The baby is crying again.|A|Das Baby hat die ganze Nacht geweint.|The baby cried all night.
+wetten|wettet · wettete · hat gewettet|to bet|Ich wette, dass er wieder zu spät kommt.|I bet he will be late again.|B|Ich habe mit ihm um zehn Euro gewettet.|I bet him ten euros.
+widersprechen|widerspricht · widersprach · hat widersprochen|to contradict (+ Dat.)|Da muss ich Ihnen leider widersprechen.|I am afraid I have to disagree with you there.|B|Da habe ich ihm sofort widersprochen.|I contradicted him on that straight away.
+winken|winkt · winkte · hat gewinkt|to wave|Die Kinder winken dem Zug.|The children are waving at the train.|B|Die Kinder haben dem Zug gewinkt.|The children waved at the train.
+wirken|wirkt · wirkte · hat gewirkt|to work, to seem|Die Tablette wirkt nach einer halben Stunde.|The tablet works after half an hour.|B|Die Tablette hat nach einer halben Stunde gewirkt.|The tablet worked after half an hour.
+zeichnen|zeichnet · zeichnete · hat gezeichnet|to draw|Sie zeichnet ein Haus mit Garten.|She is drawing a house with a garden.|A|Sie hat ein Haus mit Garten gezeichnet.|She drew a house with a garden.
+zelten|zeltet · zeltete · hat gezeltet|to camp|Im Sommer zelten wir am See.|In summer we go camping by the lake.|B|Im Sommer haben wir am See gezeltet.|In summer we camped by the lake.
+zubereiten|bereitet zu · bereitete zu · hat zubereitet|to prepare (food)|Er bereitet das Abendessen für die Gäste zu.|He is preparing dinner for the guests.|B|Er hat das Abendessen für die Gäste zubereitet.|He prepared dinner for the guests.
+zugehen|geht zu · ging zu · ist zugegangen|to walk up to (auf + Akk.)|Sie ging freundlich auf die neuen Nachbarn zu.|She walked up to the new neighbours in a friendly way.|B|Sie ist freundlich auf die neuen Nachbarn zugegangen.|She walked up to the new neighbours in a friendly way.
+zumachen|macht zu · machte zu · hat zugemacht|to close, to shut|Mach bitte das Fenster zu.|Please shut the window.|A|Ich habe das Fenster zugemacht.|I have closed the window.
+zweifeln|zweifelt · zweifelte · hat gezweifelt|to doubt (an + Dat.)|Ich zweifle an seiner Geschichte.|I doubt his story.|B|Ich habe lange an seiner Geschichte gezweifelt.|I doubted his story for a long time.
+zwingen|zwingt · zwang · hat gezwungen|to force (zu + Dat.)|Niemand kann dich dazu zwingen.|Nobody can force you to do that.|B|Niemand hat dich dazu gezwungen.|Nobody forced you to do it.
+überqueren|überquert · überquerte · hat überquert|to cross|Überqueren Sie die Straße nur bei Grün.|Only cross the road when the light is green.|B|Wir haben die Straße bei Grün überquert.|We crossed the road when the light was green.
+überreden|überredet · überredete · hat überredet|to persuade|Sie hat mich zum Mitkommen überredet.|She persuaded me to come along.|B|Sie hat mich zum Mitkommen überredet.|She persuaded me to come along.
+übertreiben|übertreibt · übertrieb · hat übertrieben|to exaggerate|Du übertreibst mal wieder!|You are exaggerating again!|B|Du hast mal wieder übertrieben!|You've exaggerated yet again!`;
 const ADJS = `zuverlässig|unzuverlässig|reliable|Meine Kollegin ist sehr zuverlässig.|My colleague is very reliable.|B
 pünktlich|unpünktlich|punctual, on time|Bitte seien Sie morgen pünktlich.|Please be on time tomorrow.|B
 selbstständig|angestellt|self-employed; independent|Er arbeitet seit zwei Jahren selbstständig.|He has been self-employed for two years.|B

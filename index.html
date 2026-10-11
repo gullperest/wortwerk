@@ -24,6 +24,7 @@
   --die:#c22f3c; --die-bg:#fbe6e8;
   --das:#1b7f52; --das-bg:#e0f3ea;
   --mark:#b77a00; --mark-bg:#fbf0d2;
+  --vio:#6a45c2; --vio-bg:#ece6fa; --teal:#0f7f86; --teal-bg:#dcf2f3;
   --ui:"Barlow","Helvetica Neue",Arial,sans-serif;
   --word:"Bitter",Georgia,"Times New Roman",serif;
 }
@@ -35,6 +36,7 @@
     --die:#f38891; --die-bg:#3f2025;
     --das:#62cf9d; --das-bg:#17362a;
     --mark:#e9b84a; --mark-bg:#3a2f14;
+    --vio:#b49cf5; --vio-bg:#2b2346; --teal:#5fcad1; --teal-bg:#143538;
     color-scheme:dark;
   }
 }
@@ -45,6 +47,7 @@
   --die:#f38891; --die-bg:#3f2025;
   --das:#62cf9d; --das-bg:#17362a;
   --mark:#e9b84a; --mark-bg:#3a2f14;
+    --vio:#b49cf5; --vio-bg:#2b2346; --teal:#5fcad1; --teal-bg:#143538;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -144,6 +147,18 @@ form.write input{width:100%;padding:12px 14px;border:2px solid var(--line);borde
 .keys button:disabled{opacity:.25;cursor:default}
 .keys button.der{color:var(--der);border-color:var(--der)} .keys button.die{color:var(--die);border-color:var(--die)} .keys button.das{color:var(--das);border-color:var(--das)}
 .profile{display:flex;flex-direction:column;gap:8px}
+details.rounds{border:1px solid var(--line);border-radius:24px;background:var(--bg)}
+details.rounds summary{padding:12px 18px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+details.rounds summary small{color:var(--muted);font-weight:500}
+.rlist{display:flex;flex-direction:column;gap:8px;padding:2px 8px 10px}
+.rlist .sub{padding:0 10px 4px}
+.rbar{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:2px 12px;align-items:center;width:100%;border:0;border-radius:999px;padding:9px 18px;text-align:left;background:var(--c-bg);color:var(--ink)}
+.rbar .g{font-weight:600;min-width:0}
+.rbar small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
+.rbar .tag{font-weight:700;font-size:.85rem;color:var(--c)}
+.rbar .sc{font-variant-numeric:tabular-nums;font-weight:600}
+.m-cards{--c:var(--mark);--c-bg:var(--mark-bg)} .m-article{--c:var(--der);--c-bg:var(--der-bg)} .m-meaning{--c:var(--das);--c-bg:var(--das-bg)}
+.m-write{--c:var(--teal);--c-bg:var(--teal-bg)} .m-perfekt{--c:var(--vio);--c-bg:var(--vio-bg)} .m-poss{--c:var(--die);--c-bg:var(--die-bg)}
 .rnd{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 14px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .rnd .g{font-weight:600}
 .rnd small{display:block;font-weight:400;color:var(--muted);font-size:.82rem}
@@ -210,7 +225,7 @@ footer .row>*{flex:0 0 auto}
 <script>
 const NOUN_TOPICS = DATA.map((t,i)=>({id:i,de:t[0],en:t[1]}));
 const TOPICS = NOUN_TOPICS.concat([{id:DATA.length,de:"Verben",en:"Verbs"},{id:DATA.length+1,de:"Adjektive",en:"Adjectives"},{id:DATA.length+2,de:"Andere Wörter",en:"Other words"},{id:DATA.length+3,de:"Meine Wörter",en:"My words"}]);
-const plain=(src,kind,topic)=>src.split("\n").filter(Boolean).map(l=>{const [de,pl,en,ex,tr,lv]=l.split("|");return {kind,art:"",de,pl,en,ex,tr,lv,topic};});
+const plain=(src,kind,topic)=>src.split("\n").filter(Boolean).map(l=>{const [de,pl,en,ex,tr,lv,pex,ptr]=l.split("|");return {kind,art:"",de,pl,en,ex,tr,lv,pex,ptr,topic};});
 const WORDS = DATA.flatMap((t,i)=>t[2].split("\n").map(l=>{const [art,de,pl,en,ex,tr,lv]=l.split("|");return {kind:"noun",art,de,pl,en,ex,tr,lv,topic:i};}))
   .concat(plain(VERBS,"verb",DATA.length),plain(ADJS,"adj",DATA.length+1),plain(OTHERS,"other",DATA.length+2));
 // Progress id: the word itself, except when two sections share a spelling (verb "sein" and possessive "sein").
@@ -255,7 +270,7 @@ function tipFor(w){
   return "";
 }
 
-const VERSION="20";
+const VERSION="21";
 const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
 const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["poss","Possessiv"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
 let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false,exam:"",day:{d:"",n:0},mine:[],rounds:[],roundNo:0};
@@ -417,11 +432,12 @@ function replayRound(id){
   startRound(shuffle(queue),r); render();
 }
 const NAMES=Object.fromEntries(KINDS.concat(MODES));
+let roundsOpen=false;
 function roundsHtml(){
-  const rs=(store.rounds||[]).slice(0,12);
-  if(!rs.length) return `<div class="profile"><div class="meta"><span>Rounds</span><span></span></div><div class="sub">Finish a round and it appears here, ready to repeat.</div></div>`;
-  return `<div class="profile"><div class="meta"><span>Rounds</span><span>right first time</span></div>`+rs.map(r=>
-    `<div class="rnd"><span class="g">Round ${r.no}<small>${esc(NAMES[r.kind]||"")} · ${esc(NAMES[r.mode]||"")} · ${esc(r.d.slice(8)+"."+r.d.slice(5,7)+".")}</small></span><span class="sc">${r.scores.join(" → ")} / ${r.size}</span><button class="link" data-act="replay" data-id="${r.id}">Repeat</button></div>`).join("")+`</div>`;
+  const rs=(store.rounds||[]).slice(0,30);
+  return `<details class="rounds" id="roundsBox"${roundsOpen?" open":""}><summary><span>Rounds</span><small>${rs.length||"none yet"}</small></summary><div class="rlist">`+
+    (rs.length?rs.map(r=>`<button class="rbar m-${r.mode}" data-act="replay" data-id="${r.id}" aria-label="Repeat round ${r.no}"><span class="g">Round ${r.no}<small>${esc(NAMES[r.kind]||"")} · ${esc(r.d.slice(8)+"."+r.d.slice(5,7)+".")}</small></span><span class="tag">${esc(NAMES[r.mode]||"")}</span><span class="sc">${r.scores.join(" → ")} / ${r.size}</span></button>`).join("")
+      :`<div class="sub">Finish a round and it appears here. Tap a round to repeat it.</div>`)+`</div></details>`;
 }
 function newRound(){
   const now=Date.now(), all=store.mode==="poss"?POSS:pool();
@@ -493,7 +509,7 @@ const head=w=>`<div class="meta"><span>${esc(TOPICS[w.topic].de)}</span><span>${
 const ik=w=>w.sk||w.kind;
 const info=w=>!w.pl||ik(w)==="adj"?"":w.pl==="–"?(ik(w)==="noun"?`<div class="sub">Plural: not used</div>`:""):w.pl==="nur Plural"?`<div class="sub">Plural only</div>`:`<div class="sub">${INFO[ik(w)]}: ${esc(w.pl)}</div>`;
 const full=w=>`<p class="big">${w.art?`<span class="art ${w.art}">${w.art}</span> `:""}${esc(w.de)}</p>${info(w)}`;
-const exBlock=w=>!w.ex?"":`<div class="ex"><p lang="de">${esc(w.ex)}</p>${S.tr&&w.tr?`<p class="tr">${esc(w.tr)}</p>`:""}${w.tr?`<button class="link" data-act="tr" aria-expanded="${S.tr}">${S.tr?"Hide translation":"Show English translation"}</button>`:""}</div>`;
+const exBlock=(w,ex=w.ex,tr=w.tr)=>!ex?"":`<div class="ex"><p lang="de">${esc(ex)}</p>${S.tr&&tr?`<p class="tr">${esc(tr)}</p>`:""}${tr?`<button class="link" data-act="tr" aria-expanded="${S.tr}">${S.tr?"Hide translation":"Show English translation"}</button>`:""}</div>`;
 function reveal(w,withEn){
   const tip=tipFor(w);
   return `<div class="prompt ${w.art}">${full(w)}${withEn?`<div class="en">${esc(w.en)}</div>`:""}${sayBtn(w)}</div>
@@ -548,7 +564,7 @@ function render(){
   }
   if(store.mode==="perfekt"){
     const done=S.phase==="shown";
-    h+=done?`<div class="prompt"><p class="big">${esc(perfText(w))}</p><div class="sub">${esc(w.de)} · ${esc(w.en)}</div>${canSpeak?`<button class="say" data-act="say" data-t="${esc(perfText(w))}">Listen</button>`:""}</div>${exBlock(w)}`
+    h+=done?`<div class="prompt"><p class="big">${esc(perfText(w))}</p><div class="sub">${esc(w.de)} · ${esc(w.en)}</div>${canSpeak?`<button class="say" data-act="say" data-t="${esc(perfText(w))}">Listen</button>`:""}</div>${w.pex?exBlock(w,w.pex,w.ptr):exBlock(w)}`
            :`<div class="prompt"><div class="sub">Perfekt: er …</div><p class="big">${esc(w.de)}</p><div class="en">${esc(w.en)}</div></div>`;
     if(done) h+=`<div class="verdict ${S.verdict?"ok":"no"}">${esc(S.msg)}</div>`;
     h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt popt ${done&&o===S.correct?"hit":""} ${done&&o===S.picked&&o!==S.correct?"miss":""}" data-act="popt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
@@ -660,6 +676,7 @@ document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventD
     store.mode="list"; save(); S=null; delAsk=""; render(); mineMsg=""; const f=$("mineDe"); if(f) f.focus();
   }
 });
+document.addEventListener("toggle",e=>{ if(e.target.id==="roundsBox") roundsOpen=e.target.open; },true);
 document.addEventListener("change",e=>{ if(e.target.id==="exam"){store.exam=e.target.value;save();render();} });
 document.addEventListener("input",e=>{
   if(e.target.id==="answer") updateTiles();
