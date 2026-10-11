@@ -144,6 +144,10 @@ form.write input{width:100%;padding:12px 14px;border:2px solid var(--line);borde
 .keys button:disabled{opacity:.25;cursor:default}
 .keys button.der{color:var(--der);border-color:var(--der)} .keys button.die{color:var(--die);border-color:var(--die)} .keys button.das{color:var(--das);border-color:var(--das)}
 .profile{display:flex;flex-direction:column;gap:8px}
+.rnd{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 14px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.rnd .g{font-weight:600}
+.rnd small{display:block;font-weight:400;color:var(--muted);font-size:.82rem}
+.rnd .sc{font-variant-numeric:tabular-nums;font-weight:600}
 .today{margin-left:auto;font-size:.85rem;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums}
 #profileBtn[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .spacer{flex:1}
@@ -253,7 +257,7 @@ function tipFor(w){
 
 const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
 const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["poss","Possessiv"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
-let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false,exam:"",day:{d:"",n:0},mine:[]};
+let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false,exam:"",day:{d:"",n:0},mine:[],rounds:[],roundNo:0};
 try{const s=JSON.parse(localStorage.getItem("b1wortschatz")||"null"); if(s&&s.p) store=Object.assign(store,s);}catch(e){}
 // Words the learner typed in themselves ("Meine"): stored on the device, practised like the rest.
 const mineWord=e=>({kind:"mine",art:e.art||"",de:e.de,pl:e.pl||"",en:e.en,ex:e.ex||"",tr:e.tr||"",lv:"B",sk:e.sk||"",topic:DATA.length+3});
@@ -298,6 +302,8 @@ function plan(){
 }
 function grade(w,ok){
   if(!store.p[key(w)]&&store.mode!=="perfekt"&&w.kind!=="mine"&&w.kind!=="poss"){const t=todayStr(); if(!store.day||store.day.d!==t) store.day={d:t,n:0}; store.day.n++;}
+  // repeating a saved round is a self-check: a right answer does not push the word further away
+  if(S&&S.replay&&ok&&store.p[key(w)]) return;
   const p=prog(w); const box=ok?Math.min(5,p.box+1):1;
   store.p[key(w)]={box,due:Date.now()+GAPS[box]*DAY}; save();
 }
@@ -382,14 +388,46 @@ document.addEventListener("visibilitychange",()=>{
 });
 
 let S=null, query="", confirmReset=false;
+function startRound(queue,round){
+  S={queue,words:queue.slice(),i:0,size:queue.length,right:0,misses:[],retried:new Set(),phase:"ask",picked:null,opts:null,verdict:null,tr:false,
+     replay:!!round,roundId:round?round.id:null,saved:false};
+  prep();
+}
+// Finished rounds are kept so the same words can be asked again and the scores compared.
+function saveRound(){
+  if(S.saved||!S.size) return; S.saved=true;
+  if(!Array.isArray(store.rounds)) store.rounds=[];
+  let r=store.rounds.find(x=>x.id===S.roundId);
+  if(r){ r.scores.push(S.right); if(r.scores.length>6) r.scores.splice(1,1); }
+  else{
+    store.roundNo=(store.roundNo||0)+1;
+    r={id:Date.now(),no:store.roundNo,d:todayStr(),mode:store.mode,kind:store.kind,ids:S.words.map(bk),size:S.size,scores:[S.right]};
+    store.rounds.unshift(r); if(store.rounds.length>30) store.rounds.length=30;
+    S.roundId=r.id;
+  }
+  save();
+}
+function replayRound(id){
+  const r=(store.rounds||[]).find(x=>x.id===id); if(!r) return;
+  const src=r.mode==="poss"?POSS:WORDS.filter(w=>w.kind===r.kind);
+  const queue=r.ids.map(k=>src.find(w=>bk(w)===k)).filter(Boolean);
+  if(!queue.length) return;
+  store.kind=r.kind; store.mode=r.mode; save();
+  startRound(shuffle(queue),r); render();
+}
+const NAMES=Object.fromEntries(KINDS.concat(MODES));
+function roundsHtml(){
+  const rs=(store.rounds||[]).slice(0,12); if(!rs.length) return "";
+  return `<div class="profile"><div class="meta"><span>Rounds</span><span>right first time</span></div>`+rs.map(r=>
+    `<div class="rnd"><span class="g">Round ${r.no}<small>${esc(NAMES[r.kind]||"")} · ${esc(NAMES[r.mode]||"")} · ${esc(r.d.slice(8)+"."+r.d.slice(5,7)+".")}</small></span><span class="sc">${r.scores.join(" → ")} / ${r.size}</span><button class="link" data-act="replay" data-id="${r.id}">Repeat</button></div>`).join("")+`</div>`;
+}
 function newRound(){
   const now=Date.now(), all=store.mode==="poss"?POSS:pool();
   const due=shuffle(all.filter(w=>prog(w).box>0&&prog(w).due<=now)).sort((a,b)=>prog(a).box-prog(b).box);
   const fresh=shuffle(all.filter(w=>prog(w).box===0));
   const later=all.filter(w=>prog(w).box>0&&prog(w).due>now).sort((a,b)=>prog(a).due-prog(b).due);
   const queue=shuffle(due.concat(fresh,later).slice(0,ROUND));
-  S={queue,i:0,size:queue.length,right:0,misses:[],retried:new Set(),phase:"ask",picked:null,opts:null,verdict:null,tr:false};
-  prep();
+  startRound(queue,null);
 }
 function prep(){
   S.phase="ask";S.picked=null;S.verdict=null;S.opts=null;S.tr=false;
@@ -400,8 +438,8 @@ function prep(){
     const f=perf(w), other=f.aux==="hat"?"ist":"hat";
     const wrong=/en$/.test(f.part)?f.part.replace(/en$/,"t"):/t$/.test(f.part)?f.part.replace(/t$/,"en"):f.part.replace(/.$/,"t");
     const form=(a,pt)=>[a,f.mid,pt].filter(Boolean).join(" ");
-    S.right=form(f.aux,f.part);
-    S.opts=shuffle([S.right,form(other,f.part),form(f.aux,wrong),form(other,wrong)]);
+    S.correct=form(f.aux,f.part);
+    S.opts=shuffle([S.correct,form(other,f.part),form(f.aux,wrong),form(other,wrong)]);
   }
   if(store.mode==="meaning"){
     const others=shuffle(WORDS.filter(x=>(w.kind==="mine"||x.kind===w.kind)&&x.en!==w.en)).slice(0,3).map(x=>x.en);
@@ -415,7 +453,7 @@ function answer(ok){
   if(first){ if(ok) S.right++; else {S.misses.push(w); S.retried.add(w.de); S.queue.push(w);} }
   S.phase="shown"; S.verdict=ok;
 }
-function next(){S.i++;prep();render();}
+function next(){S.i++;if(S.i>=S.queue.length)saveRound();prep();render();}
 
 function stats(list,pre=""){
   const now=Date.now(); let m=0,l=0,d=0;
@@ -431,6 +469,7 @@ function renderProfile(st){
   (()=>{const k=stats(WORDS.filter(w=>w.kind==="verb"&&active(w)),"perf:");return `<div class="profile"><div class="meta"><span>Perfekt</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   (()=>{const k=stats(POSS);return `<div class="profile"><div class="meta"><span>Possessiv</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   (()=>{const pl=plan();return `<div class="profile"><div class="meta"><span>Exam date</span><span>${pl?(pl.left>=0?pl.left+" days left":"passed"):"not set"}</span></div><input class="search" type="date" id="exam" value="${esc(store.exam||"")}" aria-label="Exam date">${pl&&pl.left>=0?`<div class="meta"><span>New words today</span><span>${pl.done} / ${pl.target}</span></div><div class="bar"><i class="m" style="width:${Math.min(100,pl.done/Math.max(1,pl.target)*100)}%"></i></div>`:""}</div>`;})()+
+  roundsHtml()+
   `<div class="sub">Correct words return after 1, 2, 4, 7 and 14 days.</div><div class="spacer"></div><div class="row">`+
   (confirmReset
     ?`<button class="btn" data-act="reset-no">Keep progress</button><button class="btn primary" data-act="reset-yes">Erase everything</button>`
@@ -469,9 +508,10 @@ function render(){
   if(!S) newRound();
   const w=S.queue[S.i];
   if(!w){
-    st.innerHTML=`<div class="done"><h2>${S.right} of ${S.size} right first time</h2></div>`+
+    const rr=(store.rounds||[]).find(x=>x.id===S.roundId);
+    st.innerHTML=`<div class="done"><h2>${S.right} of ${S.size} right first time</h2>${rr?`<div class="sub">Round ${rr.no}${rr.scores.length>1?" · "+rr.scores.join(" → "):""}</div>`:""}</div>`+
       (S.misses.length?`<div class="sub">Worth another look:</div><ul class="miss">${S.misses.map(x=>`<li><span><b class="${x.art}">${x.art}</b> ${esc(x.kind==="poss"?x.de.replace("___",x.ans):x.de)}</span><span class="sub">${esc(x.en)}</span></li>`).join("")}</ul>`:`<div class="sub">No misses in this round.</div>`)+
-      `<div class="spacer"></div><div class="row"><button class="btn primary" data-act="again" id="nextBtn">Next round <kbd>Enter</kbd></button></div>`;
+      `<div class="spacer"></div><div class="row">${S.roundId?`<button class="btn" data-act="replay" data-id="${S.roundId}">Repeat this round</button>`:""}<button class="btn primary" data-act="again" id="nextBtn">Next round <kbd>Enter</kbd></button></div>`;
     return;
   }
   let h=head(w);
@@ -509,7 +549,7 @@ function render(){
     h+=done?`<div class="prompt"><p class="big">${esc(perfText(w))}</p><div class="sub">${esc(w.de)} · ${esc(w.en)}</div>${canSpeak?`<button class="say" data-act="say" data-t="${esc(perfText(w))}">Listen</button>`:""}</div>${exBlock(w)}`
            :`<div class="prompt"><div class="sub">Perfekt: er …</div><p class="big">${esc(w.de)}</p><div class="en">${esc(w.en)}</div></div>`;
     if(done) h+=`<div class="verdict ${S.verdict?"ok":"no"}">${esc(S.msg)}</div>`;
-    h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt popt ${done&&o===S.right?"hit":""} ${done&&o===S.picked&&o!==S.right?"miss":""}" data-act="popt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
+    h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt popt ${done&&o===S.correct?"hit":""} ${done&&o===S.picked&&o!==S.correct?"miss":""}" data-act="popt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
     if(done) h+=nextBtn;
   }
   if(store.mode==="write"){
@@ -588,7 +628,7 @@ document.addEventListener("click",e=>{
   if(a==="sound"){store.sound=store.sound===false;save();if(store.sound)tone(true);return render();}
   if(a==="reset"){confirmReset=true;return render();}
   if(a==="reset-no"){confirmReset=false;return render();}
-  if(a==="reset-yes"){confirmReset=false;store.p={};save();S=null;return render();}
+  if(a==="reset-yes"){confirmReset=false;store.p={};store.rounds=[];store.roundNo=0;save();S=null;return render();}
   if(a==="flip"){S.phase="shown";return render();}
   if(a==="rate"){answer(b.dataset.ok==="1");return next();}
   if(a==="art"){S.picked=b.dataset.a;answer(S.picked===S.queue[S.i].art);return render();}
@@ -601,11 +641,12 @@ document.addEventListener("click",e=>{
   if(a==="sopt"){S.picked=S.opts[+b.dataset.i];answer(S.picked===S.queue[S.i].ans);return render();}
   if(a==="popt"){
     const f=perf(S.queue[S.i]); S.picked=S.opts[+b.dataset.i];
-    const ok=S.picked===S.right, auxOk=S.picked.split(" ")[0]===f.aux, partOk=S.picked.split(" ").pop()===f.part;
-    S.msg=ok?"Richtig!":partOk?`Right participle, but this verb takes “${f.aux}”.`:auxOk?`“${f.aux}” is right, but the participle is ${f.part}.`:`It is ${S.right}.`;
+    const ok=S.picked===S.correct, auxOk=S.picked.split(" ")[0]===f.aux, partOk=S.picked.split(" ").pop()===f.part;
+    S.msg=ok?"Richtig!":partOk?`Right participle, but this verb takes “${f.aux}”.`:auxOk?`“${f.aux}” is right, but the participle is ${f.part}.`:`It is ${S.correct}.`;
     answer(ok); return render();
   }
   if(a==="next"){tone("next");return next();}
+  if(a==="replay"){tone("next");return replayRound(+b.dataset.id);}
   if(a==="again"){tone("next");S=null;return render();}
 });
 document.addEventListener("submit",e=>{ if(e.target.id==="writeForm"){e.preventDefault();checkWrite($("answer").value);}
