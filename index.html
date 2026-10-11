@@ -255,6 +255,7 @@ function tipFor(w){
   return "";
 }
 
+const VERSION="20";
 const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
 const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["poss","Possessiv"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
 let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false,exam:"",day:{d:"",n:0},mine:[],rounds:[],roundNo:0};
@@ -417,7 +418,8 @@ function replayRound(id){
 }
 const NAMES=Object.fromEntries(KINDS.concat(MODES));
 function roundsHtml(){
-  const rs=(store.rounds||[]).slice(0,12); if(!rs.length) return "";
+  const rs=(store.rounds||[]).slice(0,12);
+  if(!rs.length) return `<div class="profile"><div class="meta"><span>Rounds</span><span></span></div><div class="sub">Finish a round and it appears here, ready to repeat.</div></div>`;
   return `<div class="profile"><div class="meta"><span>Rounds</span><span>right first time</span></div>`+rs.map(r=>
     `<div class="rnd"><span class="g">Round ${r.no}<small>${esc(NAMES[r.kind]||"")} · ${esc(NAMES[r.mode]||"")} · ${esc(r.d.slice(8)+"."+r.d.slice(5,7)+".")}</small></span><span class="sc">${r.scores.join(" → ")} / ${r.size}</span><button class="link" data-act="replay" data-id="${r.id}">Repeat</button></div>`).join("")+`</div>`;
 }
@@ -465,12 +467,12 @@ function renderProfile(st){
   const all=stats(WORDS.filter(active));
   st.innerHTML=`<div class="done"><h2>Profile</h2></div>
   <div class="profile">${bar(all)}<div class="counts"><span><i class="dot m"></i><b>${all.m}</b> mastered</span><span><i class="dot l"></i><b>${all.l}</b> learning</span><span><i class="dot n"></i><b>${all.n-all.m-all.l}</b> new</span><span><b>${all.d}</b> due</span></div></div>`+
+  roundsHtml()+
   KINDS.map(([id,name])=>{const k=stats(WORDS.filter(w=>w.kind===id&&active(w)));return `<div class="profile"><div class="meta"><span>${name}</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;}).join("")+
   (()=>{const k=stats(WORDS.filter(w=>w.kind==="verb"&&active(w)),"perf:");return `<div class="profile"><div class="meta"><span>Perfekt</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   (()=>{const k=stats(POSS);return `<div class="profile"><div class="meta"><span>Possessiv</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   (()=>{const pl=plan();return `<div class="profile"><div class="meta"><span>Exam date</span><span>${pl?(pl.left>=0?pl.left+" days left":"passed"):"not set"}</span></div><input class="search" type="date" id="exam" value="${esc(store.exam||"")}" aria-label="Exam date">${pl&&pl.left>=0?`<div class="meta"><span>New words today</span><span>${pl.done} / ${pl.target}</span></div><div class="bar"><i class="m" style="width:${Math.min(100,pl.done/Math.max(1,pl.target)*100)}%"></i></div>`:""}</div>`;})()+
-  roundsHtml()+
-  `<div class="sub">Correct words return after 1, 2, 4, 7 and 14 days.</div><div class="spacer"></div><div class="row">`+
+  `<div class="sub">Correct words return after 1, 2, 4, 7 and 14 days. · Version ${VERSION}</div><div class="spacer"></div><div class="row">`+
   (confirmReset
     ?`<button class="btn" data-act="reset-no">Keep progress</button><button class="btn primary" data-act="reset-yes">Erase everything</button>`
     :`<button class="btn" data-act="basics" aria-pressed="${!!store.basics}">A1–A2 words: ${store.basics?"on":"off"}</button><button class="btn" data-act="sound">Sound: ${store.sound===false?"off":"on"}</button><button class="btn" data-act="reset">Reset progress</button>`)+`</div>`;
@@ -691,7 +693,11 @@ render();
   btn.addEventListener("click",()=>{ if(deferred){deferred.prompt();deferred=null;box.hidden=true;} });
   $("installNo").addEventListener("click",()=>{box.hidden=true;try{localStorage.setItem("b1install","no");}catch(e){}});
   if(/iphone|ipad|ipod/i.test(navigator.userAgent)) show("To install: tap the Share button, then “Add to Home Screen”.",false);
-  if("serviceWorker" in navigator && location.protocol.indexOf("http")===0) navigator.serviceWorker.register("sw.js").catch(()=>{});
+  if("serviceWorker" in navigator && location.protocol.indexOf("http")===0) {
+    const had=!!navigator.serviceWorker.controller; let reloaded=false;
+    navigator.serviceWorker.addEventListener("controllerchange",()=>{ if(had&&!reloaded){reloaded=true;location.reload();} });
+    navigator.serviceWorker.register("sw.js").then(r=>r.update&&r.update()).catch(()=>{});
+  }
 })();
 </script>
 </body>
