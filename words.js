@@ -3125,3 +3125,58 @@ Vielen Dank für ___ Hilfe.|Ihre|Sie|feminin · Akkusativ (für)|Thank you very 
 Was kann ich für ___ Kinder tun?|Ihre|Sie|Plural · Akkusativ (für)|What can I do for your children?
 Bitte kommen Sie mit ___ Pass.|Ihrem|Sie|maskulin · Dativ (mit)|Please come with your passport.
 Wir haben ___ Brief erhalten.|Ihren|Sie|maskulin · Akkusativ|We have received your letter.`;
+// Verbs that always take the Dativ: verb|what it really means|english|example|translation
+const DATIV_VERBS = `helfen|give help to someone|to help|Ich helfe dir.|I'll help you.
+danken|give thanks to someone|to thank|Ich danke Ihnen.|Thank you.
+antworten|give an answer to someone|to answer (someone)|Er antwortet mir nicht.|He doesn't answer me.
+gratulieren|give congratulations to someone|to congratulate|Wir gratulieren dir zum Geburtstag.|We wish you a happy birthday.
+glauben|give belief to someone|to believe (a person)|Ich glaube dir.|I believe you.
+vertrauen|give trust to someone|to trust|Ich vertraue meiner Freundin.|I trust my friend.
+gefallen|something is pleasing to me|to like, to please|Der Film gefällt mir.|I like the film.
+schmecken|something tastes good to me|to taste (good)|Die Suppe schmeckt mir.|I like the soup.
+passen|something fits or suits me|to fit, to suit|Die Hose passt mir.|The trousers fit me.
+gehören|something belongs to me|to belong to|Das Buch gehört mir.|The book belongs to me.
+fehlen|someone is missing to me|to be missed (I miss ...)|Du fehlst mir.|I miss you.
+wehtun|something hurts me|to hurt|Der Kopf tut mir weh.|My head hurts.
+passieren|something happens to me|to happen (to someone)|Was ist dir passiert?|What happened to you?`;
+// Dativ test: sentence with ___|answer|who|three wrong options|why|translation
+const DATIV_TEST = `Kannst du ___ helfen?|mir|ich|mich,ich,mein|helfen + Dativ|Can you help me?
+Ich helfe ___ gern beim Umzug.|dir|du|dich,du,dein|helfen + Dativ|I'm happy to help you with the move.
+Wir helfen ___ bei den Hausaufgaben.|dem Kind|das Kind|das Kind,den Kind,der Kind|helfen + Dativ · neutrum|We help the child with the homework.
+Ich danke ___ für die Einladung.|Ihnen|Sie (formal)|Sie,Ihr,Ihre|danken + Dativ|Thank you for the invitation.
+Er dankt ___ für das Geschenk.|seiner Mutter|seine Mutter|seine Mutter,seinen Mutter,seinem Mutter|danken + Dativ · feminin|He thanks his mother for the present.
+Warum antwortest du ___ nicht?|mir|ich|mich,ich,mein|antworten + Dativ|Why aren't you answering me?
+Bitte antworten Sie ___ bis Freitag.|uns|wir|unser,wir,unsere|antworten + Dativ|Please answer us by Friday.
+Die Schülerin antwortet ___.|dem Lehrer|der Lehrer|den Lehrer,der Lehrer,des Lehrers|antworten + Dativ · maskulin|The pupil answers the teacher.
+Ich gratuliere ___ zum Geburtstag!|dir|du|dich,du,dein|gratulieren + Dativ|Happy birthday to you!
+Wir gratulieren ___ zur Hochzeit.|euch|ihr (you, plural)|eure,euer,eurer|gratulieren + Dativ|Congratulations on your wedding.
+Alle gratulieren ___ zur bestandenen Prüfung.|ihm|er|ihn,er,sein|gratulieren + Dativ|Everyone congratulates him on passing the exam.
+Ich glaube ___ kein Wort.|dir|du|dich,du,dein|glauben + Dativ (a person)|I don't believe a word you say.
+Glaubst du ___?|ihr|sie (she)|sie,ihn,ihre|glauben + Dativ (a person)|Do you believe her?
+Die Polizei glaubt ___ nicht.|dem Zeugen|der Zeuge|den Zeugen,der Zeuge,des Zeugen|glauben + Dativ · maskulin|The police don't believe the witness.
+Ich vertraue ___ völlig.|dir|du|dich,du,dein|vertrauen + Dativ|I trust you completely.
+Kannst du ___ vertrauen?|ihnen|sie (they)|sie,ihn,ihre|vertrauen + Dativ|Can you trust them?
+Viele Leute vertrauen ___ nicht mehr.|der Werbung|die Werbung|die Werbung,den Werbung,dem Werbung|vertrauen + Dativ · feminin|Many people no longer trust advertising.
+Der Film gefällt ___ sehr.|mir|ich|mich,ich,mein|gefallen: the film is pleasing to me|I like the film a lot.
+Gefällt ___ die neue Wohnung?|dir|du|dich,du,dein|gefallen + Dativ|Do you like the new flat?
+Die Stadt hat ___ gut gefallen.|uns|wir|unser,wir,unsere|gefallen + Dativ|We really liked the city.
+Das Kleid gefällt ___ nicht.|meiner Schwester|meine Schwester|meine Schwester,meinen Schwester,meinem Schwester|gefallen + Dativ · feminin|My sister doesn't like the dress.
+Das Wetter gefällt ___ nicht.|ihnen|sie (they)|sie,ihn,ihre|gefallen + Dativ|They don't like the weather.
+Die Suppe schmeckt ___ sehr gut.|mir|ich|mich,ich,mein|schmecken + Dativ|The soup tastes very good to me.
+Hat es ___ geschmeckt?|Ihnen|Sie (formal)|Sie,Ihr,Ihre|schmecken + Dativ|Did you enjoy your meal?
+Der Kuchen schmeckt ___ nicht.|den Kindern|die Kinder|die Kinder,den Kinder,der Kinder|schmecken + Dativ · Plural gets -n|The children don't like the cake.
+Die Hose passt ___ nicht mehr.|mir|ich|mich,ich,mein|passen + Dativ|The trousers don't fit me any more.
+Passt ___ der Termin am Montag?|Ihnen|Sie (formal)|Sie,Ihr,Ihre|passen + Dativ (to suit)|Does the appointment on Monday suit you?
+Die Schuhe passen ___ perfekt.|ihm|er|ihn,er,sein|passen + Dativ|The shoes fit him perfectly.
+Das Buch gehört ___.|mir|ich|mich,ich,mein|gehören + Dativ|The book belongs to me.
+Wem gehört das Auto? Es gehört ___.|meinem Vater|mein Vater|meinen Vater,mein Vater,meines Vaters|gehören + Dativ · maskulin|Whose car is it? It belongs to my father.
+Gehört die Tasche ___?|dir|du|dich,du,dein|gehören + Dativ|Is this bag yours?
+Du fehlst ___ sehr.|mir|ich|mich,ich,mein|fehlen: you are missing to me, so I miss you|I miss you a lot.
+Seine Familie fehlt ___.|ihm|er|ihn,er,sein|fehlen + Dativ|He misses his family.
+Was fehlt ___ denn?|Ihnen|Sie (formal)|Sie,Ihr,Ihre|fehlen + Dativ (what is wrong?)|What's wrong with you?
+Der Kopf tut ___ weh.|mir|ich|mich,ich,mein|wehtun + Dativ|My head hurts.
+Tut ___ der Rücken weh?|dir|du|dich,du,dein|wehtun + Dativ|Does your back hurt?
+Nach dem Sport tun ___ die Beine weh.|uns|wir|unser,wir,unsere|wehtun + Dativ|After sport our legs hurt.
+Was ist ___ passiert?|dir|du|dich,du,dein|passieren + Dativ|What happened to you?
+Zum Glück ist ___ nichts passiert.|ihr|sie (she)|sie,ihn,ihre|passieren + Dativ|Luckily nothing happened to her.
+Ist ___ etwas passiert?|den Kindern|die Kinder|die Kinder,den Kinder,der Kinder|passieren + Dativ · Plural gets -n|Has something happened to the children?`;

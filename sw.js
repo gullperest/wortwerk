@@ -1,6 +1,6 @@
 // Offline support. App files are fetched fresh when online (so updates show up straight away)
 // and served from the cache when offline or the network is slow. Fonts are served cache-first.
-const CACHE = "b1-wortschatz-v21";
+const CACHE = "b1-wortschatz-v22";
 const SHELL = ["./", "index.html", "words.js", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {

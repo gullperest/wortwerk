@@ -24,7 +24,7 @@
   --die:#c22f3c; --die-bg:#fbe6e8;
   --das:#1b7f52; --das-bg:#e0f3ea;
   --mark:#b77a00; --mark-bg:#fbf0d2;
-  --vio:#6a45c2; --vio-bg:#ece6fa; --teal:#0f7f86; --teal-bg:#dcf2f3;
+  --vio:#6a45c2; --vio-bg:#ece6fa; --teal:#0f7f86; --teal-bg:#dcf2f3; --pink:#b0306e; --pink-bg:#fae3ee;
   --ui:"Barlow","Helvetica Neue",Arial,sans-serif;
   --word:"Bitter",Georgia,"Times New Roman",serif;
 }
@@ -36,7 +36,7 @@
     --die:#f38891; --die-bg:#3f2025;
     --das:#62cf9d; --das-bg:#17362a;
     --mark:#e9b84a; --mark-bg:#3a2f14;
-    --vio:#b49cf5; --vio-bg:#2b2346; --teal:#5fcad1; --teal-bg:#143538;
+    --vio:#b49cf5; --vio-bg:#2b2346; --teal:#5fcad1; --teal-bg:#143538; --pink:#f08cbc; --pink-bg:#3d1f2e;
     color-scheme:dark;
   }
 }
@@ -47,7 +47,7 @@
   --die:#f38891; --die-bg:#3f2025;
   --das:#62cf9d; --das-bg:#17362a;
   --mark:#e9b84a; --mark-bg:#3a2f14;
-    --vio:#b49cf5; --vio-bg:#2b2346; --teal:#5fcad1; --teal-bg:#143538;
+    --vio:#b49cf5; --vio-bg:#2b2346; --teal:#5fcad1; --teal-bg:#143538; --pink:#f08cbc; --pink-bg:#3d1f2e;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -158,7 +158,7 @@ details.rounds summary small{color:var(--muted);font-weight:500}
 .rbar .tag{font-weight:700;font-size:.85rem;color:var(--c)}
 .rbar .sc{font-variant-numeric:tabular-nums;font-weight:600}
 .m-cards{--c:var(--mark);--c-bg:var(--mark-bg)} .m-article{--c:var(--der);--c-bg:var(--der-bg)} .m-meaning{--c:var(--das);--c-bg:var(--das-bg)}
-.m-write{--c:var(--teal);--c-bg:var(--teal-bg)} .m-perfekt{--c:var(--vio);--c-bg:var(--vio-bg)} .m-poss{--c:var(--die);--c-bg:var(--die-bg)}
+.m-write{--c:var(--teal);--c-bg:var(--teal-bg)} .m-perfekt{--c:var(--vio);--c-bg:var(--vio-bg)} .m-poss{--c:var(--die);--c-bg:var(--die-bg)} .m-dtest{--c:var(--pink);--c-bg:var(--pink-bg)}
 .rnd{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:4px 14px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .rnd .g{font-weight:600}
 .rnd small{display:block;font-weight:400;color:var(--muted);font-size:.82rem}
@@ -185,7 +185,8 @@ ul.miss li{display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-betwee
   .ptable th,.ptable td{padding:10px 3px}
   .ptable td{font-size:.9rem}
   .ptable thead th{font-size:.7rem;letter-spacing:.03em}
-  .kinds button{font-size:.82rem}
+  .kinds{flex-wrap:wrap}
+  .kinds button{font-size:.88rem;flex:1 1 30%}
   .w{grid-template-columns:2.4rem minmax(0,1fr) auto}
   .w .e{grid-column:2 / -1;grid-row:2}
 }
@@ -224,10 +225,10 @@ footer .row>*{flex:0 0 auto}
 <script src="words.js"></script>
 <script>
 const NOUN_TOPICS = DATA.map((t,i)=>({id:i,de:t[0],en:t[1]}));
-const TOPICS = NOUN_TOPICS.concat([{id:DATA.length,de:"Verben",en:"Verbs"},{id:DATA.length+1,de:"Adjektive",en:"Adjectives"},{id:DATA.length+2,de:"Andere Wörter",en:"Other words"},{id:DATA.length+3,de:"Meine Wörter",en:"My words"}]);
+const TOPICS = NOUN_TOPICS.concat([{id:DATA.length,de:"Verben",en:"Verbs"},{id:DATA.length+1,de:"Adjektive",en:"Adjectives"},{id:DATA.length+2,de:"Andere Wörter",en:"Other words"},{id:DATA.length+3,de:"Meine Wörter",en:"My words"},{id:DATA.length+4,de:"Dativ-Verben",en:"Dative verbs"}]);
 const plain=(src,kind,topic)=>src.split("\n").filter(Boolean).map(l=>{const [de,pl,en,ex,tr,lv,pex,ptr]=l.split("|");return {kind,art:"",de,pl,en,ex,tr,lv,pex,ptr,topic};});
 const WORDS = DATA.flatMap((t,i)=>t[2].split("\n").map(l=>{const [art,de,pl,en,ex,tr,lv]=l.split("|");return {kind:"noun",art,de,pl,en,ex,tr,lv,topic:i};}))
-  .concat(plain(VERBS,"verb",DATA.length),plain(ADJS,"adj",DATA.length+1),plain(OTHERS,"other",DATA.length+2));
+  .concat(plain(VERBS,"verb",DATA.length),plain(ADJS,"adj",DATA.length+1),plain(OTHERS,"other",DATA.length+2),plain(typeof DATIV_VERBS==="string"?DATIV_VERBS:"","dativ",DATA.length+4));
 // Progress id: the word itself, except when two sections share a spelling (verb "sein" and possessive "sein").
 {const seen=new Set(); WORDS.forEach(w=>{w.k=seen.has(w.de)?w.kind+":"+w.de:w.de; seen.add(w.de);});}
 // Possessive articles as a grammar drill: pick the form that fits the gap.
@@ -251,8 +252,12 @@ function renderPossTable(st){
     <tbody>${PEND.map(([c,e])=>`<tr><th>${c}</th>${e.map(x=>`<td>${x?base:stem}<b>${x}</b></td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
   }).join("")+`<div class="row"><button class="btn primary" data-act="ptab">Back to practice</button></div>`;
 }
-const KINDS=[["noun","Nomen"],["verb","Verben"],["adj","Adjektive"],["other","Andere"],["mine","Meine"]];
-const INFO={noun:"Plural",verb:"Forms",adj:"Opposite",other:"Use"};
+// Dativ test: pick the Dativ form that fits the gap (separate from the vocabulary sections).
+const DT=(typeof DATIV_TEST==="string"?DATIV_TEST:"").split("\n").filter(Boolean).map(l=>{const [q,ans,cue,dis,note,tr]=l.split("|");return {kind:"dtest",art:"",de:q,pl:note,en:"",ex:"",tr,ans,cue,dis:dis.split(","),lv:"B",topic:DATA.length+4,k:"dt:"+q};});
+const KINDS=[["noun","Nomen"],["verb","Verben"],["adj","Adjektive"],["other","Andere"],["mine","Meine"],["dativ","Dativ"]];
+const INFO={noun:"Plural",verb:"Forms",adj:"Opposite",other:"Use",dativ:"Dativ"};
+// which exercise tabs each section offers
+const modeOk=(id,kind)=>kind==="dativ"?["cards","dtest","list"].includes(id):(id!=="article"||kind==="noun")&&(id!=="perfekt"||kind==="verb")&&(id!=="poss"||kind==="other")&&id!=="dtest";
 const label=w=>(w.art?w.art+" ":"")+w.de;
 
 // Ending patterns that reliably predict the article; shown only when they fit the word.
@@ -270,9 +275,9 @@ function tipFor(w){
   return "";
 }
 
-const VERSION="21";
+const VERSION="22";
 const DAY=864e5, GAPS=[0,1,2,4,7,14], ROUND=10;
-const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["poss","Possessiv"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
+const MODES=[["cards","Cards"],["article","Artikel"],["perfekt","Perfekt"],["poss","Possessiv"],["dtest","Test"],["meaning","Meaning"],["write","Write"],["list","Word list"]];
 let store={p:{},topics:[],mode:"cards",kind:"noun",sound:true,basics:false,exam:"",day:{d:"",n:0},mine:[],rounds:[],roundNo:0};
 try{const s=JSON.parse(localStorage.getItem("b1wortschatz")||"null"); if(s&&s.p) store=Object.assign(store,s);}catch(e){}
 // Words the learner typed in themselves ("Meine"): stored on the device, practised like the rest.
@@ -312,12 +317,12 @@ function plan(){
   if(!store.exam) return null;
   const t=todayStr(), left=Math.round((new Date(store.exam+"T00:00")-new Date(t+"T00:00"))/DAY);
   const done=store.day&&store.day.d===t?store.day.n:0;
-  const fresh=WORDS.filter(w=>w.kind!=="mine"&&active(w)&&!store.p[bk(w)]).length;
+  const fresh=WORDS.filter(w=>w.kind!=="mine"&&w.kind!=="dativ"&&active(w)&&!store.p[bk(w)]).length;
   const study=Math.max(1,left>14?left-7:left);
   return {left,done,target:left<0?0:Math.ceil((fresh+done)/study)};
 }
 function grade(w,ok){
-  if(!store.p[key(w)]&&store.mode!=="perfekt"&&w.kind!=="mine"&&w.kind!=="poss"){const t=todayStr(); if(!store.day||store.day.d!==t) store.day={d:t,n:0}; store.day.n++;}
+  if(!store.p[key(w)]&&store.mode!=="perfekt"&&w.kind!=="mine"&&w.kind!=="poss"&&w.kind!=="dativ"&&w.kind!=="dtest"){const t=todayStr(); if(!store.day||store.day.d!==t) store.day={d:t,n:0}; store.day.n++;}
   // repeating a saved round is a self-check: a right answer does not push the word further away
   if(S&&S.replay&&ok&&store.p[key(w)]) return;
   const p=prog(w); const box=ok?Math.min(5,p.box+1):1;
@@ -425,7 +430,7 @@ function saveRound(){
 }
 function replayRound(id){
   const r=(store.rounds||[]).find(x=>x.id===id); if(!r) return;
-  const src=r.mode==="poss"?POSS:WORDS.filter(w=>w.kind===r.kind);
+  const src=r.mode==="poss"?POSS:r.mode==="dtest"?DT:WORDS.filter(w=>w.kind===r.kind);
   const queue=r.ids.map(k=>src.find(w=>bk(w)===k)).filter(Boolean);
   if(!queue.length) return;
   store.kind=r.kind; store.mode=r.mode; save();
@@ -440,7 +445,7 @@ function roundsHtml(){
       :`<div class="sub">Finish a round and it appears here. Tap a round to repeat it.</div>`)+`</div></details>`;
 }
 function newRound(){
-  const now=Date.now(), all=store.mode==="poss"?POSS:pool();
+  const now=Date.now(), all=store.mode==="poss"?POSS:store.mode==="dtest"?DT:pool();
   const due=shuffle(all.filter(w=>prog(w).box>0&&prog(w).due<=now)).sort((a,b)=>prog(a).box-prog(b).box);
   const fresh=shuffle(all.filter(w=>prog(w).box===0));
   const later=all.filter(w=>prog(w).box>0&&prog(w).due>now).sort((a,b)=>prog(a).due-prog(b).due);
@@ -450,6 +455,7 @@ function newRound(){
 function prep(){
   S.phase="ask";S.picked=null;S.verdict=null;S.opts=null;S.tr=false;
   const w=S.queue[S.i]; if(!w) return;
+  if(store.mode==="dtest") S.opts=shuffle([w.ans].concat(w.dis));
   if(store.mode==="poss") S.opts=shuffle([w.ans].concat(shuffle(possForms(w).filter(f=>f!==w.ans)).slice(0,3)));
   if(store.mode==="write") S.tiles=shuffle(w.de.split(""));
   if(store.mode==="perfekt"){
@@ -487,6 +493,7 @@ function renderProfile(st){
   KINDS.map(([id,name])=>{const k=stats(WORDS.filter(w=>w.kind===id&&active(w)));return `<div class="profile"><div class="meta"><span>${name}</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;}).join("")+
   (()=>{const k=stats(WORDS.filter(w=>w.kind==="verb"&&active(w)),"perf:");return `<div class="profile"><div class="meta"><span>Perfekt</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   (()=>{const k=stats(POSS);return `<div class="profile"><div class="meta"><span>Possessiv</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
+  (()=>{const k=stats(DT);return `<div class="profile"><div class="meta"><span>Dativ test</span><span>${k.m} / ${k.n}</span></div>${bar(k)}</div>`;})()+
   (()=>{const pl=plan();return `<div class="profile"><div class="meta"><span>Exam date</span><span>${pl?(pl.left>=0?pl.left+" days left":"passed"):"not set"}</span></div><input class="search" type="date" id="exam" value="${esc(store.exam||"")}" aria-label="Exam date">${pl&&pl.left>=0?`<div class="meta"><span>New words today</span><span>${pl.done} / ${pl.target}</span></div><div class="bar"><i class="m" style="width:${Math.min(100,pl.done/Math.max(1,pl.target)*100)}%"></i></div>`:""}</div>`;})()+
   `<div class="sub">Correct words return after 1, 2, 4, 7 and 14 days. · Version ${VERSION}</div><div class="spacer"></div><div class="row">`+
   (confirmReset
@@ -503,7 +510,7 @@ function renderChrome(){
     NOUN_TOPICS.map(t=>`<button class="chip" data-act="topic" data-id="${t.id}" aria-pressed="${store.topics.includes(t.id)}" title="${esc(t.en)}">${esc(t.de)}</button>`).join("");
   $("topicsBox").hidden=prof||store.kind!=="noun";
   $("kinds").innerHTML=KINDS.map(([id,name])=>`<button data-act="kind" data-id="${id}" aria-pressed="${store.kind===id}">${name}</button>`).join("");
-  $("modes").innerHTML=MODES.filter(([id])=>(id!=="article"||store.kind==="noun")&&(id!=="perfekt"||store.kind==="verb")&&(id!=="poss"||store.kind==="other")).map(([id,label])=>`<button role="tab" data-act="mode" data-id="${id}" aria-selected="${store.mode===id}">${label}</button>`).join("");
+  $("modes").innerHTML=MODES.filter(([id])=>modeOk(id,store.kind)).map(([id,label])=>`<button role="tab" data-act="mode" data-id="${id}" aria-selected="${store.mode===id}">${label}</button>`).join("");
 }
 const head=w=>`<div class="meta"><span>${esc(TOPICS[w.topic].de)}</span><span>${Math.min(S.i+1,S.queue.length)} / ${S.queue.length}</span></div>`;
 const ik=w=>w.sk||w.kind;
@@ -528,7 +535,7 @@ function render(){
   if(!w){
     const rr=(store.rounds||[]).find(x=>x.id===S.roundId);
     st.innerHTML=`<div class="done"><h2>${S.right} of ${S.size} right first time</h2>${rr?`<div class="sub">Round ${rr.no}${rr.scores.length>1?" · "+rr.scores.join(" → "):""}</div>`:""}</div>`+
-      (S.misses.length?`<div class="sub">Worth another look:</div><ul class="miss">${S.misses.map(x=>`<li><span><b class="${x.art}">${x.art}</b> ${esc(x.kind==="poss"?x.de.replace("___",x.ans):x.de)}</span><span class="sub">${esc(x.en)}</span></li>`).join("")}</ul>`:`<div class="sub">No misses in this round.</div>`)+
+      (S.misses.length?`<div class="sub">Worth another look:</div><ul class="miss">${S.misses.map(x=>`<li><span><b class="${x.art}">${x.art}</b> ${esc(x.ans?x.de.replace("___",x.ans):x.de)}</span><span class="sub">${esc(x.en)}</span></li>`).join("")}</ul>`:`<div class="sub">No misses in this round.</div>`)+
       `<div class="spacer"></div><div class="row">${S.roundId?`<button class="btn" data-act="replay" data-id="${S.roundId}">Repeat this round</button>`:""}<button class="btn primary" data-act="again" id="nextBtn">Next round <kbd>Enter</kbd></button></div>`;
     return;
   }
@@ -552,6 +559,14 @@ function render(){
     const done=S.phase==="shown";
     h+=done?reveal(w,false):`<div class="prompt ${w.art}">${full(w)}${sayBtn(w)}</div>`;
     h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt ${done&&o===w.en?"hit":""} ${done&&o===S.picked&&o!==w.en?"miss":""}" data-act="opt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
+    if(done) h+=nextBtn;
+  }
+  if(store.mode==="dtest"){
+    const done=S.phase==="shown", parts=w.de.split("___"), full=w.de.replace("___",w.ans);
+    h+=`<div class="prompt"><div class="sub">Dativ · ${esc(w.cue)}</div><p class="sent" lang="de">${esc(parts[0])}${done?`<b>${esc(w.ans)}</b>`:`<span class="gap"></span>`}${esc(parts[1]||"")}</p>${done&&canSpeak?`<button class="say" data-act="say" data-t="${esc(full)}">Listen</button>`:""}</div>`;
+    h+=`<div class="ex">${S.tr?`<p class="tr">${esc(w.tr)}</p>`:""}<button class="link" data-act="tr" aria-expanded="${S.tr}">${S.tr?"Hide translation":"Show English translation"}</button></div>`;
+    if(done) h+=`<div class="verdict ${S.verdict?"ok":"no"}">${S.verdict?"Richtig!":`It is ${esc(w.ans)}.`}</div><div class="tip"><b>Why</b> ${esc(w.pl)}</div>`;
+    h+=`<div class="opts">${S.opts.map((o,i)=>`<button class="btn opt popt ${done&&o===w.ans?"hit":""} ${done&&o===S.picked&&o!==w.ans?"miss":""}" data-act="sopt" data-i="${i}" ${done?"disabled":""}>${esc(o)}${done?"":` <kbd>${i+1}</kbd>`}</button>`).join("")}</div>`;
     if(done) h+=nextBtn;
   }
   if(store.mode==="poss"){
@@ -639,7 +654,7 @@ document.addEventListener("click",e=>{
     else{const id=+b.dataset.id,i=store.topics.indexOf(id); i<0?store.topics.push(id):store.topics.splice(i,1); if(store.topics.length===NOUN_TOPICS.length) store.topics=[];}
     save();S=null;return render();
   }
-  if(a==="kind"){store.kind=b.dataset.id;if((store.mode==="article"&&store.kind!=="noun")||(store.mode==="perfekt"&&store.kind!=="verb")||(store.mode==="poss"&&store.kind!=="other"))store.mode="cards";save();S=null;query="";return render();}
+  if(a==="kind"){store.kind=b.dataset.id;if(!modeOk(store.mode,store.kind))store.mode="cards";save();S=null;query="";return render();}
   if(a==="tr"){S.tr=!S.tr;return render();}
   if(a==="del"){ if(delAsk!==b.dataset.de){delAsk=b.dataset.de;return render();} delMine(delAsk);delAsk="";S=null;return render(); }
   if(a==="basics"){store.basics=!store.basics;save();S=null;return render();}
@@ -693,7 +708,7 @@ document.addEventListener("keydown",e=>{
   }
   if(S.phase==="ask"&&store.mode==="article"&&"123".includes(k)) return click(`[data-a="${["der","die","das"][k-1]}"]`);
   if(S.phase==="ask"&&store.mode==="meaning"&&"1234".includes(k)) return click(`[data-act="opt"][data-i="${k-1}"]`);
-  if(S.phase==="ask"&&store.mode==="poss"&&"1234".includes(k)) return click(`[data-act="sopt"][data-i="${k-1}"]`);
+  if(S.phase==="ask"&&(store.mode==="poss"||store.mode==="dtest")&&"1234".includes(k)) return click(`[data-act="sopt"][data-i="${k-1}"]`);
   if(S.phase==="ask"&&store.mode==="perfekt"&&"1234".includes(k)) return click(`[data-act="popt"][data-i="${k-1}"]`);
 });
 render();
